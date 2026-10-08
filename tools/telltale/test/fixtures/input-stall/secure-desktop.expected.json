@@ -1,0 +1,19 @@
+{
+  "name": "secure-desktop",
+  "base": "2026-02-01T09:00:00.000Z",
+  "runEndS": 20,
+  "episodes": [],
+  "blips": 0,
+  "notEvaluable": [
+    {
+      "reason": "secure-desktop",
+      "durationMs": 4000
+    }
+  ],
+  "evaluable": {
+    "observedMs": 20000,
+    "evaluatedMs": 16000,
+    "idleMs": 0,
+    "notEvaluableMs": 4000
+  }
+}

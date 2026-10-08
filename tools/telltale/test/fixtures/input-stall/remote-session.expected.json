@@ -1,0 +1,19 @@
+{
+  "name": "remote-session",
+  "base": "2026-02-01T09:00:00.000Z",
+  "runEndS": 30,
+  "episodes": [],
+  "blips": 0,
+  "notEvaluable": [
+    {
+      "reason": "remote-session",
+      "durationMs": 30000
+    }
+  ],
+  "evaluable": {
+    "observedMs": 30000,
+    "evaluatedMs": 0,
+    "idleMs": 0,
+    "notEvaluableMs": 30000
+  }
+}

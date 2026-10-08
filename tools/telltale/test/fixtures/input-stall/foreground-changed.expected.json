@@ -1,0 +1,29 @@
+{
+  "name": "foreground-changed",
+  "base": "2026-02-01T09:00:00.000Z",
+  "runEndS": 30,
+  "episodes": [
+    {
+      "startS": 15,
+      "endS": 15.9,
+      "durationMs": 900,
+      "worstLatencyMs": 500,
+      "samples": 2,
+      "sampleRefs": [
+        0,
+        1
+      ],
+      "endReason": "answered",
+      "foreground": {
+        "kind": "in-scope",
+        "group": "code"
+      },
+      "guards": [
+        "foreground-changed-near"
+      ],
+      "builderGuards": []
+    }
+  ],
+  "blips": 0,
+  "foregroundChangedDropped": 3
+}

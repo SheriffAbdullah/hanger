@@ -1,0 +1,20 @@
+{
+  "name": "elevated-foreground",
+  "base": "2026-02-01T09:00:00.000Z",
+  "runEndS": 30,
+  "episodes": [],
+  "blips": 0,
+  "droppedInSpan": 1,
+  "notEvaluable": [
+    {
+      "reason": "elevated-foreground",
+      "durationMs": 6000
+    }
+  ],
+  "evaluable": {
+    "observedMs": 30000,
+    "evaluatedMs": 24000,
+    "idleMs": 0,
+    "notEvaluableMs": 6000
+  }
+}

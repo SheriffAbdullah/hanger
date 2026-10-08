@@ -1,0 +1,18 @@
+###identity###
+manufacturer=HP
+model=Test Model
+###processor###
+model=Test CPU
+cores=4
+logical=8
+baseMHz=2400
+###memory###
+totalBytes=8589934592
+row:module|DIMM1|8589934592||0|12
+###storage###
+TIMEOUT 8000
+###firmware###
+biosVendor=HP
+biosVersion=U1
+biosDate=2024-05-01
+serial=

@@ -1,0 +1,27 @@
+{
+  "name": "torn-last-line",
+  "base": "2026-02-01T09:00:00.000Z",
+  "runEndS": 40,
+  "episodes": [
+    {
+      "startS": 12,
+      "endS": 13,
+      "durationMs": 1000,
+      "worstLatencyMs": 700,
+      "samples": 2,
+      "sampleRefs": [
+        0,
+        1
+      ],
+      "endReason": "answered",
+      "foreground": {
+        "kind": "in-scope",
+        "group": "code"
+      },
+      "guards": [],
+      "builderGuards": []
+    }
+  ],
+  "blips": 0,
+  "badLines": 1
+}

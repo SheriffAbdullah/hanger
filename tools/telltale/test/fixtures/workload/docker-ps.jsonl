@@ -1,0 +1,3 @@
+{"Command":"\"docker-entrypoint.s…\"","CreatedAt":"2026-10-07 09:58:00 +0000 UTC","ID":"a1b2c3d4e5f6a7b8c9d0","Image":"postgres:16","Labels":"","Names":"pg-db","Networks":"bridge","Ports":"5432/tcp","RunningFor":"2 minutes ago","State":"running","Status":"Up 2 minutes"}
+{"ID":"ffeeddccbbaa99887766","Image":"registry.local:5000/team/zzcanary-img:latest","Names":"zzcanary-web","State":"running","Status":"Up 10 minutes"}
+{"ID":"0011223344556677","Image":"redis:7","Names":"zzcanary-cache","State":"running","Status":"Up 1 hour"}

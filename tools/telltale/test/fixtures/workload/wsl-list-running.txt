@@ -1,0 +1,4 @@
+  NAME              STATE           VERSION
+* Ubuntu            Running         2
+  docker-desktop    Running         2
+  zzcanary-distro   Stopped         2

@@ -1,0 +1,403 @@
+{
+  "tool": "telltale pack/1",
+  "schema": "telltale-pack/1",
+  "assembledAt": "2026-01-15T11:00:00.000Z",
+  "tier": "user",
+  "scope": {
+    "mode": "allowlist",
+    "source": "file",
+    "path": "telltale.scope.json",
+    "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "entries": [
+      {
+        "name": "postgres",
+        "includeDescendants": false
+      },
+      {
+        "name": "docker",
+        "includeDescendants": false
+      }
+    ],
+    "matchRule": "exact executable name (with or without .exe) or explicit * ? pattern",
+    "systemSet": {
+      "listVersion": 1,
+      "categories": [
+        "os",
+        "security",
+        "virtualization"
+      ],
+      "names": []
+    },
+    "counts": {
+      "inScopeGroups": 2,
+      "systemGroups": 12,
+      "outOfScopeGroups": 41
+    },
+    "fallbacks": [],
+    "statement": "Names of software outside this scope were not recorded."
+  },
+  "outOfScope": {
+    "groups": 41,
+    "processes": 130,
+    "memMB": 4200,
+    "cpuPctOfMachine": 10,
+    "inScope": {
+      "memMB": 2800,
+      "cpuPctOfMachine": 8
+    },
+    "system": {
+      "memMB": 900,
+      "cpuPctOfMachine": 2
+    },
+    "measuredAt": "2026-01-15T10:01:00.000Z"
+  },
+  "systemProfile": {
+    "collectedAt": "2026-01-15T10:00:00.000Z",
+    "collectionMs": 1200,
+    "tier": "user",
+    "workloadConfigRef": null,
+    "groupStatus": {},
+    "identity": {
+      "hostname": {
+        "value": "<host>",
+        "source": "os",
+        "tier": "user",
+        "asOf": "2026-01-15T10:00:00.000Z"
+      },
+      "manufacturer": {
+        "value": "Synthetic Corp",
+        "source": "firmware-system-info",
+        "tier": "user",
+        "asOf": "2026-01-15T10:00:00.000Z"
+      },
+      "model": {
+        "value": "SX-1 Laptop",
+        "source": "firmware-system-info",
+        "tier": "user",
+        "asOf": "2026-01-15T10:00:00.000Z"
+      },
+      "serial": {
+        "value": "SYN0000001",
+        "source": "firmware-bios",
+        "tier": "user",
+        "asOf": "2026-01-15T10:00:00.000Z"
+      }
+    },
+    "processor": {
+      "model": {
+        "value": "Synthetic CPU 8-thread",
+        "source": "cpu-info",
+        "tier": "user",
+        "asOf": "2026-01-15T10:00:00.000Z"
+      },
+      "physicalCores": {
+        "value": 4,
+        "unit": "cores",
+        "source": "cpu-info",
+        "tier": "user",
+        "asOf": "2026-01-15T10:00:00.000Z"
+      },
+      "logicalProcessors": {
+        "value": 8,
+        "unit": "threads",
+        "source": "cpu-info",
+        "tier": "user",
+        "asOf": "2026-01-15T10:00:00.000Z"
+      },
+      "baseClockMHz": {
+        "value": 2400,
+        "unit": "MHz",
+        "source": "cpu-info",
+        "tier": "user",
+        "asOf": "2026-01-15T10:00:00.000Z"
+      },
+      "maxClockMHz": {
+        "value": null,
+        "unit": "MHz",
+        "source": "cpu-info",
+        "tier": "user",
+        "asOf": "2026-01-15T10:00:00.000Z",
+        "unavailableReason": "max turbo clock not exposed at user tier"
+      }
+    },
+    "memory": {
+      "installedGB": {
+        "value": 16,
+        "unit": "GB",
+        "source": "physical-memory-info",
+        "tier": "user",
+        "asOf": "2026-01-15T10:00:00.000Z"
+      },
+      "modules": {
+        "value": [
+          {
+            "slot": "Slot 1",
+            "sizeGB": 16,
+            "speedMTs": 3200,
+            "formFactor": "SODIMM"
+          }
+        ],
+        "source": "physical-memory-info",
+        "tier": "user",
+        "asOf": "2026-01-15T10:00:00.000Z"
+      },
+      "slotsUsed": {
+        "value": 1,
+        "source": "physical-memory-info",
+        "tier": "user",
+        "asOf": "2026-01-15T10:00:00.000Z"
+      },
+      "slotsTotal": {
+        "value": 2,
+        "source": "physical-memory-info",
+        "tier": "user",
+        "asOf": "2026-01-15T10:00:00.000Z"
+      }
+    },
+    "storage": {
+      "disks": {
+        "value": [
+          {
+            "model": "Synthetic NVMe 512",
+            "mediaType": "SSD",
+            "bus": "NVMe",
+            "capacityGB": 512,
+            "health": "Healthy"
+          }
+        ],
+        "source": "physical-disk-info",
+        "tier": "user",
+        "asOf": "2026-01-15T10:00:00.000Z"
+      },
+      "systemVolume": {
+        "value": {
+          "volume": "C:",
+          "freeGB": 190,
+          "totalGB": 460
+        },
+        "unit": "GB",
+        "source": "logical-disk-info",
+        "tier": "user",
+        "asOf": "2026-01-15T10:00:00.000Z"
+      }
+    },
+    "firmware": {
+      "biosVendor": {
+        "value": "Synthetic",
+        "source": "firmware-bios",
+        "tier": "user",
+        "asOf": "2026-01-15T10:00:00.000Z"
+      },
+      "biosVersion": {
+        "value": "SYN 1.02",
+        "source": "firmware-bios",
+        "tier": "user",
+        "asOf": "2026-01-15T10:00:00.000Z"
+      },
+      "biosDate": {
+        "value": "2025-06-01",
+        "source": "firmware-bios",
+        "tier": "user",
+        "asOf": "2026-01-15T10:00:00.000Z"
+      }
+    },
+    "os": {
+      "edition": {
+        "value": "Windows 11 Pro",
+        "source": "os-info",
+        "tier": "user",
+        "asOf": "2026-01-15T10:00:00.000Z"
+      },
+      "version": {
+        "value": "10.0.26200",
+        "source": "os-info",
+        "tier": "user",
+        "asOf": "2026-01-15T10:00:00.000Z"
+      },
+      "build": {
+        "value": "26200",
+        "source": "os-info",
+        "tier": "user",
+        "asOf": "2026-01-15T10:00:00.000Z"
+      },
+      "uptimeMin": {
+        "value": 1234,
+        "unit": "min",
+        "source": "os-info",
+        "tier": "user",
+        "asOf": "2026-01-15T10:00:00.000Z"
+      }
+    },
+    "power": {
+      "planName": {
+        "value": "Balanced",
+        "source": "powercfg",
+        "tier": "user",
+        "asOf": "2026-01-15T10:00:00.000Z"
+      },
+      "powerMode": {
+        "value": "Balanced",
+        "source": "powercfg",
+        "tier": "user",
+        "asOf": "2026-01-15T10:00:00.000Z"
+      },
+      "batteryDesignWh": {
+        "value": null,
+        "unit": "Wh",
+        "source": "battery-static-data",
+        "tier": "user",
+        "asOf": "2026-01-15T10:00:00.000Z",
+        "unavailableReason": "requires admin"
+      }
+    },
+    "virtualMemory": {
+      "pagefiles": {
+        "value": [
+          {
+            "location": "C:pagefile.sys",
+            "currentMB": 2048,
+            "initialMB": 4096,
+            "maxMB": 8192
+          }
+        ],
+        "source": "pagefile-info",
+        "tier": "user",
+        "asOf": "2026-01-15T10:00:00.000Z"
+      },
+      "systemManaged": {
+        "value": false,
+        "source": "pagefile-info",
+        "tier": "user",
+        "asOf": "2026-01-15T10:00:00.000Z"
+      },
+      "commitLimitGB": {
+        "value": 24,
+        "unit": "GB",
+        "source": "os-info",
+        "tier": "user",
+        "asOf": "2026-01-15T10:00:00.000Z"
+      }
+    },
+    "security": {
+      "products": {
+        "value": [
+          {
+            "name": "Synthetic Defender",
+            "state": "enabled"
+          }
+        ],
+        "source": "security-center",
+        "tier": "user",
+        "asOf": "2026-01-15T10:00:00.000Z"
+      },
+      "domainJoined": {
+        "value": false,
+        "source": "domain-join-info",
+        "tier": "user",
+        "asOf": "2026-01-15T10:00:00.000Z"
+      }
+    }
+  },
+  "sustained": {
+    "source": "trace-window (no watch log; single-window, not sustained)",
+    "file": "telltale-x.json",
+    "n": 30,
+    "windowS": 60,
+    "commitPeak": 92,
+    "pagesAvg": 120,
+    "note": "run watch for multi-day sustained evidence"
+  },
+  "hangs": {
+    "source": "telltale-x.json",
+    "count": 3,
+    "hangRatePerMin": 3,
+    "n": 30,
+    "worstMs": 1900,
+    "p95Ms": 1800,
+    "thresholdMs": 800,
+    "events": [
+      {
+        "at": "2026-01-15T10:00:30.000Z",
+        "tSec": 30,
+        "ms": 1900,
+        "usedPct": 93,
+        "committed": 91,
+        "pages": 900
+      }
+    ]
+  },
+  "finding": {
+    "class": "memory",
+    "sentence": "3 of 3 usable hangs coincide with memory pressure; commit 91% at hangs vs 62% calm (hangs n=3, calm n=8); 2 confirmed by user mark, 1 probe-only",
+    "strength": "sufficient",
+    "confirmations": {
+      "user-mark": 2,
+      "os-not-responding": 0,
+      "workload-probe": 0,
+      "probe-only": 1
+    },
+    "excludedHangs": 0,
+    "scope": "scoped: postgres, docker",
+    "window": {
+      "start": "2026-01-15T10:00:00.000Z",
+      "end": "2026-01-15T10:01:04.100Z",
+      "observedS": 64
+    },
+    "ruleId": "memory-pressure",
+    "confidence": 0.95
+  },
+  "rollup": [
+    {
+      "id": "memory-pressure",
+      "class": "memory",
+      "hangs": 3,
+      "of": 3,
+      "confidence": 0.95,
+      "hangMean": 91,
+      "hangN": 3,
+      "calm": {
+        "mean": 62.22,
+        "n": 8
+      },
+      "unit": "%",
+      "signal": "mem.committed_pct"
+    }
+  ],
+  "hwConfigSignal": null,
+  "timeLost": {
+    "basis": "measured",
+    "hangs": 3,
+    "frozenS": 5.6,
+    "observedS": 64,
+    "meanFreezeS": 1.87,
+    "userSupplied": null
+  },
+  "admin": {
+    "tier": "user",
+    "skipped": "process not elevated"
+  },
+  "power": {
+    "plugged": false,
+    "batteryPct": 60,
+    "scheme": "Balanced"
+  },
+  "audit": {
+    "tier": "user",
+    "anonymized": true,
+    "scopeSource": "file",
+    "scopeMode": "allowlist",
+    "thresholds": {
+      "hang": 800,
+      "commit": 85
+    },
+    "thresholdSource": "trace"
+  },
+  "provenance": {
+    "traceReport": "telltale-x.json",
+    "baselineFiles": [],
+    "unreadableReports": [],
+    "v1ReportsSkipped": [],
+    "sustainedBasis": "trace-window",
+    "findingBasis": "diagnosis stored in telltale-x.json"
+  }
+}

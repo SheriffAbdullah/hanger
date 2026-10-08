@@ -1,0 +1,39 @@
+{
+  "name": "helper-late",
+  "base": "2026-02-01T09:00:00.000Z",
+  "runEndS": 60,
+  "episodes": [
+    {
+      "startS": 30,
+      "endS": 31.1,
+      "durationMs": 1100,
+      "worstLatencyMs": 700,
+      "samples": 3,
+      "sampleRefs": [
+        0,
+        1,
+        2
+      ],
+      "endReason": "answered",
+      "foreground": {
+        "kind": "in-scope",
+        "group": "code"
+      },
+      "guards": [
+        "helper-late"
+      ],
+      "builderGuards": [
+        "helper-late"
+      ]
+    }
+  ],
+  "blips": 0,
+  "helperLateSamples": 1,
+  "latePeriods": [
+    {
+      "startS": 29.9,
+      "endS": 30.75,
+      "maxMs": 850
+    }
+  ]
+}

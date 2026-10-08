@@ -1,0 +1,39 @@
+{
+  "name": "suspend-resume",
+  "base": "2026-02-01T09:00:00.000Z",
+  "runEndS": 50,
+  "episodes": [
+    {
+      "startS": 18,
+      "endS": 19,
+      "durationMs": 1000,
+      "worstLatencyMs": 700,
+      "samples": 2,
+      "sampleRefs": [
+        0,
+        1
+      ],
+      "endReason": "not-evaluable:suspend-resume",
+      "foreground": {
+        "kind": "in-scope",
+        "group": "code"
+      },
+      "guards": [],
+      "builderGuards": []
+    }
+  ],
+  "blips": 0,
+  "droppedInSpan": 1,
+  "notEvaluable": [
+    {
+      "reason": "suspend-resume",
+      "durationMs": 26000
+    }
+  ],
+  "evaluable": {
+    "observedMs": 50000,
+    "evaluatedMs": 19000,
+    "idleMs": 5000,
+    "notEvaluableMs": 26000
+  }
+}

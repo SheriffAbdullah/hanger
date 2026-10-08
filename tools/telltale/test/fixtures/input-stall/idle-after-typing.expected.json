@@ -1,0 +1,14 @@
+{
+  "name": "idle-after-typing",
+  "base": "2026-02-01T09:00:00.000Z",
+  "runEndS": 30,
+  "episodes": [],
+  "blips": 0,
+  "evaluable": {
+    "observedMs": 30000,
+    "evaluatedMs": 10000,
+    "idleMs": 20000,
+    "notEvaluableMs": 0
+  },
+  "measuredTotal": 40
+}

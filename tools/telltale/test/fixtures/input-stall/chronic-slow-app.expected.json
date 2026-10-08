@@ -1,0 +1,55 @@
+{
+  "name": "chronic-slow-app",
+  "base": "2026-02-01T09:00:00.000Z",
+  "runEndS": 40,
+  "episodes": [
+    {
+      "startS": 5,
+      "endS": 5.9,
+      "durationMs": 900,
+      "worstLatencyMs": 500,
+      "samples": 2,
+      "sampleRefs": [
+        0,
+        1
+      ],
+      "endReason": "answered",
+      "foreground": {
+        "kind": "in-scope",
+        "group": "slowtool"
+      },
+      "guards": [
+        "chronic-slow-app"
+      ],
+      "builderGuards": []
+    },
+    {
+      "startS": 25,
+      "endS": 25.85,
+      "durationMs": 850,
+      "worstLatencyMs": 600,
+      "samples": 2,
+      "sampleRefs": [
+        2,
+        3
+      ],
+      "endReason": "answered",
+      "foreground": {
+        "kind": "in-scope",
+        "group": "slowtool"
+      },
+      "guards": [
+        "chronic-slow-app"
+      ],
+      "builderGuards": []
+    }
+  ],
+  "blips": 0,
+  "chronic": [
+    {
+      "group": "slowtool",
+      "n": 40,
+      "over": 32
+    }
+  ]
+}

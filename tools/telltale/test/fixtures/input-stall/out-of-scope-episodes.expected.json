@@ -1,0 +1,56 @@
+{
+  "name": "out-of-scope-episodes",
+  "base": "2026-02-01T09:00:00.000Z",
+  "runEndS": 40,
+  "episodes": [
+    {
+      "startS": 10,
+      "endS": 10.5,
+      "durationMs": 500,
+      "worstLatencyMs": 500,
+      "samples": 1,
+      "sampleRefs": [
+        0
+      ],
+      "endReason": "answered",
+      "foreground": {
+        "kind": "out-of-scope",
+        "group": null
+      },
+      "guards": [],
+      "builderGuards": []
+    },
+    {
+      "startS": 25,
+      "endS": 25.9,
+      "durationMs": 900,
+      "worstLatencyMs": 600,
+      "samples": 2,
+      "sampleRefs": [
+        1,
+        2
+      ],
+      "endReason": "answered",
+      "foreground": {
+        "kind": "out-of-scope",
+        "group": null
+      },
+      "guards": [],
+      "builderGuards": []
+    }
+  ],
+  "blips": 0,
+  "outOfScope": {
+    "episodes": 2,
+    "totalMs": 1400
+  },
+  "hangs": [
+    {
+      "ref": "spawnProbes[5]",
+      "atS": 10.5,
+      "ms": 900,
+      "osConfirmed": false
+    }
+  ],
+  "probeIntervalS": 2
+}

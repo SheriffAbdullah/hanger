@@ -1,0 +1,197 @@
+{
+  "_note": "Universal inference contract. Columns: inference (OS-independent question), shape, windows-collector (today), mac-probe (TBD candidate for the Mac agent), collectorId (must exist in COLLECTORS), green_when.",
+  "inferences": [
+    {
+      "inference": "power.on_wall_power",
+      "shape": "bool|null",
+      "windows-collector": "GetSystemPowerStatus ACLineStatus (one Win32 call per tick) + as-of time + transition events",
+      "mac-probe": "pmset -g batt | ioreg AppleSmartBattery ExternalConnected",
+      "collectorId": "powerSample",
+      "green_when": "plugged true|false (not null)"
+    },
+    {
+      "inference": "power.battery_pct",
+      "shape": "0-100|null",
+      "windows-collector": "GetSystemPowerStatus BatteryLifePercent (numeric whenever a battery exists; null with reason no-battery only when the platform reports none)",
+      "mac-probe": "pmset -g batt percent / ioreg Capacity",
+      "collectorId": "powerSample",
+      "green_when": "0-100 or null-with-reason"
+    },
+    {
+      "inference": "power.throttled",
+      "shape": "perfPct, perfLimitPct, throttleReasons[]",
+      "windows-collector": "Processor Information % Processor Performance, % Performance Limit, Performance Limit Flags; Thermal Zone Throttle Reasons (legacy % of Maximum Frequency kept with a confound note)",
+      "mac-probe": "powermetrics thermal pressure / sysctl machdep cpu throttle",
+      "collectorId": "signals.cpu",
+      "green_when": "perfPct present (can exceed 100); limit present; reasons present or null-with-reason"
+    },
+    {
+      "inference": "mem.committed_pct",
+      "shape": "float",
+      "windows-collector": "Get-Counter Memory % Committed Bytes In Use",
+      "mac-probe": "vm_stat pageouts + swapins / memory_pressure",
+      "collectorId": "counterBundle",
+      "green_when": "finite number"
+    },
+    {
+      "inference": "mem.pressure",
+      "shape": "none|watch|severe",
+      "windows-collector": "committed+avail+pages thresholds",
+      "mac-probe": "memory_pressure level + swap used",
+      "collectorId": "counterBundle",
+      "green_when": "derives from committed"
+    },
+    {
+      "inference": "mem.thrashing",
+      "shape": "bool",
+      "windows-collector": "Pages/sec + Page Reads/sec sustained",
+      "mac-probe": "vm_stat pageouts/sec sustained",
+      "collectorId": "counterBundle",
+      "green_when": "pages finite"
+    },
+    {
+      "inference": "cpu.saturated",
+      "shape": "bool",
+      "windows-collector": "Processor Queue Length + % Processor Time",
+      "mac-probe": "sar/top loadavg + sched latency",
+      "collectorId": "counterBundle",
+      "green_when": "queue finite"
+    },
+    {
+      "inference": "disk.stalled",
+      "shape": "bool",
+      "windows-collector": "PhysicalDisk queue + Avg sec/Transfer",
+      "mac-probe": "iostat latency + fs_usage stalls",
+      "collectorId": "counterBundle",
+      "green_when": "diskQ finite"
+    },
+    {
+      "inference": "proc.top_hoarders",
+      "shape": "[{name,MB}]",
+      "windows-collector": "tasklist rollup + Get-Process fallback",
+      "mac-probe": "ps/top rss grouped",
+      "collectorId": "tasklistSnap",
+      "green_when": "non-empty, MB>0"
+    },
+    {
+      "inference": "proc.identity_unresolved",
+      "shape": "int",
+      "windows-collector": "KNOWN + FileDescription fallback",
+      "mac-probe": "bundle-id / code-signature fallback",
+      "collectorId": "filedesc",
+      "green_when": "count reported"
+    },
+    {
+      "inference": "hang.events",
+      "shape": "[{at,ms}]",
+      "windows-collector": "node -e spawn latency ≥ --hang",
+      "mac-probe": "same spawn probe (node portable)",
+      "collectorId": "spawnProbe",
+      "green_when": "array (possibly empty)"
+    },
+    {
+      "inference": "hang.os_confirmed",
+      "shape": "bool",
+      "windows-collector": "Get-Process Responding==false",
+      "mac-probe": "app Nap / unresponsive sampling",
+      "collectorId": "respondPoll",
+      "green_when": "bool per hang or deferred-with-reason"
+    },
+    {
+      "inference": "sys.os_events",
+      "shape": "rows",
+      "windows-collector": "Get-WinEvent 1002/1000/2004 + WER archive",
+      "mac-probe": "log show --predicate hangs + DiagnosticReports",
+      "collectorId": "winEvents",
+      "green_when": "queried (empty ok)"
+    },
+    {
+      "inference": "container.state",
+      "shape": "text",
+      "windows-collector": "docker ps + vmmem + wsl -l -v",
+      "mac-probe": "docker ps + colima/orbital status",
+      "collectorId": "dockerState",
+      "green_when": "queried (absent ok, recorded)"
+    },
+    {
+      "inference": "gpu.util_per_proc",
+      "shape": "{pid: {pct, n}}",
+      "windows-collector": "Get-Counter GPU Engine(*) Utilization Percentage grouped by pid_N",
+      "mac-probe": "powermetrics gpu_busy per-pid (TBD)",
+      "collectorId": "gpuEngines",
+      "green_when": "per-PID map with n, or unavailable-with-reason (never zero)"
+    },
+    {
+      "inference": "gpu.vram_per_proc",
+      "shape": "{pid: {mb, n}}",
+      "windows-collector": "Get-Counter GPU Process Memory(*) Local Usage per PID",
+      "mac-probe": "powermetrics gpu vram per-pid (TBD)",
+      "collectorId": "gpuMem",
+      "green_when": "per-PID map with n, or unavailable-with-reason (never zero)"
+    },
+    {
+      "inference": "power.mode",
+      "shape": "best-power-efficiency|balanced|best-performance|null",
+      "windows-collector": "PowerGetEffectiveOverlayScheme + system status flag (energy saver) per tick",
+      "mac-probe": "pmset -g (lowpowermode) / powermetrics",
+      "collectorId": "powerSample",
+      "green_when": "a mode value or null-with-reason"
+    },
+    {
+      "inference": "thermal.temperature",
+      "shape": "[{label, role, c}]|null",
+      "windows-collector": "Thermal Zone Information (Temperature / High Precision Temperature), unelevated; 5-130 C kept",
+      "mac-probe": "powermetrics --samplers smc / osx-cpu-temp (TBD)",
+      "collectorId": "signals.thermal",
+      "green_when": "zones with labels, or null with reason not-exposed|tier"
+    },
+    {
+      "inference": "mem.commit",
+      "shape": "{committedBytes, commitLimitBytes, committedPct, pagesInPerS, pagesOutPerS, pagefileUsePct}",
+      "windows-collector": "Memory Committed Bytes, Commit Limit, Pages Input/sec, Pages Output/sec; Paging File % Usage",
+      "mac-probe": "vm_stat + sysctl vm.swapusage (TBD)",
+      "collectorId": "signals.memory",
+      "green_when": "committedBytes finite"
+    },
+    {
+      "inference": "disk.latency",
+      "shape": "{latencyMs, queue, busyPct, readBps, writeBps}",
+      "windows-collector": "PhysicalDisk(_Total) Avg. Disk sec/Transfer x 1000, Current Disk Queue Length, 100 - % Idle Time, Disk Read/Write Bytes/sec",
+      "mac-probe": "iostat -d (TBD)",
+      "collectorId": "signals.disk",
+      "green_when": "latencyMs finite"
+    },
+    {
+      "inference": "net.aggregate",
+      "shape": "[{adapter, inBps, outBps, errors, isVpn, vpnRule}]",
+      "windows-collector": "Network Interface(*) Bytes Received/sec, Bytes Sent/sec, Packets Received/Outbound Errors; adapter-description VPN heuristic",
+      "mac-probe": "netstat -ib (TBD)",
+      "collectorId": "signals.network",
+      "green_when": "adapters listed, or null with reason; never per process"
+    },
+    {
+      "inference": "gpu.util_total",
+      "shape": "{totalUtilPct, vramUsedMB, tempC}",
+      "windows-collector": "GPU Engine(*) summed per adapter+engine type (max over types), GPU Adapter Memory Dedicated Usage; temperature from a graphics thermal zone",
+      "mac-probe": "powermetrics gpu_power (TBD)",
+      "collectorId": "signals.gpu",
+      "green_when": "total derived or null-with-reason"
+    },
+    {
+      "inference": "sys.handles",
+      "shape": "count",
+      "windows-collector": "Process(_Total) Handle Count",
+      "mac-probe": "lsof -n | wc -l (TBD)",
+      "collectorId": "signals.system",
+      "green_when": "finite count"
+    },
+    {
+      "inference": "proc.cpu_io",
+      "shape": "{groups[], system[], outOfScope{}}",
+      "windows-collector": "Process(*) % Processor Time / logical CPUs, IO Read/Write Bytes/sec, Working Set, Private Bytes, summed by process name, reduced through the scope resolver",
+      "mac-probe": "top -l 2 / proc_pid_rusage (TBD)",
+      "collectorId": "signals.procs",
+      "green_when": "in-scope + system rows and an anonymous out-of-scope aggregate"
+    }
+  ]
+}

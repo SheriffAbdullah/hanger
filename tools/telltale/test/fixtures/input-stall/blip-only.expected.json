@@ -1,0 +1,13 @@
+{
+  "name": "blip-only",
+  "base": "2026-02-01T09:00:00.000Z",
+  "runEndS": 50,
+  "episodes": [],
+  "blips": 2,
+  "evaluable": {
+    "observedMs": 50000,
+    "evaluatedMs": 50000,
+    "idleMs": 0,
+    "notEvaluableMs": 0
+  }
+}

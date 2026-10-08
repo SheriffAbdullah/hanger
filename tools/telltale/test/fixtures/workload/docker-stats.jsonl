@@ -1,0 +1,3 @@
+{"BlockIO":"0B / 0B","CPUPerc":"2.50%","Container":"a1b2c3d4e5f6","ID":"a1b2c3d4e5f6","MemPerc":"1.5%","MemUsage":"118.4MiB / 7.62GiB","Name":"pg-db","NetIO":"1kB / 2kB","PIDs":"12"}
+{"CPUPerc":"10.00%","ID":"ffeeddccbbaa","MemPerc":"2%","MemUsage":"512MiB / 7.62GiB","Name":"zzcanary-web"}
+{"CPUPerc":"0.50%","ID":"001122334455","MemUsage":"1.5GiB / 7.62GiB","Name":"zzcanary-cache"}

@@ -1,0 +1,21 @@
+{
+  "name": "calm-5min",
+  "base": "2026-02-01T09:00:00.000Z",
+  "runEndS": 300,
+  "episodes": [],
+  "blips": 0,
+  "evaluable": {
+    "observedMs": 300000,
+    "evaluatedMs": 300000,
+    "idleMs": 0,
+    "notEvaluableMs": 0
+  },
+  "baseline": {
+    "n": 1200,
+    "medianMs": 3,
+    "p95Ms": 12,
+    "maxMs": 30,
+    "overThresholdPct": 0,
+    "noisy": false
+  }
+}

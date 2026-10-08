@@ -1,0 +1,7 @@
+{
+  "name": "helper-unavailable",
+  "base": "2026-02-01T09:00:00.000Z",
+  "episodes": null,
+  "status": "unavailable",
+  "reason": "helper blocked by policy"
+}

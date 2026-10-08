@@ -1,0 +1,56 @@
+###identity###
+manufacturer=HP
+model=HP ProBook 440 15.6 inch G9 Notebook PC
+hostname=LAPTOP-TESTHOST
+###processor###
+model=12th Gen Intel(R) Core(TM) i7-1255U
+cores=10
+logical=12
+baseMHz=1700
+###memory###
+totalBytes=16794329088
+slotsTotal=2
+row:module|DIMM A|8589934592|3200|3200|12
+row:module|DIMM B|8589934592|3200|3200|12
+###storage###
+systemDrive=C:
+row:disk|SAMSUNG MZVLQ512HBLU|SSD|NVMe|512110190592|Healthy
+row:vol|C:|130000000000|510000000000
+row:vol|D:|1000|2000
+###graphics###
+row:adapter|Intel(R) UHD Graphics|2147483648|31.0.101.5333|2024-05-01
+###firmware###
+biosVendor=HP
+biosVersion=U85 Ver. 01.19.01
+biosDate=2024-05-01
+serial=5CD1234XYZ
+###os###
+caption=Microsoft Windows 11 Business
+version=10.0.26200
+build=26200
+lastBoot=2026-10-06T04:03:53Z
+vbs=2
+securityServices=2
+###power###
+scheme=Power Scheme GUID: 381b4222-f694-41f0-9685-ff5bb260df2e  (Balanced)
+overlayAc=ded574b5-45a0-4f42-8737-46345c09c238
+overlayDc=961cc777-2547-4f9d-8174-7d86181b8a7a
+batteryPresent=True
+designMWh=45000
+fullMWh=40500
+###vmem###
+systemManaged=True
+row:pagefile|C:\pagefile.sys|15814
+commitLimitBytes=33377062912
+###virt###
+row:wsl|WSL version: 2.3.26.0
+row:wsl|Kernel version: 5.15.167.4-1
+###security###
+row:av|Windows Defender|397568
+partOfDomain=False
+azureAdJoined=YES
+domainJoinedDsreg=NO
+mdmEnrolled=True
+###unrelated###
+row:app|Slack
+row:app|Postgres Server 16

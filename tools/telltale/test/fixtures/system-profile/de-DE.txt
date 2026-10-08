@@ -1,0 +1,22 @@
+###processor###
+model=Intel(R) Core(TM) i5
+cores=4
+logical=8
+baseMHz=2.400
+###memory###
+totalBytes=8.589.934.592
+slotsTotal=2
+row:module|DIMM1|8589934592|3.200|3.200|8
+###storage###
+systemDrive=C:
+row:vol|C:|120.500.000.000|250.000.000.000
+###firmware###
+biosVendor=Dell Inc.
+biosVersion=1.2.3
+biosDate=07.10.2026 00:00:00
+serial=ABC123
+###os###
+caption=Microsoft Windows 11 Pro
+version=10.0.22631
+build=22631
+lastBoot=06.10.2026 04:03:53

@@ -1,0 +1,8 @@
+node_modules/
+vendor/
+reports/*
+!reports/.gitkeep
+*.log
+
+# per-user tooling config (identity isolation)
+.claude/settings.local.json

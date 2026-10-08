@@ -1,0 +1,13 @@
+{
+  "name": "noisy-baseline",
+  "base": "2026-02-01T09:00:00.000Z",
+  "runEndS": 60,
+  "episodes": [],
+  "blips": 0,
+  "baseline": {
+    "n": 240,
+    "p95Ms": 180,
+    "noisy": true,
+    "limitMs": 125
+  }
+}

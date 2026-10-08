@@ -1,0 +1,7 @@
+###power###
+scheme=Power Scheme GUID: 8c5e7fda-e8bf-4a96-9a85-a6e23a8c635c  (High performance)
+batteryPresent=False
+###virt###
+row:wsl|WSL version: 2.1.5.0
+###security###
+ERROR access denied

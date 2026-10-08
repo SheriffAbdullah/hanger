@@ -1,0 +1,3043 @@
+{
+  "tool": "telltale v0.6",
+  "schema": "telltale-json/2",
+  "schemaStatus": "frozen",
+  "registry": "registry v0.4",
+  "run": {
+    "status": "complete",
+    "endReason": null,
+    "startedAt": "2026-01-15T10:00:00.000Z",
+    "endedAt": "2026-01-15T10:01:04.100Z",
+    "utcOffsetMin": 120,
+    "stream": "telltale-scoped-nothing-running.jsonl"
+  },
+  "window": {
+    "nominalS": 68,
+    "spanS": 64,
+    "unobservedS": 0,
+    "observedS": 64,
+    "probesExpected": 34,
+    "probesObserved": 30,
+    "samplesExpected": 68,
+    "samplesObserved": 43
+  },
+  "settings": {
+    "duration": {
+      "value": 68,
+      "source": "flag"
+    },
+    "interval": {
+      "value": 1000,
+      "source": "config"
+    },
+    "anonymize": {
+      "value": true,
+      "source": "config"
+    },
+    "scope": {
+      "value": {
+        "mode": "open"
+      },
+      "source": "default"
+    },
+    "thresholds": {
+      "hang": {
+        "value": 800,
+        "source": "default"
+      },
+      "commit": {
+        "value": 85,
+        "source": "default"
+      },
+      "minFreeGB": {
+        "value": 2,
+        "source": "default"
+      },
+      "pages": {
+        "value": 500,
+        "source": "default"
+      },
+      "queue": {
+        "value": 4,
+        "source": "default"
+      },
+      "diskSec": {
+        "value": 0.025,
+        "source": "default"
+      },
+      "ramHigh": {
+        "value": 85,
+        "source": "default"
+      },
+      "severeCommit": {
+        "value": 90,
+        "source": "default"
+      },
+      "severeFree": {
+        "value": 1.5,
+        "source": "default"
+      },
+      "defender": {
+        "value": 20,
+        "source": "default"
+      },
+      "recovery": {
+        "value": 400,
+        "source": "default"
+      }
+    }
+  },
+  "observer": {
+    "pidCount": 3,
+    "wsMB": 96,
+    "wsMBAvg": 90,
+    "cpuPctAvg": null,
+    "note": "synthetic fixture"
+  },
+  "tier": "user",
+  "startedAt": "2026-01-15T10:00:00.000Z",
+  "hostname": "<host>",
+  "anonymized": true,
+  "machine": {
+    "totalGB": 16,
+    "cpus": 8,
+    "cpuModel": "Synthetic CPU 8-thread",
+    "uptimeMin": 1234.5,
+    "logicalCpus": 8
+  },
+  "systemProfile": {
+    "collectedAt": "2026-01-15T10:00:00.000Z",
+    "collectionMs": 1200,
+    "tier": "user",
+    "workloadConfigRef": null,
+    "groupStatus": {},
+    "identity": {
+      "hostname": {
+        "value": "<host>",
+        "source": "os",
+        "tier": "user",
+        "asOf": "2026-01-15T10:00:00.000Z"
+      },
+      "manufacturer": {
+        "value": "Synthetic Corp",
+        "source": "firmware-system-info",
+        "tier": "user",
+        "asOf": "2026-01-15T10:00:00.000Z"
+      },
+      "model": {
+        "value": "SX-1 Laptop",
+        "source": "firmware-system-info",
+        "tier": "user",
+        "asOf": "2026-01-15T10:00:00.000Z"
+      },
+      "serial": {
+        "value": "SYN0000001",
+        "source": "firmware-bios",
+        "tier": "user",
+        "asOf": "2026-01-15T10:00:00.000Z"
+      }
+    },
+    "processor": {
+      "model": {
+        "value": "Synthetic CPU 8-thread",
+        "source": "cpu-info",
+        "tier": "user",
+        "asOf": "2026-01-15T10:00:00.000Z"
+      },
+      "physicalCores": {
+        "value": 4,
+        "unit": "cores",
+        "source": "cpu-info",
+        "tier": "user",
+        "asOf": "2026-01-15T10:00:00.000Z"
+      },
+      "logicalProcessors": {
+        "value": 8,
+        "unit": "threads",
+        "source": "cpu-info",
+        "tier": "user",
+        "asOf": "2026-01-15T10:00:00.000Z"
+      },
+      "baseClockMHz": {
+        "value": 2400,
+        "unit": "MHz",
+        "source": "cpu-info",
+        "tier": "user",
+        "asOf": "2026-01-15T10:00:00.000Z"
+      },
+      "maxClockMHz": {
+        "value": null,
+        "unit": "MHz",
+        "source": "cpu-info",
+        "tier": "user",
+        "asOf": "2026-01-15T10:00:00.000Z",
+        "unavailableReason": "max turbo clock not exposed at user tier"
+      }
+    },
+    "memory": {
+      "installedGB": {
+        "value": 16,
+        "unit": "GB",
+        "source": "physical-memory-info",
+        "tier": "user",
+        "asOf": "2026-01-15T10:00:00.000Z"
+      },
+      "modules": {
+        "value": [
+          {
+            "slot": "Slot 1",
+            "sizeGB": 16,
+            "speedMTs": 3200,
+            "formFactor": "SODIMM"
+          }
+        ],
+        "source": "physical-memory-info",
+        "tier": "user",
+        "asOf": "2026-01-15T10:00:00.000Z"
+      },
+      "slotsUsed": {
+        "value": 1,
+        "source": "physical-memory-info",
+        "tier": "user",
+        "asOf": "2026-01-15T10:00:00.000Z"
+      },
+      "slotsTotal": {
+        "value": 2,
+        "source": "physical-memory-info",
+        "tier": "user",
+        "asOf": "2026-01-15T10:00:00.000Z"
+      }
+    },
+    "storage": {
+      "disks": {
+        "value": [
+          {
+            "model": "Synthetic NVMe 512",
+            "mediaType": "SSD",
+            "bus": "NVMe",
+            "capacityGB": 512,
+            "health": "Healthy"
+          }
+        ],
+        "source": "physical-disk-info",
+        "tier": "user",
+        "asOf": "2026-01-15T10:00:00.000Z"
+      },
+      "systemVolume": {
+        "value": {
+          "volume": "C:",
+          "freeGB": 190,
+          "totalGB": 460
+        },
+        "unit": "GB",
+        "source": "logical-disk-info",
+        "tier": "user",
+        "asOf": "2026-01-15T10:00:00.000Z"
+      }
+    },
+    "firmware": {
+      "biosVendor": {
+        "value": "Synthetic",
+        "source": "firmware-bios",
+        "tier": "user",
+        "asOf": "2026-01-15T10:00:00.000Z"
+      },
+      "biosVersion": {
+        "value": "SYN 1.02",
+        "source": "firmware-bios",
+        "tier": "user",
+        "asOf": "2026-01-15T10:00:00.000Z"
+      },
+      "biosDate": {
+        "value": "2025-06-01",
+        "source": "firmware-bios",
+        "tier": "user",
+        "asOf": "2026-01-15T10:00:00.000Z"
+      }
+    },
+    "os": {
+      "edition": {
+        "value": "Windows 11 Pro",
+        "source": "os-info",
+        "tier": "user",
+        "asOf": "2026-01-15T10:00:00.000Z"
+      },
+      "version": {
+        "value": "10.0.26200",
+        "source": "os-info",
+        "tier": "user",
+        "asOf": "2026-01-15T10:00:00.000Z"
+      },
+      "build": {
+        "value": "26200",
+        "source": "os-info",
+        "tier": "user",
+        "asOf": "2026-01-15T10:00:00.000Z"
+      },
+      "uptimeMin": {
+        "value": 1234,
+        "unit": "min",
+        "source": "os-info",
+        "tier": "user",
+        "asOf": "2026-01-15T10:00:00.000Z"
+      }
+    },
+    "power": {
+      "planName": {
+        "value": "Balanced",
+        "source": "powercfg",
+        "tier": "user",
+        "asOf": "2026-01-15T10:00:00.000Z"
+      },
+      "powerMode": {
+        "value": "Balanced",
+        "source": "powercfg",
+        "tier": "user",
+        "asOf": "2026-01-15T10:00:00.000Z"
+      },
+      "batteryDesignWh": {
+        "value": null,
+        "unit": "Wh",
+        "source": "battery-static-data",
+        "tier": "user",
+        "asOf": "2026-01-15T10:00:00.000Z",
+        "unavailableReason": "requires admin"
+      }
+    },
+    "virtualMemory": {
+      "pagefiles": {
+        "value": [
+          {
+            "location": "C:pagefile.sys",
+            "currentMB": 2048,
+            "initialMB": 4096,
+            "maxMB": 8192
+          }
+        ],
+        "source": "pagefile-info",
+        "tier": "user",
+        "asOf": "2026-01-15T10:00:00.000Z"
+      },
+      "systemManaged": {
+        "value": false,
+        "source": "pagefile-info",
+        "tier": "user",
+        "asOf": "2026-01-15T10:00:00.000Z"
+      },
+      "commitLimitGB": {
+        "value": 24,
+        "unit": "GB",
+        "source": "os-info",
+        "tier": "user",
+        "asOf": "2026-01-15T10:00:00.000Z"
+      }
+    },
+    "security": {
+      "products": {
+        "value": [
+          {
+            "name": "Synthetic Defender",
+            "state": "enabled"
+          }
+        ],
+        "source": "security-center",
+        "tier": "user",
+        "asOf": "2026-01-15T10:00:00.000Z"
+      },
+      "domainJoined": {
+        "value": false,
+        "source": "domain-join-info",
+        "tier": "user",
+        "asOf": "2026-01-15T10:00:00.000Z"
+      }
+    }
+  },
+  "power": {
+    "scheme": "Power Scheme GUID: 00000000-0000-0000-0000-000000000000  (Balanced)",
+    "plugged": false,
+    "batteryPct": 60,
+    "hasBattery": true,
+    "transitions": [
+      {
+        "at": "2026-01-15T10:00:20.000Z",
+        "from": "ac",
+        "to": "battery"
+      }
+    ]
+  },
+  "admin": {
+    "tier": "user",
+    "skipped": "process not elevated; re-run as admin for thermal/SMART/Sysmon/WER-sys/SeDebug"
+  },
+  "wprEtl": null,
+  "gpu": {
+    "engines": {
+      "unavailable": "synthetic fixture: no GPU data"
+    },
+    "mem": {
+      "unavailable": "synthetic fixture: no GPU data"
+    },
+    "nvidia": {
+      "present": false,
+      "reason": "synthetic fixture"
+    },
+    "bundleTotalNote": "synthetic fixture"
+  },
+  "summary": {
+    "windowBasis": "observed",
+    "avgUsedPct": 67.8,
+    "minFreeGB": 4.81,
+    "committedPeak": 63.7,
+    "pagesPeak": 110,
+    "pagesAvg": 88,
+    "diskSecPeak": 0.004,
+    "diskQPeak": 0.2,
+    "maxFreqMin": 100,
+    "loopP50ms": 1.1,
+    "loopP95ms": 2.5,
+    "loopMaxMs": 2.5,
+    "spawnP50ms": 168,
+    "spawnP95ms": 213,
+    "spawnMaxMs": 218,
+    "hangThresholdMs": 800,
+    "hangEventCount": 0,
+    "hangRatePerMin": 0,
+    "pctFrozenFull": 0,
+    "pctFrozenExcess": 0,
+    "mttrMs": null,
+    "mttrN": 0,
+    "meanFreezeS": null,
+    "secsOverRamHigh": 0,
+    "secsOverRamHighBasis": "time above 85% RAM, each sample weighted by its measured spacing",
+    "calmSharePct": 100,
+    "recoveryThresholdMs": 400,
+    "granularityMs": 1000,
+    "totalSamples": 43,
+    "totalSpawnProbes": 30,
+    "thresholds": {
+      "hang": 800,
+      "commit": 85,
+      "minFreeGB": 2,
+      "pages": 500,
+      "queue": 4,
+      "diskSec": 0.025,
+      "ramHigh": 85,
+      "severeCommit": 90,
+      "severeFree": 1.5,
+      "defender": 20,
+      "recovery": 400,
+      "sources": {
+        "hang": "NN/g response limits [cited]",
+        "commit": "MS perf troubleshooting [derived]"
+      },
+      "ideal": "TBD (orders-framework ideal table)",
+      "status": "provisional"
+    },
+    "nulls": {
+      "mttrMs": "no hangs observed",
+      "meanFreezeS": "no hangs observed"
+    },
+    "committedStart": 63.07,
+    "committedEnd": 63.37,
+    "pagesStart": 78,
+    "pagesEnd": 95,
+    "availMB": 4096,
+    "cpuQueue": 1,
+    "loopN": 5,
+    "bundleOkProbes": "30/30",
+    "loopConfoundNote": "synthetic fixture",
+    "loopNote": null,
+    "warpSeenMB": null,
+    "openspecSeenMB": null,
+    "unresolvedNames": 0,
+    "werArchive": {
+      "total": 12,
+      "apphang": 3
+    },
+    "hangCount": 0
+  },
+  "hangEvents": [],
+  "userMarks": [],
+  "culprits": [],
+  "privateTop": [
+    {
+      "name": "node.exe",
+      "privateMB": 2048,
+      "instances": 14
+    }
+  ],
+  "topProcesses": [
+    {
+      "name": "postgres.exe",
+      "pid": 1100,
+      "memMB": 2048
+    }
+  ],
+  "scope": {
+    "mode": "allowlist",
+    "source": "file",
+    "path": "telltale.scope.json",
+    "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "entries": [
+      {
+        "name": "postgres",
+        "includeDescendants": false
+      }
+    ],
+    "matchRule": "exact executable name (with or without .exe) or explicit * ? pattern",
+    "systemSet": {
+      "listVersion": 1,
+      "categories": [
+        "os",
+        "security",
+        "virtualization"
+      ],
+      "names": []
+    },
+    "counts": {
+      "inScopeGroups": 1,
+      "systemGroups": 12,
+      "outOfScopeGroups": 52
+    },
+    "fallbacks": [],
+    "statement": "Names of software outside this scope were not recorded."
+  },
+  "outOfScope": {
+    "groups": 52,
+    "processes": 210,
+    "memMB": 7000,
+    "cpuPctOfMachine": 20,
+    "inScope": {
+      "memMB": 0,
+      "cpuPctOfMachine": 0
+    },
+    "system": {
+      "memMB": 900,
+      "cpuPctOfMachine": 2
+    },
+    "measuredAt": "2026-01-15T10:01:00.000Z"
+  },
+  "containers": null,
+  "containersNote": "synthetic fixture: no daemon",
+  "flags": {
+    "hasChromeHeadless": false,
+    "hasDockerVmmem": false,
+    "hasWarp": false,
+    "hasOpenspec": false
+  },
+  "events": {
+    "window": {
+      "from": "2026-01-15T09:59:00.000Z",
+      "to": "2026-01-15T10:01:04.100Z",
+      "leadS": 60
+    },
+    "mode": "none-in-window",
+    "inWindow": {
+      "appHang": [],
+      "appCrash": [],
+      "resourceExhaustion": []
+    },
+    "history": {
+      "appHang": {
+        "count": 1,
+        "newest": "2026-01-14T09:00:00.000Z",
+        "countCapped": false
+      },
+      "appCrash": {
+        "count": 0,
+        "newest": null,
+        "countCapped": false
+      },
+      "resourceExhaustion": {
+        "count": 0,
+        "newest": null,
+        "countCapped": false
+      }
+    }
+  },
+  "wer": {
+    "archivePresent": true,
+    "searchedWindow": {
+      "from": "2026-01-15T10:00:00.000Z",
+      "to": "2026-01-15T10:01:04.100Z"
+    },
+    "inRun": {
+      "total": 0,
+      "apphang": 0
+    },
+    "history": {
+      "total": 12,
+      "apphang": 3,
+      "window": "all-time",
+      "capped": false
+    }
+  },
+  "docker": {
+    "present": false,
+    "containers": {
+      "total": 0,
+      "inScope": [],
+      "outOfScopeCount": 0
+    },
+    "statsOutOfScopeCount": 0,
+    "wsl": {
+      "present": false,
+      "distros": [],
+      "outOfScopeCount": 0
+    }
+  },
+  "disk": "C: 190.0/460.0GB free",
+  "errors": [],
+  "collection.failures": [
+    {
+      "inference": "container.state",
+      "collector": "dockerState",
+      "mode": "missing",
+      "reason": "not installed",
+      "at": "2026-01-15T10:01:00.000Z"
+    }
+  ],
+  "spawnProbes": [
+    {
+      "tSec": 4,
+      "at": "2026-01-15T10:00:04.000Z",
+      "ms": 157,
+      "usedPct": 67.28,
+      "hang": false,
+      "bundleMs": 180,
+      "slipS": 0,
+      "plugged": true,
+      "batteryPct": 80,
+      "weightMs": {
+        "spawn": 157,
+        "bundle": 180
+      },
+      "degraded": [],
+      "committed": 63.07,
+      "pages": 78,
+      "cpuQ": 1,
+      "diskQ": 0.2,
+      "diskSec": 0.004,
+      "maxFreq": 100,
+      "availMB": 5200,
+      "cpuPct": 34.46221170714125,
+      "defender": 4.4065621718764305,
+      "dpcPct": 0.8,
+      "intrPct": 0.5,
+      "cpu": {
+        "perfPct": 113.76594935078174,
+        "perfLimitPct": 0,
+        "dpcPct": 0.8,
+        "interruptPct": 0.5
+      },
+      "mem": {
+        "committedPct": 63.1,
+        "pagefileUsePct": 5,
+        "pagesInPerS": 50,
+        "pagesOutPerS": 0
+      },
+      "disk": {
+        "latencyMs": 4,
+        "queue": 0.2,
+        "busyPct": 6,
+        "readBps": 1000000,
+        "writeBps": 2500000
+      },
+      "thermal": {
+        "zones": null,
+        "zonesReason": "not exposed at user tier"
+      },
+      "power": {
+        "ac": true,
+        "hasBattery": true
+      },
+      "procs": {
+        "groups": [],
+        "outOfScope": {
+          "groupCount": 52,
+          "cpuPctMachine": 20,
+          "readBps": 0,
+          "writeBps": 0,
+          "wsMB": 7000
+        },
+        "prov": {
+          "src": "procs.byGroup@counterSession"
+        }
+      }
+    },
+    {
+      "tSec": 6,
+      "at": "2026-01-15T10:00:06.000Z",
+      "ms": 156,
+      "usedPct": 66.42,
+      "hang": false,
+      "bundleMs": 180,
+      "slipS": 0,
+      "plugged": true,
+      "batteryPct": 80,
+      "weightMs": {
+        "spawn": 156,
+        "bundle": 180
+      },
+      "degraded": [],
+      "committed": 61.32,
+      "pages": 58,
+      "cpuQ": 1,
+      "diskQ": 0.2,
+      "diskSec": 0.004,
+      "maxFreq": 100,
+      "availMB": 5200,
+      "cpuPct": 34.1303486819379,
+      "defender": 3.644853925332427,
+      "dpcPct": 0.8,
+      "intrPct": 0.5,
+      "cpu": {
+        "perfPct": 103.80751053802669,
+        "perfLimitPct": 0,
+        "dpcPct": 0.8,
+        "interruptPct": 0.5
+      },
+      "mem": {
+        "committedPct": 61.3,
+        "pagefileUsePct": 5.1,
+        "pagesInPerS": 50,
+        "pagesOutPerS": 0
+      },
+      "disk": {
+        "latencyMs": 4,
+        "queue": 0.2,
+        "busyPct": 6,
+        "readBps": 1000000,
+        "writeBps": 2500000
+      },
+      "thermal": {
+        "zones": null,
+        "zonesReason": "not exposed at user tier"
+      },
+      "power": {
+        "ac": true,
+        "hasBattery": true
+      },
+      "procs": {
+        "groups": [],
+        "outOfScope": {
+          "groupCount": 52,
+          "cpuPctMachine": 20,
+          "readBps": 0,
+          "writeBps": 0,
+          "wsMB": 7000
+        },
+        "prov": {
+          "src": "procs.byGroup@counterSession"
+        }
+      }
+    },
+    {
+      "tSec": 8,
+      "at": "2026-01-15T10:00:08.000Z",
+      "ms": 154,
+      "usedPct": 66.13,
+      "hang": false,
+      "bundleMs": 180,
+      "slipS": 0,
+      "plugged": true,
+      "batteryPct": 80,
+      "weightMs": {
+        "spawn": 154,
+        "bundle": 180
+      },
+      "degraded": [],
+      "committed": 62.53,
+      "pages": 91,
+      "cpuQ": 1,
+      "diskQ": 0.2,
+      "diskSec": 0.004,
+      "maxFreq": 100,
+      "availMB": 5200,
+      "cpuPct": 34.213717721868306,
+      "defender": 4.095745285972953,
+      "dpcPct": 0.8,
+      "intrPct": 0.5,
+      "cpu": {
+        "perfPct": 116.53155048843473,
+        "perfLimitPct": 0,
+        "dpcPct": 0.8,
+        "interruptPct": 0.5
+      },
+      "mem": {
+        "committedPct": 62.5,
+        "pagefileUsePct": 5.2,
+        "pagesInPerS": 50,
+        "pagesOutPerS": 0
+      },
+      "disk": {
+        "latencyMs": 4,
+        "queue": 0.2,
+        "busyPct": 6,
+        "readBps": 1000000,
+        "writeBps": 2500000
+      },
+      "thermal": {
+        "zones": null,
+        "zonesReason": "not exposed at user tier"
+      },
+      "power": {
+        "ac": true,
+        "hasBattery": true
+      },
+      "procs": {
+        "groups": [],
+        "outOfScope": {
+          "groupCount": 52,
+          "cpuPctMachine": 20,
+          "readBps": 0,
+          "writeBps": 0,
+          "wsMB": 7000
+        },
+        "prov": {
+          "src": "procs.byGroup@counterSession"
+        }
+      }
+    },
+    {
+      "tSec": 10,
+      "at": "2026-01-15T10:00:10.000Z",
+      "ms": 212,
+      "usedPct": 66.35,
+      "hang": false,
+      "bundleMs": 180,
+      "slipS": 0,
+      "plugged": true,
+      "batteryPct": 79,
+      "weightMs": {
+        "spawn": 212,
+        "bundle": 180
+      },
+      "degraded": [],
+      "committed": 62.62,
+      "pages": 82,
+      "cpuQ": 1,
+      "diskQ": 0.2,
+      "diskSec": 0.004,
+      "maxFreq": 100,
+      "availMB": 5200,
+      "cpuPct": 31.49166026385501,
+      "defender": 4.782129818107933,
+      "dpcPct": 0.8,
+      "intrPct": 0.5,
+      "cpu": {
+        "perfPct": 119.2099678516388,
+        "perfLimitPct": 0,
+        "dpcPct": 0.8,
+        "interruptPct": 0.5
+      },
+      "mem": {
+        "committedPct": 62.6,
+        "pagefileUsePct": 5.3,
+        "pagesInPerS": 50,
+        "pagesOutPerS": 0
+      },
+      "disk": {
+        "latencyMs": 4,
+        "queue": 0.2,
+        "busyPct": 6,
+        "readBps": 1000000,
+        "writeBps": 2500000
+      },
+      "thermal": {
+        "zones": null,
+        "zonesReason": "not exposed at user tier"
+      },
+      "power": {
+        "ac": true,
+        "hasBattery": true
+      },
+      "procs": {
+        "groups": [],
+        "outOfScope": {
+          "groupCount": 52,
+          "cpuPctMachine": 20,
+          "readBps": 0,
+          "writeBps": 0,
+          "wsMB": 7000
+        },
+        "prov": {
+          "src": "procs.byGroup@counterSession"
+        }
+      }
+    },
+    {
+      "tSec": 12,
+      "at": "2026-01-15T10:00:12.000Z",
+      "ms": 179,
+      "usedPct": 68.89,
+      "hang": false,
+      "bundleMs": 180,
+      "slipS": 0,
+      "plugged": true,
+      "batteryPct": 79,
+      "weightMs": {
+        "spawn": 179,
+        "bundle": 180
+      },
+      "degraded": [],
+      "committed": 63.35,
+      "pages": 108,
+      "cpuQ": 1,
+      "diskQ": 0.2,
+      "diskSec": 0.004,
+      "maxFreq": 100,
+      "availMB": 5200,
+      "cpuPct": 30.48568267840892,
+      "defender": 4.637035979889333,
+      "dpcPct": 0.8,
+      "intrPct": 0.5,
+      "cpu": {
+        "perfPct": 100.11399883776903,
+        "perfLimitPct": 0,
+        "dpcPct": 0.8,
+        "interruptPct": 0.5
+      },
+      "mem": {
+        "committedPct": 63.4,
+        "pagefileUsePct": 5.4,
+        "pagesInPerS": 50,
+        "pagesOutPerS": 0
+      },
+      "disk": {
+        "latencyMs": 4,
+        "queue": 0.2,
+        "busyPct": 6,
+        "readBps": 1000000,
+        "writeBps": 2500000
+      },
+      "thermal": {
+        "zones": null,
+        "zonesReason": "not exposed at user tier"
+      },
+      "power": {
+        "ac": true,
+        "hasBattery": true
+      },
+      "procs": {
+        "groups": [],
+        "outOfScope": {
+          "groupCount": 52,
+          "cpuPctMachine": 20,
+          "readBps": 0,
+          "writeBps": 0,
+          "wsMB": 7000
+        },
+        "prov": {
+          "src": "procs.byGroup@counterSession"
+        }
+      }
+    },
+    {
+      "tSec": 14,
+      "at": "2026-01-15T10:00:14.000Z",
+      "ms": 153,
+      "usedPct": 68.17,
+      "hang": false,
+      "bundleMs": 180,
+      "slipS": 0,
+      "plugged": true,
+      "batteryPct": 79,
+      "weightMs": {
+        "spawn": 153,
+        "bundle": 180
+      },
+      "degraded": [],
+      "committed": 62.06,
+      "pages": 83,
+      "cpuQ": 1,
+      "diskQ": 0.2,
+      "diskSec": 0.004,
+      "maxFreq": 100,
+      "availMB": 5200,
+      "cpuPct": 32.55416352767497,
+      "defender": 4.953867916949093,
+      "dpcPct": 0.8,
+      "intrPct": 0.5,
+      "cpu": {
+        "perfPct": 111.15106647834182,
+        "perfLimitPct": 0,
+        "dpcPct": 0.8,
+        "interruptPct": 0.5
+      },
+      "mem": {
+        "committedPct": 62.1,
+        "pagefileUsePct": 5.5,
+        "pagesInPerS": 50,
+        "pagesOutPerS": 0
+      },
+      "disk": {
+        "latencyMs": 4,
+        "queue": 0.2,
+        "busyPct": 6,
+        "readBps": 1000000,
+        "writeBps": 2500000
+      },
+      "thermal": {
+        "zones": null,
+        "zonesReason": "not exposed at user tier"
+      },
+      "power": {
+        "ac": true,
+        "hasBattery": true
+      },
+      "procs": {
+        "groups": [],
+        "outOfScope": {
+          "groupCount": 52,
+          "cpuPctMachine": 20,
+          "readBps": 0,
+          "writeBps": 0,
+          "wsMB": 7000
+        },
+        "prov": {
+          "src": "procs.byGroup@counterSession"
+        }
+      }
+    },
+    {
+      "tSec": 16,
+      "at": "2026-01-15T10:00:16.000Z",
+      "ms": 163,
+      "usedPct": 67.93,
+      "hang": false,
+      "bundleMs": 180,
+      "slipS": 0,
+      "plugged": true,
+      "batteryPct": 78,
+      "weightMs": {
+        "spawn": 163,
+        "bundle": 180
+      },
+      "degraded": [],
+      "committed": 63.29,
+      "pages": 94,
+      "cpuQ": 1,
+      "diskQ": 0.2,
+      "diskSec": 0.004,
+      "maxFreq": 100,
+      "availMB": 5200,
+      "cpuPct": 30.5169670865871,
+      "defender": 3.6247676545754075,
+      "dpcPct": 0.8,
+      "intrPct": 0.5,
+      "cpu": {
+        "perfPct": 104.73670357372612,
+        "perfLimitPct": 0,
+        "dpcPct": 0.8,
+        "interruptPct": 0.5
+      },
+      "mem": {
+        "committedPct": 63.3,
+        "pagefileUsePct": 5.6,
+        "pagesInPerS": 50,
+        "pagesOutPerS": 0
+      },
+      "disk": {
+        "latencyMs": 4,
+        "queue": 0.2,
+        "busyPct": 6,
+        "readBps": 1000000,
+        "writeBps": 2500000
+      },
+      "thermal": {
+        "zones": null,
+        "zonesReason": "not exposed at user tier"
+      },
+      "power": {
+        "ac": true,
+        "hasBattery": true
+      },
+      "procs": {
+        "groups": [],
+        "outOfScope": {
+          "groupCount": 52,
+          "cpuPctMachine": 20,
+          "readBps": 0,
+          "writeBps": 0,
+          "wsMB": 7000
+        },
+        "prov": {
+          "src": "procs.byGroup@counterSession"
+        }
+      }
+    },
+    {
+      "tSec": 18,
+      "at": "2026-01-15T10:00:18.000Z",
+      "ms": 122,
+      "usedPct": 68.83,
+      "hang": false,
+      "bundleMs": 180,
+      "slipS": 0,
+      "plugged": true,
+      "batteryPct": 78,
+      "weightMs": {
+        "spawn": 122,
+        "bundle": 180
+      },
+      "degraded": [],
+      "committed": 60.04,
+      "pages": 100,
+      "cpuQ": 1,
+      "diskQ": 0.2,
+      "diskSec": 0.004,
+      "maxFreq": 100,
+      "availMB": 5200,
+      "cpuPct": 31.306014058645815,
+      "defender": 3.02880242979154,
+      "dpcPct": 0.8,
+      "intrPct": 0.5,
+      "cpu": {
+        "perfPct": 112.37792138941586,
+        "perfLimitPct": 0,
+        "dpcPct": 0.8,
+        "interruptPct": 0.5
+      },
+      "mem": {
+        "committedPct": 60,
+        "pagefileUsePct": 5.7,
+        "pagesInPerS": 50,
+        "pagesOutPerS": 0
+      },
+      "disk": {
+        "latencyMs": 4,
+        "queue": 0.2,
+        "busyPct": 6,
+        "readBps": 1000000,
+        "writeBps": 2500000
+      },
+      "thermal": {
+        "zones": null,
+        "zonesReason": "not exposed at user tier"
+      },
+      "power": {
+        "ac": true,
+        "hasBattery": true
+      },
+      "procs": {
+        "groups": [],
+        "outOfScope": {
+          "groupCount": 52,
+          "cpuPctMachine": 20,
+          "readBps": 0,
+          "writeBps": 0,
+          "wsMB": 7000
+        },
+        "prov": {
+          "src": "procs.byGroup@counterSession"
+        }
+      }
+    },
+    {
+      "tSec": 20,
+      "at": "2026-01-15T10:00:20.000Z",
+      "ms": 192,
+      "usedPct": 68.98,
+      "hang": false,
+      "bundleMs": 180,
+      "slipS": 0,
+      "plugged": false,
+      "batteryPct": 78,
+      "weightMs": {
+        "spawn": 192,
+        "bundle": 180
+      },
+      "degraded": [],
+      "committed": 62.38,
+      "pages": 67,
+      "cpuQ": 1,
+      "diskQ": 0.2,
+      "diskSec": 0.004,
+      "maxFreq": 100,
+      "availMB": 5200,
+      "cpuPct": 34.86275274306536,
+      "defender": 4.2999421688728034,
+      "dpcPct": 0.8,
+      "intrPct": 0.5,
+      "cpu": {
+        "perfPct": 116.09834881965071,
+        "perfLimitPct": 0,
+        "dpcPct": 0.8,
+        "interruptPct": 0.5
+      },
+      "mem": {
+        "committedPct": 62.4,
+        "pagefileUsePct": 5.8,
+        "pagesInPerS": 50,
+        "pagesOutPerS": 0
+      },
+      "disk": {
+        "latencyMs": 4,
+        "queue": 0.2,
+        "busyPct": 6,
+        "readBps": 1000000,
+        "writeBps": 2500000
+      },
+      "thermal": {
+        "zones": null,
+        "zonesReason": "not exposed at user tier"
+      },
+      "power": {
+        "ac": false,
+        "hasBattery": true
+      },
+      "procs": {
+        "groups": [],
+        "outOfScope": {
+          "groupCount": 52,
+          "cpuPctMachine": 20,
+          "readBps": 0,
+          "writeBps": 0,
+          "wsMB": 7000
+        },
+        "prov": {
+          "src": "procs.byGroup@counterSession"
+        }
+      }
+    },
+    {
+      "tSec": 22,
+      "at": "2026-01-15T10:00:22.000Z",
+      "ms": 203,
+      "usedPct": 66.42,
+      "hang": false,
+      "bundleMs": 180,
+      "slipS": 0,
+      "plugged": false,
+      "batteryPct": 77,
+      "weightMs": {
+        "spawn": 203,
+        "bundle": 180
+      },
+      "degraded": [],
+      "committed": 62.5,
+      "pages": 110,
+      "cpuQ": 1,
+      "diskQ": 0.2,
+      "diskSec": 0.004,
+      "maxFreq": 100,
+      "availMB": 5200,
+      "cpuPct": 30.06931663956493,
+      "defender": 4.133779828436673,
+      "dpcPct": 0.8,
+      "intrPct": 0.5,
+      "cpu": {
+        "perfPct": 103.21764492429793,
+        "perfLimitPct": 0,
+        "dpcPct": 0.8,
+        "interruptPct": 0.5
+      },
+      "mem": {
+        "committedPct": 62.5,
+        "pagefileUsePct": 5.9,
+        "pagesInPerS": 50,
+        "pagesOutPerS": 0
+      },
+      "disk": {
+        "latencyMs": 4,
+        "queue": 0.2,
+        "busyPct": 6,
+        "readBps": 1000000,
+        "writeBps": 2500000
+      },
+      "thermal": {
+        "zones": null,
+        "zonesReason": "not exposed at user tier"
+      },
+      "power": {
+        "ac": false,
+        "hasBattery": true
+      },
+      "procs": {
+        "groups": [],
+        "outOfScope": {
+          "groupCount": 52,
+          "cpuPctMachine": 20,
+          "readBps": 0,
+          "writeBps": 0,
+          "wsMB": 7000
+        },
+        "prov": {
+          "src": "procs.byGroup@counterSession"
+        }
+      }
+    },
+    {
+      "tSec": 24,
+      "at": "2026-01-15T10:00:24.000Z",
+      "ms": 141,
+      "usedPct": 68.44,
+      "hang": false,
+      "bundleMs": 180,
+      "slipS": 0,
+      "plugged": false,
+      "batteryPct": 77,
+      "weightMs": {
+        "spawn": 141,
+        "bundle": 180
+      },
+      "degraded": [],
+      "committed": 61.58,
+      "pages": 102,
+      "cpuQ": 1,
+      "diskQ": 0.2,
+      "diskSec": 0.004,
+      "maxFreq": 100,
+      "availMB": 5200,
+      "cpuPct": 32.359193000011146,
+      "defender": 4.316910402383655,
+      "dpcPct": 0.8,
+      "intrPct": 0.5,
+      "cpu": {
+        "perfPct": 119.8048579506576,
+        "perfLimitPct": 0,
+        "dpcPct": 0.8,
+        "interruptPct": 0.5
+      },
+      "mem": {
+        "committedPct": 61.6,
+        "pagefileUsePct": 6,
+        "pagesInPerS": 50,
+        "pagesOutPerS": 0
+      },
+      "disk": {
+        "latencyMs": 4,
+        "queue": 0.2,
+        "busyPct": 6,
+        "readBps": 1000000,
+        "writeBps": 2500000
+      },
+      "thermal": {
+        "zones": null,
+        "zonesReason": "not exposed at user tier"
+      },
+      "power": {
+        "ac": false,
+        "hasBattery": true
+      },
+      "procs": {
+        "groups": [],
+        "outOfScope": {
+          "groupCount": 52,
+          "cpuPctMachine": 20,
+          "readBps": 0,
+          "writeBps": 0,
+          "wsMB": 7000
+        },
+        "prov": {
+          "src": "procs.byGroup@counterSession"
+        }
+      }
+    },
+    {
+      "tSec": 26,
+      "at": "2026-01-15T10:00:26.000Z",
+      "ms": 194,
+      "usedPct": 68.87,
+      "hang": false,
+      "bundleMs": 180,
+      "slipS": 0,
+      "plugged": false,
+      "batteryPct": 77,
+      "weightMs": {
+        "spawn": 194,
+        "bundle": 180
+      },
+      "degraded": [],
+      "committed": 62.44,
+      "pages": 79,
+      "cpuQ": 1,
+      "diskQ": 0.2,
+      "diskSec": 0.004,
+      "maxFreq": 100,
+      "availMB": 5200,
+      "cpuPct": 27.297733509913087,
+      "defender": 4.168015407864004,
+      "dpcPct": 0.8,
+      "intrPct": 0.5,
+      "cpu": {
+        "perfPct": 115.91363292653114,
+        "perfLimitPct": 0,
+        "dpcPct": 0.8,
+        "interruptPct": 0.5
+      },
+      "mem": {
+        "committedPct": 62.4,
+        "pagefileUsePct": 6.1,
+        "pagesInPerS": 50,
+        "pagesOutPerS": 0
+      },
+      "disk": {
+        "latencyMs": 4,
+        "queue": 0.2,
+        "busyPct": 6,
+        "readBps": 1000000,
+        "writeBps": 2500000
+      },
+      "thermal": {
+        "zones": null,
+        "zonesReason": "not exposed at user tier"
+      },
+      "power": {
+        "ac": false,
+        "hasBattery": true
+      },
+      "procs": {
+        "groups": [],
+        "outOfScope": {
+          "groupCount": 52,
+          "cpuPctMachine": 20,
+          "readBps": 0,
+          "writeBps": 0,
+          "wsMB": 7000
+        },
+        "prov": {
+          "src": "procs.byGroup@counterSession"
+        }
+      }
+    },
+    {
+      "tSec": 28,
+      "at": "2026-01-15T10:00:28.000Z",
+      "ms": 139,
+      "usedPct": 67.66,
+      "hang": false,
+      "bundleMs": 180,
+      "slipS": 0,
+      "plugged": false,
+      "batteryPct": 76,
+      "weightMs": {
+        "spawn": 139,
+        "bundle": 180
+      },
+      "degraded": [],
+      "committed": 63.42,
+      "pages": 79,
+      "cpuQ": 1,
+      "diskQ": 0.2,
+      "diskSec": 0.004,
+      "maxFreq": 100,
+      "availMB": 5200,
+      "cpuPct": 30.256457440555096,
+      "defender": 3.3604117766954005,
+      "dpcPct": 0.8,
+      "intrPct": 0.5,
+      "cpu": {
+        "perfPct": 105.01264940481633,
+        "perfLimitPct": 0,
+        "dpcPct": 0.8,
+        "interruptPct": 0.5
+      },
+      "mem": {
+        "committedPct": 63.4,
+        "pagefileUsePct": 6.2,
+        "pagesInPerS": 50,
+        "pagesOutPerS": 0
+      },
+      "disk": {
+        "latencyMs": 4,
+        "queue": 0.2,
+        "busyPct": 6,
+        "readBps": 1000000,
+        "writeBps": 2500000
+      },
+      "thermal": {
+        "zones": null,
+        "zonesReason": "not exposed at user tier"
+      },
+      "power": {
+        "ac": false,
+        "hasBattery": true
+      },
+      "procs": {
+        "groups": [],
+        "outOfScope": {
+          "groupCount": 52,
+          "cpuPctMachine": 20,
+          "readBps": 0,
+          "writeBps": 0,
+          "wsMB": 7000
+        },
+        "prov": {
+          "src": "procs.byGroup@counterSession"
+        }
+      }
+    },
+    {
+      "tSec": 30,
+      "at": "2026-01-15T10:00:30.000Z",
+      "ms": 168,
+      "usedPct": 66.51,
+      "hang": false,
+      "bundleMs": 180,
+      "slipS": 0,
+      "plugged": false,
+      "batteryPct": 76,
+      "weightMs": {
+        "spawn": 168,
+        "bundle": 180
+      },
+      "degraded": [],
+      "committed": 61.76,
+      "pages": 50,
+      "cpuQ": 1,
+      "diskQ": 0.2,
+      "diskSec": 0.004,
+      "maxFreq": 100,
+      "availMB": 5200,
+      "cpuPct": 26.73152768984437,
+      "defender": 3.0482108676806092,
+      "dpcPct": 0.8,
+      "intrPct": 0.5,
+      "cpu": {
+        "perfPct": 102.14456678368151,
+        "perfLimitPct": 0,
+        "dpcPct": 0.8,
+        "interruptPct": 0.5
+      },
+      "mem": {
+        "committedPct": 61.8,
+        "pagefileUsePct": 6.3,
+        "pagesInPerS": 50,
+        "pagesOutPerS": 0
+      },
+      "disk": {
+        "latencyMs": 4,
+        "queue": 0.2,
+        "busyPct": 6,
+        "readBps": 1000000,
+        "writeBps": 2500000
+      },
+      "thermal": {
+        "zones": null,
+        "zonesReason": "not exposed at user tier"
+      },
+      "power": {
+        "ac": false,
+        "hasBattery": true
+      },
+      "procs": {
+        "groups": [],
+        "outOfScope": {
+          "groupCount": 52,
+          "cpuPctMachine": 20,
+          "readBps": 0,
+          "writeBps": 0,
+          "wsMB": 7000
+        },
+        "prov": {
+          "src": "procs.byGroup@counterSession"
+        }
+      }
+    },
+    {
+      "tSec": 32,
+      "at": "2026-01-15T10:00:32.000Z",
+      "ms": 218,
+      "usedPct": 66.18,
+      "hang": false,
+      "bundleMs": 180,
+      "slipS": 0,
+      "plugged": false,
+      "batteryPct": 76,
+      "weightMs": {
+        "spawn": 218,
+        "bundle": 180
+      },
+      "degraded": [],
+      "committed": 63.51,
+      "pages": 60,
+      "cpuQ": 1,
+      "diskQ": 0.2,
+      "diskSec": 0.004,
+      "maxFreq": 100,
+      "availMB": 5200,
+      "cpuPct": 29.05037412652746,
+      "defender": 3.997991099022329,
+      "dpcPct": 0.8,
+      "intrPct": 0.5,
+      "cpu": {
+        "perfPct": 114.6466862456873,
+        "perfLimitPct": 0,
+        "dpcPct": 0.8,
+        "interruptPct": 0.5
+      },
+      "mem": {
+        "committedPct": 63.5,
+        "pagefileUsePct": 6.4,
+        "pagesInPerS": 50,
+        "pagesOutPerS": 0
+      },
+      "disk": {
+        "latencyMs": 4,
+        "queue": 0.2,
+        "busyPct": 6,
+        "readBps": 1000000,
+        "writeBps": 2500000
+      },
+      "thermal": {
+        "zones": null,
+        "zonesReason": "not exposed at user tier"
+      },
+      "power": {
+        "ac": false,
+        "hasBattery": true
+      },
+      "procs": {
+        "groups": [],
+        "outOfScope": {
+          "groupCount": 52,
+          "cpuPctMachine": 20,
+          "readBps": 0,
+          "writeBps": 0,
+          "wsMB": 7000
+        },
+        "prov": {
+          "src": "procs.byGroup@counterSession"
+        }
+      }
+    },
+    {
+      "tSec": 34,
+      "at": "2026-01-15T10:00:34.000Z",
+      "ms": 156,
+      "usedPct": 68.37,
+      "hang": false,
+      "bundleMs": 180,
+      "slipS": 0,
+      "plugged": false,
+      "batteryPct": 75,
+      "weightMs": {
+        "spawn": 156,
+        "bundle": 180
+      },
+      "degraded": [],
+      "committed": 61.47,
+      "pages": 93,
+      "cpuQ": 1,
+      "diskQ": 0.2,
+      "diskSec": 0.004,
+      "maxFreq": 100,
+      "availMB": 5200,
+      "cpuPct": 33.00114242127165,
+      "defender": 4.059979653451592,
+      "dpcPct": 0.8,
+      "intrPct": 0.5,
+      "cpu": {
+        "perfPct": 115.96643184311688,
+        "perfLimitPct": 0,
+        "dpcPct": 0.8,
+        "interruptPct": 0.5
+      },
+      "mem": {
+        "committedPct": 61.5,
+        "pagefileUsePct": 6.5,
+        "pagesInPerS": 50,
+        "pagesOutPerS": 0
+      },
+      "disk": {
+        "latencyMs": 4,
+        "queue": 0.2,
+        "busyPct": 6,
+        "readBps": 1000000,
+        "writeBps": 2500000
+      },
+      "thermal": {
+        "zones": null,
+        "zonesReason": "not exposed at user tier"
+      },
+      "power": {
+        "ac": false,
+        "hasBattery": true
+      },
+      "procs": {
+        "groups": [],
+        "outOfScope": {
+          "groupCount": 52,
+          "cpuPctMachine": 20,
+          "readBps": 0,
+          "writeBps": 0,
+          "wsMB": 7000
+        },
+        "prov": {
+          "src": "procs.byGroup@counterSession"
+        }
+      }
+    },
+    {
+      "tSec": 36,
+      "at": "2026-01-15T10:00:36.000Z",
+      "ms": 176,
+      "usedPct": 66.88,
+      "hang": false,
+      "bundleMs": 180,
+      "slipS": 0,
+      "plugged": false,
+      "batteryPct": 75,
+      "weightMs": {
+        "spawn": 176,
+        "bundle": 180
+      },
+      "degraded": [],
+      "committed": 61.65,
+      "pages": 82,
+      "cpuQ": 1,
+      "diskQ": 0.2,
+      "diskSec": 0.004,
+      "maxFreq": 100,
+      "availMB": 5200,
+      "cpuPct": 32.7648345916532,
+      "defender": 3.1600269903428853,
+      "dpcPct": 0.8,
+      "intrPct": 0.5,
+      "cpu": {
+        "perfPct": 105.04395651631057,
+        "perfLimitPct": 0,
+        "dpcPct": 0.8,
+        "interruptPct": 0.5
+      },
+      "mem": {
+        "committedPct": 61.6,
+        "pagefileUsePct": 6.6,
+        "pagesInPerS": 50,
+        "pagesOutPerS": 0
+      },
+      "disk": {
+        "latencyMs": 4,
+        "queue": 0.2,
+        "busyPct": 6,
+        "readBps": 1000000,
+        "writeBps": 2500000
+      },
+      "thermal": {
+        "zones": null,
+        "zonesReason": "not exposed at user tier"
+      },
+      "power": {
+        "ac": false,
+        "hasBattery": true
+      },
+      "procs": {
+        "groups": [],
+        "outOfScope": {
+          "groupCount": 52,
+          "cpuPctMachine": 20,
+          "readBps": 0,
+          "writeBps": 0,
+          "wsMB": 7000
+        },
+        "prov": {
+          "src": "procs.byGroup@counterSession"
+        }
+      }
+    },
+    {
+      "tSec": 38,
+      "at": "2026-01-15T10:00:38.000Z",
+      "ms": 203,
+      "usedPct": 68.32,
+      "hang": false,
+      "bundleMs": 180,
+      "slipS": 0,
+      "plugged": false,
+      "batteryPct": 75,
+      "weightMs": {
+        "spawn": 203,
+        "bundle": 180
+      },
+      "degraded": [],
+      "committed": 63.31,
+      "pages": 76,
+      "cpuQ": 1,
+      "diskQ": 0.2,
+      "diskSec": 0.004,
+      "maxFreq": 100,
+      "availMB": 5200,
+      "cpuPct": 28.569119728635997,
+      "defender": 4.840652633924037,
+      "dpcPct": 0.8,
+      "intrPct": 0.5,
+      "cpu": {
+        "perfPct": 105.02664151601493,
+        "perfLimitPct": 0,
+        "dpcPct": 0.8,
+        "interruptPct": 0.5
+      },
+      "mem": {
+        "committedPct": 63.3,
+        "pagefileUsePct": 6.7,
+        "pagesInPerS": 50,
+        "pagesOutPerS": 0
+      },
+      "disk": {
+        "latencyMs": 4,
+        "queue": 0.2,
+        "busyPct": 6,
+        "readBps": 1000000,
+        "writeBps": 2500000
+      },
+      "thermal": {
+        "zones": null,
+        "zonesReason": "not exposed at user tier"
+      },
+      "power": {
+        "ac": false,
+        "hasBattery": true
+      },
+      "procs": {
+        "groups": [],
+        "outOfScope": {
+          "groupCount": 52,
+          "cpuPctMachine": 20,
+          "readBps": 0,
+          "writeBps": 0,
+          "wsMB": 7000
+        },
+        "prov": {
+          "src": "procs.byGroup@counterSession"
+        }
+      }
+    },
+    {
+      "tSec": 40,
+      "at": "2026-01-15T10:00:40.000Z",
+      "ms": 168,
+      "usedPct": 68.49,
+      "hang": false,
+      "bundleMs": 180,
+      "slipS": 0,
+      "plugged": false,
+      "batteryPct": 74,
+      "weightMs": {
+        "spawn": 168,
+        "bundle": 180
+      },
+      "degraded": [],
+      "committed": 61.45,
+      "pages": 74,
+      "cpuQ": 1,
+      "diskQ": 0.2,
+      "diskSec": 0.004,
+      "maxFreq": 100,
+      "availMB": 5200,
+      "cpuPct": 34.74566309247166,
+      "defender": 4.102562819607556,
+      "dpcPct": 0.8,
+      "intrPct": 0.5,
+      "cpu": {
+        "perfPct": 108.72629049234092,
+        "perfLimitPct": 0,
+        "dpcPct": 0.8,
+        "interruptPct": 0.5
+      },
+      "mem": {
+        "committedPct": 61.4,
+        "pagefileUsePct": 6.8,
+        "pagesInPerS": 50,
+        "pagesOutPerS": 0
+      },
+      "disk": {
+        "latencyMs": 4,
+        "queue": 0.2,
+        "busyPct": 6,
+        "readBps": 1000000,
+        "writeBps": 2500000
+      },
+      "thermal": {
+        "zones": null,
+        "zonesReason": "not exposed at user tier"
+      },
+      "power": {
+        "ac": false,
+        "hasBattery": true
+      },
+      "procs": {
+        "groups": [],
+        "outOfScope": {
+          "groupCount": 52,
+          "cpuPctMachine": 20,
+          "readBps": 0,
+          "writeBps": 0,
+          "wsMB": 7000
+        },
+        "prov": {
+          "src": "procs.byGroup@counterSession"
+        }
+      }
+    },
+    {
+      "tSec": 42,
+      "at": "2026-01-15T10:00:42.000Z",
+      "ms": 174,
+      "usedPct": 66.88,
+      "hang": false,
+      "bundleMs": 180,
+      "slipS": 0,
+      "plugged": false,
+      "batteryPct": 74,
+      "weightMs": {
+        "spawn": 174,
+        "bundle": 180
+      },
+      "degraded": [],
+      "committed": 61.35,
+      "pages": 103,
+      "cpuQ": 1,
+      "diskQ": 0.2,
+      "diskSec": 0.004,
+      "maxFreq": 100,
+      "availMB": 5200,
+      "cpuPct": 30.722587201744318,
+      "defender": 4.972079839091748,
+      "dpcPct": 0.8,
+      "intrPct": 0.5,
+      "cpu": {
+        "perfPct": 116.82009651791304,
+        "perfLimitPct": 0,
+        "dpcPct": 0.8,
+        "interruptPct": 0.5
+      },
+      "mem": {
+        "committedPct": 61.4,
+        "pagefileUsePct": 6.9,
+        "pagesInPerS": 50,
+        "pagesOutPerS": 0
+      },
+      "disk": {
+        "latencyMs": 4,
+        "queue": 0.2,
+        "busyPct": 6,
+        "readBps": 1000000,
+        "writeBps": 2500000
+      },
+      "thermal": {
+        "zones": null,
+        "zonesReason": "not exposed at user tier"
+      },
+      "power": {
+        "ac": false,
+        "hasBattery": true
+      },
+      "procs": {
+        "groups": [],
+        "outOfScope": {
+          "groupCount": 52,
+          "cpuPctMachine": 20,
+          "readBps": 0,
+          "writeBps": 0,
+          "wsMB": 7000
+        },
+        "prov": {
+          "src": "procs.byGroup@counterSession"
+        }
+      }
+    },
+    {
+      "tSec": 44,
+      "at": "2026-01-15T10:00:44.000Z",
+      "ms": 164,
+      "usedPct": 68.09,
+      "hang": false,
+      "bundleMs": 180,
+      "slipS": 0,
+      "plugged": false,
+      "batteryPct": 74,
+      "weightMs": {
+        "spawn": 164,
+        "bundle": 180
+      },
+      "degraded": [],
+      "committed": 61.98,
+      "pages": 106,
+      "cpuQ": 1,
+      "diskQ": 0.2,
+      "diskSec": 0.004,
+      "maxFreq": 100,
+      "availMB": 5200,
+      "cpuPct": 30.50654601538554,
+      "defender": 4.3147423840127885,
+      "dpcPct": 0.8,
+      "intrPct": 0.5,
+      "cpu": {
+        "perfPct": 103.24769473168999,
+        "perfLimitPct": 0,
+        "dpcPct": 0.8,
+        "interruptPct": 0.5
+      },
+      "mem": {
+        "committedPct": 62,
+        "pagefileUsePct": 7,
+        "pagesInPerS": 50,
+        "pagesOutPerS": 0
+      },
+      "disk": {
+        "latencyMs": 4,
+        "queue": 0.2,
+        "busyPct": 6,
+        "readBps": 1000000,
+        "writeBps": 2500000
+      },
+      "thermal": {
+        "zones": null,
+        "zonesReason": "not exposed at user tier"
+      },
+      "power": {
+        "ac": false,
+        "hasBattery": true
+      },
+      "procs": {
+        "groups": [],
+        "outOfScope": {
+          "groupCount": 52,
+          "cpuPctMachine": 20,
+          "readBps": 0,
+          "writeBps": 0,
+          "wsMB": 7000
+        },
+        "prov": {
+          "src": "procs.byGroup@counterSession"
+        }
+      }
+    },
+    {
+      "tSec": 46,
+      "at": "2026-01-15T10:00:46.000Z",
+      "ms": 159,
+      "usedPct": 67.83,
+      "hang": false,
+      "bundleMs": 180,
+      "slipS": 0,
+      "plugged": false,
+      "batteryPct": 73,
+      "weightMs": {
+        "spawn": 159,
+        "bundle": 180
+      },
+      "degraded": [],
+      "committed": 62.77,
+      "pages": 101,
+      "cpuQ": 1,
+      "diskQ": 0.2,
+      "diskSec": 0.004,
+      "maxFreq": 100,
+      "availMB": 5200,
+      "cpuPct": 28.838182254694402,
+      "defender": 3.590767003595829,
+      "dpcPct": 0.8,
+      "intrPct": 0.5,
+      "cpu": {
+        "perfPct": 101.8104170076549,
+        "perfLimitPct": 0,
+        "dpcPct": 0.8,
+        "interruptPct": 0.5
+      },
+      "mem": {
+        "committedPct": 62.8,
+        "pagefileUsePct": 7.1,
+        "pagesInPerS": 50,
+        "pagesOutPerS": 0
+      },
+      "disk": {
+        "latencyMs": 4,
+        "queue": 0.2,
+        "busyPct": 6,
+        "readBps": 1000000,
+        "writeBps": 2500000
+      },
+      "thermal": {
+        "zones": null,
+        "zonesReason": "not exposed at user tier"
+      },
+      "power": {
+        "ac": false,
+        "hasBattery": true
+      },
+      "procs": {
+        "groups": [],
+        "outOfScope": {
+          "groupCount": 52,
+          "cpuPctMachine": 20,
+          "readBps": 0,
+          "writeBps": 0,
+          "wsMB": 7000
+        },
+        "prov": {
+          "src": "procs.byGroup@counterSession"
+        }
+      }
+    },
+    {
+      "tSec": 48,
+      "at": "2026-01-15T10:00:48.000Z",
+      "ms": 193,
+      "usedPct": 68.89,
+      "hang": false,
+      "bundleMs": 180,
+      "slipS": 0,
+      "plugged": false,
+      "batteryPct": 73,
+      "weightMs": {
+        "spawn": 193,
+        "bundle": 180
+      },
+      "degraded": [],
+      "committed": 62.73,
+      "pages": 69,
+      "cpuQ": 1,
+      "diskQ": 0.2,
+      "diskSec": 0.004,
+      "maxFreq": 100,
+      "availMB": 5200,
+      "cpuPct": 27.596381187904626,
+      "defender": 3.1348114367574453,
+      "dpcPct": 0.8,
+      "intrPct": 0.5,
+      "cpu": {
+        "perfPct": 114.40714181866497,
+        "perfLimitPct": 0,
+        "dpcPct": 0.8,
+        "interruptPct": 0.5
+      },
+      "mem": {
+        "committedPct": 62.7,
+        "pagefileUsePct": 7.2,
+        "pagesInPerS": 50,
+        "pagesOutPerS": 0
+      },
+      "disk": {
+        "latencyMs": 4,
+        "queue": 0.2,
+        "busyPct": 6,
+        "readBps": 1000000,
+        "writeBps": 2500000
+      },
+      "thermal": {
+        "zones": null,
+        "zonesReason": "not exposed at user tier"
+      },
+      "power": {
+        "ac": false,
+        "hasBattery": true
+      },
+      "procs": {
+        "groups": [],
+        "outOfScope": {
+          "groupCount": 52,
+          "cpuPctMachine": 20,
+          "readBps": 0,
+          "writeBps": 0,
+          "wsMB": 7000
+        },
+        "prov": {
+          "src": "procs.byGroup@counterSession"
+        }
+      }
+    },
+    {
+      "tSec": 50,
+      "at": "2026-01-15T10:00:50.000Z",
+      "ms": 198,
+      "usedPct": 68.49,
+      "hang": false,
+      "bundleMs": 180,
+      "slipS": 0,
+      "plugged": false,
+      "batteryPct": 73,
+      "weightMs": {
+        "spawn": 198,
+        "bundle": 180
+      },
+      "degraded": [],
+      "committed": 63.7,
+      "pages": 108,
+      "cpuQ": 1,
+      "diskQ": 0.2,
+      "diskSec": 0.004,
+      "maxFreq": 100,
+      "availMB": 5200,
+      "cpuPct": 27.26511153858155,
+      "defender": 4.957515985239297,
+      "dpcPct": 0.8,
+      "intrPct": 0.5,
+      "cpu": {
+        "perfPct": 105.65184567589313,
+        "perfLimitPct": 0,
+        "dpcPct": 0.8,
+        "interruptPct": 0.5
+      },
+      "mem": {
+        "committedPct": 63.7,
+        "pagefileUsePct": 7.300000000000001,
+        "pagesInPerS": 50,
+        "pagesOutPerS": 0
+      },
+      "disk": {
+        "latencyMs": 4,
+        "queue": 0.2,
+        "busyPct": 6,
+        "readBps": 1000000,
+        "writeBps": 2500000
+      },
+      "thermal": {
+        "zones": null,
+        "zonesReason": "not exposed at user tier"
+      },
+      "power": {
+        "ac": false,
+        "hasBattery": true
+      },
+      "procs": {
+        "groups": [],
+        "outOfScope": {
+          "groupCount": 52,
+          "cpuPctMachine": 20,
+          "readBps": 0,
+          "writeBps": 0,
+          "wsMB": 7000
+        },
+        "prov": {
+          "src": "procs.byGroup@counterSession"
+        }
+      }
+    },
+    {
+      "tSec": 52,
+      "at": "2026-01-15T10:00:52.000Z",
+      "ms": 159,
+      "usedPct": 68.14,
+      "hang": false,
+      "bundleMs": 180,
+      "slipS": 0,
+      "plugged": false,
+      "batteryPct": 72,
+      "weightMs": {
+        "spawn": 159,
+        "bundle": 180
+      },
+      "degraded": [],
+      "committed": 62.15,
+      "pages": 96,
+      "cpuQ": 1,
+      "diskQ": 0.2,
+      "diskSec": 0.004,
+      "maxFreq": 100,
+      "availMB": 5200,
+      "cpuPct": 31.237296788021922,
+      "defender": 4.451047928072512,
+      "dpcPct": 0.8,
+      "intrPct": 0.5,
+      "cpu": {
+        "perfPct": 112.43007516022772,
+        "perfLimitPct": 0,
+        "dpcPct": 0.8,
+        "interruptPct": 0.5
+      },
+      "mem": {
+        "committedPct": 62.2,
+        "pagefileUsePct": 7.4,
+        "pagesInPerS": 50,
+        "pagesOutPerS": 0
+      },
+      "disk": {
+        "latencyMs": 4,
+        "queue": 0.2,
+        "busyPct": 6,
+        "readBps": 1000000,
+        "writeBps": 2500000
+      },
+      "thermal": {
+        "zones": null,
+        "zonesReason": "not exposed at user tier"
+      },
+      "power": {
+        "ac": false,
+        "hasBattery": true
+      },
+      "procs": {
+        "groups": [],
+        "outOfScope": {
+          "groupCount": 52,
+          "cpuPctMachine": 20,
+          "readBps": 0,
+          "writeBps": 0,
+          "wsMB": 7000
+        },
+        "prov": {
+          "src": "procs.byGroup@counterSession"
+        }
+      }
+    },
+    {
+      "tSec": 54,
+      "at": "2026-01-15T10:00:54.000Z",
+      "ms": 147,
+      "usedPct": 68.5,
+      "hang": false,
+      "bundleMs": 180,
+      "slipS": 0,
+      "plugged": false,
+      "batteryPct": 72,
+      "weightMs": {
+        "spawn": 147,
+        "bundle": 180
+      },
+      "degraded": [],
+      "committed": 62.38,
+      "pages": 79,
+      "cpuQ": 1,
+      "diskQ": 0.2,
+      "diskSec": 0.004,
+      "maxFreq": 100,
+      "availMB": 5200,
+      "cpuPct": 26.39822127763182,
+      "defender": 4.445077676791698,
+      "dpcPct": 0.8,
+      "intrPct": 0.5,
+      "cpu": {
+        "perfPct": 109.27792291156948,
+        "perfLimitPct": 0,
+        "dpcPct": 0.8,
+        "interruptPct": 0.5
+      },
+      "mem": {
+        "committedPct": 62.4,
+        "pagefileUsePct": 7.5,
+        "pagesInPerS": 50,
+        "pagesOutPerS": 0
+      },
+      "disk": {
+        "latencyMs": 4,
+        "queue": 0.2,
+        "busyPct": 6,
+        "readBps": 1000000,
+        "writeBps": 2500000
+      },
+      "thermal": {
+        "zones": null,
+        "zonesReason": "not exposed at user tier"
+      },
+      "power": {
+        "ac": false,
+        "hasBattery": true
+      },
+      "procs": {
+        "groups": [],
+        "outOfScope": {
+          "groupCount": 52,
+          "cpuPctMachine": 20,
+          "readBps": 0,
+          "writeBps": 0,
+          "wsMB": 7000
+        },
+        "prov": {
+          "src": "procs.byGroup@counterSession"
+        }
+      }
+    },
+    {
+      "tSec": 56,
+      "at": "2026-01-15T10:00:56.000Z",
+      "ms": 175,
+      "usedPct": 68.66,
+      "hang": false,
+      "bundleMs": 180,
+      "slipS": 0,
+      "plugged": false,
+      "batteryPct": 72,
+      "weightMs": {
+        "spawn": 175,
+        "bundle": 180
+      },
+      "degraded": [],
+      "committed": 62.24,
+      "pages": 107,
+      "cpuQ": 1,
+      "diskQ": 0.2,
+      "diskSec": 0.004,
+      "maxFreq": 100,
+      "availMB": 5200,
+      "cpuPct": 26.532953234855086,
+      "defender": 3.2035064147785306,
+      "dpcPct": 0.8,
+      "intrPct": 0.5,
+      "cpu": {
+        "perfPct": 105.73824603110552,
+        "perfLimitPct": 0,
+        "dpcPct": 0.8,
+        "interruptPct": 0.5
+      },
+      "mem": {
+        "committedPct": 62.2,
+        "pagefileUsePct": 7.6,
+        "pagesInPerS": 50,
+        "pagesOutPerS": 0
+      },
+      "disk": {
+        "latencyMs": 4,
+        "queue": 0.2,
+        "busyPct": 6,
+        "readBps": 1000000,
+        "writeBps": 2500000
+      },
+      "thermal": {
+        "zones": null,
+        "zonesReason": "not exposed at user tier"
+      },
+      "power": {
+        "ac": false,
+        "hasBattery": true
+      },
+      "procs": {
+        "groups": [],
+        "outOfScope": {
+          "groupCount": 52,
+          "cpuPctMachine": 20,
+          "readBps": 0,
+          "writeBps": 0,
+          "wsMB": 7000
+        },
+        "prov": {
+          "src": "procs.byGroup@counterSession"
+        }
+      }
+    },
+    {
+      "tSec": 58,
+      "at": "2026-01-15T10:00:58.000Z",
+      "ms": 159,
+      "usedPct": 68.73,
+      "hang": false,
+      "bundleMs": 180,
+      "slipS": 0,
+      "plugged": false,
+      "batteryPct": 71,
+      "weightMs": {
+        "spawn": 159,
+        "bundle": 180
+      },
+      "degraded": [],
+      "committed": 62.1,
+      "pages": 101,
+      "cpuQ": 1,
+      "diskQ": 0.2,
+      "diskSec": 0.004,
+      "maxFreq": 100,
+      "availMB": 5200,
+      "cpuPct": 30.3011362394318,
+      "defender": 4.815918357111514,
+      "dpcPct": 0.8,
+      "intrPct": 0.5,
+      "cpu": {
+        "perfPct": 105.57462031953037,
+        "perfLimitPct": 0,
+        "dpcPct": 0.8,
+        "interruptPct": 0.5
+      },
+      "mem": {
+        "committedPct": 62.1,
+        "pagefileUsePct": 7.7,
+        "pagesInPerS": 50,
+        "pagesOutPerS": 0
+      },
+      "disk": {
+        "latencyMs": 4,
+        "queue": 0.2,
+        "busyPct": 6,
+        "readBps": 1000000,
+        "writeBps": 2500000
+      },
+      "thermal": {
+        "zones": null,
+        "zonesReason": "not exposed at user tier"
+      },
+      "power": {
+        "ac": false,
+        "hasBattery": true
+      },
+      "procs": {
+        "groups": [],
+        "outOfScope": {
+          "groupCount": 52,
+          "cpuPctMachine": 20,
+          "readBps": 0,
+          "writeBps": 0,
+          "wsMB": 7000
+        },
+        "prov": {
+          "src": "procs.byGroup@counterSession"
+        }
+      }
+    },
+    {
+      "tSec": 60,
+      "at": "2026-01-15T10:01:00.000Z",
+      "ms": 213,
+      "usedPct": 68.03,
+      "hang": false,
+      "bundleMs": 180,
+      "slipS": 0,
+      "plugged": false,
+      "batteryPct": 71,
+      "weightMs": {
+        "spawn": 213,
+        "bundle": 180
+      },
+      "degraded": [],
+      "committed": 61.97,
+      "pages": 98,
+      "cpuQ": 1,
+      "diskQ": 0.2,
+      "diskSec": 0.004,
+      "maxFreq": 100,
+      "availMB": 5200,
+      "cpuPct": 28.335344968363643,
+      "defender": 4.819140531588346,
+      "dpcPct": 0.8,
+      "intrPct": 0.5,
+      "cpu": {
+        "perfPct": 119.3923812918365,
+        "perfLimitPct": 0,
+        "dpcPct": 0.8,
+        "interruptPct": 0.5
+      },
+      "mem": {
+        "committedPct": 62,
+        "pagefileUsePct": 7.800000000000001,
+        "pagesInPerS": 50,
+        "pagesOutPerS": 0
+      },
+      "disk": {
+        "latencyMs": 4,
+        "queue": 0.2,
+        "busyPct": 6,
+        "readBps": 1000000,
+        "writeBps": 2500000
+      },
+      "thermal": {
+        "zones": null,
+        "zonesReason": "not exposed at user tier"
+      },
+      "power": {
+        "ac": false,
+        "hasBattery": true
+      },
+      "procs": {
+        "groups": [],
+        "outOfScope": {
+          "groupCount": 52,
+          "cpuPctMachine": 20,
+          "readBps": 0,
+          "writeBps": 0,
+          "wsMB": 7000
+        },
+        "prov": {
+          "src": "procs.byGroup@counterSession"
+        }
+      }
+    },
+    {
+      "tSec": 62,
+      "at": "2026-01-15T10:01:02.000Z",
+      "ms": 120,
+      "usedPct": 66.5,
+      "hang": false,
+      "bundleMs": 180,
+      "slipS": 0,
+      "plugged": false,
+      "batteryPct": 71,
+      "weightMs": {
+        "spawn": 120,
+        "bundle": 180
+      },
+      "degraded": [],
+      "committed": 63.37,
+      "pages": 95,
+      "cpuQ": 1,
+      "diskQ": 0.2,
+      "diskSec": 0.004,
+      "maxFreq": 100,
+      "availMB": 5200,
+      "cpuPct": 26.045329561457038,
+      "defender": 3.1650439985096455,
+      "dpcPct": 0.8,
+      "intrPct": 0.5,
+      "cpu": {
+        "perfPct": 118.23646428063512,
+        "perfLimitPct": 0,
+        "dpcPct": 0.8,
+        "interruptPct": 0.5
+      },
+      "mem": {
+        "committedPct": 63.4,
+        "pagefileUsePct": 7.9,
+        "pagesInPerS": 50,
+        "pagesOutPerS": 0
+      },
+      "disk": {
+        "latencyMs": 4,
+        "queue": 0.2,
+        "busyPct": 6,
+        "readBps": 1000000,
+        "writeBps": 2500000
+      },
+      "thermal": {
+        "zones": null,
+        "zonesReason": "not exposed at user tier"
+      },
+      "power": {
+        "ac": false,
+        "hasBattery": true
+      },
+      "procs": {
+        "groups": [],
+        "outOfScope": {
+          "groupCount": 52,
+          "cpuPctMachine": 20,
+          "readBps": 0,
+          "writeBps": 0,
+          "wsMB": 7000
+        },
+        "prov": {
+          "src": "procs.byGroup@counterSession"
+        }
+      }
+    }
+  ],
+  "samples": [
+    {
+      "at": "2026-01-15T10:00:01.000Z",
+      "tSec": 1,
+      "freeGB": 5.43,
+      "usedPct": 66.05
+    },
+    {
+      "at": "2026-01-15T10:00:02.500Z",
+      "tSec": 2.5,
+      "freeGB": 5.4,
+      "usedPct": 66.25
+    },
+    {
+      "at": "2026-01-15T10:00:04.000Z",
+      "tSec": 4,
+      "freeGB": 4.81,
+      "usedPct": 69.91
+    },
+    {
+      "at": "2026-01-15T10:00:05.500Z",
+      "tSec": 5.5,
+      "freeGB": 4.99,
+      "usedPct": 68.8
+    },
+    {
+      "at": "2026-01-15T10:00:07.000Z",
+      "tSec": 7,
+      "freeGB": 5.11,
+      "usedPct": 68.09
+    },
+    {
+      "at": "2026-01-15T10:00:08.500Z",
+      "tSec": 8.5,
+      "freeGB": 5.18,
+      "usedPct": 67.62
+    },
+    {
+      "at": "2026-01-15T10:00:10.000Z",
+      "tSec": 10,
+      "freeGB": 5.14,
+      "usedPct": 67.86
+    },
+    {
+      "at": "2026-01-15T10:00:11.500Z",
+      "tSec": 11.5,
+      "freeGB": 5.29,
+      "usedPct": 66.96
+    },
+    {
+      "at": "2026-01-15T10:00:13.000Z",
+      "tSec": 13,
+      "freeGB": 5.09,
+      "usedPct": 68.21
+    },
+    {
+      "at": "2026-01-15T10:00:14.500Z",
+      "tSec": 14.5,
+      "freeGB": 4.97,
+      "usedPct": 68.92
+    },
+    {
+      "at": "2026-01-15T10:00:16.000Z",
+      "tSec": 16,
+      "freeGB": 5.27,
+      "usedPct": 67.03
+    },
+    {
+      "at": "2026-01-15T10:00:17.500Z",
+      "tSec": 17.5,
+      "freeGB": 5.34,
+      "usedPct": 66.62
+    },
+    {
+      "at": "2026-01-15T10:00:19.000Z",
+      "tSec": 19,
+      "freeGB": 4.95,
+      "usedPct": 69.06
+    },
+    {
+      "at": "2026-01-15T10:00:20.500Z",
+      "tSec": 20.5,
+      "freeGB": 5.11,
+      "usedPct": 68.07
+    },
+    {
+      "at": "2026-01-15T10:00:22.000Z",
+      "tSec": 22,
+      "freeGB": 5.31,
+      "usedPct": 66.79
+    },
+    {
+      "at": "2026-01-15T10:00:23.500Z",
+      "tSec": 23.5,
+      "freeGB": 5.2,
+      "usedPct": 67.47
+    },
+    {
+      "at": "2026-01-15T10:00:25.000Z",
+      "tSec": 25,
+      "freeGB": 5.25,
+      "usedPct": 67.17
+    },
+    {
+      "at": "2026-01-15T10:00:26.500Z",
+      "tSec": 26.5,
+      "freeGB": 5.1,
+      "usedPct": 68.14
+    },
+    {
+      "at": "2026-01-15T10:00:28.000Z",
+      "tSec": 28,
+      "freeGB": 5.25,
+      "usedPct": 67.19
+    },
+    {
+      "at": "2026-01-15T10:00:29.500Z",
+      "tSec": 29.5,
+      "freeGB": 4.81,
+      "usedPct": 69.91
+    },
+    {
+      "at": "2026-01-15T10:00:31.000Z",
+      "tSec": 31,
+      "freeGB": 5.28,
+      "usedPct": 66.99
+    },
+    {
+      "at": "2026-01-15T10:00:32.500Z",
+      "tSec": 32.5,
+      "freeGB": 4.88,
+      "usedPct": 69.51
+    },
+    {
+      "at": "2026-01-15T10:00:34.000Z",
+      "tSec": 34,
+      "freeGB": 5.32,
+      "usedPct": 66.76
+    },
+    {
+      "at": "2026-01-15T10:00:35.500Z",
+      "tSec": 35.5,
+      "freeGB": 5.35,
+      "usedPct": 66.57
+    },
+    {
+      "at": "2026-01-15T10:00:37.000Z",
+      "tSec": 37,
+      "freeGB": 5.34,
+      "usedPct": 66.62
+    },
+    {
+      "at": "2026-01-15T10:00:38.500Z",
+      "tSec": 38.5,
+      "freeGB": 5.25,
+      "usedPct": 67.16
+    },
+    {
+      "at": "2026-01-15T10:00:40.000Z",
+      "tSec": 40,
+      "freeGB": 5.09,
+      "usedPct": 68.19
+    },
+    {
+      "at": "2026-01-15T10:00:41.500Z",
+      "tSec": 41.5,
+      "freeGB": 4.95,
+      "usedPct": 69.05
+    },
+    {
+      "at": "2026-01-15T10:00:43.000Z",
+      "tSec": 43,
+      "freeGB": 5.39,
+      "usedPct": 66.3
+    },
+    {
+      "at": "2026-01-15T10:00:44.500Z",
+      "tSec": 44.5,
+      "freeGB": 4.86,
+      "usedPct": 69.65
+    },
+    {
+      "at": "2026-01-15T10:00:46.000Z",
+      "tSec": 46,
+      "freeGB": 5.09,
+      "usedPct": 68.21
+    },
+    {
+      "at": "2026-01-15T10:00:47.500Z",
+      "tSec": 47.5,
+      "freeGB": 5.04,
+      "usedPct": 68.49
+    },
+    {
+      "at": "2026-01-15T10:00:49.000Z",
+      "tSec": 49,
+      "freeGB": 5,
+      "usedPct": 68.72
+    },
+    {
+      "at": "2026-01-15T10:00:50.500Z",
+      "tSec": 50.5,
+      "freeGB": 4.82,
+      "usedPct": 69.86
+    },
+    {
+      "at": "2026-01-15T10:00:52.000Z",
+      "tSec": 52,
+      "freeGB": 5.04,
+      "usedPct": 68.5
+    },
+    {
+      "at": "2026-01-15T10:00:53.500Z",
+      "tSec": 53.5,
+      "freeGB": 4.85,
+      "usedPct": 69.68
+    },
+    {
+      "at": "2026-01-15T10:00:55.000Z",
+      "tSec": 55,
+      "freeGB": 4.91,
+      "usedPct": 69.31
+    },
+    {
+      "at": "2026-01-15T10:00:56.500Z",
+      "tSec": 56.5,
+      "freeGB": 5.41,
+      "usedPct": 66.16
+    },
+    {
+      "at": "2026-01-15T10:00:58.000Z",
+      "tSec": 58,
+      "freeGB": 5.33,
+      "usedPct": 66.7
+    },
+    {
+      "at": "2026-01-15T10:00:59.500Z",
+      "tSec": 59.5,
+      "freeGB": 5.21,
+      "usedPct": 67.43
+    },
+    {
+      "at": "2026-01-15T10:01:01.000Z",
+      "tSec": 61,
+      "freeGB": 5.17,
+      "usedPct": 67.7
+    },
+    {
+      "at": "2026-01-15T10:01:02.500Z",
+      "tSec": 62.5,
+      "freeGB": 5.43,
+      "usedPct": 66.08
+    },
+    {
+      "at": "2026-01-15T10:01:04.000Z",
+      "tSec": 64,
+      "freeGB": 5.38,
+      "usedPct": 66.35
+    }
+  ],
+  "diagnosis": {
+    "engine": "diagnosis/1",
+    "hangDefinition": {
+      "probe": "process-start-latency",
+      "thresholdMs": 800,
+      "source": "default",
+      "intervalS": 2,
+      "cannotSee": [
+        "freezes shorter than the probe interval",
+        "UI input lag that does not delay process start"
+      ],
+      "inputResponse": {
+        "status": "not evaluated",
+        "reason": "report predates the input-response check"
+      }
+    },
+    "usable": {
+      "probes": 27,
+      "excluded": 3,
+      "minimum": 10,
+      "sustainedMin": 3
+    },
+    "excludedProbes": [
+      {
+        "ref": "spawnProbes[0]",
+        "reasons": [
+          "startup-window"
+        ]
+      },
+      {
+        "ref": "spawnProbes[1]",
+        "reasons": [
+          "startup-window"
+        ]
+      },
+      {
+        "ref": "spawnProbes[2]",
+        "reasons": [
+          "startup-window"
+        ]
+      }
+    ],
+    "calm": {
+      "definition": "usable, latency < 400 ms, not within 10 s of a hang",
+      "n": 27,
+      "means": {}
+    },
+    "proxyValidation": {
+      "status": "not validated",
+      "reason": "no hung user marks were recorded"
+    },
+    "marks": {
+      "joined": [],
+      "unmatched": []
+    },
+    "confidenceModel": {
+      "confirmationWeights": {
+        "user-mark": 1,
+        "os-not-responding": 1,
+        "workload-probe": 1,
+        "input-stall": 0.5,
+        "probe-only": 0
+      },
+      "weights": {
+        "C": 0.35,
+        "D": 0.25,
+        "O": 0.25,
+        "K": 0.15
+      },
+      "penaltyPerConfound": 0.1,
+      "penaltyMax": 0.3,
+      "cap": 0.95
+    },
+    "thresholds": {},
+    "probeAgreement": {
+      "status": "not evaluated",
+      "reason": "report predates the input-response check",
+      "toleranceMs": 2000,
+      "stallMs": null,
+      "probeIntervalS": null
+    },
+    "inputStallCorroboration": {
+      "status": "not evaluated",
+      "reason": "report predates the input-response check"
+    },
+    "hangs": [],
+    "rollup": [],
+    "finding": {
+      "class": "no-freeze-observed",
+      "sentence": "No freeze observed: 0 of 27 usable probes reached 800 ms (slowest 218 ms); 3 probe(s) excluded as observer-affected. This is not evidence that the machine never freezes.",
+      "strength": "sufficient",
+      "confirmations": {
+        "user-mark": 0,
+        "os-not-responding": 0,
+        "workload-probe": 0,
+        "probe-only": 0
+      },
+      "excludedHangs": 0,
+      "scope": "scoped: postgres",
+      "window": {
+        "start": "2026-01-15T10:00:00.000Z",
+        "end": "2026-01-15T10:01:04.100Z",
+        "observedS": 64
+      }
+    },
+    "observations": [
+      "27 usable probes of 30 (3 excluded: startup-window)",
+      "commit 60-64% across 27 usable probes"
+    ],
+    "hwConfigSignal": null,
+    "timeLost": null,
+    "eventsUsed": [],
+    "eventsHistory": [],
+    "suggestedActions": []
+  },
+  "sampling": {
+    "cadence": {
+      "nominalS": 2,
+      "achievedMedianS": 2.05,
+      "achievedP95S": 2.4,
+      "n": 30,
+      "basis": "synthetic fixture"
+    },
+    "unobserved": [
+      {
+        "start": "2026-01-15T10:00:52.000Z",
+        "end": "2026-01-15T10:00:55.000Z",
+        "durationS": 3,
+        "reason": "collector-late"
+      }
+    ],
+    "heavyRuns": []
+  },
+  "workload": {
+    "declared": {
+      "phases": [],
+      "probes": [],
+      "config": []
+    },
+    "phases": [
+      {
+        "label": "docker compose up",
+        "startAt": "2026-01-15T10:00:06.000Z",
+        "endAt": "2026-01-15T10:00:42.000Z",
+        "endStatus": "closed",
+        "source": "flag"
+      }
+    ],
+    "phaseSummary": null,
+    "markers": [
+      {
+        "at": "2026-01-15T10:00:08.000Z",
+        "kind": "container-start",
+        "name": "db",
+        "id": "c1"
+      }
+    ],
+    "containers": {
+      "series": [],
+      "outOfScope": [],
+      "unavailable": null
+    },
+    "vm": {
+      "hostMemMB": [],
+      "configuredCapMB": {
+        "value": null,
+        "unavailableReason": "no cap configured"
+      }
+    },
+    "probes": {}
+  }
+}

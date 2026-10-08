@@ -1,0 +1,7031 @@
+{
+  "tool": "telltale v0.6",
+  "schema": "telltale-json/2",
+  "schemaStatus": "frozen",
+  "registry": "registry v0.4",
+  "run": {
+    "status": "complete",
+    "endReason": null,
+    "startedAt": "2026-01-15T10:00:00.000Z",
+    "endedAt": "2026-01-15T10:01:04.100Z",
+    "utcOffsetMin": 120,
+    "stream": "telltale-full-signals.jsonl"
+  },
+  "window": {
+    "nominalS": 68,
+    "spanS": 64,
+    "unobservedS": 0,
+    "observedS": 64,
+    "probesExpected": 34,
+    "probesObserved": 30,
+    "samplesExpected": 68,
+    "samplesObserved": 43
+  },
+  "settings": {
+    "duration": {
+      "value": 68,
+      "source": "flag"
+    },
+    "interval": {
+      "value": 1000,
+      "source": "config"
+    },
+    "anonymize": {
+      "value": true,
+      "source": "config"
+    },
+    "scope": {
+      "value": {
+        "mode": "open"
+      },
+      "source": "default"
+    },
+    "thresholds": {
+      "hang": {
+        "value": 800,
+        "source": "default"
+      },
+      "commit": {
+        "value": 85,
+        "source": "default"
+      },
+      "minFreeGB": {
+        "value": 2,
+        "source": "default"
+      },
+      "pages": {
+        "value": 500,
+        "source": "default"
+      },
+      "queue": {
+        "value": 4,
+        "source": "default"
+      },
+      "diskSec": {
+        "value": 0.025,
+        "source": "default"
+      },
+      "ramHigh": {
+        "value": 85,
+        "source": "default"
+      },
+      "severeCommit": {
+        "value": 90,
+        "source": "default"
+      },
+      "severeFree": {
+        "value": 1.5,
+        "source": "default"
+      },
+      "defender": {
+        "value": 20,
+        "source": "default"
+      },
+      "recovery": {
+        "value": 400,
+        "source": "default"
+      }
+    }
+  },
+  "observer": {
+    "pidCount": 3,
+    "wsMB": 96,
+    "wsMBAvg": 90,
+    "cpuPctAvg": null,
+    "note": "synthetic fixture"
+  },
+  "tier": "user",
+  "startedAt": "2026-01-15T10:00:00.000Z",
+  "hostname": "<host>",
+  "anonymized": true,
+  "machine": {
+    "totalGB": 16,
+    "cpus": 8,
+    "cpuModel": "Synthetic CPU 8-thread",
+    "uptimeMin": 1234.5,
+    "logicalCpus": 8
+  },
+  "systemProfile": {
+    "collectedAt": "2026-01-15T10:00:00.000Z",
+    "collectionMs": 1200,
+    "tier": "user",
+    "workloadConfigRef": null,
+    "groupStatus": {},
+    "identity": {
+      "hostname": {
+        "value": "<host>",
+        "source": "os",
+        "tier": "user",
+        "asOf": "2026-01-15T10:00:00.000Z"
+      },
+      "manufacturer": {
+        "value": "Synthetic Corp",
+        "source": "firmware-system-info",
+        "tier": "user",
+        "asOf": "2026-01-15T10:00:00.000Z"
+      },
+      "model": {
+        "value": "SX-1 Laptop",
+        "source": "firmware-system-info",
+        "tier": "user",
+        "asOf": "2026-01-15T10:00:00.000Z"
+      },
+      "serial": {
+        "value": "SYN0000001",
+        "source": "firmware-bios",
+        "tier": "user",
+        "asOf": "2026-01-15T10:00:00.000Z"
+      }
+    },
+    "processor": {
+      "model": {
+        "value": "Synthetic CPU 8-thread",
+        "source": "cpu-info",
+        "tier": "user",
+        "asOf": "2026-01-15T10:00:00.000Z"
+      },
+      "physicalCores": {
+        "value": 4,
+        "unit": "cores",
+        "source": "cpu-info",
+        "tier": "user",
+        "asOf": "2026-01-15T10:00:00.000Z"
+      },
+      "logicalProcessors": {
+        "value": 8,
+        "unit": "threads",
+        "source": "cpu-info",
+        "tier": "user",
+        "asOf": "2026-01-15T10:00:00.000Z"
+      },
+      "baseClockMHz": {
+        "value": 2400,
+        "unit": "MHz",
+        "source": "cpu-info",
+        "tier": "user",
+        "asOf": "2026-01-15T10:00:00.000Z"
+      },
+      "maxClockMHz": {
+        "value": null,
+        "unit": "MHz",
+        "source": "cpu-info",
+        "tier": "user",
+        "asOf": "2026-01-15T10:00:00.000Z",
+        "unavailableReason": "max turbo clock not exposed at user tier"
+      }
+    },
+    "memory": {
+      "installedGB": {
+        "value": 16,
+        "unit": "GB",
+        "source": "physical-memory-info",
+        "tier": "user",
+        "asOf": "2026-01-15T10:00:00.000Z"
+      },
+      "modules": {
+        "value": [
+          {
+            "slot": "Slot 1",
+            "sizeGB": 16,
+            "speedMTs": 3200,
+            "formFactor": "SODIMM"
+          }
+        ],
+        "source": "physical-memory-info",
+        "tier": "user",
+        "asOf": "2026-01-15T10:00:00.000Z"
+      },
+      "slotsUsed": {
+        "value": 1,
+        "source": "physical-memory-info",
+        "tier": "user",
+        "asOf": "2026-01-15T10:00:00.000Z"
+      },
+      "slotsTotal": {
+        "value": 2,
+        "source": "physical-memory-info",
+        "tier": "user",
+        "asOf": "2026-01-15T10:00:00.000Z"
+      }
+    },
+    "storage": {
+      "disks": {
+        "value": [
+          {
+            "model": "Synthetic NVMe 512",
+            "mediaType": "SSD",
+            "bus": "NVMe",
+            "capacityGB": 512,
+            "health": "Healthy"
+          }
+        ],
+        "source": "physical-disk-info",
+        "tier": "user",
+        "asOf": "2026-01-15T10:00:00.000Z"
+      },
+      "systemVolume": {
+        "value": {
+          "volume": "C:",
+          "freeGB": 190,
+          "totalGB": 460
+        },
+        "unit": "GB",
+        "source": "logical-disk-info",
+        "tier": "user",
+        "asOf": "2026-01-15T10:00:00.000Z"
+      }
+    },
+    "firmware": {
+      "biosVendor": {
+        "value": "Synthetic",
+        "source": "firmware-bios",
+        "tier": "user",
+        "asOf": "2026-01-15T10:00:00.000Z"
+      },
+      "biosVersion": {
+        "value": "SYN 1.02",
+        "source": "firmware-bios",
+        "tier": "user",
+        "asOf": "2026-01-15T10:00:00.000Z"
+      },
+      "biosDate": {
+        "value": "2025-06-01",
+        "source": "firmware-bios",
+        "tier": "user",
+        "asOf": "2026-01-15T10:00:00.000Z"
+      }
+    },
+    "os": {
+      "edition": {
+        "value": "Windows 11 Pro",
+        "source": "os-info",
+        "tier": "user",
+        "asOf": "2026-01-15T10:00:00.000Z"
+      },
+      "version": {
+        "value": "10.0.26200",
+        "source": "os-info",
+        "tier": "user",
+        "asOf": "2026-01-15T10:00:00.000Z"
+      },
+      "build": {
+        "value": "26200",
+        "source": "os-info",
+        "tier": "user",
+        "asOf": "2026-01-15T10:00:00.000Z"
+      },
+      "uptimeMin": {
+        "value": 1234,
+        "unit": "min",
+        "source": "os-info",
+        "tier": "user",
+        "asOf": "2026-01-15T10:00:00.000Z"
+      }
+    },
+    "power": {
+      "planName": {
+        "value": "Balanced",
+        "source": "powercfg",
+        "tier": "user",
+        "asOf": "2026-01-15T10:00:00.000Z"
+      },
+      "powerMode": {
+        "value": "Balanced",
+        "source": "powercfg",
+        "tier": "user",
+        "asOf": "2026-01-15T10:00:00.000Z"
+      },
+      "batteryDesignWh": {
+        "value": null,
+        "unit": "Wh",
+        "source": "battery-static-data",
+        "tier": "user",
+        "asOf": "2026-01-15T10:00:00.000Z",
+        "unavailableReason": "requires admin"
+      }
+    },
+    "virtualMemory": {
+      "pagefiles": {
+        "value": [
+          {
+            "location": "C:pagefile.sys",
+            "currentMB": 2048,
+            "initialMB": 4096,
+            "maxMB": 8192
+          }
+        ],
+        "source": "pagefile-info",
+        "tier": "user",
+        "asOf": "2026-01-15T10:00:00.000Z"
+      },
+      "systemManaged": {
+        "value": false,
+        "source": "pagefile-info",
+        "tier": "user",
+        "asOf": "2026-01-15T10:00:00.000Z"
+      },
+      "commitLimitGB": {
+        "value": 24,
+        "unit": "GB",
+        "source": "os-info",
+        "tier": "user",
+        "asOf": "2026-01-15T10:00:00.000Z"
+      }
+    },
+    "security": {
+      "products": {
+        "value": [
+          {
+            "name": "Synthetic Defender",
+            "state": "enabled"
+          }
+        ],
+        "source": "security-center",
+        "tier": "user",
+        "asOf": "2026-01-15T10:00:00.000Z"
+      },
+      "domainJoined": {
+        "value": false,
+        "source": "domain-join-info",
+        "tier": "user",
+        "asOf": "2026-01-15T10:00:00.000Z"
+      }
+    }
+  },
+  "power": {
+    "scheme": "Power Scheme GUID: 00000000-0000-0000-0000-000000000000  (Balanced)",
+    "plugged": false,
+    "batteryPct": 60,
+    "hasBattery": true,
+    "transitions": [
+      {
+        "at": "2026-01-15T10:00:20.000Z",
+        "from": "ac",
+        "to": "battery"
+      }
+    ]
+  },
+  "admin": {
+    "tier": "user",
+    "skipped": "process not elevated; re-run as admin for thermal/SMART/Sysmon/WER-sys/SeDebug"
+  },
+  "wprEtl": null,
+  "gpu": {
+    "engines": {
+      "unavailable": "synthetic fixture: no GPU data"
+    },
+    "mem": {
+      "unavailable": "synthetic fixture: no GPU data"
+    },
+    "nvidia": {
+      "present": false,
+      "reason": "synthetic fixture"
+    },
+    "bundleTotalNote": "synthetic fixture"
+  },
+  "summary": {
+    "windowBasis": "observed",
+    "avgUsedPct": 70.9,
+    "minFreeGB": 3.71,
+    "committedPeak": 91.5,
+    "pagesPeak": 900,
+    "pagesAvg": 168,
+    "diskSecPeak": 0.004,
+    "diskQPeak": 0.2,
+    "maxFreqMin": 100,
+    "loopP50ms": 1.1,
+    "loopP95ms": 2.5,
+    "loopMaxMs": 2.5,
+    "spawnP50ms": 170,
+    "spawnP95ms": 1952,
+    "spawnMaxMs": 1979,
+    "hangThresholdMs": 800,
+    "hangEventCount": 3,
+    "hangRatePerMin": 2.81,
+    "pctFrozenFull": 8.78,
+    "pctFrozenExcess": 5.03,
+    "mttrMs": 192,
+    "mttrN": 3,
+    "meanFreezeS": 1.87,
+    "secsOverRamHigh": 0,
+    "secsOverRamHighBasis": "time above 85% RAM, each sample weighted by its measured spacing",
+    "calmSharePct": 90,
+    "recoveryThresholdMs": 400,
+    "granularityMs": 1000,
+    "totalSamples": 43,
+    "totalSpawnProbes": 30,
+    "thresholds": {
+      "hang": 800,
+      "commit": 85,
+      "minFreeGB": 2,
+      "pages": 500,
+      "queue": 4,
+      "diskSec": 0.025,
+      "ramHigh": 85,
+      "severeCommit": 90,
+      "severeFree": 1.5,
+      "defender": 20,
+      "recovery": 400,
+      "sources": {
+        "hang": "NN/g response limits [cited]",
+        "commit": "MS perf troubleshooting [derived]"
+      },
+      "ideal": "TBD (orders-framework ideal table)",
+      "status": "provisional"
+    },
+    "nulls": {},
+    "committedStart": 63.07,
+    "committedEnd": 63.63,
+    "pagesStart": 78,
+    "pagesEnd": 106,
+    "availMB": 4096,
+    "cpuQueue": 1,
+    "loopN": 5,
+    "bundleOkProbes": "30/30",
+    "loopConfoundNote": "synthetic fixture",
+    "loopNote": null,
+    "warpSeenMB": null,
+    "openspecSeenMB": null,
+    "unresolvedNames": 0,
+    "werArchive": {
+      "total": 12,
+      "apphang": 3
+    },
+    "hangCount": 0
+  },
+  "hangEvents": [
+    {
+      "tSec": 30,
+      "at": "2026-01-15T10:00:30.000Z",
+      "ms": 1687,
+      "usedPct": 93,
+      "hang": true,
+      "bundleMs": 180,
+      "slipS": 0,
+      "plugged": false,
+      "batteryPct": 76,
+      "weightMs": {
+        "spawn": 1687,
+        "bundle": 180
+      },
+      "degraded": [],
+      "committed": 90.88,
+      "pages": 900,
+      "cpuQ": 3,
+      "diskQ": 0.2,
+      "diskSec": 0.004,
+      "maxFreq": 100,
+      "culpritsAtHang": [
+        {
+          "name": "postgres.exe",
+          "totalMB": 2048
+        }
+      ],
+      "availMB": 280,
+      "cpuPct": 40,
+      "defender": 3.341681757476181,
+      "dpcPct": 0.8,
+      "intrPct": 0.5,
+      "cpu": {
+        "perfPct": 100.06422069389373,
+        "perfLimitPct": 0,
+        "dpcPct": 0.8,
+        "interruptPct": 0.5
+      },
+      "mem": {
+        "committedPct": 90.9,
+        "pagefileUsePct": 6.3,
+        "pagesInPerS": 900,
+        "pagesOutPerS": 300
+      },
+      "disk": {
+        "latencyMs": 4,
+        "queue": 0.2,
+        "busyPct": 6,
+        "readBps": 1000000,
+        "writeBps": 2500000
+      },
+      "thermal": {
+        "zones": null,
+        "zonesReason": "not exposed at user tier"
+      },
+      "power": {
+        "ac": false,
+        "hasBattery": true
+      },
+      "procs": {
+        "groups": [
+          {
+            "group": "postgres",
+            "wsMB": 1619,
+            "privateMB": 1000,
+            "instances": 4
+          },
+          {
+            "group": "docker",
+            "wsMB": 800,
+            "privateMB": 700,
+            "instances": 2
+          }
+        ],
+        "outOfScope": {
+          "groupCount": 41,
+          "cpuPctMachine": 10,
+          "readBps": 0,
+          "writeBps": 0,
+          "wsMB": 4200
+        },
+        "prov": {
+          "src": "procs.byGroup@counterSession"
+        }
+      },
+      "label": "HANG 1687ms at 10:00:30 (t+30s, RAM 93%)",
+      "context": {
+        "windowS": 10,
+        "basis": "wall-clock offsets",
+        "ramPreAvg": 68.1,
+        "ramPostAvg": 70,
+        "commitPreAvg": 62.5,
+        "commitPostAvg": 67.9,
+        "pagesPreAvg": 87.4,
+        "pagesPostAvg": 250,
+        "cpuQPreAvg": 1,
+        "cpuQPostAvg": 1.4,
+        "diskQPreAvg": 0.2,
+        "diskQPostAvg": 0.2,
+        "gpuPreAvg": null,
+        "gpuPostAvg": null,
+        "culpritDelta": null,
+        "culpritDeltaNote": "pre-hang culprits not sampled (snapshot is post-measure by design); see culpritsAtHang",
+        "recoveryMs": 122,
+        "recoveryGapS": 2
+      }
+    },
+    {
+      "tSec": 40,
+      "at": "2026-01-15T10:00:40.000Z",
+      "ms": 1952,
+      "usedPct": 93,
+      "hang": true,
+      "bundleMs": 180,
+      "slipS": 0,
+      "plugged": false,
+      "batteryPct": 74,
+      "weightMs": {
+        "spawn": 1952,
+        "bundle": 180
+      },
+      "degraded": [],
+      "committed": 90.71,
+      "pages": 900,
+      "cpuQ": 3,
+      "diskQ": 0.2,
+      "diskSec": 0.004,
+      "maxFreq": 100,
+      "culpritsAtHang": [
+        {
+          "name": "postgres.exe",
+          "totalMB": 2048
+        }
+      ],
+      "availMB": 280,
+      "cpuPct": 40,
+      "defender": 3.5026641516014934,
+      "dpcPct": 0.8,
+      "intrPct": 0.5,
+      "cpu": {
+        "perfPct": 107.22820549737662,
+        "perfLimitPct": 0,
+        "dpcPct": 0.8,
+        "interruptPct": 0.5
+      },
+      "mem": {
+        "committedPct": 90.7,
+        "pagefileUsePct": 6.8,
+        "pagesInPerS": 900,
+        "pagesOutPerS": 300
+      },
+      "disk": {
+        "latencyMs": 4,
+        "queue": 0.2,
+        "busyPct": 6,
+        "readBps": 1000000,
+        "writeBps": 2500000
+      },
+      "thermal": {
+        "zones": null,
+        "zonesReason": "not exposed at user tier"
+      },
+      "power": {
+        "ac": false,
+        "hasBattery": true
+      },
+      "procs": {
+        "groups": [
+          {
+            "group": "postgres",
+            "wsMB": 1769,
+            "privateMB": 1000,
+            "instances": 4
+          },
+          {
+            "group": "docker",
+            "wsMB": 800,
+            "privateMB": 700,
+            "instances": 2
+          }
+        ],
+        "outOfScope": {
+          "groupCount": 41,
+          "cpuPctMachine": 10,
+          "readBps": 0,
+          "writeBps": 0,
+          "wsMB": 4200
+        },
+        "prov": {
+          "src": "procs.byGroup@counterSession"
+        }
+      },
+      "label": "HANG 1952ms at 10:00:40 (t+40s, RAM 93%)",
+      "context": {
+        "windowS": 10,
+        "basis": "wall-clock offsets",
+        "ramPreAvg": 69.7,
+        "ramPostAvg": 73.5,
+        "commitPreAvg": 67.9,
+        "commitPostAvg": 67.8,
+        "pagesPreAvg": 250,
+        "pagesPostAvg": 249.6,
+        "cpuQPreAvg": 1.4,
+        "cpuQPostAvg": 1.4,
+        "diskQPreAvg": 0.2,
+        "diskQPostAvg": 0.2,
+        "gpuPreAvg": null,
+        "gpuPostAvg": null,
+        "culpritDelta": null,
+        "culpritDeltaNote": "pre-hang culprits not sampled (snapshot is post-measure by design); see culpritsAtHang",
+        "recoveryMs": 203,
+        "recoveryGapS": 2
+      }
+    },
+    {
+      "tSec": 50,
+      "at": "2026-01-15T10:00:50.000Z",
+      "ms": 1979,
+      "usedPct": 93,
+      "hang": true,
+      "bundleMs": 180,
+      "slipS": 0,
+      "plugged": false,
+      "batteryPct": 73,
+      "weightMs": {
+        "spawn": 1979,
+        "bundle": 180
+      },
+      "degraded": [],
+      "committed": 91.46,
+      "pages": 900,
+      "cpuQ": 3,
+      "diskQ": 0.2,
+      "diskSec": 0.004,
+      "maxFreq": 100,
+      "culpritsAtHang": [
+        {
+          "name": "postgres.exe",
+          "totalMB": 2048
+        }
+      ],
+      "availMB": 280,
+      "cpuPct": 40,
+      "defender": 3.634836305398494,
+      "dpcPct": 0.8,
+      "intrPct": 0.5,
+      "cpu": {
+        "perfPct": 105.19276237580925,
+        "perfLimitPct": 0,
+        "dpcPct": 0.8,
+        "interruptPct": 0.5
+      },
+      "mem": {
+        "committedPct": 91.5,
+        "pagefileUsePct": 7.300000000000001,
+        "pagesInPerS": 900,
+        "pagesOutPerS": 300
+      },
+      "disk": {
+        "latencyMs": 4,
+        "queue": 0.2,
+        "busyPct": 6,
+        "readBps": 1000000,
+        "writeBps": 2500000
+      },
+      "thermal": {
+        "zones": null,
+        "zonesReason": "not exposed at user tier"
+      },
+      "power": {
+        "ac": false,
+        "hasBattery": true
+      },
+      "procs": {
+        "groups": [
+          {
+            "group": "postgres",
+            "wsMB": 1919,
+            "privateMB": 1000,
+            "instances": 4
+          },
+          {
+            "group": "docker",
+            "wsMB": 800,
+            "privateMB": 700,
+            "instances": 2
+          }
+        ],
+        "outOfScope": {
+          "groupCount": 41,
+          "cpuPctMachine": 10,
+          "readBps": 0,
+          "writeBps": 0,
+          "wsMB": 4200
+        },
+        "prov": {
+          "src": "procs.byGroup@counterSession"
+        }
+      },
+      "label": "HANG 1979ms at 10:00:50 (t+50s, RAM 93%)",
+      "context": {
+        "windowS": 10,
+        "basis": "wall-clock offsets",
+        "ramPreAvg": 73.2,
+        "ramPostAvg": 75.7,
+        "commitPreAvg": 67.6,
+        "commitPostAvg": 62.1,
+        "pagesPreAvg": 249.6,
+        "pagesPostAvg": 78.6,
+        "cpuQPreAvg": 1.4,
+        "cpuQPostAvg": 1,
+        "diskQPreAvg": 0.2,
+        "diskQPostAvg": 0.2,
+        "gpuPreAvg": null,
+        "gpuPostAvg": null,
+        "culpritDelta": null,
+        "culpritDeltaNote": "pre-hang culprits not sampled (snapshot is post-measure by design); see culpritsAtHang",
+        "recoveryMs": 192,
+        "recoveryGapS": 2
+      }
+    }
+  ],
+  "userMarks": [
+    {
+      "tSec": 30.8,
+      "at": "2026-01-15T10:00:30.800Z",
+      "kind": "hung",
+      "note": "terminal froze"
+    },
+    {
+      "tSec": 40.5,
+      "at": "2026-01-15T10:00:40.500Z",
+      "kind": "hung"
+    }
+  ],
+  "culprits": [
+    {
+      "name": "postgres.exe",
+      "friendly": "PostgreSQL",
+      "detail": "PostgreSQL server",
+      "totalMB": 2048,
+      "instances": 4,
+      "source": "known",
+      "category": "user"
+    }
+  ],
+  "privateTop": [
+    {
+      "name": "node.exe",
+      "privateMB": 2048,
+      "instances": 14
+    }
+  ],
+  "topProcesses": [
+    {
+      "name": "postgres.exe",
+      "pid": 1100,
+      "memMB": 2048
+    }
+  ],
+  "scope": {
+    "mode": "allowlist",
+    "source": "file",
+    "path": "telltale.scope.json",
+    "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "entries": [
+      {
+        "name": "postgres",
+        "includeDescendants": false
+      },
+      {
+        "name": "docker",
+        "includeDescendants": false
+      }
+    ],
+    "matchRule": "exact executable name (with or without .exe) or explicit * ? pattern",
+    "systemSet": {
+      "listVersion": 1,
+      "categories": [
+        "os",
+        "security",
+        "virtualization"
+      ],
+      "names": []
+    },
+    "counts": {
+      "inScopeGroups": 2,
+      "systemGroups": 12,
+      "outOfScopeGroups": 41
+    },
+    "fallbacks": [],
+    "statement": "Names of software outside this scope were not recorded."
+  },
+  "outOfScope": {
+    "groups": 41,
+    "processes": 130,
+    "memMB": 4200,
+    "cpuPctOfMachine": 10,
+    "inScope": {
+      "memMB": 2800,
+      "cpuPctOfMachine": 8
+    },
+    "system": {
+      "memMB": 900,
+      "cpuPctOfMachine": 2
+    },
+    "measuredAt": "2026-01-15T10:01:00.000Z"
+  },
+  "containers": null,
+  "containersNote": "synthetic fixture: no daemon",
+  "flags": {
+    "hasChromeHeadless": false,
+    "hasDockerVmmem": false,
+    "hasWarp": false,
+    "hasOpenspec": false
+  },
+  "events": {
+    "window": {
+      "from": "2026-01-15T09:59:00.000Z",
+      "to": "2026-01-15T10:01:04.100Z",
+      "leadS": 60
+    },
+    "mode": "none-in-window",
+    "inWindow": {
+      "appHang": [],
+      "appCrash": [],
+      "resourceExhaustion": []
+    },
+    "history": {
+      "appHang": {
+        "count": 1,
+        "newest": "2026-01-14T09:00:00.000Z",
+        "countCapped": false
+      },
+      "appCrash": {
+        "count": 0,
+        "newest": null,
+        "countCapped": false
+      },
+      "resourceExhaustion": {
+        "count": 0,
+        "newest": null,
+        "countCapped": false
+      }
+    }
+  },
+  "wer": {
+    "archivePresent": true,
+    "searchedWindow": {
+      "from": "2026-01-15T10:00:00.000Z",
+      "to": "2026-01-15T10:01:04.100Z"
+    },
+    "inRun": {
+      "total": 0,
+      "apphang": 0
+    },
+    "history": {
+      "total": 12,
+      "apphang": 3,
+      "window": "all-time",
+      "capped": false
+    }
+  },
+  "docker": {
+    "present": false,
+    "containers": {
+      "total": 0,
+      "inScope": [],
+      "outOfScopeCount": 0
+    },
+    "statsOutOfScopeCount": 0,
+    "wsl": {
+      "present": false,
+      "distros": [],
+      "outOfScopeCount": 0
+    }
+  },
+  "disk": "C: 190.0/460.0GB free",
+  "errors": [],
+  "collection.failures": [
+    {
+      "inference": "container.state",
+      "collector": "dockerState",
+      "mode": "missing",
+      "reason": "not installed",
+      "at": "2026-01-15T10:01:00.000Z"
+    }
+  ],
+  "spawnProbes": [
+    {
+      "tSec": 4,
+      "at": "2026-01-15T10:00:04.000Z",
+      "ms": 157,
+      "usedPct": 67.28,
+      "hang": false,
+      "bundleMs": 180,
+      "slipS": 0,
+      "plugged": true,
+      "batteryPct": 80,
+      "weightMs": {
+        "spawn": 157,
+        "bundle": 180
+      },
+      "degraded": [],
+      "committed": 63.07,
+      "pages": 78,
+      "cpuQ": 1,
+      "diskQ": 0.2,
+      "diskSec": 0.004,
+      "maxFreq": 100,
+      "availMB": 5200,
+      "cpuPct": 34.46221170714125,
+      "defender": 4.4065621718764305,
+      "dpcPct": 0.8,
+      "intrPct": 0.5,
+      "cpu": {
+        "perfPct": 113.76594935078174,
+        "perfLimitPct": 0,
+        "dpcPct": 0.8,
+        "interruptPct": 0.5
+      },
+      "mem": {
+        "committedPct": 63.1,
+        "pagefileUsePct": 5,
+        "pagesInPerS": 50,
+        "pagesOutPerS": 0
+      },
+      "disk": {
+        "latencyMs": 4,
+        "queue": 0.2,
+        "busyPct": 6,
+        "readBps": 1000000,
+        "writeBps": 2500000
+      },
+      "thermal": {
+        "zones": null,
+        "zonesReason": "not exposed at user tier"
+      },
+      "power": {
+        "ac": true,
+        "hasBattery": true
+      },
+      "procs": {
+        "groups": [
+          {
+            "group": "postgres",
+            "wsMB": 1229,
+            "privateMB": 1000,
+            "instances": 4
+          },
+          {
+            "group": "docker",
+            "wsMB": 800,
+            "privateMB": 700,
+            "instances": 2
+          }
+        ],
+        "outOfScope": {
+          "groupCount": 41,
+          "cpuPctMachine": 10,
+          "readBps": 0,
+          "writeBps": 0,
+          "wsMB": 4200
+        },
+        "prov": {
+          "src": "procs.byGroup@counterSession"
+        }
+      }
+    },
+    {
+      "tSec": 6,
+      "at": "2026-01-15T10:00:06.000Z",
+      "ms": 156,
+      "usedPct": 66.42,
+      "hang": false,
+      "bundleMs": 180,
+      "slipS": 0,
+      "plugged": true,
+      "batteryPct": 80,
+      "weightMs": {
+        "spawn": 156,
+        "bundle": 180
+      },
+      "degraded": [],
+      "committed": 61.32,
+      "pages": 58,
+      "cpuQ": 1,
+      "diskQ": 0.2,
+      "diskSec": 0.004,
+      "maxFreq": 100,
+      "availMB": 5200,
+      "cpuPct": 34.1303486819379,
+      "defender": 3.644853925332427,
+      "dpcPct": 0.8,
+      "intrPct": 0.5,
+      "cpu": {
+        "perfPct": 103.80751053802669,
+        "perfLimitPct": 0,
+        "dpcPct": 0.8,
+        "interruptPct": 0.5
+      },
+      "mem": {
+        "committedPct": 61.3,
+        "pagefileUsePct": 5.1,
+        "pagesInPerS": 50,
+        "pagesOutPerS": 0
+      },
+      "disk": {
+        "latencyMs": 4,
+        "queue": 0.2,
+        "busyPct": 6,
+        "readBps": 1000000,
+        "writeBps": 2500000
+      },
+      "thermal": {
+        "zones": null,
+        "zonesReason": "not exposed at user tier"
+      },
+      "power": {
+        "ac": true,
+        "hasBattery": true
+      },
+      "procs": {
+        "groups": [
+          {
+            "group": "postgres",
+            "wsMB": 1259,
+            "privateMB": 1000,
+            "instances": 4
+          },
+          {
+            "group": "docker",
+            "wsMB": 800,
+            "privateMB": 700,
+            "instances": 2
+          }
+        ],
+        "outOfScope": {
+          "groupCount": 41,
+          "cpuPctMachine": 10,
+          "readBps": 0,
+          "writeBps": 0,
+          "wsMB": 4200
+        },
+        "prov": {
+          "src": "procs.byGroup@counterSession"
+        }
+      }
+    },
+    {
+      "tSec": 8,
+      "at": "2026-01-15T10:00:08.000Z",
+      "ms": 154,
+      "usedPct": 66.13,
+      "hang": false,
+      "bundleMs": 180,
+      "slipS": 0,
+      "plugged": true,
+      "batteryPct": 80,
+      "weightMs": {
+        "spawn": 154,
+        "bundle": 180
+      },
+      "degraded": [],
+      "committed": 62.53,
+      "pages": 91,
+      "cpuQ": 1,
+      "diskQ": 0.2,
+      "diskSec": 0.004,
+      "maxFreq": 100,
+      "availMB": 5200,
+      "cpuPct": 34.213717721868306,
+      "defender": 4.095745285972953,
+      "dpcPct": 0.8,
+      "intrPct": 0.5,
+      "cpu": {
+        "perfPct": 116.53155048843473,
+        "perfLimitPct": 0,
+        "dpcPct": 0.8,
+        "interruptPct": 0.5
+      },
+      "mem": {
+        "committedPct": 62.5,
+        "pagefileUsePct": 5.2,
+        "pagesInPerS": 50,
+        "pagesOutPerS": 0
+      },
+      "disk": {
+        "latencyMs": 4,
+        "queue": 0.2,
+        "busyPct": 6,
+        "readBps": 1000000,
+        "writeBps": 2500000
+      },
+      "thermal": {
+        "zones": null,
+        "zonesReason": "not exposed at user tier"
+      },
+      "power": {
+        "ac": true,
+        "hasBattery": true
+      },
+      "procs": {
+        "groups": [
+          {
+            "group": "postgres",
+            "wsMB": 1289,
+            "privateMB": 1000,
+            "instances": 4
+          },
+          {
+            "group": "docker",
+            "wsMB": 800,
+            "privateMB": 700,
+            "instances": 2
+          }
+        ],
+        "outOfScope": {
+          "groupCount": 41,
+          "cpuPctMachine": 10,
+          "readBps": 0,
+          "writeBps": 0,
+          "wsMB": 4200
+        },
+        "prov": {
+          "src": "procs.byGroup@counterSession"
+        }
+      }
+    },
+    {
+      "tSec": 10,
+      "at": "2026-01-15T10:00:10.000Z",
+      "ms": 212,
+      "usedPct": 66.35,
+      "hang": false,
+      "bundleMs": 180,
+      "slipS": 0,
+      "plugged": true,
+      "batteryPct": 79,
+      "weightMs": {
+        "spawn": 212,
+        "bundle": 180
+      },
+      "degraded": [],
+      "committed": 62.62,
+      "pages": 82,
+      "cpuQ": 1,
+      "diskQ": 0.2,
+      "diskSec": 0.004,
+      "maxFreq": 100,
+      "availMB": 5200,
+      "cpuPct": 31.49166026385501,
+      "defender": 4.782129818107933,
+      "dpcPct": 0.8,
+      "intrPct": 0.5,
+      "cpu": {
+        "perfPct": 119.2099678516388,
+        "perfLimitPct": 0,
+        "dpcPct": 0.8,
+        "interruptPct": 0.5
+      },
+      "mem": {
+        "committedPct": 62.6,
+        "pagefileUsePct": 5.3,
+        "pagesInPerS": 50,
+        "pagesOutPerS": 0
+      },
+      "disk": {
+        "latencyMs": 4,
+        "queue": 0.2,
+        "busyPct": 6,
+        "readBps": 1000000,
+        "writeBps": 2500000
+      },
+      "thermal": {
+        "zones": null,
+        "zonesReason": "not exposed at user tier"
+      },
+      "power": {
+        "ac": true,
+        "hasBattery": true
+      },
+      "procs": {
+        "groups": [
+          {
+            "group": "postgres",
+            "wsMB": 1319,
+            "privateMB": 1000,
+            "instances": 4
+          },
+          {
+            "group": "docker",
+            "wsMB": 800,
+            "privateMB": 700,
+            "instances": 2
+          }
+        ],
+        "outOfScope": {
+          "groupCount": 41,
+          "cpuPctMachine": 10,
+          "readBps": 0,
+          "writeBps": 0,
+          "wsMB": 4200
+        },
+        "prov": {
+          "src": "procs.byGroup@counterSession"
+        }
+      }
+    },
+    {
+      "tSec": 12,
+      "at": "2026-01-15T10:00:12.000Z",
+      "ms": 179,
+      "usedPct": 68.89,
+      "hang": false,
+      "bundleMs": 180,
+      "slipS": 0,
+      "plugged": true,
+      "batteryPct": 79,
+      "weightMs": {
+        "spawn": 179,
+        "bundle": 180
+      },
+      "degraded": [],
+      "committed": 63.35,
+      "pages": 108,
+      "cpuQ": 1,
+      "diskQ": 0.2,
+      "diskSec": 0.004,
+      "maxFreq": 100,
+      "availMB": 5200,
+      "cpuPct": 30.48568267840892,
+      "defender": 4.637035979889333,
+      "dpcPct": 0.8,
+      "intrPct": 0.5,
+      "cpu": {
+        "perfPct": 100.11399883776903,
+        "perfLimitPct": 0,
+        "dpcPct": 0.8,
+        "interruptPct": 0.5
+      },
+      "mem": {
+        "committedPct": 63.4,
+        "pagefileUsePct": 5.4,
+        "pagesInPerS": 50,
+        "pagesOutPerS": 0
+      },
+      "disk": {
+        "latencyMs": 4,
+        "queue": 0.2,
+        "busyPct": 6,
+        "readBps": 1000000,
+        "writeBps": 2500000
+      },
+      "thermal": {
+        "zones": null,
+        "zonesReason": "not exposed at user tier"
+      },
+      "power": {
+        "ac": true,
+        "hasBattery": true
+      },
+      "procs": {
+        "groups": [
+          {
+            "group": "postgres",
+            "wsMB": 1349,
+            "privateMB": 1000,
+            "instances": 4
+          },
+          {
+            "group": "docker",
+            "wsMB": 800,
+            "privateMB": 700,
+            "instances": 2
+          }
+        ],
+        "outOfScope": {
+          "groupCount": 41,
+          "cpuPctMachine": 10,
+          "readBps": 0,
+          "writeBps": 0,
+          "wsMB": 4200
+        },
+        "prov": {
+          "src": "procs.byGroup@counterSession"
+        }
+      }
+    },
+    {
+      "tSec": 14,
+      "at": "2026-01-15T10:00:14.000Z",
+      "ms": 153,
+      "usedPct": 68.17,
+      "hang": false,
+      "bundleMs": 180,
+      "slipS": 0,
+      "plugged": true,
+      "batteryPct": 79,
+      "weightMs": {
+        "spawn": 153,
+        "bundle": 180
+      },
+      "degraded": [],
+      "committed": 62.06,
+      "pages": 83,
+      "cpuQ": 1,
+      "diskQ": 0.2,
+      "diskSec": 0.004,
+      "maxFreq": 100,
+      "availMB": 5200,
+      "cpuPct": 32.55416352767497,
+      "defender": 4.953867916949093,
+      "dpcPct": 0.8,
+      "intrPct": 0.5,
+      "cpu": {
+        "perfPct": 111.15106647834182,
+        "perfLimitPct": 0,
+        "dpcPct": 0.8,
+        "interruptPct": 0.5
+      },
+      "mem": {
+        "committedPct": 62.1,
+        "pagefileUsePct": 5.5,
+        "pagesInPerS": 50,
+        "pagesOutPerS": 0
+      },
+      "disk": {
+        "latencyMs": 4,
+        "queue": 0.2,
+        "busyPct": 6,
+        "readBps": 1000000,
+        "writeBps": 2500000
+      },
+      "thermal": {
+        "zones": null,
+        "zonesReason": "not exposed at user tier"
+      },
+      "power": {
+        "ac": true,
+        "hasBattery": true
+      },
+      "procs": {
+        "groups": [
+          {
+            "group": "postgres",
+            "wsMB": 1379,
+            "privateMB": 1000,
+            "instances": 4
+          },
+          {
+            "group": "docker",
+            "wsMB": 800,
+            "privateMB": 700,
+            "instances": 2
+          }
+        ],
+        "outOfScope": {
+          "groupCount": 41,
+          "cpuPctMachine": 10,
+          "readBps": 0,
+          "writeBps": 0,
+          "wsMB": 4200
+        },
+        "prov": {
+          "src": "procs.byGroup@counterSession"
+        }
+      }
+    },
+    {
+      "tSec": 16,
+      "at": "2026-01-15T10:00:16.000Z",
+      "ms": 163,
+      "usedPct": 67.93,
+      "hang": false,
+      "bundleMs": 180,
+      "slipS": 0,
+      "plugged": true,
+      "batteryPct": 78,
+      "weightMs": {
+        "spawn": 163,
+        "bundle": 180
+      },
+      "degraded": [],
+      "committed": 63.29,
+      "pages": 94,
+      "cpuQ": 1,
+      "diskQ": 0.2,
+      "diskSec": 0.004,
+      "maxFreq": 100,
+      "availMB": 5200,
+      "cpuPct": 30.5169670865871,
+      "defender": 3.6247676545754075,
+      "dpcPct": 0.8,
+      "intrPct": 0.5,
+      "cpu": {
+        "perfPct": 104.73670357372612,
+        "perfLimitPct": 0,
+        "dpcPct": 0.8,
+        "interruptPct": 0.5
+      },
+      "mem": {
+        "committedPct": 63.3,
+        "pagefileUsePct": 5.6,
+        "pagesInPerS": 50,
+        "pagesOutPerS": 0
+      },
+      "disk": {
+        "latencyMs": 4,
+        "queue": 0.2,
+        "busyPct": 6,
+        "readBps": 1000000,
+        "writeBps": 2500000
+      },
+      "thermal": {
+        "zones": null,
+        "zonesReason": "not exposed at user tier"
+      },
+      "power": {
+        "ac": true,
+        "hasBattery": true
+      },
+      "procs": {
+        "groups": [
+          {
+            "group": "postgres",
+            "wsMB": 1409,
+            "privateMB": 1000,
+            "instances": 4
+          },
+          {
+            "group": "docker",
+            "wsMB": 800,
+            "privateMB": 700,
+            "instances": 2
+          }
+        ],
+        "outOfScope": {
+          "groupCount": 41,
+          "cpuPctMachine": 10,
+          "readBps": 0,
+          "writeBps": 0,
+          "wsMB": 4200
+        },
+        "prov": {
+          "src": "procs.byGroup@counterSession"
+        }
+      }
+    },
+    {
+      "tSec": 18,
+      "at": "2026-01-15T10:00:18.000Z",
+      "ms": 122,
+      "usedPct": 68.83,
+      "hang": false,
+      "bundleMs": 180,
+      "slipS": 0,
+      "plugged": true,
+      "batteryPct": 78,
+      "weightMs": {
+        "spawn": 122,
+        "bundle": 180
+      },
+      "degraded": [],
+      "committed": 60.04,
+      "pages": 100,
+      "cpuQ": 1,
+      "diskQ": 0.2,
+      "diskSec": 0.004,
+      "maxFreq": 100,
+      "availMB": 5200,
+      "cpuPct": 31.306014058645815,
+      "defender": 3.02880242979154,
+      "dpcPct": 0.8,
+      "intrPct": 0.5,
+      "cpu": {
+        "perfPct": 112.37792138941586,
+        "perfLimitPct": 0,
+        "dpcPct": 0.8,
+        "interruptPct": 0.5
+      },
+      "mem": {
+        "committedPct": 60,
+        "pagefileUsePct": 5.7,
+        "pagesInPerS": 50,
+        "pagesOutPerS": 0
+      },
+      "disk": {
+        "latencyMs": 4,
+        "queue": 0.2,
+        "busyPct": 6,
+        "readBps": 1000000,
+        "writeBps": 2500000
+      },
+      "thermal": {
+        "zones": null,
+        "zonesReason": "not exposed at user tier"
+      },
+      "power": {
+        "ac": true,
+        "hasBattery": true
+      },
+      "procs": {
+        "groups": [
+          {
+            "group": "postgres",
+            "wsMB": 1439,
+            "privateMB": 1000,
+            "instances": 4
+          },
+          {
+            "group": "docker",
+            "wsMB": 800,
+            "privateMB": 700,
+            "instances": 2
+          }
+        ],
+        "outOfScope": {
+          "groupCount": 41,
+          "cpuPctMachine": 10,
+          "readBps": 0,
+          "writeBps": 0,
+          "wsMB": 4200
+        },
+        "prov": {
+          "src": "procs.byGroup@counterSession"
+        }
+      }
+    },
+    {
+      "tSec": 20,
+      "at": "2026-01-15T10:00:20.000Z",
+      "ms": 192,
+      "usedPct": 68.98,
+      "hang": false,
+      "bundleMs": 180,
+      "slipS": 0,
+      "plugged": false,
+      "batteryPct": 78,
+      "weightMs": {
+        "spawn": 192,
+        "bundle": 180
+      },
+      "degraded": [],
+      "committed": 62.38,
+      "pages": 67,
+      "cpuQ": 1,
+      "diskQ": 0.2,
+      "diskSec": 0.004,
+      "maxFreq": 100,
+      "availMB": 5200,
+      "cpuPct": 34.86275274306536,
+      "defender": 4.2999421688728034,
+      "dpcPct": 0.8,
+      "intrPct": 0.5,
+      "cpu": {
+        "perfPct": 116.09834881965071,
+        "perfLimitPct": 0,
+        "dpcPct": 0.8,
+        "interruptPct": 0.5
+      },
+      "mem": {
+        "committedPct": 62.4,
+        "pagefileUsePct": 5.8,
+        "pagesInPerS": 50,
+        "pagesOutPerS": 0
+      },
+      "disk": {
+        "latencyMs": 4,
+        "queue": 0.2,
+        "busyPct": 6,
+        "readBps": 1000000,
+        "writeBps": 2500000
+      },
+      "thermal": {
+        "zones": null,
+        "zonesReason": "not exposed at user tier"
+      },
+      "power": {
+        "ac": false,
+        "hasBattery": true
+      },
+      "procs": {
+        "groups": [
+          {
+            "group": "postgres",
+            "wsMB": 1469,
+            "privateMB": 1000,
+            "instances": 4
+          },
+          {
+            "group": "docker",
+            "wsMB": 800,
+            "privateMB": 700,
+            "instances": 2
+          }
+        ],
+        "outOfScope": {
+          "groupCount": 41,
+          "cpuPctMachine": 10,
+          "readBps": 0,
+          "writeBps": 0,
+          "wsMB": 4200
+        },
+        "prov": {
+          "src": "procs.byGroup@counterSession"
+        }
+      }
+    },
+    {
+      "tSec": 22,
+      "at": "2026-01-15T10:00:22.000Z",
+      "ms": 203,
+      "usedPct": 66.42,
+      "hang": false,
+      "bundleMs": 180,
+      "slipS": 0,
+      "plugged": false,
+      "batteryPct": 77,
+      "weightMs": {
+        "spawn": 203,
+        "bundle": 180
+      },
+      "degraded": [],
+      "committed": 62.5,
+      "pages": 110,
+      "cpuQ": 1,
+      "diskQ": 0.2,
+      "diskSec": 0.004,
+      "maxFreq": 100,
+      "availMB": 5200,
+      "cpuPct": 30.06931663956493,
+      "defender": 4.133779828436673,
+      "dpcPct": 0.8,
+      "intrPct": 0.5,
+      "cpu": {
+        "perfPct": 103.21764492429793,
+        "perfLimitPct": 0,
+        "dpcPct": 0.8,
+        "interruptPct": 0.5
+      },
+      "mem": {
+        "committedPct": 62.5,
+        "pagefileUsePct": 5.9,
+        "pagesInPerS": 50,
+        "pagesOutPerS": 0
+      },
+      "disk": {
+        "latencyMs": 4,
+        "queue": 0.2,
+        "busyPct": 6,
+        "readBps": 1000000,
+        "writeBps": 2500000
+      },
+      "thermal": {
+        "zones": null,
+        "zonesReason": "not exposed at user tier"
+      },
+      "power": {
+        "ac": false,
+        "hasBattery": true
+      },
+      "procs": {
+        "groups": [
+          {
+            "group": "postgres",
+            "wsMB": 1499,
+            "privateMB": 1000,
+            "instances": 4
+          },
+          {
+            "group": "docker",
+            "wsMB": 800,
+            "privateMB": 700,
+            "instances": 2
+          }
+        ],
+        "outOfScope": {
+          "groupCount": 41,
+          "cpuPctMachine": 10,
+          "readBps": 0,
+          "writeBps": 0,
+          "wsMB": 4200
+        },
+        "prov": {
+          "src": "procs.byGroup@counterSession"
+        }
+      }
+    },
+    {
+      "tSec": 24,
+      "at": "2026-01-15T10:00:24.000Z",
+      "ms": 141,
+      "usedPct": 68.44,
+      "hang": false,
+      "bundleMs": 180,
+      "slipS": 0,
+      "plugged": false,
+      "batteryPct": 77,
+      "weightMs": {
+        "spawn": 141,
+        "bundle": 180
+      },
+      "degraded": [],
+      "committed": 61.58,
+      "pages": 102,
+      "cpuQ": 1,
+      "diskQ": 0.2,
+      "diskSec": 0.004,
+      "maxFreq": 100,
+      "availMB": 5200,
+      "cpuPct": 32.359193000011146,
+      "defender": 4.316910402383655,
+      "dpcPct": 0.8,
+      "intrPct": 0.5,
+      "cpu": {
+        "perfPct": 119.8048579506576,
+        "perfLimitPct": 0,
+        "dpcPct": 0.8,
+        "interruptPct": 0.5
+      },
+      "mem": {
+        "committedPct": 61.6,
+        "pagefileUsePct": 6,
+        "pagesInPerS": 50,
+        "pagesOutPerS": 0
+      },
+      "disk": {
+        "latencyMs": 4,
+        "queue": 0.2,
+        "busyPct": 6,
+        "readBps": 1000000,
+        "writeBps": 2500000
+      },
+      "thermal": {
+        "zones": null,
+        "zonesReason": "not exposed at user tier"
+      },
+      "power": {
+        "ac": false,
+        "hasBattery": true
+      },
+      "procs": {
+        "groups": [
+          {
+            "group": "postgres",
+            "wsMB": 1529,
+            "privateMB": 1000,
+            "instances": 4
+          },
+          {
+            "group": "docker",
+            "wsMB": 800,
+            "privateMB": 700,
+            "instances": 2
+          }
+        ],
+        "outOfScope": {
+          "groupCount": 41,
+          "cpuPctMachine": 10,
+          "readBps": 0,
+          "writeBps": 0,
+          "wsMB": 4200
+        },
+        "prov": {
+          "src": "procs.byGroup@counterSession"
+        }
+      }
+    },
+    {
+      "tSec": 26,
+      "at": "2026-01-15T10:00:26.000Z",
+      "ms": 194,
+      "usedPct": 68.87,
+      "hang": false,
+      "bundleMs": 180,
+      "slipS": 0,
+      "plugged": false,
+      "batteryPct": 77,
+      "weightMs": {
+        "spawn": 194,
+        "bundle": 180
+      },
+      "degraded": [],
+      "committed": 62.44,
+      "pages": 79,
+      "cpuQ": 1,
+      "diskQ": 0.2,
+      "diskSec": 0.004,
+      "maxFreq": 100,
+      "availMB": 5200,
+      "cpuPct": 27.297733509913087,
+      "defender": 4.168015407864004,
+      "dpcPct": 0.8,
+      "intrPct": 0.5,
+      "cpu": {
+        "perfPct": 115.91363292653114,
+        "perfLimitPct": 0,
+        "dpcPct": 0.8,
+        "interruptPct": 0.5
+      },
+      "mem": {
+        "committedPct": 62.4,
+        "pagefileUsePct": 6.1,
+        "pagesInPerS": 50,
+        "pagesOutPerS": 0
+      },
+      "disk": {
+        "latencyMs": 4,
+        "queue": 0.2,
+        "busyPct": 6,
+        "readBps": 1000000,
+        "writeBps": 2500000
+      },
+      "thermal": {
+        "zones": null,
+        "zonesReason": "not exposed at user tier"
+      },
+      "power": {
+        "ac": false,
+        "hasBattery": true
+      },
+      "procs": {
+        "groups": [
+          {
+            "group": "postgres",
+            "wsMB": 1559,
+            "privateMB": 1000,
+            "instances": 4
+          },
+          {
+            "group": "docker",
+            "wsMB": 800,
+            "privateMB": 700,
+            "instances": 2
+          }
+        ],
+        "outOfScope": {
+          "groupCount": 41,
+          "cpuPctMachine": 10,
+          "readBps": 0,
+          "writeBps": 0,
+          "wsMB": 4200
+        },
+        "prov": {
+          "src": "procs.byGroup@counterSession"
+        }
+      }
+    },
+    {
+      "tSec": 28,
+      "at": "2026-01-15T10:00:28.000Z",
+      "ms": 139,
+      "usedPct": 67.66,
+      "hang": false,
+      "bundleMs": 180,
+      "slipS": 0,
+      "plugged": false,
+      "batteryPct": 76,
+      "weightMs": {
+        "spawn": 139,
+        "bundle": 180
+      },
+      "degraded": [],
+      "committed": 63.42,
+      "pages": 79,
+      "cpuQ": 1,
+      "diskQ": 0.2,
+      "diskSec": 0.004,
+      "maxFreq": 100,
+      "availMB": 5200,
+      "cpuPct": 30.256457440555096,
+      "defender": 3.3604117766954005,
+      "dpcPct": 0.8,
+      "intrPct": 0.5,
+      "cpu": {
+        "perfPct": 105.01264940481633,
+        "perfLimitPct": 0,
+        "dpcPct": 0.8,
+        "interruptPct": 0.5
+      },
+      "mem": {
+        "committedPct": 63.4,
+        "pagefileUsePct": 6.2,
+        "pagesInPerS": 50,
+        "pagesOutPerS": 0
+      },
+      "disk": {
+        "latencyMs": 4,
+        "queue": 0.2,
+        "busyPct": 6,
+        "readBps": 1000000,
+        "writeBps": 2500000
+      },
+      "thermal": {
+        "zones": null,
+        "zonesReason": "not exposed at user tier"
+      },
+      "power": {
+        "ac": false,
+        "hasBattery": true
+      },
+      "procs": {
+        "groups": [
+          {
+            "group": "postgres",
+            "wsMB": 1589,
+            "privateMB": 1000,
+            "instances": 4
+          },
+          {
+            "group": "docker",
+            "wsMB": 800,
+            "privateMB": 700,
+            "instances": 2
+          }
+        ],
+        "outOfScope": {
+          "groupCount": 41,
+          "cpuPctMachine": 10,
+          "readBps": 0,
+          "writeBps": 0,
+          "wsMB": 4200
+        },
+        "prov": {
+          "src": "procs.byGroup@counterSession"
+        }
+      }
+    },
+    {
+      "tSec": 30,
+      "at": "2026-01-15T10:00:30.000Z",
+      "ms": 1687,
+      "usedPct": 93,
+      "hang": true,
+      "bundleMs": 180,
+      "slipS": 0,
+      "plugged": false,
+      "batteryPct": 76,
+      "weightMs": {
+        "spawn": 1687,
+        "bundle": 180
+      },
+      "degraded": [],
+      "committed": 90.88,
+      "pages": 900,
+      "cpuQ": 3,
+      "diskQ": 0.2,
+      "diskSec": 0.004,
+      "maxFreq": 100,
+      "culpritsAtHang": [
+        {
+          "name": "node.exe",
+          "totalMB": 6200,
+          "n": 14,
+          "pids": [
+            1100,
+            1104,
+            1108
+          ]
+        }
+      ],
+      "availMB": 280,
+      "cpuPct": 40,
+      "defender": 3.341681757476181,
+      "dpcPct": 0.8,
+      "intrPct": 0.5,
+      "cpu": {
+        "perfPct": 100.06422069389373,
+        "perfLimitPct": 0,
+        "dpcPct": 0.8,
+        "interruptPct": 0.5
+      },
+      "mem": {
+        "committedPct": 90.9,
+        "pagefileUsePct": 6.3,
+        "pagesInPerS": 900,
+        "pagesOutPerS": 300
+      },
+      "disk": {
+        "latencyMs": 4,
+        "queue": 0.2,
+        "busyPct": 6,
+        "readBps": 1000000,
+        "writeBps": 2500000
+      },
+      "thermal": {
+        "zones": null,
+        "zonesReason": "not exposed at user tier"
+      },
+      "power": {
+        "ac": false,
+        "hasBattery": true
+      },
+      "procs": {
+        "groups": [
+          {
+            "group": "postgres",
+            "wsMB": 1619,
+            "privateMB": 1000,
+            "instances": 4
+          },
+          {
+            "group": "docker",
+            "wsMB": 800,
+            "privateMB": 700,
+            "instances": 2
+          }
+        ],
+        "outOfScope": {
+          "groupCount": 41,
+          "cpuPctMachine": 10,
+          "readBps": 0,
+          "writeBps": 0,
+          "wsMB": 4200
+        },
+        "prov": {
+          "src": "procs.byGroup@counterSession"
+        }
+      }
+    },
+    {
+      "tSec": 32,
+      "at": "2026-01-15T10:00:32.000Z",
+      "ms": 122,
+      "usedPct": 66.32,
+      "hang": false,
+      "bundleMs": 180,
+      "slipS": 0,
+      "plugged": false,
+      "batteryPct": 76,
+      "weightMs": {
+        "spawn": 122,
+        "bundle": 180
+      },
+      "degraded": [],
+      "committed": 60.69,
+      "pages": 103,
+      "cpuQ": 1,
+      "diskQ": 0.2,
+      "diskSec": 0.004,
+      "maxFreq": 100,
+      "availMB": 5200,
+      "cpuPct": 34.8281576205045,
+      "defender": 3.1202395409345627,
+      "dpcPct": 0.8,
+      "intrPct": 0.5,
+      "cpu": {
+        "perfPct": 103.48909487016499,
+        "perfLimitPct": 0,
+        "dpcPct": 0.8,
+        "interruptPct": 0.5
+      },
+      "mem": {
+        "committedPct": 60.7,
+        "pagefileUsePct": 6.4,
+        "pagesInPerS": 50,
+        "pagesOutPerS": 0
+      },
+      "disk": {
+        "latencyMs": 4,
+        "queue": 0.2,
+        "busyPct": 6,
+        "readBps": 1000000,
+        "writeBps": 2500000
+      },
+      "thermal": {
+        "zones": null,
+        "zonesReason": "not exposed at user tier"
+      },
+      "power": {
+        "ac": false,
+        "hasBattery": true
+      },
+      "procs": {
+        "groups": [
+          {
+            "group": "postgres",
+            "wsMB": 1649,
+            "privateMB": 1000,
+            "instances": 4
+          },
+          {
+            "group": "docker",
+            "wsMB": 800,
+            "privateMB": 700,
+            "instances": 2
+          }
+        ],
+        "outOfScope": {
+          "groupCount": 41,
+          "cpuPctMachine": 10,
+          "readBps": 0,
+          "writeBps": 0,
+          "wsMB": 4200
+        },
+        "prov": {
+          "src": "procs.byGroup@counterSession"
+        }
+      }
+    },
+    {
+      "tSec": 34,
+      "at": "2026-01-15T10:00:34.000Z",
+      "ms": 170,
+      "usedPct": 68.2,
+      "hang": false,
+      "bundleMs": 180,
+      "slipS": 0,
+      "plugged": false,
+      "batteryPct": 75,
+      "weightMs": {
+        "spawn": 170,
+        "bundle": 180
+      },
+      "degraded": [],
+      "committed": 61.62,
+      "pages": 72,
+      "cpuQ": 1,
+      "diskQ": 0.2,
+      "diskSec": 0.004,
+      "maxFreq": 100,
+      "availMB": 5200,
+      "cpuPct": 28.600158491171896,
+      "defender": 4.583051931578666,
+      "dpcPct": 0.8,
+      "intrPct": 0.5,
+      "cpu": {
+        "perfPct": 114.21468406450003,
+        "perfLimitPct": 0,
+        "dpcPct": 0.8,
+        "interruptPct": 0.5
+      },
+      "mem": {
+        "committedPct": 61.6,
+        "pagefileUsePct": 6.5,
+        "pagesInPerS": 50,
+        "pagesOutPerS": 0
+      },
+      "disk": {
+        "latencyMs": 4,
+        "queue": 0.2,
+        "busyPct": 6,
+        "readBps": 1000000,
+        "writeBps": 2500000
+      },
+      "thermal": {
+        "zones": null,
+        "zonesReason": "not exposed at user tier"
+      },
+      "power": {
+        "ac": false,
+        "hasBattery": true
+      },
+      "procs": {
+        "groups": [
+          {
+            "group": "postgres",
+            "wsMB": 1679,
+            "privateMB": 1000,
+            "instances": 4
+          },
+          {
+            "group": "docker",
+            "wsMB": 800,
+            "privateMB": 700,
+            "instances": 2
+          }
+        ],
+        "outOfScope": {
+          "groupCount": 41,
+          "cpuPctMachine": 10,
+          "readBps": 0,
+          "writeBps": 0,
+          "wsMB": 4200
+        },
+        "prov": {
+          "src": "procs.byGroup@counterSession"
+        }
+      }
+    },
+    {
+      "tSec": 36,
+      "at": "2026-01-15T10:00:36.000Z",
+      "ms": 173,
+      "usedPct": 68.39,
+      "hang": false,
+      "bundleMs": 180,
+      "slipS": 0,
+      "plugged": false,
+      "batteryPct": 75,
+      "weightMs": {
+        "spawn": 173,
+        "bundle": 180
+      },
+      "degraded": [],
+      "committed": 63.2,
+      "pages": 75,
+      "cpuQ": 1,
+      "diskQ": 0.2,
+      "diskSec": 0.004,
+      "maxFreq": 100,
+      "availMB": 5200,
+      "cpuPct": 30.626365207135677,
+      "defender": 3.585292321164161,
+      "dpcPct": 0.8,
+      "intrPct": 0.5,
+      "cpu": {
+        "perfPct": 110.54517689161003,
+        "perfLimitPct": 0,
+        "dpcPct": 0.8,
+        "interruptPct": 0.5
+      },
+      "mem": {
+        "committedPct": 63.2,
+        "pagefileUsePct": 6.6,
+        "pagesInPerS": 50,
+        "pagesOutPerS": 0
+      },
+      "disk": {
+        "latencyMs": 4,
+        "queue": 0.2,
+        "busyPct": 6,
+        "readBps": 1000000,
+        "writeBps": 2500000
+      },
+      "thermal": {
+        "zones": null,
+        "zonesReason": "not exposed at user tier"
+      },
+      "power": {
+        "ac": false,
+        "hasBattery": true
+      },
+      "procs": {
+        "groups": [
+          {
+            "group": "postgres",
+            "wsMB": 1709,
+            "privateMB": 1000,
+            "instances": 4
+          },
+          {
+            "group": "docker",
+            "wsMB": 800,
+            "privateMB": 700,
+            "instances": 2
+          }
+        ],
+        "outOfScope": {
+          "groupCount": 41,
+          "cpuPctMachine": 10,
+          "readBps": 0,
+          "writeBps": 0,
+          "wsMB": 4200
+        },
+        "prov": {
+          "src": "procs.byGroup@counterSession"
+        }
+      }
+    },
+    {
+      "tSec": 38,
+      "at": "2026-01-15T10:00:38.000Z",
+      "ms": 128,
+      "usedPct": 66.76,
+      "hang": false,
+      "bundleMs": 180,
+      "slipS": 0,
+      "plugged": false,
+      "batteryPct": 75,
+      "weightMs": {
+        "spawn": 128,
+        "bundle": 180
+      },
+      "degraded": [],
+      "committed": 63.11,
+      "pages": 100,
+      "cpuQ": 1,
+      "diskQ": 0.2,
+      "diskSec": 0.004,
+      "maxFreq": 100,
+      "availMB": 5200,
+      "cpuPct": 33.27374309534207,
+      "defender": 4.5493414886295795,
+      "dpcPct": 0.8,
+      "intrPct": 0.5,
+      "cpu": {
+        "perfPct": 108.5965968342498,
+        "perfLimitPct": 0,
+        "dpcPct": 0.8,
+        "interruptPct": 0.5
+      },
+      "mem": {
+        "committedPct": 63.1,
+        "pagefileUsePct": 6.7,
+        "pagesInPerS": 50,
+        "pagesOutPerS": 0
+      },
+      "disk": {
+        "latencyMs": 4,
+        "queue": 0.2,
+        "busyPct": 6,
+        "readBps": 1000000,
+        "writeBps": 2500000
+      },
+      "thermal": {
+        "zones": null,
+        "zonesReason": "not exposed at user tier"
+      },
+      "power": {
+        "ac": false,
+        "hasBattery": true
+      },
+      "procs": {
+        "groups": [
+          {
+            "group": "postgres",
+            "wsMB": 1739,
+            "privateMB": 1000,
+            "instances": 4
+          },
+          {
+            "group": "docker",
+            "wsMB": 800,
+            "privateMB": 700,
+            "instances": 2
+          }
+        ],
+        "outOfScope": {
+          "groupCount": 41,
+          "cpuPctMachine": 10,
+          "readBps": 0,
+          "writeBps": 0,
+          "wsMB": 4200
+        },
+        "prov": {
+          "src": "procs.byGroup@counterSession"
+        }
+      }
+    },
+    {
+      "tSec": 40,
+      "at": "2026-01-15T10:00:40.000Z",
+      "ms": 1952,
+      "usedPct": 93,
+      "hang": true,
+      "bundleMs": 180,
+      "slipS": 0,
+      "plugged": false,
+      "batteryPct": 74,
+      "weightMs": {
+        "spawn": 1952,
+        "bundle": 180
+      },
+      "degraded": [],
+      "committed": 90.71,
+      "pages": 900,
+      "cpuQ": 3,
+      "diskQ": 0.2,
+      "diskSec": 0.004,
+      "maxFreq": 100,
+      "culpritsAtHang": [
+        {
+          "name": "node.exe",
+          "totalMB": 6200,
+          "n": 14,
+          "pids": [
+            1100,
+            1104,
+            1108
+          ]
+        }
+      ],
+      "availMB": 280,
+      "cpuPct": 40,
+      "defender": 3.5026641516014934,
+      "dpcPct": 0.8,
+      "intrPct": 0.5,
+      "cpu": {
+        "perfPct": 107.22820549737662,
+        "perfLimitPct": 0,
+        "dpcPct": 0.8,
+        "interruptPct": 0.5
+      },
+      "mem": {
+        "committedPct": 90.7,
+        "pagefileUsePct": 6.8,
+        "pagesInPerS": 900,
+        "pagesOutPerS": 300
+      },
+      "disk": {
+        "latencyMs": 4,
+        "queue": 0.2,
+        "busyPct": 6,
+        "readBps": 1000000,
+        "writeBps": 2500000
+      },
+      "thermal": {
+        "zones": null,
+        "zonesReason": "not exposed at user tier"
+      },
+      "power": {
+        "ac": false,
+        "hasBattery": true
+      },
+      "procs": {
+        "groups": [
+          {
+            "group": "postgres",
+            "wsMB": 1769,
+            "privateMB": 1000,
+            "instances": 4
+          },
+          {
+            "group": "docker",
+            "wsMB": 800,
+            "privateMB": 700,
+            "instances": 2
+          }
+        ],
+        "outOfScope": {
+          "groupCount": 41,
+          "cpuPctMachine": 10,
+          "readBps": 0,
+          "writeBps": 0,
+          "wsMB": 4200
+        },
+        "prov": {
+          "src": "procs.byGroup@counterSession"
+        }
+      }
+    },
+    {
+      "tSec": 42,
+      "at": "2026-01-15T10:00:42.000Z",
+      "ms": 203,
+      "usedPct": 67.21,
+      "hang": false,
+      "bundleMs": 180,
+      "slipS": 0,
+      "plugged": false,
+      "batteryPct": 74,
+      "weightMs": {
+        "spawn": 203,
+        "bundle": 180
+      },
+      "degraded": [],
+      "committed": 61.91,
+      "pages": 108,
+      "cpuQ": 1,
+      "diskQ": 0.2,
+      "diskSec": 0.004,
+      "maxFreq": 100,
+      "availMB": 5200,
+      "cpuPct": 30.51281409803778,
+      "defender": 3.8726290492340922,
+      "dpcPct": 0.8,
+      "intrPct": 0.5,
+      "cpu": {
+        "perfPct": 106.77119142841548,
+        "perfLimitPct": 0,
+        "dpcPct": 0.8,
+        "interruptPct": 0.5
+      },
+      "mem": {
+        "committedPct": 61.9,
+        "pagefileUsePct": 6.9,
+        "pagesInPerS": 50,
+        "pagesOutPerS": 0
+      },
+      "disk": {
+        "latencyMs": 4,
+        "queue": 0.2,
+        "busyPct": 6,
+        "readBps": 1000000,
+        "writeBps": 2500000
+      },
+      "thermal": {
+        "zones": null,
+        "zonesReason": "not exposed at user tier"
+      },
+      "power": {
+        "ac": false,
+        "hasBattery": true
+      },
+      "procs": {
+        "groups": [
+          {
+            "group": "postgres",
+            "wsMB": 1799,
+            "privateMB": 1000,
+            "instances": 4
+          },
+          {
+            "group": "docker",
+            "wsMB": 800,
+            "privateMB": 700,
+            "instances": 2
+          }
+        ],
+        "outOfScope": {
+          "groupCount": 41,
+          "cpuPctMachine": 10,
+          "readBps": 0,
+          "writeBps": 0,
+          "wsMB": 4200
+        },
+        "prov": {
+          "src": "procs.byGroup@counterSession"
+        }
+      }
+    },
+    {
+      "tSec": 44,
+      "at": "2026-01-15T10:00:44.000Z",
+      "ms": 149,
+      "usedPct": 68.65,
+      "hang": false,
+      "bundleMs": 180,
+      "slipS": 0,
+      "plugged": false,
+      "batteryPct": 74,
+      "weightMs": {
+        "spawn": 149,
+        "bundle": 180
+      },
+      "degraded": [],
+      "committed": 62.15,
+      "pages": 84,
+      "cpuQ": 1,
+      "diskQ": 0.2,
+      "diskSec": 0.004,
+      "maxFreq": 100,
+      "availMB": 5200,
+      "cpuPct": 34.86039919545874,
+      "defender": 4.682009651791304,
+      "dpcPct": 0.8,
+      "intrPct": 0.5,
+      "cpu": {
+        "perfPct": 109.91272084414959,
+        "perfLimitPct": 0,
+        "dpcPct": 0.8,
+        "interruptPct": 0.5
+      },
+      "mem": {
+        "committedPct": 62.1,
+        "pagefileUsePct": 7,
+        "pagesInPerS": 50,
+        "pagesOutPerS": 0
+      },
+      "disk": {
+        "latencyMs": 4,
+        "queue": 0.2,
+        "busyPct": 6,
+        "readBps": 1000000,
+        "writeBps": 2500000
+      },
+      "thermal": {
+        "zones": null,
+        "zonesReason": "not exposed at user tier"
+      },
+      "power": {
+        "ac": false,
+        "hasBattery": true
+      },
+      "procs": {
+        "groups": [
+          {
+            "group": "postgres",
+            "wsMB": 1829,
+            "privateMB": 1000,
+            "instances": 4
+          },
+          {
+            "group": "docker",
+            "wsMB": 800,
+            "privateMB": 700,
+            "instances": 2
+          }
+        ],
+        "outOfScope": {
+          "groupCount": 41,
+          "cpuPctMachine": 10,
+          "readBps": 0,
+          "writeBps": 0,
+          "wsMB": 4200
+        },
+        "prov": {
+          "src": "procs.byGroup@counterSession"
+        }
+      }
+    },
+    {
+      "tSec": 46,
+      "at": "2026-01-15T10:00:46.000Z",
+      "ms": 190,
+      "usedPct": 68.79,
+      "hang": false,
+      "bundleMs": 180,
+      "slipS": 0,
+      "plugged": false,
+      "batteryPct": 73,
+      "weightMs": {
+        "spawn": 190,
+        "bundle": 180
+      },
+      "degraded": [],
+      "committed": 61.75,
+      "pages": 83,
+      "cpuQ": 1,
+      "diskQ": 0.2,
+      "diskSec": 0.004,
+      "maxFreq": 100,
+      "availMB": 5200,
+      "cpuPct": 31.573711920063943,
+      "defender": 3.324769473168999,
+      "dpcPct": 0.8,
+      "intrPct": 0.5,
+      "cpu": {
+        "perfPct": 113.86603767517954,
+        "perfLimitPct": 0,
+        "dpcPct": 0.8,
+        "interruptPct": 0.5
+      },
+      "mem": {
+        "committedPct": 61.7,
+        "pagefileUsePct": 7.1,
+        "pagesInPerS": 50,
+        "pagesOutPerS": 0
+      },
+      "disk": {
+        "latencyMs": 4,
+        "queue": 0.2,
+        "busyPct": 6,
+        "readBps": 1000000,
+        "writeBps": 2500000
+      },
+      "thermal": {
+        "zones": null,
+        "zonesReason": "not exposed at user tier"
+      },
+      "power": {
+        "ac": false,
+        "hasBattery": true
+      },
+      "procs": {
+        "groups": [
+          {
+            "group": "postgres",
+            "wsMB": 1859,
+            "privateMB": 1000,
+            "instances": 4
+          },
+          {
+            "group": "docker",
+            "wsMB": 800,
+            "privateMB": 700,
+            "instances": 2
+          }
+        ],
+        "outOfScope": {
+          "groupCount": 41,
+          "cpuPctMachine": 10,
+          "readBps": 0,
+          "writeBps": 0,
+          "wsMB": 4200
+        },
+        "prov": {
+          "src": "procs.byGroup@counterSession"
+        }
+      }
+    },
+    {
+      "tSec": 48,
+      "at": "2026-01-15T10:00:48.000Z",
+      "ms": 181,
+      "usedPct": 68.57,
+      "hang": false,
+      "bundleMs": 180,
+      "slipS": 0,
+      "plugged": false,
+      "batteryPct": 73,
+      "weightMs": {
+        "spawn": 181,
+        "bundle": 180
+      },
+      "degraded": [],
+      "committed": 61.56,
+      "pages": 73,
+      "cpuQ": 1,
+      "diskQ": 0.2,
+      "diskSec": 0.004,
+      "maxFreq": 100,
+      "availMB": 5200,
+      "cpuPct": 27.953835017979145,
+      "defender": 3.1810417007654905,
+      "dpcPct": 0.8,
+      "intrPct": 0.5,
+      "cpu": {
+        "perfPct": 113.6692205350846,
+        "perfLimitPct": 0,
+        "dpcPct": 0.8,
+        "interruptPct": 0.5
+      },
+      "mem": {
+        "committedPct": 61.6,
+        "pagefileUsePct": 7.2,
+        "pagesInPerS": 50,
+        "pagesOutPerS": 0
+      },
+      "disk": {
+        "latencyMs": 4,
+        "queue": 0.2,
+        "busyPct": 6,
+        "readBps": 1000000,
+        "writeBps": 2500000
+      },
+      "thermal": {
+        "zones": null,
+        "zonesReason": "not exposed at user tier"
+      },
+      "power": {
+        "ac": false,
+        "hasBattery": true
+      },
+      "procs": {
+        "groups": [
+          {
+            "group": "postgres",
+            "wsMB": 1889,
+            "privateMB": 1000,
+            "instances": 4
+          },
+          {
+            "group": "docker",
+            "wsMB": 800,
+            "privateMB": 700,
+            "instances": 2
+          }
+        ],
+        "outOfScope": {
+          "groupCount": 41,
+          "cpuPctMachine": 10,
+          "readBps": 0,
+          "writeBps": 0,
+          "wsMB": 4200
+        },
+        "prov": {
+          "src": "procs.byGroup@counterSession"
+        }
+      }
+    },
+    {
+      "tSec": 50,
+      "at": "2026-01-15T10:00:50.000Z",
+      "ms": 1979,
+      "usedPct": 93,
+      "hang": true,
+      "bundleMs": 180,
+      "slipS": 0,
+      "plugged": false,
+      "batteryPct": 73,
+      "weightMs": {
+        "spawn": 1979,
+        "bundle": 180
+      },
+      "degraded": [],
+      "committed": 91.46,
+      "pages": 900,
+      "cpuQ": 3,
+      "diskQ": 0.2,
+      "diskSec": 0.004,
+      "maxFreq": 100,
+      "culpritsAtHang": [
+        {
+          "name": "node.exe",
+          "totalMB": 6200,
+          "n": 14,
+          "pids": [
+            1100,
+            1104,
+            1108
+          ]
+        }
+      ],
+      "availMB": 280,
+      "cpuPct": 40,
+      "defender": 3.634836305398494,
+      "dpcPct": 0.8,
+      "intrPct": 0.5,
+      "cpu": {
+        "perfPct": 105.19276237580925,
+        "perfLimitPct": 0,
+        "dpcPct": 0.8,
+        "interruptPct": 0.5
+      },
+      "mem": {
+        "committedPct": 91.5,
+        "pagefileUsePct": 7.300000000000001,
+        "pagesInPerS": 900,
+        "pagesOutPerS": 300
+      },
+      "disk": {
+        "latencyMs": 4,
+        "queue": 0.2,
+        "busyPct": 6,
+        "readBps": 1000000,
+        "writeBps": 2500000
+      },
+      "thermal": {
+        "zones": null,
+        "zonesReason": "not exposed at user tier"
+      },
+      "power": {
+        "ac": false,
+        "hasBattery": true
+      },
+      "procs": {
+        "groups": [
+          {
+            "group": "postgres",
+            "wsMB": 1919,
+            "privateMB": 1000,
+            "instances": 4
+          },
+          {
+            "group": "docker",
+            "wsMB": 800,
+            "privateMB": 700,
+            "instances": 2
+          }
+        ],
+        "outOfScope": {
+          "groupCount": 41,
+          "cpuPctMachine": 10,
+          "readBps": 0,
+          "writeBps": 0,
+          "wsMB": 4200
+        },
+        "prov": {
+          "src": "procs.byGroup@counterSession"
+        }
+      }
+    },
+    {
+      "tSec": 52,
+      "at": "2026-01-15T10:00:52.000Z",
+      "ms": 192,
+      "usedPct": 68.78,
+      "hang": false,
+      "bundleMs": 180,
+      "slipS": 0,
+      "plugged": false,
+      "batteryPct": 72,
+      "weightMs": {
+        "spawn": 192,
+        "bundle": 180
+      },
+      "degraded": [],
+      "committed": 60.27,
+      "pages": 97,
+      "cpuQ": 1,
+      "diskQ": 0.2,
+      "diskSec": 0.004,
+      "maxFreq": 100,
+      "availMB": 5200,
+      "cpuPct": 33.28781609190628,
+      "defender": 4.925477055367082,
+      "dpcPct": 0.8,
+      "intrPct": 0.5,
+      "cpu": {
+        "perfPct": 104.5302230771631,
+        "perfLimitPct": 0,
+        "dpcPct": 0.8,
+        "interruptPct": 0.5
+      },
+      "mem": {
+        "committedPct": 60.3,
+        "pagefileUsePct": 7.4,
+        "pagesInPerS": 50,
+        "pagesOutPerS": 0
+      },
+      "disk": {
+        "latencyMs": 4,
+        "queue": 0.2,
+        "busyPct": 6,
+        "readBps": 1000000,
+        "writeBps": 2500000
+      },
+      "thermal": {
+        "zones": null,
+        "zonesReason": "not exposed at user tier"
+      },
+      "power": {
+        "ac": false,
+        "hasBattery": true
+      },
+      "procs": {
+        "groups": [
+          {
+            "group": "postgres",
+            "wsMB": 1949,
+            "privateMB": 1000,
+            "instances": 4
+          },
+          {
+            "group": "docker",
+            "wsMB": 800,
+            "privateMB": 700,
+            "instances": 2
+          }
+        ],
+        "outOfScope": {
+          "groupCount": 41,
+          "cpuPctMachine": 10,
+          "readBps": 0,
+          "writeBps": 0,
+          "wsMB": 4200
+        },
+        "prov": {
+          "src": "procs.byGroup@counterSession"
+        }
+      }
+    },
+    {
+      "tSec": 54,
+      "at": "2026-01-15T10:00:54.000Z",
+      "ms": 148,
+      "usedPct": 67.62,
+      "hang": false,
+      "bundleMs": 180,
+      "slipS": 0,
+      "plugged": false,
+      "batteryPct": 72,
+      "weightMs": {
+        "spawn": 148,
+        "bundle": 180
+      },
+      "degraded": [],
+      "committed": 63.92,
+      "pages": 73,
+      "cpuQ": 1,
+      "diskQ": 0.2,
+      "diskSec": 0.004,
+      "maxFreq": 100,
+      "availMB": 5200,
+      "cpuPct": 32.13557530660182,
+      "defender": 4.52020511822775,
+      "dpcPct": 0.8,
+      "intrPct": 0.5,
+      "cpu": {
+        "perfPct": 112.47459357604384,
+        "perfLimitPct": 0,
+        "dpcPct": 0.8,
+        "interruptPct": 0.5
+      },
+      "mem": {
+        "committedPct": 63.9,
+        "pagefileUsePct": 7.5,
+        "pagesInPerS": 50,
+        "pagesOutPerS": 0
+      },
+      "disk": {
+        "latencyMs": 4,
+        "queue": 0.2,
+        "busyPct": 6,
+        "readBps": 1000000,
+        "writeBps": 2500000
+      },
+      "thermal": {
+        "zones": null,
+        "zonesReason": "not exposed at user tier"
+      },
+      "power": {
+        "ac": false,
+        "hasBattery": true
+      },
+      "procs": {
+        "groups": [
+          {
+            "group": "postgres",
+            "wsMB": 1979,
+            "privateMB": 1000,
+            "instances": 4
+          },
+          {
+            "group": "docker",
+            "wsMB": 800,
+            "privateMB": 700,
+            "instances": 2
+          }
+        ],
+        "outOfScope": {
+          "groupCount": 41,
+          "cpuPctMachine": 10,
+          "readBps": 0,
+          "writeBps": 0,
+          "wsMB": 4200
+        },
+        "prov": {
+          "src": "procs.byGroup@counterSession"
+        }
+      }
+    },
+    {
+      "tSec": 56,
+      "at": "2026-01-15T10:00:56.000Z",
+      "ms": 182,
+      "usedPct": 67.78,
+      "hang": false,
+      "bundleMs": 180,
+      "slipS": 0,
+      "plugged": false,
+      "batteryPct": 72,
+      "weightMs": {
+        "spawn": 182,
+        "bundle": 180
+      },
+      "degraded": [],
+      "committed": 62.9,
+      "pages": 66,
+      "cpuQ": 1,
+      "diskQ": 0.2,
+      "diskSec": 0.004,
+      "maxFreq": 100,
+      "availMB": 5200,
+      "cpuPct": 33.31945147365332,
+      "defender": 3.965197247453034,
+      "dpcPct": 0.8,
+      "intrPct": 0.5,
+      "cpu": {
+        "perfPct": 102.79644255526364,
+        "perfLimitPct": 0,
+        "dpcPct": 0.8,
+        "interruptPct": 0.5
+      },
+      "mem": {
+        "committedPct": 62.9,
+        "pagefileUsePct": 7.6,
+        "pagesInPerS": 50,
+        "pagesOutPerS": 0
+      },
+      "disk": {
+        "latencyMs": 4,
+        "queue": 0.2,
+        "busyPct": 6,
+        "readBps": 1000000,
+        "writeBps": 2500000
+      },
+      "thermal": {
+        "zones": null,
+        "zonesReason": "not exposed at user tier"
+      },
+      "power": {
+        "ac": false,
+        "hasBattery": true
+      },
+      "procs": {
+        "groups": [
+          {
+            "group": "postgres",
+            "wsMB": 2009,
+            "privateMB": 1000,
+            "instances": 4
+          },
+          {
+            "group": "docker",
+            "wsMB": 800,
+            "privateMB": 700,
+            "instances": 2
+          }
+        ],
+        "outOfScope": {
+          "groupCount": 41,
+          "cpuPctMachine": 10,
+          "readBps": 0,
+          "writeBps": 0,
+          "wsMB": 4200
+        },
+        "prov": {
+          "src": "procs.byGroup@counterSession"
+        }
+      }
+    },
+    {
+      "tSec": 58,
+      "at": "2026-01-15T10:00:58.000Z",
+      "ms": 166,
+      "usedPct": 67.68,
+      "hang": false,
+      "bundleMs": 180,
+      "slipS": 0,
+      "plugged": false,
+      "batteryPct": 71,
+      "weightMs": {
+        "spawn": 166,
+        "bundle": 180
+      },
+      "degraded": [],
+      "committed": 62.89,
+      "pages": 83,
+      "cpuQ": 1,
+      "diskQ": 0.2,
+      "diskSec": 0.004,
+      "maxFreq": 100,
+      "availMB": 5200,
+      "cpuPct": 33.88029074994847,
+      "defender": 4.9060662891715765,
+      "dpcPct": 0.8,
+      "intrPct": 0.5,
+      "cpu": {
+        "perfPct": 103.06590646971017,
+        "perfLimitPct": 0,
+        "dpcPct": 0.8,
+        "interruptPct": 0.5
+      },
+      "mem": {
+        "committedPct": 62.9,
+        "pagefileUsePct": 7.7,
+        "pagesInPerS": 50,
+        "pagesOutPerS": 0
+      },
+      "disk": {
+        "latencyMs": 4,
+        "queue": 0.2,
+        "busyPct": 6,
+        "readBps": 1000000,
+        "writeBps": 2500000
+      },
+      "thermal": {
+        "zones": null,
+        "zonesReason": "not exposed at user tier"
+      },
+      "power": {
+        "ac": false,
+        "hasBattery": true
+      },
+      "procs": {
+        "groups": [
+          {
+            "group": "postgres",
+            "wsMB": 2039,
+            "privateMB": 1000,
+            "instances": 4
+          },
+          {
+            "group": "docker",
+            "wsMB": 800,
+            "privateMB": 700,
+            "instances": 2
+          }
+        ],
+        "outOfScope": {
+          "groupCount": 41,
+          "cpuPctMachine": 10,
+          "readBps": 0,
+          "writeBps": 0,
+          "wsMB": 4200
+        },
+        "prov": {
+          "src": "procs.byGroup@counterSession"
+        }
+      }
+    },
+    {
+      "tSec": 60,
+      "at": "2026-01-15T10:01:00.000Z",
+      "ms": 149,
+      "usedPct": 67.57,
+      "hang": false,
+      "bundleMs": 180,
+      "slipS": 0,
+      "plugged": false,
+      "batteryPct": 71,
+      "weightMs": {
+        "spawn": 149,
+        "bundle": 180
+      },
+      "degraded": [],
+      "committed": 60.41,
+      "pages": 74,
+      "cpuQ": 1,
+      "diskQ": 0.2,
+      "diskSec": 0.004,
+      "maxFreq": 100,
+      "availMB": 5200,
+      "cpuPct": 34.10057526547462,
+      "defender": 4.714530501514673,
+      "dpcPct": 0.8,
+      "intrPct": 0.5,
+      "cpu": {
+        "perfPct": 110.6022724788636,
+        "perfLimitPct": 0,
+        "dpcPct": 0.8,
+        "interruptPct": 0.5
+      },
+      "mem": {
+        "committedPct": 60.4,
+        "pagefileUsePct": 7.800000000000001,
+        "pagesInPerS": 50,
+        "pagesOutPerS": 0
+      },
+      "disk": {
+        "latencyMs": 4,
+        "queue": 0.2,
+        "busyPct": 6,
+        "readBps": 1000000,
+        "writeBps": 2500000
+      },
+      "thermal": {
+        "zones": null,
+        "zonesReason": "not exposed at user tier"
+      },
+      "power": {
+        "ac": false,
+        "hasBattery": true
+      },
+      "procs": {
+        "groups": [
+          {
+            "group": "postgres",
+            "wsMB": 2069,
+            "privateMB": 1000,
+            "instances": 4
+          },
+          {
+            "group": "docker",
+            "wsMB": 800,
+            "privateMB": 700,
+            "instances": 2
+          }
+        ],
+        "outOfScope": {
+          "groupCount": 41,
+          "cpuPctMachine": 10,
+          "readBps": 0,
+          "writeBps": 0,
+          "wsMB": 4200
+        },
+        "prov": {
+          "src": "procs.byGroup@counterSession"
+        }
+      }
+    },
+    {
+      "tSec": 62,
+      "at": "2026-01-15T10:01:02.000Z",
+      "ms": 148,
+      "usedPct": 67.48,
+      "hang": false,
+      "bundleMs": 180,
+      "slipS": 0,
+      "plugged": false,
+      "batteryPct": 71,
+      "weightMs": {
+        "spawn": 148,
+        "bundle": 180
+      },
+      "degraded": [],
+      "committed": 63.63,
+      "pages": 106,
+      "cpuQ": 1,
+      "diskQ": 0.2,
+      "diskSec": 0.004,
+      "maxFreq": 100,
+      "availMB": 5200,
+      "cpuPct": 31.75929921446368,
+      "defender": 4.591585788410157,
+      "dpcPct": 0.8,
+      "intrPct": 0.5,
+      "cpu": {
+        "perfPct": 106.67068993672729,
+        "perfLimitPct": 0,
+        "dpcPct": 0.8,
+        "interruptPct": 0.5
+      },
+      "mem": {
+        "committedPct": 63.6,
+        "pagefileUsePct": 7.9,
+        "pagesInPerS": 50,
+        "pagesOutPerS": 0
+      },
+      "disk": {
+        "latencyMs": 4,
+        "queue": 0.2,
+        "busyPct": 6,
+        "readBps": 1000000,
+        "writeBps": 2500000
+      },
+      "thermal": {
+        "zones": null,
+        "zonesReason": "not exposed at user tier"
+      },
+      "power": {
+        "ac": false,
+        "hasBattery": true
+      },
+      "procs": {
+        "groups": [
+          {
+            "group": "postgres",
+            "wsMB": 2099,
+            "privateMB": 1000,
+            "instances": 4
+          },
+          {
+            "group": "docker",
+            "wsMB": 800,
+            "privateMB": 700,
+            "instances": 2
+          }
+        ],
+        "outOfScope": {
+          "groupCount": 41,
+          "cpuPctMachine": 10,
+          "readBps": 0,
+          "writeBps": 0,
+          "wsMB": 4200
+        },
+        "prov": {
+          "src": "procs.byGroup@counterSession"
+        }
+      }
+    }
+  ],
+  "samples": [
+    {
+      "at": "2026-01-15T10:00:01.000Z",
+      "tSec": 1,
+      "freeGB": 5.43,
+      "usedPct": 66.05
+    },
+    {
+      "at": "2026-01-15T10:00:02.500Z",
+      "tSec": 2.5,
+      "freeGB": 5.4,
+      "usedPct": 66.25
+    },
+    {
+      "at": "2026-01-15T10:00:04.000Z",
+      "tSec": 4,
+      "freeGB": 4.81,
+      "usedPct": 69.91
+    },
+    {
+      "at": "2026-01-15T10:00:05.500Z",
+      "tSec": 5.5,
+      "freeGB": 4.99,
+      "usedPct": 68.8
+    },
+    {
+      "at": "2026-01-15T10:00:07.000Z",
+      "tSec": 7,
+      "freeGB": 5.11,
+      "usedPct": 68.09
+    },
+    {
+      "at": "2026-01-15T10:00:08.500Z",
+      "tSec": 8.5,
+      "freeGB": 5.18,
+      "usedPct": 67.62
+    },
+    {
+      "at": "2026-01-15T10:00:10.000Z",
+      "tSec": 10,
+      "freeGB": 5.14,
+      "usedPct": 67.86
+    },
+    {
+      "at": "2026-01-15T10:00:11.500Z",
+      "tSec": 11.5,
+      "freeGB": 5.29,
+      "usedPct": 66.96
+    },
+    {
+      "at": "2026-01-15T10:00:13.000Z",
+      "tSec": 13,
+      "freeGB": 5.09,
+      "usedPct": 68.21
+    },
+    {
+      "at": "2026-01-15T10:00:14.500Z",
+      "tSec": 14.5,
+      "freeGB": 4.97,
+      "usedPct": 68.92
+    },
+    {
+      "at": "2026-01-15T10:00:16.000Z",
+      "tSec": 16,
+      "freeGB": 5.27,
+      "usedPct": 67.03
+    },
+    {
+      "at": "2026-01-15T10:00:17.500Z",
+      "tSec": 17.5,
+      "freeGB": 5.34,
+      "usedPct": 66.62
+    },
+    {
+      "at": "2026-01-15T10:00:19.000Z",
+      "tSec": 19,
+      "freeGB": 4.95,
+      "usedPct": 69.06
+    },
+    {
+      "at": "2026-01-15T10:00:20.500Z",
+      "tSec": 20.5,
+      "freeGB": 5.11,
+      "usedPct": 68.07
+    },
+    {
+      "at": "2026-01-15T10:00:22.000Z",
+      "tSec": 22,
+      "freeGB": 5.31,
+      "usedPct": 66.79
+    },
+    {
+      "at": "2026-01-15T10:00:23.500Z",
+      "tSec": 23.5,
+      "freeGB": 5.2,
+      "usedPct": 67.47
+    },
+    {
+      "at": "2026-01-15T10:00:25.000Z",
+      "tSec": 25,
+      "freeGB": 5.25,
+      "usedPct": 67.17
+    },
+    {
+      "at": "2026-01-15T10:00:26.500Z",
+      "tSec": 26.5,
+      "freeGB": 5.04,
+      "usedPct": 68.51
+    },
+    {
+      "at": "2026-01-15T10:00:28.000Z",
+      "tSec": 28,
+      "freeGB": 5.13,
+      "usedPct": 67.94
+    },
+    {
+      "at": "2026-01-15T10:00:29.500Z",
+      "tSec": 29.5,
+      "freeGB": 4.63,
+      "usedPct": 71.04
+    },
+    {
+      "at": "2026-01-15T10:00:31.000Z",
+      "tSec": 31,
+      "freeGB": 5.04,
+      "usedPct": 68.49
+    },
+    {
+      "at": "2026-01-15T10:00:32.500Z",
+      "tSec": 32.5,
+      "freeGB": 4.58,
+      "usedPct": 71.39
+    },
+    {
+      "at": "2026-01-15T10:00:34.000Z",
+      "tSec": 34,
+      "freeGB": 4.96,
+      "usedPct": 69.01
+    },
+    {
+      "at": "2026-01-15T10:00:35.500Z",
+      "tSec": 35.5,
+      "freeGB": 4.93,
+      "usedPct": 69.2
+    },
+    {
+      "at": "2026-01-15T10:00:37.000Z",
+      "tSec": 37,
+      "freeGB": 4.86,
+      "usedPct": 69.62
+    },
+    {
+      "at": "2026-01-15T10:00:38.500Z",
+      "tSec": 38.5,
+      "freeGB": 4.71,
+      "usedPct": 70.54
+    },
+    {
+      "at": "2026-01-15T10:00:40.000Z",
+      "tSec": 40,
+      "freeGB": 4.49,
+      "usedPct": 71.94
+    },
+    {
+      "at": "2026-01-15T10:00:41.500Z",
+      "tSec": 41.5,
+      "freeGB": 4.29,
+      "usedPct": 73.17
+    },
+    {
+      "at": "2026-01-15T10:00:43.000Z",
+      "tSec": 43,
+      "freeGB": 4.67,
+      "usedPct": 70.8
+    },
+    {
+      "at": "2026-01-15T10:00:44.500Z",
+      "tSec": 44.5,
+      "freeGB": 4.08,
+      "usedPct": 74.53
+    },
+    {
+      "at": "2026-01-15T10:00:46.000Z",
+      "tSec": 46,
+      "freeGB": 4.25,
+      "usedPct": 73.46
+    },
+    {
+      "at": "2026-01-15T10:00:47.500Z",
+      "tSec": 47.5,
+      "freeGB": 4.14,
+      "usedPct": 74.11
+    },
+    {
+      "at": "2026-01-15T10:00:49.000Z",
+      "tSec": 49,
+      "freeGB": 4.04,
+      "usedPct": 74.72
+    },
+    {
+      "at": "2026-01-15T10:00:50.500Z",
+      "tSec": 50.5,
+      "freeGB": 3.8,
+      "usedPct": 76.24
+    },
+    {
+      "at": "2026-01-15T10:00:52.000Z",
+      "tSec": 52,
+      "freeGB": 3.96,
+      "usedPct": 75.25
+    },
+    {
+      "at": "2026-01-15T10:00:53.500Z",
+      "tSec": 53.5,
+      "freeGB": 3.71,
+      "usedPct": 76.81
+    },
+    {
+      "at": "2026-01-15T10:00:55.000Z",
+      "tSec": 55,
+      "freeGB": 3.71,
+      "usedPct": 76.81
+    },
+    {
+      "at": "2026-01-15T10:00:56.500Z",
+      "tSec": 56.5,
+      "freeGB": 4.15,
+      "usedPct": 74.03
+    },
+    {
+      "at": "2026-01-15T10:00:58.000Z",
+      "tSec": 58,
+      "freeGB": 4.01,
+      "usedPct": 74.95
+    },
+    {
+      "at": "2026-01-15T10:00:59.500Z",
+      "tSec": 59.5,
+      "freeGB": 3.83,
+      "usedPct": 76.05
+    },
+    {
+      "at": "2026-01-15T10:01:01.000Z",
+      "tSec": 61,
+      "freeGB": 3.73,
+      "usedPct": 76.7
+    },
+    {
+      "at": "2026-01-15T10:01:02.500Z",
+      "tSec": 62.5,
+      "freeGB": 3.93,
+      "usedPct": 75.46
+    },
+    {
+      "at": "2026-01-15T10:01:04.000Z",
+      "tSec": 64,
+      "freeGB": 3.82,
+      "usedPct": 76.1
+    }
+  ],
+  "diagnosis": {
+    "engine": "diagnosis/1",
+    "hangDefinition": {
+      "probe": "process-start-latency",
+      "thresholdMs": 800,
+      "source": "default",
+      "intervalS": 2,
+      "cannotSee": [
+        "freezes shorter than the probe interval",
+        "UI input lag that does not delay process start"
+      ],
+      "inputResponse": {
+        "status": "not evaluated",
+        "reason": "report predates the input-response check"
+      }
+    },
+    "usable": {
+      "probes": 27,
+      "excluded": 3,
+      "minimum": 10,
+      "sustainedMin": 3
+    },
+    "excludedProbes": [
+      {
+        "ref": "spawnProbes[0]",
+        "reasons": [
+          "startup-window"
+        ]
+      },
+      {
+        "ref": "spawnProbes[1]",
+        "reasons": [
+          "startup-window"
+        ]
+      },
+      {
+        "ref": "spawnProbes[2]",
+        "reasons": [
+          "startup-window"
+        ]
+      }
+    ],
+    "calm": {
+      "definition": "usable, latency < 400 ms, not within 10 s of a hang",
+      "n": 8,
+      "means": {
+        "mem.commit_of_limit_pct": 62.22,
+        "cpu.pct_total": 32.13,
+        "disk.latency_ms": 4,
+        "cpu.dpc_intr_pct": 1.3,
+        "mem.pages_out_per_s": 0,
+        "mem.committed_pct": 62.22,
+        "security.cpu_pct_machine": 0.54,
+        "cpu.perf_pct": 110.12
+      }
+    },
+    "proxyValidation": {
+      "status": "validated",
+      "precision": {
+        "num": 2,
+        "den": 3,
+        "value": 0.67
+      },
+      "recall": {
+        "num": 2,
+        "den": 2,
+        "value": 1
+      }
+    },
+    "marks": {
+      "joined": [
+        {
+          "at": "2026-01-15T10:00:30.800Z",
+          "kind": "hung",
+          "note": "terminal froze",
+          "ref": "spawnProbes[13]",
+          "gapMs": 800,
+          "onHang": true,
+          "role": "hang-confirmed"
+        },
+        {
+          "at": "2026-01-15T10:00:40.500Z",
+          "kind": "hung",
+          "note": null,
+          "ref": "spawnProbes[18]",
+          "gapMs": 500,
+          "onHang": true,
+          "role": "hang-confirmed"
+        }
+      ],
+      "unmatched": []
+    },
+    "confidenceModel": {
+      "confirmationWeights": {
+        "user-mark": 1,
+        "os-not-responding": 1,
+        "workload-probe": 1,
+        "input-stall": 0.5,
+        "probe-only": 0
+      },
+      "weights": {
+        "C": 0.35,
+        "D": 0.25,
+        "O": 0.25,
+        "K": 0.15
+      },
+      "penaltyPerConfound": 0.1,
+      "penaltyMax": 0.3,
+      "cap": 0.95
+    },
+    "thresholds": {
+      "battery-power-plan": {
+        "value": 2,
+        "unit": "x AC rate",
+        "source": "provisional (diagnosis-cause-rules design)",
+        "origin": "default",
+        "key": "battery-power-plan.rateRatio"
+      },
+      "commit-limit-pressure": {
+        "value": 90,
+        "unit": "%",
+        "source": "provisional (diagnosis-cause-rules design)",
+        "origin": "default",
+        "key": "commit-limit-pressure.commitPct"
+      },
+      "cpu-saturation": {
+        "value": 90,
+        "unit": "%",
+        "source": "provisional",
+        "origin": "default",
+        "key": "cpu.pct_total"
+      },
+      "database-memory-io": {
+        "value": 25,
+        "unit": "% of RAM",
+        "source": "provisional (diagnosis-cause-rules design)",
+        "origin": "default",
+        "key": "database-memory-io.memPctRam"
+      },
+      "disk-stall": {
+        "value": 25,
+        "unit": "ms",
+        "source": "provisional",
+        "origin": "default",
+        "key": "disk.latency_ms"
+      },
+      "driver-interrupt-storm": {
+        "value": 10,
+        "unit": "%",
+        "source": "provisional (diagnosis-cause-rules design)",
+        "origin": "default",
+        "key": "driver-interrupt-storm.sumPct"
+      },
+      "gpu-contention": {
+        "value": 90,
+        "unit": "%",
+        "source": "provisional (diagnosis-cause-rules design)",
+        "origin": "default",
+        "key": "gpu-contention.enginePct"
+      },
+      "hard-fault-thrash": {
+        "value": 100,
+        "unit": "/s",
+        "source": "provisional (diagnosis-cause-rules design)",
+        "origin": "default",
+        "key": "hard-fault-thrash.pagesOutPerS"
+      },
+      "memory-pressure": {
+        "value": 85,
+        "unit": "%",
+        "source": "MS perf troubleshooting [derived]",
+        "origin": "default",
+        "key": "mem.commit"
+      },
+      "outside-scope": {
+        "value": 85,
+        "unit": "%",
+        "source": "MS perf troubleshooting [derived]",
+        "origin": "default",
+        "key": "mem.commit"
+      },
+      "security-contention": {
+        "value": 8,
+        "unit": "% of machine",
+        "source": "provisional",
+        "origin": "default",
+        "key": "security.cpu_pct_machine"
+      },
+      "single-process-dominance": {
+        "value": 40,
+        "unit": "% of used memory",
+        "source": "provisional (diagnosis-cause-rules design)",
+        "origin": "default",
+        "key": "single-process-dominance.sharePct"
+      },
+      "thermal-power-throttle": {
+        "value": 60,
+        "unit": "% of calm median",
+        "source": "provisional (diagnosis-cause-rules design)",
+        "origin": "default",
+        "key": "thermal-power-throttle.perfPctOfCalm"
+      },
+      "vm-memory-dominance": {
+        "value": 40,
+        "unit": "% of RAM",
+        "source": "provisional (diagnosis-cause-rules design)",
+        "origin": "default",
+        "key": "vm-memory-dominance.vmPctRam"
+      }
+    },
+    "probeAgreement": {
+      "status": "not evaluated",
+      "reason": "report predates the input-response check",
+      "toleranceMs": 2000,
+      "stallMs": null,
+      "probeIntervalS": null
+    },
+    "inputStallCorroboration": {
+      "status": "not evaluated",
+      "reason": "report predates the input-response check"
+    },
+    "hangs": [
+      {
+        "ref": "spawnProbes[13]",
+        "at": "2026-01-15T10:00:30.000Z",
+        "ms": 1687,
+        "confirmedBy": [
+          "user-mark"
+        ],
+        "helperLate": "not evaluated",
+        "helperLateReason": "report predates the input-response check",
+        "rules": [
+          {
+            "id": "battery-power-plan",
+            "class": "thermal-power",
+            "fired": null,
+            "reason": "rate comparison not evaluated: not enough data on each side (battery 3 hangs/22 probes, AC 0 hangs/5 probes; needs 3 hangs and 10 probes each); power mode not evaluated: power mode / energy saver known at 0 hangs and 0 calm probes (needs 3 of each)",
+            "at": [],
+            "inputs": [],
+            "threshold": {
+              "value": 2,
+              "unit": "x AC rate",
+              "source": "provisional (diagnosis-cause-rules design)",
+              "origin": "default",
+              "key": "battery-power-plan.rateRatio"
+            },
+            "n": 0,
+            "calm": {
+              "mean": null,
+              "n": 0,
+              "signal": null
+            },
+            "components": null,
+            "confidence": null,
+            "disprover": {
+              "check": "battery and AC hang rates per minute within 1.25x of each other (each side with enough hangs and probes)",
+              "result": "not-evaluable",
+              "values": [
+                {
+                  "reason": "not enough data on each side (battery 3 hangs/22 probes, AC 0 hangs/5 probes; needs 3 hangs and 10 probes each)"
+                }
+              ]
+            },
+            "confounds": [],
+            "extra": {
+              "via": null,
+              "battery": {
+                "hangs": 3,
+                "probes": 22,
+                "observedMin": 0.7,
+                "ratePerMin": 4.091
+              },
+              "ac": {
+                "hangs": 0,
+                "probes": 5,
+                "observedMin": 0.2,
+                "ratePerMin": 0
+              },
+              "ratio": null,
+              "rateComparison": "not evaluated: not enough data on each side (battery 3 hangs/22 probes, AC 0 hangs/5 probes; needs 3 hangs and 10 probes each)",
+              "mode": {
+                "evaluated": false,
+                "hangShare": null,
+                "calmShare": null,
+                "reason": "power mode / energy saver known at 0 hangs and 0 calm probes (needs 3 of each)"
+              }
+            }
+          },
+          {
+            "id": "commit-limit-pressure",
+            "class": "memory",
+            "fired": false,
+            "reason": "not sustained (2 of 11 probes, minimum 3; commit >= 90% of the limit and available < 819 MB, 5% of RAM)",
+            "at": [
+              "2026-01-15T10:00:30.000Z",
+              "2026-01-15T10:00:40.000Z"
+            ],
+            "inputs": [
+              {
+                "ref": "spawnProbes[13]",
+                "signal": "mem.commit_of_limit_pct",
+                "at": "2026-01-15T10:00:30.000Z",
+                "value": 90.9,
+                "unit": "%"
+              },
+              {
+                "ref": "spawnProbes[13]",
+                "signal": "mem.pagefile_pct",
+                "at": "2026-01-15T10:00:30.000Z",
+                "value": 6.3,
+                "unit": "%"
+              },
+              {
+                "ref": "spawnProbes[13]",
+                "signal": "mem.avail_mb",
+                "at": "2026-01-15T10:00:30.000Z",
+                "value": 280,
+                "unit": "MB"
+              },
+              {
+                "ref": "spawnProbes[18]",
+                "signal": "mem.commit_of_limit_pct",
+                "at": "2026-01-15T10:00:40.000Z",
+                "value": 90.7,
+                "unit": "%"
+              },
+              {
+                "ref": "spawnProbes[18]",
+                "signal": "mem.pagefile_pct",
+                "at": "2026-01-15T10:00:40.000Z",
+                "value": 6.8,
+                "unit": "%"
+              },
+              {
+                "ref": "spawnProbes[18]",
+                "signal": "mem.avail_mb",
+                "at": "2026-01-15T10:00:40.000Z",
+                "value": 280,
+                "unit": "MB"
+              }
+            ],
+            "threshold": {
+              "value": 90,
+              "unit": "%",
+              "source": "provisional (diagnosis-cause-rules design)",
+              "origin": "default",
+              "key": "commit-limit-pressure.commitPct"
+            },
+            "n": 2,
+            "calm": {
+              "mean": 62.22,
+              "n": 8,
+              "signal": "mem.commit_of_limit_pct"
+            },
+            "components": null,
+            "confidence": null,
+            "disprover": {
+              "check": "commit < 80% of the limit at 2/3 or more of the hangs",
+              "result": "not-disproved",
+              "values": [
+                {
+                  "ref": "spawnProbes[13]",
+                  "commitPct": 90.9
+                },
+                {
+                  "ref": "spawnProbes[18]",
+                  "commitPct": 90.7
+                },
+                {
+                  "ref": "spawnProbes[23]",
+                  "commitPct": 91.5
+                }
+              ]
+            },
+            "confounds": [
+              {
+                "id": "pagefile-capped-by-policy",
+                "text": "the commit limit is close to installed RAM, so the page file is capped or absent by policy",
+                "active": false
+              },
+              {
+                "id": "observer-commit",
+                "text": "the observer's own processes add to commit charge",
+                "active": false
+              }
+            ],
+            "extra": {
+              "pagefile": null,
+              "availableLimitMB": 819,
+              "installedRamMB": 16384
+            }
+          },
+          {
+            "id": "cpu-saturation",
+            "class": "cpu",
+            "fired": false,
+            "reason": "CPU 40% (needs > 90%) with queue 0.38 per logical processor (needs > 2)",
+            "at": [
+              "2026-01-15T10:00:30.000Z"
+            ],
+            "inputs": [
+              {
+                "ref": "spawnProbes[13]",
+                "signal": "cpu.pct_total",
+                "at": "2026-01-15T10:00:30.000Z",
+                "value": 40,
+                "unit": "%"
+              },
+              {
+                "ref": "spawnProbes[13]",
+                "signal": "cpu.queue_per_lp",
+                "at": "2026-01-15T10:00:30.000Z",
+                "value": 0.38,
+                "unit": "per logical processor"
+              }
+            ],
+            "threshold": {
+              "value": 90,
+              "unit": "%",
+              "source": "provisional",
+              "origin": "default",
+              "key": "cpu.pct_total"
+            },
+            "n": 1,
+            "calm": {
+              "mean": 32.13,
+              "n": 8,
+              "signal": "cpu.pct_total"
+            },
+            "components": null,
+            "confidence": null,
+            "disprover": {
+              "check": "CPU < 60% and queue < 1 per logical processor on every probe within +-10 s of the hang",
+              "result": "disproved",
+              "values": [
+                {
+                  "ref": "spawnProbes[8]",
+                  "cpuPct": 34.86275274306536,
+                  "queuePerLp": 0.13
+                },
+                {
+                  "ref": "spawnProbes[9]",
+                  "cpuPct": 30.06931663956493,
+                  "queuePerLp": 0.13
+                },
+                {
+                  "ref": "spawnProbes[10]",
+                  "cpuPct": 32.359193000011146,
+                  "queuePerLp": 0.13
+                },
+                {
+                  "ref": "spawnProbes[11]",
+                  "cpuPct": 27.297733509913087,
+                  "queuePerLp": 0.13
+                },
+                {
+                  "ref": "spawnProbes[12]",
+                  "cpuPct": 30.256457440555096,
+                  "queuePerLp": 0.13
+                },
+                {
+                  "ref": "spawnProbes[13]",
+                  "cpuPct": 40,
+                  "queuePerLp": 0.38
+                },
+                {
+                  "ref": "spawnProbes[14]",
+                  "cpuPct": 34.8281576205045,
+                  "queuePerLp": 0.13
+                },
+                {
+                  "ref": "spawnProbes[15]",
+                  "cpuPct": 28.600158491171896,
+                  "queuePerLp": 0.13
+                },
+                {
+                  "ref": "spawnProbes[16]",
+                  "cpuPct": 30.626365207135677,
+                  "queuePerLp": 0.13
+                },
+                {
+                  "ref": "spawnProbes[17]",
+                  "cpuPct": 33.27374309534207,
+                  "queuePerLp": 0.13
+                },
+                {
+                  "ref": "spawnProbes[18]",
+                  "cpuPct": 40,
+                  "queuePerLp": 0.38
+                }
+              ]
+            },
+            "confounds": [],
+            "extra": {
+              "queuePerLogicalProcessor": 0.38,
+              "queueThreshold": {
+                "value": 2,
+                "unit": "per logical processor",
+                "source": "provisional",
+                "origin": "default",
+                "key": "cpu.queue_per_lp"
+              },
+              "topInScopeGroups": []
+            }
+          },
+          {
+            "id": "database-memory-io",
+            "class": "memory",
+            "fired": false,
+            "reason": "memory variant not sustained (0 of 11 probes, minimum 3; group + configured >= 25% of RAM)",
+            "at": [],
+            "inputs": [],
+            "threshold": {
+              "value": 25,
+              "unit": "% of RAM",
+              "source": "provisional (diagnosis-cause-rules design)",
+              "origin": "default",
+              "key": "database-memory-io.memPctRam"
+            },
+            "n": 0,
+            "calm": {
+              "mean": null,
+              "n": 0,
+              "signal": null
+            },
+            "components": null,
+            "confidence": null,
+            "disprover": {
+              "check": "disk latency < 10 ms and database group memory < 10% of RAM within +-10 s of every hang",
+              "result": "disproved",
+              "values": [
+                {
+                  "ref": "spawnProbes[13]",
+                  "group": "postgres",
+                  "maxLatencyMs": 4,
+                  "maxMemPctRam": 6.1
+                },
+                {
+                  "ref": "spawnProbes[18]",
+                  "group": "postgres",
+                  "maxLatencyMs": 4,
+                  "maxMemPctRam": 6.1
+                },
+                {
+                  "ref": "spawnProbes[23]",
+                  "group": "postgres",
+                  "maxLatencyMs": 4,
+                  "maxMemPctRam": 6.1
+                }
+              ]
+            },
+            "confounds": [
+              {
+                "id": "config-unavailable",
+                "text": "database configuration facts were not collected; the memory variant uses group memory alone",
+                "active": false
+              }
+            ],
+            "extra": {
+              "group": "postgres",
+              "variants": {
+                "memory": {
+                  "n": 0,
+                  "fired": false
+                },
+                "io": "not evaluated (disk latency, queue or group I/O not recorded)"
+              },
+              "config": null,
+              "missingInputs": [
+                "database configuration facts (not collected: declare config in the scope file)"
+              ]
+            }
+          },
+          {
+            "id": "disk-stall",
+            "class": "disk",
+            "fired": false,
+            "reason": "not sustained (0 of 11 probes, minimum 3; latency > 25 ms with queue >= 1)",
+            "at": [],
+            "inputs": [],
+            "threshold": {
+              "value": 25,
+              "unit": "ms",
+              "source": "provisional",
+              "origin": "default",
+              "key": "disk.latency_ms"
+            },
+            "n": 0,
+            "calm": {
+              "mean": 4,
+              "n": 8,
+              "signal": "disk.latency_ms"
+            },
+            "components": null,
+            "confidence": null,
+            "disprover": {
+              "check": "latency < 10 ms and queue < 1 on every probe within +-10 s of the hang",
+              "result": "disproved",
+              "values": [
+                {
+                  "ref": "spawnProbes[8]",
+                  "latencyMs": 4,
+                  "queue": 0.2
+                },
+                {
+                  "ref": "spawnProbes[9]",
+                  "latencyMs": 4,
+                  "queue": 0.2
+                },
+                {
+                  "ref": "spawnProbes[10]",
+                  "latencyMs": 4,
+                  "queue": 0.2
+                },
+                {
+                  "ref": "spawnProbes[11]",
+                  "latencyMs": 4,
+                  "queue": 0.2
+                },
+                {
+                  "ref": "spawnProbes[12]",
+                  "latencyMs": 4,
+                  "queue": 0.2
+                },
+                {
+                  "ref": "spawnProbes[13]",
+                  "latencyMs": 4,
+                  "queue": 0.2
+                },
+                {
+                  "ref": "spawnProbes[14]",
+                  "latencyMs": 4,
+                  "queue": 0.2
+                },
+                {
+                  "ref": "spawnProbes[15]",
+                  "latencyMs": 4,
+                  "queue": 0.2
+                },
+                {
+                  "ref": "spawnProbes[16]",
+                  "latencyMs": 4,
+                  "queue": 0.2
+                },
+                {
+                  "ref": "spawnProbes[17]",
+                  "latencyMs": 4,
+                  "queue": 0.2
+                },
+                {
+                  "ref": "spawnProbes[18]",
+                  "latencyMs": 4,
+                  "queue": 0.2
+                }
+              ]
+            },
+            "confounds": []
+          },
+          {
+            "id": "driver-interrupt-storm",
+            "class": "cpu",
+            "fired": false,
+            "reason": "not sustained (0 of 11 probes, minimum 3; DPC + interrupt >= 10% of CPU)",
+            "at": [],
+            "inputs": [],
+            "threshold": {
+              "value": 10,
+              "unit": "%",
+              "source": "provisional (diagnosis-cause-rules design)",
+              "origin": "default",
+              "key": "driver-interrupt-storm.sumPct"
+            },
+            "n": 0,
+            "calm": {
+              "mean": 1.3,
+              "n": 8,
+              "signal": "cpu.dpc_intr_pct"
+            },
+            "components": null,
+            "confidence": null,
+            "disprover": {
+              "check": "DPC + interrupt time < 3% on every probe within +-10 s of every hang",
+              "result": "disproved",
+              "values": [
+                {
+                  "ref": "spawnProbes[13]",
+                  "maxDpcPlusInterruptPct": 1.3
+                },
+                {
+                  "ref": "spawnProbes[18]",
+                  "maxDpcPlusInterruptPct": 1.3
+                },
+                {
+                  "ref": "spawnProbes[23]",
+                  "maxDpcPlusInterruptPct": 1.3
+                }
+              ]
+            },
+            "confounds": [
+              {
+                "id": "legitimate-io-load",
+                "text": "very high network or disk throughput legitimately raises interrupt time",
+                "active": false
+              }
+            ]
+          },
+          {
+            "id": "gpu-contention",
+            "class": "gpu",
+            "fired": null,
+            "reason": "gpu.engine_util_pct not recorded at this hang (no value stored)",
+            "at": [],
+            "inputs": [],
+            "threshold": {
+              "value": 90,
+              "unit": "%",
+              "source": "provisional (diagnosis-cause-rules design)",
+              "origin": "default",
+              "key": "gpu-contention.enginePct"
+            },
+            "n": 0,
+            "calm": {
+              "mean": null,
+              "n": 0,
+              "signal": null
+            },
+            "components": null,
+            "confidence": null,
+            "disprover": {
+              "check": "busiest GPU engine < 50% and dedicated memory < 80% of its total within +-10 s of every hang",
+              "result": "not-evaluable",
+              "values": []
+            },
+            "confounds": []
+          },
+          {
+            "id": "hard-fault-thrash",
+            "class": "memory",
+            "fired": false,
+            "reason": "not sustained (2 of 11 probes, minimum 3; pages written out >= 100/s); pages read in are high but reads alone are never swap",
+            "at": [
+              "2026-01-15T10:00:30.000Z",
+              "2026-01-15T10:00:40.000Z"
+            ],
+            "inputs": [
+              {
+                "ref": "spawnProbes[13]",
+                "signal": "mem.pages_out_per_s",
+                "at": "2026-01-15T10:00:30.000Z",
+                "value": 300,
+                "unit": "/s"
+              },
+              {
+                "ref": "spawnProbes[18]",
+                "signal": "mem.pages_out_per_s",
+                "at": "2026-01-15T10:00:40.000Z",
+                "value": 300,
+                "unit": "/s"
+              }
+            ],
+            "threshold": {
+              "value": 100,
+              "unit": "/s",
+              "source": "provisional (diagnosis-cause-rules design)",
+              "origin": "default",
+              "key": "hard-fault-thrash.pagesOutPerS"
+            },
+            "n": 2,
+            "calm": {
+              "mean": 0,
+              "n": 8,
+              "signal": "mem.pages_out_per_s"
+            },
+            "components": null,
+            "confidence": null,
+            "disprover": {
+              "check": "pages written out < 20/s on every probe within +-10 s of every hang",
+              "result": "not-disproved",
+              "values": [
+                {
+                  "ref": "spawnProbes[13]",
+                  "maxPagesOutPerS": 300
+                },
+                {
+                  "ref": "spawnProbes[18]",
+                  "maxPagesOutPerS": 300
+                },
+                {
+                  "ref": "spawnProbes[23]",
+                  "maxPagesOutPerS": 300
+                }
+              ]
+            },
+            "confounds": [
+              {
+                "id": "image-or-mapped-file-reads",
+                "text": "pages read in per second are dominated by image loads and mapped-file reads, which are not swap",
+                "active": false
+              },
+              {
+                "id": "observer-process-launches",
+                "text": "the observer's own process launches generate page-ins and page-outs",
+                "active": true
+              }
+            ]
+          },
+          {
+            "id": "memory-pressure",
+            "class": "memory",
+            "fired": true,
+            "reason": null,
+            "at": [
+              "2026-01-15T10:00:30.000Z"
+            ],
+            "inputs": [
+              {
+                "ref": "spawnProbes[13]",
+                "signal": "mem.committed_pct",
+                "at": "2026-01-15T10:00:30.000Z",
+                "value": 90.9,
+                "unit": "%"
+              },
+              {
+                "ref": "spawnProbes[13]",
+                "signal": "mem.avail_mb",
+                "at": "2026-01-15T10:00:30.000Z",
+                "value": 280,
+                "unit": "MB"
+              }
+            ],
+            "threshold": {
+              "value": 85,
+              "unit": "%",
+              "source": "MS perf troubleshooting [derived]",
+              "origin": "default",
+              "key": "mem.commit"
+            },
+            "n": 1,
+            "calm": {
+              "mean": 62.22,
+              "n": 8,
+              "signal": "mem.committed_pct"
+            },
+            "components": {
+              "C": 1,
+              "D": 1,
+              "O": 1,
+              "K": 0.67,
+              "P": 0
+            },
+            "confidence": 0.95,
+            "disprover": {
+              "check": "commit < 70% and available > 2 GB on every probe within +-10 s of the hang",
+              "result": "not-disproved",
+              "values": [
+                {
+                  "ref": "spawnProbes[8]",
+                  "commitPct": 62.4,
+                  "availMB": 5200
+                },
+                {
+                  "ref": "spawnProbes[9]",
+                  "commitPct": 62.5,
+                  "availMB": 5200
+                },
+                {
+                  "ref": "spawnProbes[10]",
+                  "commitPct": 61.6,
+                  "availMB": 5200
+                },
+                {
+                  "ref": "spawnProbes[11]",
+                  "commitPct": 62.4,
+                  "availMB": 5200
+                },
+                {
+                  "ref": "spawnProbes[12]",
+                  "commitPct": 63.4,
+                  "availMB": 5200
+                },
+                {
+                  "ref": "spawnProbes[13]",
+                  "commitPct": 90.9,
+                  "availMB": 280
+                },
+                {
+                  "ref": "spawnProbes[14]",
+                  "commitPct": 60.7,
+                  "availMB": 5200
+                },
+                {
+                  "ref": "spawnProbes[15]",
+                  "commitPct": 61.6,
+                  "availMB": 5200
+                },
+                {
+                  "ref": "spawnProbes[16]",
+                  "commitPct": 63.2,
+                  "availMB": 5200
+                },
+                {
+                  "ref": "spawnProbes[17]",
+                  "commitPct": 63.1,
+                  "availMB": 5200
+                },
+                {
+                  "ref": "spawnProbes[18]",
+                  "commitPct": 90.7,
+                  "availMB": 280
+                }
+              ]
+            },
+            "confounds": [],
+            "confirmationWeight": 1,
+            "hangValue": 90.9
+          },
+          {
+            "id": "outside-scope",
+            "class": "outside-scope",
+            "fired": null,
+            "reason": "no per-hang scope share was recorded for this hang",
+            "at": [],
+            "inputs": [],
+            "threshold": {
+              "value": 85,
+              "unit": "%",
+              "source": "MS perf troubleshooting [derived]",
+              "origin": "default",
+              "key": "mem.commit"
+            },
+            "n": 0,
+            "calm": {
+              "mean": null,
+              "n": 0,
+              "signal": null
+            },
+            "components": null,
+            "confidence": null,
+            "disprover": {
+              "check": "machine commit < 70% and CPU < 60% on every probe within +-10 s of the hang",
+              "result": "not-disproved",
+              "values": [
+                {
+                  "ref": "spawnProbes[8]",
+                  "commitPct": 62.4,
+                  "cpuPct": 34.86275274306536
+                },
+                {
+                  "ref": "spawnProbes[9]",
+                  "commitPct": 62.5,
+                  "cpuPct": 30.06931663956493
+                },
+                {
+                  "ref": "spawnProbes[10]",
+                  "commitPct": 61.6,
+                  "cpuPct": 32.359193000011146
+                },
+                {
+                  "ref": "spawnProbes[11]",
+                  "commitPct": 62.4,
+                  "cpuPct": 27.297733509913087
+                },
+                {
+                  "ref": "spawnProbes[12]",
+                  "commitPct": 63.4,
+                  "cpuPct": 30.256457440555096
+                },
+                {
+                  "ref": "spawnProbes[13]",
+                  "commitPct": 90.9,
+                  "cpuPct": 40
+                },
+                {
+                  "ref": "spawnProbes[14]",
+                  "commitPct": 60.7,
+                  "cpuPct": 34.8281576205045
+                },
+                {
+                  "ref": "spawnProbes[15]",
+                  "commitPct": 61.6,
+                  "cpuPct": 28.600158491171896
+                },
+                {
+                  "ref": "spawnProbes[16]",
+                  "commitPct": 63.2,
+                  "cpuPct": 30.626365207135677
+                },
+                {
+                  "ref": "spawnProbes[17]",
+                  "commitPct": 63.1,
+                  "cpuPct": 33.27374309534207
+                },
+                {
+                  "ref": "spawnProbes[18]",
+                  "commitPct": 90.7,
+                  "cpuPct": 40
+                }
+              ]
+            },
+            "confounds": []
+          },
+          {
+            "id": "security-contention",
+            "class": "security-software",
+            "fired": false,
+            "reason": "memory-pressure rule fired at this hang; not attributed to security software",
+            "at": [
+              "2026-01-15T10:00:30.000Z"
+            ],
+            "inputs": [
+              {
+                "ref": "spawnProbes[13]",
+                "signal": "security.cpu_pct_machine",
+                "at": "2026-01-15T10:00:30.000Z",
+                "value": 0.42,
+                "unit": "% of machine",
+                "rawValue": 3.341681757476181,
+                "rawNote": "per-core-scaled value divided by logical processors"
+              }
+            ],
+            "threshold": {
+              "value": 8,
+              "unit": "% of machine",
+              "source": "provisional",
+              "origin": "default",
+              "key": "security.cpu_pct_machine"
+            },
+            "n": 1,
+            "calm": {
+              "mean": 0.54,
+              "n": 8,
+              "signal": "security.cpu_pct_machine"
+            },
+            "components": null,
+            "confidence": null,
+            "disprover": {
+              "check": "security-software CPU < 3% of machine on every probe within +-10 s of the hang",
+              "result": "disproved",
+              "values": [
+                {
+                  "ref": "spawnProbes[8]",
+                  "cpuPctMachine": 0.54
+                },
+                {
+                  "ref": "spawnProbes[9]",
+                  "cpuPctMachine": 0.52
+                },
+                {
+                  "ref": "spawnProbes[10]",
+                  "cpuPctMachine": 0.54
+                },
+                {
+                  "ref": "spawnProbes[11]",
+                  "cpuPctMachine": 0.52
+                },
+                {
+                  "ref": "spawnProbes[12]",
+                  "cpuPctMachine": 0.42
+                },
+                {
+                  "ref": "spawnProbes[13]",
+                  "cpuPctMachine": 0.42
+                },
+                {
+                  "ref": "spawnProbes[14]",
+                  "cpuPctMachine": 0.39
+                },
+                {
+                  "ref": "spawnProbes[15]",
+                  "cpuPctMachine": 0.57
+                },
+                {
+                  "ref": "spawnProbes[16]",
+                  "cpuPctMachine": 0.45
+                },
+                {
+                  "ref": "spawnProbes[17]",
+                  "cpuPctMachine": 0.57
+                },
+                {
+                  "ref": "spawnProbes[18]",
+                  "cpuPctMachine": 0.44
+                }
+              ]
+            },
+            "confounds": [
+              {
+                "id": "probe-start-scanning",
+                "text": "probe process starts may trigger scanning",
+                "active": true
+              }
+            ],
+            "extra": {
+              "ratio": 2.5
+            }
+          },
+          {
+            "id": "single-process-dominance",
+            "class": "memory",
+            "fired": false,
+            "reason": "no group holds >= 40% of used memory on >= 3 probes, and no group grows monotonically by >= 10% across >= 3 snapshots",
+            "at": [],
+            "inputs": [],
+            "threshold": {
+              "value": 40,
+              "unit": "% of used memory",
+              "source": "provisional (diagnosis-cause-rules design)",
+              "origin": "default",
+              "key": "single-process-dominance.sharePct"
+            },
+            "n": 0,
+            "calm": {
+              "mean": null,
+              "n": 0,
+              "signal": null
+            },
+            "components": null,
+            "confidence": null,
+            "disprover": {
+              "check": "no group holds >= 20% of used memory and no group grows by >= 10% at any hang",
+              "result": "disproved",
+              "values": [
+                {
+                  "ref": "spawnProbes[13]",
+                  "maxSharePct": 9.2,
+                  "growth": false
+                },
+                {
+                  "ref": "spawnProbes[18]",
+                  "maxSharePct": 9.2,
+                  "growth": false
+                },
+                {
+                  "ref": "spawnProbes[23]",
+                  "maxSharePct": 9.1,
+                  "growth": false
+                }
+              ]
+            },
+            "confounds": []
+          },
+          {
+            "id": "thermal-power-throttle",
+            "class": "thermal-power",
+            "fired": false,
+            "reason": "not sustained (0 of 11 probes, minimum 3; CPU >= 50% with performance < 60% of the calm median 110.87666947860271% or an active limit)",
+            "at": [],
+            "inputs": [],
+            "threshold": {
+              "value": 60,
+              "unit": "% of calm median",
+              "source": "provisional (diagnosis-cause-rules design)",
+              "origin": "default",
+              "key": "thermal-power-throttle.perfPctOfCalm"
+            },
+            "n": 0,
+            "calm": {
+              "mean": 110.12,
+              "n": 8,
+              "signal": "cpu.perf_pct"
+            },
+            "components": null,
+            "confidence": null,
+            "disprover": {
+              "check": "delivered performance >= 90% of the calm median at 2/3 or more of the hangs",
+              "result": "disproved",
+              "values": [
+                {
+                  "ref": "spawnProbes[13]",
+                  "meanPerfPct": 109.5,
+                  "calmMedianPerfPct": 110.87666947860271
+                },
+                {
+                  "ref": "spawnProbes[18]",
+                  "meanPerfPct": 108.5,
+                  "calmMedianPerfPct": 110.87666947860271
+                },
+                {
+                  "ref": "spawnProbes[23]",
+                  "meanPerfPct": 108.2,
+                  "calmMedianPerfPct": 110.87666947860271
+                }
+              ]
+            },
+            "confounds": [
+              {
+                "id": "power-mode-overlay",
+                "text": "an efficiency power mode lowers delivered performance by design",
+                "active": false
+              }
+            ],
+            "extra": {
+              "calmMedianPerfPct": 110.87666947860271,
+              "calmN": 8,
+              "powerSource": "unknown",
+              "limitKind": "unknown",
+              "limitReasons": [],
+              "cpuTempC": null,
+              "efficiencyMode": false
+            }
+          },
+          {
+            "id": "vm-memory-dominance",
+            "class": "memory",
+            "fired": null,
+            "reason": "proc.vm_host_mb not recorded at this hang (no value stored)",
+            "at": [],
+            "inputs": [],
+            "threshold": {
+              "value": 40,
+              "unit": "% of RAM",
+              "source": "provisional (diagnosis-cause-rules design)",
+              "origin": "default",
+              "key": "vm-memory-dominance.vmPctRam"
+            },
+            "n": 0,
+            "calm": {
+              "mean": null,
+              "n": 0,
+              "signal": null
+            },
+            "components": null,
+            "confidence": null,
+            "disprover": {
+              "check": "the configured VM memory cap is at most 50% of RAM, or VM host memory < 25% of RAM at 2/3 or more of the hangs",
+              "result": "not-evaluable",
+              "values": []
+            },
+            "confounds": []
+          }
+        ],
+        "ranked": [
+          "memory-pressure"
+        ]
+      },
+      {
+        "ref": "spawnProbes[18]",
+        "at": "2026-01-15T10:00:40.000Z",
+        "ms": 1952,
+        "confirmedBy": [
+          "user-mark"
+        ],
+        "helperLate": "not evaluated",
+        "helperLateReason": "report predates the input-response check",
+        "rules": [
+          {
+            "id": "battery-power-plan",
+            "class": "thermal-power",
+            "fired": null,
+            "reason": "rate comparison not evaluated: not enough data on each side (battery 3 hangs/22 probes, AC 0 hangs/5 probes; needs 3 hangs and 10 probes each); power mode not evaluated: power mode / energy saver known at 0 hangs and 0 calm probes (needs 3 of each)",
+            "at": [],
+            "inputs": [],
+            "threshold": {
+              "value": 2,
+              "unit": "x AC rate",
+              "source": "provisional (diagnosis-cause-rules design)",
+              "origin": "default",
+              "key": "battery-power-plan.rateRatio"
+            },
+            "n": 0,
+            "calm": {
+              "mean": null,
+              "n": 0,
+              "signal": null
+            },
+            "components": null,
+            "confidence": null,
+            "disprover": {
+              "check": "battery and AC hang rates per minute within 1.25x of each other (each side with enough hangs and probes)",
+              "result": "not-evaluable",
+              "values": [
+                {
+                  "reason": "not enough data on each side (battery 3 hangs/22 probes, AC 0 hangs/5 probes; needs 3 hangs and 10 probes each)"
+                }
+              ]
+            },
+            "confounds": [],
+            "extra": {
+              "via": null,
+              "battery": {
+                "hangs": 3,
+                "probes": 22,
+                "observedMin": 0.7,
+                "ratePerMin": 4.091
+              },
+              "ac": {
+                "hangs": 0,
+                "probes": 5,
+                "observedMin": 0.2,
+                "ratePerMin": 0
+              },
+              "ratio": null,
+              "rateComparison": "not evaluated: not enough data on each side (battery 3 hangs/22 probes, AC 0 hangs/5 probes; needs 3 hangs and 10 probes each)",
+              "mode": {
+                "evaluated": false,
+                "hangShare": null,
+                "calmShare": null,
+                "reason": "power mode / energy saver known at 0 hangs and 0 calm probes (needs 3 of each)"
+              }
+            }
+          },
+          {
+            "id": "commit-limit-pressure",
+            "class": "memory",
+            "fired": false,
+            "reason": "page file usage not rising (6.3% to 7.300000000000001%; needs +2 percentage points)",
+            "at": [
+              "2026-01-15T10:00:30.000Z",
+              "2026-01-15T10:00:40.000Z",
+              "2026-01-15T10:00:50.000Z"
+            ],
+            "inputs": [
+              {
+                "ref": "spawnProbes[13]",
+                "signal": "mem.commit_of_limit_pct",
+                "at": "2026-01-15T10:00:30.000Z",
+                "value": 90.9,
+                "unit": "%"
+              },
+              {
+                "ref": "spawnProbes[13]",
+                "signal": "mem.pagefile_pct",
+                "at": "2026-01-15T10:00:30.000Z",
+                "value": 6.3,
+                "unit": "%"
+              },
+              {
+                "ref": "spawnProbes[13]",
+                "signal": "mem.avail_mb",
+                "at": "2026-01-15T10:00:30.000Z",
+                "value": 280,
+                "unit": "MB"
+              },
+              {
+                "ref": "spawnProbes[18]",
+                "signal": "mem.commit_of_limit_pct",
+                "at": "2026-01-15T10:00:40.000Z",
+                "value": 90.7,
+                "unit": "%"
+              },
+              {
+                "ref": "spawnProbes[18]",
+                "signal": "mem.pagefile_pct",
+                "at": "2026-01-15T10:00:40.000Z",
+                "value": 6.8,
+                "unit": "%"
+              },
+              {
+                "ref": "spawnProbes[18]",
+                "signal": "mem.avail_mb",
+                "at": "2026-01-15T10:00:40.000Z",
+                "value": 280,
+                "unit": "MB"
+              },
+              {
+                "ref": "spawnProbes[23]",
+                "signal": "mem.commit_of_limit_pct",
+                "at": "2026-01-15T10:00:50.000Z",
+                "value": 91.5,
+                "unit": "%"
+              },
+              {
+                "ref": "spawnProbes[23]",
+                "signal": "mem.pagefile_pct",
+                "at": "2026-01-15T10:00:50.000Z",
+                "value": 7.300000000000001,
+                "unit": "%"
+              },
+              {
+                "ref": "spawnProbes[23]",
+                "signal": "mem.avail_mb",
+                "at": "2026-01-15T10:00:50.000Z",
+                "value": 280,
+                "unit": "MB"
+              }
+            ],
+            "threshold": {
+              "value": 90,
+              "unit": "%",
+              "source": "provisional (diagnosis-cause-rules design)",
+              "origin": "default",
+              "key": "commit-limit-pressure.commitPct"
+            },
+            "n": 3,
+            "calm": {
+              "mean": 62.22,
+              "n": 8,
+              "signal": "mem.commit_of_limit_pct"
+            },
+            "components": null,
+            "confidence": null,
+            "disprover": {
+              "check": "commit < 80% of the limit at 2/3 or more of the hangs",
+              "result": "not-disproved",
+              "values": [
+                {
+                  "ref": "spawnProbes[13]",
+                  "commitPct": 90.9
+                },
+                {
+                  "ref": "spawnProbes[18]",
+                  "commitPct": 90.7
+                },
+                {
+                  "ref": "spawnProbes[23]",
+                  "commitPct": 91.5
+                }
+              ]
+            },
+            "confounds": [
+              {
+                "id": "pagefile-capped-by-policy",
+                "text": "the commit limit is close to installed RAM, so the page file is capped or absent by policy",
+                "active": false
+              },
+              {
+                "id": "observer-commit",
+                "text": "the observer's own processes add to commit charge",
+                "active": false
+              }
+            ],
+            "extra": {
+              "pagefile": {
+                "firstPct": 6.3,
+                "lastPct": 7.300000000000001,
+                "deltaPp": 1,
+                "risePpNeeded": 2
+              },
+              "availableLimitMB": 819,
+              "installedRamMB": 16384
+            }
+          },
+          {
+            "id": "cpu-saturation",
+            "class": "cpu",
+            "fired": false,
+            "reason": "CPU 40% (needs > 90%) with queue 0.38 per logical processor (needs > 2)",
+            "at": [
+              "2026-01-15T10:00:40.000Z"
+            ],
+            "inputs": [
+              {
+                "ref": "spawnProbes[18]",
+                "signal": "cpu.pct_total",
+                "at": "2026-01-15T10:00:40.000Z",
+                "value": 40,
+                "unit": "%"
+              },
+              {
+                "ref": "spawnProbes[18]",
+                "signal": "cpu.queue_per_lp",
+                "at": "2026-01-15T10:00:40.000Z",
+                "value": 0.38,
+                "unit": "per logical processor"
+              }
+            ],
+            "threshold": {
+              "value": 90,
+              "unit": "%",
+              "source": "provisional",
+              "origin": "default",
+              "key": "cpu.pct_total"
+            },
+            "n": 1,
+            "calm": {
+              "mean": 32.13,
+              "n": 8,
+              "signal": "cpu.pct_total"
+            },
+            "components": null,
+            "confidence": null,
+            "disprover": {
+              "check": "CPU < 60% and queue < 1 per logical processor on every probe within +-10 s of the hang",
+              "result": "disproved",
+              "values": [
+                {
+                  "ref": "spawnProbes[13]",
+                  "cpuPct": 40,
+                  "queuePerLp": 0.38
+                },
+                {
+                  "ref": "spawnProbes[14]",
+                  "cpuPct": 34.8281576205045,
+                  "queuePerLp": 0.13
+                },
+                {
+                  "ref": "spawnProbes[15]",
+                  "cpuPct": 28.600158491171896,
+                  "queuePerLp": 0.13
+                },
+                {
+                  "ref": "spawnProbes[16]",
+                  "cpuPct": 30.626365207135677,
+                  "queuePerLp": 0.13
+                },
+                {
+                  "ref": "spawnProbes[17]",
+                  "cpuPct": 33.27374309534207,
+                  "queuePerLp": 0.13
+                },
+                {
+                  "ref": "spawnProbes[18]",
+                  "cpuPct": 40,
+                  "queuePerLp": 0.38
+                },
+                {
+                  "ref": "spawnProbes[19]",
+                  "cpuPct": 30.51281409803778,
+                  "queuePerLp": 0.13
+                },
+                {
+                  "ref": "spawnProbes[20]",
+                  "cpuPct": 34.86039919545874,
+                  "queuePerLp": 0.13
+                },
+                {
+                  "ref": "spawnProbes[21]",
+                  "cpuPct": 31.573711920063943,
+                  "queuePerLp": 0.13
+                },
+                {
+                  "ref": "spawnProbes[22]",
+                  "cpuPct": 27.953835017979145,
+                  "queuePerLp": 0.13
+                },
+                {
+                  "ref": "spawnProbes[23]",
+                  "cpuPct": 40,
+                  "queuePerLp": 0.38
+                }
+              ]
+            },
+            "confounds": [],
+            "extra": {
+              "queuePerLogicalProcessor": 0.38,
+              "queueThreshold": {
+                "value": 2,
+                "unit": "per logical processor",
+                "source": "provisional",
+                "origin": "default",
+                "key": "cpu.queue_per_lp"
+              },
+              "topInScopeGroups": []
+            }
+          },
+          {
+            "id": "database-memory-io",
+            "class": "memory",
+            "fired": false,
+            "reason": "memory variant not sustained (0 of 11 probes, minimum 3; group + configured >= 25% of RAM)",
+            "at": [],
+            "inputs": [],
+            "threshold": {
+              "value": 25,
+              "unit": "% of RAM",
+              "source": "provisional (diagnosis-cause-rules design)",
+              "origin": "default",
+              "key": "database-memory-io.memPctRam"
+            },
+            "n": 0,
+            "calm": {
+              "mean": null,
+              "n": 0,
+              "signal": null
+            },
+            "components": null,
+            "confidence": null,
+            "disprover": {
+              "check": "disk latency < 10 ms and database group memory < 10% of RAM within +-10 s of every hang",
+              "result": "disproved",
+              "values": [
+                {
+                  "ref": "spawnProbes[13]",
+                  "group": "postgres",
+                  "maxLatencyMs": 4,
+                  "maxMemPctRam": 6.1
+                },
+                {
+                  "ref": "spawnProbes[18]",
+                  "group": "postgres",
+                  "maxLatencyMs": 4,
+                  "maxMemPctRam": 6.1
+                },
+                {
+                  "ref": "spawnProbes[23]",
+                  "group": "postgres",
+                  "maxLatencyMs": 4,
+                  "maxMemPctRam": 6.1
+                }
+              ]
+            },
+            "confounds": [
+              {
+                "id": "config-unavailable",
+                "text": "database configuration facts were not collected; the memory variant uses group memory alone",
+                "active": false
+              }
+            ],
+            "extra": {
+              "group": "postgres",
+              "variants": {
+                "memory": {
+                  "n": 0,
+                  "fired": false
+                },
+                "io": "not evaluated (disk latency, queue or group I/O not recorded)"
+              },
+              "config": null,
+              "missingInputs": [
+                "database configuration facts (not collected: declare config in the scope file)"
+              ]
+            }
+          },
+          {
+            "id": "disk-stall",
+            "class": "disk",
+            "fired": false,
+            "reason": "not sustained (0 of 11 probes, minimum 3; latency > 25 ms with queue >= 1)",
+            "at": [],
+            "inputs": [],
+            "threshold": {
+              "value": 25,
+              "unit": "ms",
+              "source": "provisional",
+              "origin": "default",
+              "key": "disk.latency_ms"
+            },
+            "n": 0,
+            "calm": {
+              "mean": 4,
+              "n": 8,
+              "signal": "disk.latency_ms"
+            },
+            "components": null,
+            "confidence": null,
+            "disprover": {
+              "check": "latency < 10 ms and queue < 1 on every probe within +-10 s of the hang",
+              "result": "disproved",
+              "values": [
+                {
+                  "ref": "spawnProbes[13]",
+                  "latencyMs": 4,
+                  "queue": 0.2
+                },
+                {
+                  "ref": "spawnProbes[14]",
+                  "latencyMs": 4,
+                  "queue": 0.2
+                },
+                {
+                  "ref": "spawnProbes[15]",
+                  "latencyMs": 4,
+                  "queue": 0.2
+                },
+                {
+                  "ref": "spawnProbes[16]",
+                  "latencyMs": 4,
+                  "queue": 0.2
+                },
+                {
+                  "ref": "spawnProbes[17]",
+                  "latencyMs": 4,
+                  "queue": 0.2
+                },
+                {
+                  "ref": "spawnProbes[18]",
+                  "latencyMs": 4,
+                  "queue": 0.2
+                },
+                {
+                  "ref": "spawnProbes[19]",
+                  "latencyMs": 4,
+                  "queue": 0.2
+                },
+                {
+                  "ref": "spawnProbes[20]",
+                  "latencyMs": 4,
+                  "queue": 0.2
+                },
+                {
+                  "ref": "spawnProbes[21]",
+                  "latencyMs": 4,
+                  "queue": 0.2
+                },
+                {
+                  "ref": "spawnProbes[22]",
+                  "latencyMs": 4,
+                  "queue": 0.2
+                },
+                {
+                  "ref": "spawnProbes[23]",
+                  "latencyMs": 4,
+                  "queue": 0.2
+                }
+              ]
+            },
+            "confounds": []
+          },
+          {
+            "id": "driver-interrupt-storm",
+            "class": "cpu",
+            "fired": false,
+            "reason": "not sustained (0 of 11 probes, minimum 3; DPC + interrupt >= 10% of CPU)",
+            "at": [],
+            "inputs": [],
+            "threshold": {
+              "value": 10,
+              "unit": "%",
+              "source": "provisional (diagnosis-cause-rules design)",
+              "origin": "default",
+              "key": "driver-interrupt-storm.sumPct"
+            },
+            "n": 0,
+            "calm": {
+              "mean": 1.3,
+              "n": 8,
+              "signal": "cpu.dpc_intr_pct"
+            },
+            "components": null,
+            "confidence": null,
+            "disprover": {
+              "check": "DPC + interrupt time < 3% on every probe within +-10 s of every hang",
+              "result": "disproved",
+              "values": [
+                {
+                  "ref": "spawnProbes[13]",
+                  "maxDpcPlusInterruptPct": 1.3
+                },
+                {
+                  "ref": "spawnProbes[18]",
+                  "maxDpcPlusInterruptPct": 1.3
+                },
+                {
+                  "ref": "spawnProbes[23]",
+                  "maxDpcPlusInterruptPct": 1.3
+                }
+              ]
+            },
+            "confounds": [
+              {
+                "id": "legitimate-io-load",
+                "text": "very high network or disk throughput legitimately raises interrupt time",
+                "active": false
+              }
+            ]
+          },
+          {
+            "id": "gpu-contention",
+            "class": "gpu",
+            "fired": null,
+            "reason": "gpu.engine_util_pct not recorded at this hang (no value stored)",
+            "at": [],
+            "inputs": [],
+            "threshold": {
+              "value": 90,
+              "unit": "%",
+              "source": "provisional (diagnosis-cause-rules design)",
+              "origin": "default",
+              "key": "gpu-contention.enginePct"
+            },
+            "n": 0,
+            "calm": {
+              "mean": null,
+              "n": 0,
+              "signal": null
+            },
+            "components": null,
+            "confidence": null,
+            "disprover": {
+              "check": "busiest GPU engine < 50% and dedicated memory < 80% of its total within +-10 s of every hang",
+              "result": "not-evaluable",
+              "values": []
+            },
+            "confounds": []
+          },
+          {
+            "id": "hard-fault-thrash",
+            "class": "memory",
+            "fired": null,
+            "reason": "mem.modified_mb not recorded at this hang (no value stored); modified list growth cannot be judged",
+            "at": [],
+            "inputs": [],
+            "threshold": {
+              "value": 100,
+              "unit": "/s",
+              "source": "provisional (diagnosis-cause-rules design)",
+              "origin": "default",
+              "key": "hard-fault-thrash.pagesOutPerS"
+            },
+            "n": 0,
+            "calm": {
+              "mean": 0,
+              "n": 8,
+              "signal": "mem.pages_out_per_s"
+            },
+            "components": null,
+            "confidence": null,
+            "disprover": {
+              "check": "pages written out < 20/s on every probe within +-10 s of every hang",
+              "result": "not-disproved",
+              "values": [
+                {
+                  "ref": "spawnProbes[13]",
+                  "maxPagesOutPerS": 300
+                },
+                {
+                  "ref": "spawnProbes[18]",
+                  "maxPagesOutPerS": 300
+                },
+                {
+                  "ref": "spawnProbes[23]",
+                  "maxPagesOutPerS": 300
+                }
+              ]
+            },
+            "confounds": [
+              {
+                "id": "image-or-mapped-file-reads",
+                "text": "pages read in per second are dominated by image loads and mapped-file reads, which are not swap",
+                "active": false
+              },
+              {
+                "id": "observer-process-launches",
+                "text": "the observer's own process launches generate page-ins and page-outs",
+                "active": true
+              }
+            ]
+          },
+          {
+            "id": "memory-pressure",
+            "class": "memory",
+            "fired": true,
+            "reason": null,
+            "at": [
+              "2026-01-15T10:00:40.000Z"
+            ],
+            "inputs": [
+              {
+                "ref": "spawnProbes[18]",
+                "signal": "mem.committed_pct",
+                "at": "2026-01-15T10:00:40.000Z",
+                "value": 90.7,
+                "unit": "%"
+              },
+              {
+                "ref": "spawnProbes[18]",
+                "signal": "mem.avail_mb",
+                "at": "2026-01-15T10:00:40.000Z",
+                "value": 280,
+                "unit": "MB"
+              }
+            ],
+            "threshold": {
+              "value": 85,
+              "unit": "%",
+              "source": "MS perf troubleshooting [derived]",
+              "origin": "default",
+              "key": "mem.commit"
+            },
+            "n": 1,
+            "calm": {
+              "mean": 62.22,
+              "n": 8,
+              "signal": "mem.committed_pct"
+            },
+            "components": {
+              "C": 1,
+              "D": 1,
+              "O": 1,
+              "K": 0.67,
+              "P": 0
+            },
+            "confidence": 0.95,
+            "disprover": {
+              "check": "commit < 70% and available > 2 GB on every probe within +-10 s of the hang",
+              "result": "not-disproved",
+              "values": [
+                {
+                  "ref": "spawnProbes[13]",
+                  "commitPct": 90.9,
+                  "availMB": 280
+                },
+                {
+                  "ref": "spawnProbes[14]",
+                  "commitPct": 60.7,
+                  "availMB": 5200
+                },
+                {
+                  "ref": "spawnProbes[15]",
+                  "commitPct": 61.6,
+                  "availMB": 5200
+                },
+                {
+                  "ref": "spawnProbes[16]",
+                  "commitPct": 63.2,
+                  "availMB": 5200
+                },
+                {
+                  "ref": "spawnProbes[17]",
+                  "commitPct": 63.1,
+                  "availMB": 5200
+                },
+                {
+                  "ref": "spawnProbes[18]",
+                  "commitPct": 90.7,
+                  "availMB": 280
+                },
+                {
+                  "ref": "spawnProbes[19]",
+                  "commitPct": 61.9,
+                  "availMB": 5200
+                },
+                {
+                  "ref": "spawnProbes[20]",
+                  "commitPct": 62.1,
+                  "availMB": 5200
+                },
+                {
+                  "ref": "spawnProbes[21]",
+                  "commitPct": 61.7,
+                  "availMB": 5200
+                },
+                {
+                  "ref": "spawnProbes[22]",
+                  "commitPct": 61.6,
+                  "availMB": 5200
+                },
+                {
+                  "ref": "spawnProbes[23]",
+                  "commitPct": 91.5,
+                  "availMB": 280
+                }
+              ]
+            },
+            "confounds": [],
+            "confirmationWeight": 1,
+            "hangValue": 90.7
+          },
+          {
+            "id": "outside-scope",
+            "class": "outside-scope",
+            "fired": null,
+            "reason": "no per-hang scope share was recorded for this hang",
+            "at": [],
+            "inputs": [],
+            "threshold": {
+              "value": 85,
+              "unit": "%",
+              "source": "MS perf troubleshooting [derived]",
+              "origin": "default",
+              "key": "mem.commit"
+            },
+            "n": 0,
+            "calm": {
+              "mean": null,
+              "n": 0,
+              "signal": null
+            },
+            "components": null,
+            "confidence": null,
+            "disprover": {
+              "check": "machine commit < 70% and CPU < 60% on every probe within +-10 s of the hang",
+              "result": "not-disproved",
+              "values": [
+                {
+                  "ref": "spawnProbes[13]",
+                  "commitPct": 90.9,
+                  "cpuPct": 40
+                },
+                {
+                  "ref": "spawnProbes[14]",
+                  "commitPct": 60.7,
+                  "cpuPct": 34.8281576205045
+                },
+                {
+                  "ref": "spawnProbes[15]",
+                  "commitPct": 61.6,
+                  "cpuPct": 28.600158491171896
+                },
+                {
+                  "ref": "spawnProbes[16]",
+                  "commitPct": 63.2,
+                  "cpuPct": 30.626365207135677
+                },
+                {
+                  "ref": "spawnProbes[17]",
+                  "commitPct": 63.1,
+                  "cpuPct": 33.27374309534207
+                },
+                {
+                  "ref": "spawnProbes[18]",
+                  "commitPct": 90.7,
+                  "cpuPct": 40
+                },
+                {
+                  "ref": "spawnProbes[19]",
+                  "commitPct": 61.9,
+                  "cpuPct": 30.51281409803778
+                },
+                {
+                  "ref": "spawnProbes[20]",
+                  "commitPct": 62.1,
+                  "cpuPct": 34.86039919545874
+                },
+                {
+                  "ref": "spawnProbes[21]",
+                  "commitPct": 61.7,
+                  "cpuPct": 31.573711920063943
+                },
+                {
+                  "ref": "spawnProbes[22]",
+                  "commitPct": 61.6,
+                  "cpuPct": 27.953835017979145
+                },
+                {
+                  "ref": "spawnProbes[23]",
+                  "commitPct": 91.5,
+                  "cpuPct": 40
+                }
+              ]
+            },
+            "confounds": []
+          },
+          {
+            "id": "security-contention",
+            "class": "security-software",
+            "fired": false,
+            "reason": "memory-pressure rule fired at this hang; not attributed to security software",
+            "at": [
+              "2026-01-15T10:00:40.000Z"
+            ],
+            "inputs": [
+              {
+                "ref": "spawnProbes[18]",
+                "signal": "security.cpu_pct_machine",
+                "at": "2026-01-15T10:00:40.000Z",
+                "value": 0.44,
+                "unit": "% of machine",
+                "rawValue": 3.5026641516014934,
+                "rawNote": "per-core-scaled value divided by logical processors"
+              }
+            ],
+            "threshold": {
+              "value": 8,
+              "unit": "% of machine",
+              "source": "provisional",
+              "origin": "default",
+              "key": "security.cpu_pct_machine"
+            },
+            "n": 1,
+            "calm": {
+              "mean": 0.54,
+              "n": 8,
+              "signal": "security.cpu_pct_machine"
+            },
+            "components": null,
+            "confidence": null,
+            "disprover": {
+              "check": "security-software CPU < 3% of machine on every probe within +-10 s of the hang",
+              "result": "disproved",
+              "values": [
+                {
+                  "ref": "spawnProbes[13]",
+                  "cpuPctMachine": 0.42
+                },
+                {
+                  "ref": "spawnProbes[14]",
+                  "cpuPctMachine": 0.39
+                },
+                {
+                  "ref": "spawnProbes[15]",
+                  "cpuPctMachine": 0.57
+                },
+                {
+                  "ref": "spawnProbes[16]",
+                  "cpuPctMachine": 0.45
+                },
+                {
+                  "ref": "spawnProbes[17]",
+                  "cpuPctMachine": 0.57
+                },
+                {
+                  "ref": "spawnProbes[18]",
+                  "cpuPctMachine": 0.44
+                },
+                {
+                  "ref": "spawnProbes[19]",
+                  "cpuPctMachine": 0.48
+                },
+                {
+                  "ref": "spawnProbes[20]",
+                  "cpuPctMachine": 0.59
+                },
+                {
+                  "ref": "spawnProbes[21]",
+                  "cpuPctMachine": 0.42
+                },
+                {
+                  "ref": "spawnProbes[22]",
+                  "cpuPctMachine": 0.4
+                },
+                {
+                  "ref": "spawnProbes[23]",
+                  "cpuPctMachine": 0.45
+                }
+              ]
+            },
+            "confounds": [
+              {
+                "id": "probe-start-scanning",
+                "text": "probe process starts may trigger scanning",
+                "active": true
+              }
+            ],
+            "extra": {
+              "ratio": 2.5
+            }
+          },
+          {
+            "id": "single-process-dominance",
+            "class": "memory",
+            "fired": false,
+            "reason": "no group holds >= 40% of used memory on >= 3 probes, and no group grows monotonically by >= 10% across >= 3 snapshots",
+            "at": [],
+            "inputs": [],
+            "threshold": {
+              "value": 40,
+              "unit": "% of used memory",
+              "source": "provisional (diagnosis-cause-rules design)",
+              "origin": "default",
+              "key": "single-process-dominance.sharePct"
+            },
+            "n": 0,
+            "calm": {
+              "mean": null,
+              "n": 0,
+              "signal": null
+            },
+            "components": null,
+            "confidence": null,
+            "disprover": {
+              "check": "no group holds >= 20% of used memory and no group grows by >= 10% at any hang",
+              "result": "disproved",
+              "values": [
+                {
+                  "ref": "spawnProbes[13]",
+                  "maxSharePct": 9.2,
+                  "growth": false
+                },
+                {
+                  "ref": "spawnProbes[18]",
+                  "maxSharePct": 9.2,
+                  "growth": false
+                },
+                {
+                  "ref": "spawnProbes[23]",
+                  "maxSharePct": 9.1,
+                  "growth": false
+                }
+              ]
+            },
+            "confounds": []
+          },
+          {
+            "id": "thermal-power-throttle",
+            "class": "thermal-power",
+            "fired": false,
+            "reason": "not sustained (0 of 11 probes, minimum 3; CPU >= 50% with performance < 60% of the calm median 110.87666947860271% or an active limit)",
+            "at": [],
+            "inputs": [],
+            "threshold": {
+              "value": 60,
+              "unit": "% of calm median",
+              "source": "provisional (diagnosis-cause-rules design)",
+              "origin": "default",
+              "key": "thermal-power-throttle.perfPctOfCalm"
+            },
+            "n": 0,
+            "calm": {
+              "mean": 110.12,
+              "n": 8,
+              "signal": "cpu.perf_pct"
+            },
+            "components": null,
+            "confidence": null,
+            "disprover": {
+              "check": "delivered performance >= 90% of the calm median at 2/3 or more of the hangs",
+              "result": "disproved",
+              "values": [
+                {
+                  "ref": "spawnProbes[13]",
+                  "meanPerfPct": 109.5,
+                  "calmMedianPerfPct": 110.87666947860271
+                },
+                {
+                  "ref": "spawnProbes[18]",
+                  "meanPerfPct": 108.5,
+                  "calmMedianPerfPct": 110.87666947860271
+                },
+                {
+                  "ref": "spawnProbes[23]",
+                  "meanPerfPct": 108.2,
+                  "calmMedianPerfPct": 110.87666947860271
+                }
+              ]
+            },
+            "confounds": [
+              {
+                "id": "power-mode-overlay",
+                "text": "an efficiency power mode lowers delivered performance by design",
+                "active": false
+              }
+            ],
+            "extra": {
+              "calmMedianPerfPct": 110.87666947860271,
+              "calmN": 8,
+              "powerSource": "unknown",
+              "limitKind": "unknown",
+              "limitReasons": [],
+              "cpuTempC": null,
+              "efficiencyMode": false
+            }
+          },
+          {
+            "id": "vm-memory-dominance",
+            "class": "memory",
+            "fired": null,
+            "reason": "proc.vm_host_mb not recorded at this hang (no value stored)",
+            "at": [],
+            "inputs": [],
+            "threshold": {
+              "value": 40,
+              "unit": "% of RAM",
+              "source": "provisional (diagnosis-cause-rules design)",
+              "origin": "default",
+              "key": "vm-memory-dominance.vmPctRam"
+            },
+            "n": 0,
+            "calm": {
+              "mean": null,
+              "n": 0,
+              "signal": null
+            },
+            "components": null,
+            "confidence": null,
+            "disprover": {
+              "check": "the configured VM memory cap is at most 50% of RAM, or VM host memory < 25% of RAM at 2/3 or more of the hangs",
+              "result": "not-evaluable",
+              "values": []
+            },
+            "confounds": []
+          }
+        ],
+        "ranked": [
+          "memory-pressure"
+        ]
+      },
+      {
+        "ref": "spawnProbes[23]",
+        "at": "2026-01-15T10:00:50.000Z",
+        "ms": 1979,
+        "confirmedBy": [
+          "probe-only"
+        ],
+        "helperLate": "not evaluated",
+        "helperLateReason": "report predates the input-response check",
+        "rules": [
+          {
+            "id": "battery-power-plan",
+            "class": "thermal-power",
+            "fired": null,
+            "reason": "rate comparison not evaluated: not enough data on each side (battery 3 hangs/22 probes, AC 0 hangs/5 probes; needs 3 hangs and 10 probes each); power mode not evaluated: power mode / energy saver known at 0 hangs and 0 calm probes (needs 3 of each)",
+            "at": [],
+            "inputs": [],
+            "threshold": {
+              "value": 2,
+              "unit": "x AC rate",
+              "source": "provisional (diagnosis-cause-rules design)",
+              "origin": "default",
+              "key": "battery-power-plan.rateRatio"
+            },
+            "n": 0,
+            "calm": {
+              "mean": null,
+              "n": 0,
+              "signal": null
+            },
+            "components": null,
+            "confidence": null,
+            "disprover": {
+              "check": "battery and AC hang rates per minute within 1.25x of each other (each side with enough hangs and probes)",
+              "result": "not-evaluable",
+              "values": [
+                {
+                  "reason": "not enough data on each side (battery 3 hangs/22 probes, AC 0 hangs/5 probes; needs 3 hangs and 10 probes each)"
+                }
+              ]
+            },
+            "confounds": [],
+            "extra": {
+              "via": null,
+              "battery": {
+                "hangs": 3,
+                "probes": 22,
+                "observedMin": 0.7,
+                "ratePerMin": 4.091
+              },
+              "ac": {
+                "hangs": 0,
+                "probes": 5,
+                "observedMin": 0.2,
+                "ratePerMin": 0
+              },
+              "ratio": null,
+              "rateComparison": "not evaluated: not enough data on each side (battery 3 hangs/22 probes, AC 0 hangs/5 probes; needs 3 hangs and 10 probes each)",
+              "mode": {
+                "evaluated": false,
+                "hangShare": null,
+                "calmShare": null,
+                "reason": "power mode / energy saver known at 0 hangs and 0 calm probes (needs 3 of each)"
+              }
+            }
+          },
+          {
+            "id": "commit-limit-pressure",
+            "class": "memory",
+            "fired": false,
+            "reason": "not sustained (2 of 11 probes, minimum 3; commit >= 90% of the limit and available < 819 MB, 5% of RAM)",
+            "at": [
+              "2026-01-15T10:00:40.000Z",
+              "2026-01-15T10:00:50.000Z"
+            ],
+            "inputs": [
+              {
+                "ref": "spawnProbes[18]",
+                "signal": "mem.commit_of_limit_pct",
+                "at": "2026-01-15T10:00:40.000Z",
+                "value": 90.7,
+                "unit": "%"
+              },
+              {
+                "ref": "spawnProbes[18]",
+                "signal": "mem.pagefile_pct",
+                "at": "2026-01-15T10:00:40.000Z",
+                "value": 6.8,
+                "unit": "%"
+              },
+              {
+                "ref": "spawnProbes[18]",
+                "signal": "mem.avail_mb",
+                "at": "2026-01-15T10:00:40.000Z",
+                "value": 280,
+                "unit": "MB"
+              },
+              {
+                "ref": "spawnProbes[23]",
+                "signal": "mem.commit_of_limit_pct",
+                "at": "2026-01-15T10:00:50.000Z",
+                "value": 91.5,
+                "unit": "%"
+              },
+              {
+                "ref": "spawnProbes[23]",
+                "signal": "mem.pagefile_pct",
+                "at": "2026-01-15T10:00:50.000Z",
+                "value": 7.300000000000001,
+                "unit": "%"
+              },
+              {
+                "ref": "spawnProbes[23]",
+                "signal": "mem.avail_mb",
+                "at": "2026-01-15T10:00:50.000Z",
+                "value": 280,
+                "unit": "MB"
+              }
+            ],
+            "threshold": {
+              "value": 90,
+              "unit": "%",
+              "source": "provisional (diagnosis-cause-rules design)",
+              "origin": "default",
+              "key": "commit-limit-pressure.commitPct"
+            },
+            "n": 2,
+            "calm": {
+              "mean": 62.22,
+              "n": 8,
+              "signal": "mem.commit_of_limit_pct"
+            },
+            "components": null,
+            "confidence": null,
+            "disprover": {
+              "check": "commit < 80% of the limit at 2/3 or more of the hangs",
+              "result": "not-disproved",
+              "values": [
+                {
+                  "ref": "spawnProbes[13]",
+                  "commitPct": 90.9
+                },
+                {
+                  "ref": "spawnProbes[18]",
+                  "commitPct": 90.7
+                },
+                {
+                  "ref": "spawnProbes[23]",
+                  "commitPct": 91.5
+                }
+              ]
+            },
+            "confounds": [
+              {
+                "id": "pagefile-capped-by-policy",
+                "text": "the commit limit is close to installed RAM, so the page file is capped or absent by policy",
+                "active": false
+              },
+              {
+                "id": "observer-commit",
+                "text": "the observer's own processes add to commit charge",
+                "active": false
+              }
+            ],
+            "extra": {
+              "pagefile": null,
+              "availableLimitMB": 819,
+              "installedRamMB": 16384
+            }
+          },
+          {
+            "id": "cpu-saturation",
+            "class": "cpu",
+            "fired": false,
+            "reason": "CPU 40% (needs > 90%) with queue 0.38 per logical processor (needs > 2)",
+            "at": [
+              "2026-01-15T10:00:50.000Z"
+            ],
+            "inputs": [
+              {
+                "ref": "spawnProbes[23]",
+                "signal": "cpu.pct_total",
+                "at": "2026-01-15T10:00:50.000Z",
+                "value": 40,
+                "unit": "%"
+              },
+              {
+                "ref": "spawnProbes[23]",
+                "signal": "cpu.queue_per_lp",
+                "at": "2026-01-15T10:00:50.000Z",
+                "value": 0.38,
+                "unit": "per logical processor"
+              }
+            ],
+            "threshold": {
+              "value": 90,
+              "unit": "%",
+              "source": "provisional",
+              "origin": "default",
+              "key": "cpu.pct_total"
+            },
+            "n": 1,
+            "calm": {
+              "mean": 32.13,
+              "n": 8,
+              "signal": "cpu.pct_total"
+            },
+            "components": null,
+            "confidence": null,
+            "disprover": {
+              "check": "CPU < 60% and queue < 1 per logical processor on every probe within +-10 s of the hang",
+              "result": "disproved",
+              "values": [
+                {
+                  "ref": "spawnProbes[18]",
+                  "cpuPct": 40,
+                  "queuePerLp": 0.38
+                },
+                {
+                  "ref": "spawnProbes[19]",
+                  "cpuPct": 30.51281409803778,
+                  "queuePerLp": 0.13
+                },
+                {
+                  "ref": "spawnProbes[20]",
+                  "cpuPct": 34.86039919545874,
+                  "queuePerLp": 0.13
+                },
+                {
+                  "ref": "spawnProbes[21]",
+                  "cpuPct": 31.573711920063943,
+                  "queuePerLp": 0.13
+                },
+                {
+                  "ref": "spawnProbes[22]",
+                  "cpuPct": 27.953835017979145,
+                  "queuePerLp": 0.13
+                },
+                {
+                  "ref": "spawnProbes[23]",
+                  "cpuPct": 40,
+                  "queuePerLp": 0.38
+                },
+                {
+                  "ref": "spawnProbes[24]",
+                  "cpuPct": 33.28781609190628,
+                  "queuePerLp": 0.13
+                },
+                {
+                  "ref": "spawnProbes[25]",
+                  "cpuPct": 32.13557530660182,
+                  "queuePerLp": 0.13
+                },
+                {
+                  "ref": "spawnProbes[26]",
+                  "cpuPct": 33.31945147365332,
+                  "queuePerLp": 0.13
+                },
+                {
+                  "ref": "spawnProbes[27]",
+                  "cpuPct": 33.88029074994847,
+                  "queuePerLp": 0.13
+                },
+                {
+                  "ref": "spawnProbes[28]",
+                  "cpuPct": 34.10057526547462,
+                  "queuePerLp": 0.13
+                }
+              ]
+            },
+            "confounds": [],
+            "extra": {
+              "queuePerLogicalProcessor": 0.38,
+              "queueThreshold": {
+                "value": 2,
+                "unit": "per logical processor",
+                "source": "provisional",
+                "origin": "default",
+                "key": "cpu.queue_per_lp"
+              },
+              "topInScopeGroups": []
+            }
+          },
+          {
+            "id": "database-memory-io",
+            "class": "memory",
+            "fired": false,
+            "reason": "memory variant not sustained (0 of 11 probes, minimum 3; group + configured >= 25% of RAM)",
+            "at": [],
+            "inputs": [],
+            "threshold": {
+              "value": 25,
+              "unit": "% of RAM",
+              "source": "provisional (diagnosis-cause-rules design)",
+              "origin": "default",
+              "key": "database-memory-io.memPctRam"
+            },
+            "n": 0,
+            "calm": {
+              "mean": null,
+              "n": 0,
+              "signal": null
+            },
+            "components": null,
+            "confidence": null,
+            "disprover": {
+              "check": "disk latency < 10 ms and database group memory < 10% of RAM within +-10 s of every hang",
+              "result": "disproved",
+              "values": [
+                {
+                  "ref": "spawnProbes[13]",
+                  "group": "postgres",
+                  "maxLatencyMs": 4,
+                  "maxMemPctRam": 6.1
+                },
+                {
+                  "ref": "spawnProbes[18]",
+                  "group": "postgres",
+                  "maxLatencyMs": 4,
+                  "maxMemPctRam": 6.1
+                },
+                {
+                  "ref": "spawnProbes[23]",
+                  "group": "postgres",
+                  "maxLatencyMs": 4,
+                  "maxMemPctRam": 6.1
+                }
+              ]
+            },
+            "confounds": [
+              {
+                "id": "config-unavailable",
+                "text": "database configuration facts were not collected; the memory variant uses group memory alone",
+                "active": false
+              }
+            ],
+            "extra": {
+              "group": "postgres",
+              "variants": {
+                "memory": {
+                  "n": 0,
+                  "fired": false
+                },
+                "io": "not evaluated (disk latency, queue or group I/O not recorded)"
+              },
+              "config": null,
+              "missingInputs": [
+                "database configuration facts (not collected: declare config in the scope file)"
+              ]
+            }
+          },
+          {
+            "id": "disk-stall",
+            "class": "disk",
+            "fired": false,
+            "reason": "not sustained (0 of 11 probes, minimum 3; latency > 25 ms with queue >= 1)",
+            "at": [],
+            "inputs": [],
+            "threshold": {
+              "value": 25,
+              "unit": "ms",
+              "source": "provisional",
+              "origin": "default",
+              "key": "disk.latency_ms"
+            },
+            "n": 0,
+            "calm": {
+              "mean": 4,
+              "n": 8,
+              "signal": "disk.latency_ms"
+            },
+            "components": null,
+            "confidence": null,
+            "disprover": {
+              "check": "latency < 10 ms and queue < 1 on every probe within +-10 s of the hang",
+              "result": "disproved",
+              "values": [
+                {
+                  "ref": "spawnProbes[18]",
+                  "latencyMs": 4,
+                  "queue": 0.2
+                },
+                {
+                  "ref": "spawnProbes[19]",
+                  "latencyMs": 4,
+                  "queue": 0.2
+                },
+                {
+                  "ref": "spawnProbes[20]",
+                  "latencyMs": 4,
+                  "queue": 0.2
+                },
+                {
+                  "ref": "spawnProbes[21]",
+                  "latencyMs": 4,
+                  "queue": 0.2
+                },
+                {
+                  "ref": "spawnProbes[22]",
+                  "latencyMs": 4,
+                  "queue": 0.2
+                },
+                {
+                  "ref": "spawnProbes[23]",
+                  "latencyMs": 4,
+                  "queue": 0.2
+                },
+                {
+                  "ref": "spawnProbes[24]",
+                  "latencyMs": 4,
+                  "queue": 0.2
+                },
+                {
+                  "ref": "spawnProbes[25]",
+                  "latencyMs": 4,
+                  "queue": 0.2
+                },
+                {
+                  "ref": "spawnProbes[26]",
+                  "latencyMs": 4,
+                  "queue": 0.2
+                },
+                {
+                  "ref": "spawnProbes[27]",
+                  "latencyMs": 4,
+                  "queue": 0.2
+                },
+                {
+                  "ref": "spawnProbes[28]",
+                  "latencyMs": 4,
+                  "queue": 0.2
+                }
+              ]
+            },
+            "confounds": []
+          },
+          {
+            "id": "driver-interrupt-storm",
+            "class": "cpu",
+            "fired": false,
+            "reason": "not sustained (0 of 11 probes, minimum 3; DPC + interrupt >= 10% of CPU)",
+            "at": [],
+            "inputs": [],
+            "threshold": {
+              "value": 10,
+              "unit": "%",
+              "source": "provisional (diagnosis-cause-rules design)",
+              "origin": "default",
+              "key": "driver-interrupt-storm.sumPct"
+            },
+            "n": 0,
+            "calm": {
+              "mean": 1.3,
+              "n": 8,
+              "signal": "cpu.dpc_intr_pct"
+            },
+            "components": null,
+            "confidence": null,
+            "disprover": {
+              "check": "DPC + interrupt time < 3% on every probe within +-10 s of every hang",
+              "result": "disproved",
+              "values": [
+                {
+                  "ref": "spawnProbes[13]",
+                  "maxDpcPlusInterruptPct": 1.3
+                },
+                {
+                  "ref": "spawnProbes[18]",
+                  "maxDpcPlusInterruptPct": 1.3
+                },
+                {
+                  "ref": "spawnProbes[23]",
+                  "maxDpcPlusInterruptPct": 1.3
+                }
+              ]
+            },
+            "confounds": [
+              {
+                "id": "legitimate-io-load",
+                "text": "very high network or disk throughput legitimately raises interrupt time",
+                "active": false
+              }
+            ]
+          },
+          {
+            "id": "gpu-contention",
+            "class": "gpu",
+            "fired": null,
+            "reason": "gpu.engine_util_pct not recorded at this hang (no value stored)",
+            "at": [],
+            "inputs": [],
+            "threshold": {
+              "value": 90,
+              "unit": "%",
+              "source": "provisional (diagnosis-cause-rules design)",
+              "origin": "default",
+              "key": "gpu-contention.enginePct"
+            },
+            "n": 0,
+            "calm": {
+              "mean": null,
+              "n": 0,
+              "signal": null
+            },
+            "components": null,
+            "confidence": null,
+            "disprover": {
+              "check": "busiest GPU engine < 50% and dedicated memory < 80% of its total within +-10 s of every hang",
+              "result": "not-evaluable",
+              "values": []
+            },
+            "confounds": []
+          },
+          {
+            "id": "hard-fault-thrash",
+            "class": "memory",
+            "fired": false,
+            "reason": "not sustained (2 of 11 probes, minimum 3; pages written out >= 100/s); pages read in are high but reads alone are never swap",
+            "at": [
+              "2026-01-15T10:00:40.000Z",
+              "2026-01-15T10:00:50.000Z"
+            ],
+            "inputs": [
+              {
+                "ref": "spawnProbes[18]",
+                "signal": "mem.pages_out_per_s",
+                "at": "2026-01-15T10:00:40.000Z",
+                "value": 300,
+                "unit": "/s"
+              },
+              {
+                "ref": "spawnProbes[23]",
+                "signal": "mem.pages_out_per_s",
+                "at": "2026-01-15T10:00:50.000Z",
+                "value": 300,
+                "unit": "/s"
+              }
+            ],
+            "threshold": {
+              "value": 100,
+              "unit": "/s",
+              "source": "provisional (diagnosis-cause-rules design)",
+              "origin": "default",
+              "key": "hard-fault-thrash.pagesOutPerS"
+            },
+            "n": 2,
+            "calm": {
+              "mean": 0,
+              "n": 8,
+              "signal": "mem.pages_out_per_s"
+            },
+            "components": null,
+            "confidence": null,
+            "disprover": {
+              "check": "pages written out < 20/s on every probe within +-10 s of every hang",
+              "result": "not-disproved",
+              "values": [
+                {
+                  "ref": "spawnProbes[13]",
+                  "maxPagesOutPerS": 300
+                },
+                {
+                  "ref": "spawnProbes[18]",
+                  "maxPagesOutPerS": 300
+                },
+                {
+                  "ref": "spawnProbes[23]",
+                  "maxPagesOutPerS": 300
+                }
+              ]
+            },
+            "confounds": [
+              {
+                "id": "image-or-mapped-file-reads",
+                "text": "pages read in per second are dominated by image loads and mapped-file reads, which are not swap",
+                "active": false
+              },
+              {
+                "id": "observer-process-launches",
+                "text": "the observer's own process launches generate page-ins and page-outs",
+                "active": true
+              }
+            ]
+          },
+          {
+            "id": "memory-pressure",
+            "class": "memory",
+            "fired": true,
+            "reason": null,
+            "at": [
+              "2026-01-15T10:00:50.000Z"
+            ],
+            "inputs": [
+              {
+                "ref": "spawnProbes[23]",
+                "signal": "mem.committed_pct",
+                "at": "2026-01-15T10:00:50.000Z",
+                "value": 91.5,
+                "unit": "%"
+              },
+              {
+                "ref": "spawnProbes[23]",
+                "signal": "mem.avail_mb",
+                "at": "2026-01-15T10:00:50.000Z",
+                "value": 280,
+                "unit": "MB"
+              }
+            ],
+            "threshold": {
+              "value": 85,
+              "unit": "%",
+              "source": "MS perf troubleshooting [derived]",
+              "origin": "default",
+              "key": "mem.commit"
+            },
+            "n": 1,
+            "calm": {
+              "mean": 62.22,
+              "n": 8,
+              "signal": "mem.committed_pct"
+            },
+            "components": {
+              "C": 1,
+              "D": 1,
+              "O": 1,
+              "K": 0.67,
+              "P": 0
+            },
+            "confidence": 0.95,
+            "disprover": {
+              "check": "commit < 70% and available > 2 GB on every probe within +-10 s of the hang",
+              "result": "not-disproved",
+              "values": [
+                {
+                  "ref": "spawnProbes[18]",
+                  "commitPct": 90.7,
+                  "availMB": 280
+                },
+                {
+                  "ref": "spawnProbes[19]",
+                  "commitPct": 61.9,
+                  "availMB": 5200
+                },
+                {
+                  "ref": "spawnProbes[20]",
+                  "commitPct": 62.1,
+                  "availMB": 5200
+                },
+                {
+                  "ref": "spawnProbes[21]",
+                  "commitPct": 61.7,
+                  "availMB": 5200
+                },
+                {
+                  "ref": "spawnProbes[22]",
+                  "commitPct": 61.6,
+                  "availMB": 5200
+                },
+                {
+                  "ref": "spawnProbes[23]",
+                  "commitPct": 91.5,
+                  "availMB": 280
+                },
+                {
+                  "ref": "spawnProbes[24]",
+                  "commitPct": 60.3,
+                  "availMB": 5200
+                },
+                {
+                  "ref": "spawnProbes[25]",
+                  "commitPct": 63.9,
+                  "availMB": 5200
+                },
+                {
+                  "ref": "spawnProbes[26]",
+                  "commitPct": 62.9,
+                  "availMB": 5200
+                },
+                {
+                  "ref": "spawnProbes[27]",
+                  "commitPct": 62.9,
+                  "availMB": 5200
+                },
+                {
+                  "ref": "spawnProbes[28]",
+                  "commitPct": 60.4,
+                  "availMB": 5200
+                }
+              ]
+            },
+            "confounds": [],
+            "confirmationWeight": 0,
+            "hangValue": 91.5
+          },
+          {
+            "id": "outside-scope",
+            "class": "outside-scope",
+            "fired": null,
+            "reason": "no per-hang scope share was recorded for this hang",
+            "at": [],
+            "inputs": [],
+            "threshold": {
+              "value": 85,
+              "unit": "%",
+              "source": "MS perf troubleshooting [derived]",
+              "origin": "default",
+              "key": "mem.commit"
+            },
+            "n": 0,
+            "calm": {
+              "mean": null,
+              "n": 0,
+              "signal": null
+            },
+            "components": null,
+            "confidence": null,
+            "disprover": {
+              "check": "machine commit < 70% and CPU < 60% on every probe within +-10 s of the hang",
+              "result": "not-disproved",
+              "values": [
+                {
+                  "ref": "spawnProbes[18]",
+                  "commitPct": 90.7,
+                  "cpuPct": 40
+                },
+                {
+                  "ref": "spawnProbes[19]",
+                  "commitPct": 61.9,
+                  "cpuPct": 30.51281409803778
+                },
+                {
+                  "ref": "spawnProbes[20]",
+                  "commitPct": 62.1,
+                  "cpuPct": 34.86039919545874
+                },
+                {
+                  "ref": "spawnProbes[21]",
+                  "commitPct": 61.7,
+                  "cpuPct": 31.573711920063943
+                },
+                {
+                  "ref": "spawnProbes[22]",
+                  "commitPct": 61.6,
+                  "cpuPct": 27.953835017979145
+                },
+                {
+                  "ref": "spawnProbes[23]",
+                  "commitPct": 91.5,
+                  "cpuPct": 40
+                },
+                {
+                  "ref": "spawnProbes[24]",
+                  "commitPct": 60.3,
+                  "cpuPct": 33.28781609190628
+                },
+                {
+                  "ref": "spawnProbes[25]",
+                  "commitPct": 63.9,
+                  "cpuPct": 32.13557530660182
+                },
+                {
+                  "ref": "spawnProbes[26]",
+                  "commitPct": 62.9,
+                  "cpuPct": 33.31945147365332
+                },
+                {
+                  "ref": "spawnProbes[27]",
+                  "commitPct": 62.9,
+                  "cpuPct": 33.88029074994847
+                },
+                {
+                  "ref": "spawnProbes[28]",
+                  "commitPct": 60.4,
+                  "cpuPct": 34.10057526547462
+                }
+              ]
+            },
+            "confounds": []
+          },
+          {
+            "id": "security-contention",
+            "class": "security-software",
+            "fired": false,
+            "reason": "memory-pressure rule fired at this hang; not attributed to security software",
+            "at": [
+              "2026-01-15T10:00:50.000Z"
+            ],
+            "inputs": [
+              {
+                "ref": "spawnProbes[23]",
+                "signal": "security.cpu_pct_machine",
+                "at": "2026-01-15T10:00:50.000Z",
+                "value": 0.45,
+                "unit": "% of machine",
+                "rawValue": 3.634836305398494,
+                "rawNote": "per-core-scaled value divided by logical processors"
+              }
+            ],
+            "threshold": {
+              "value": 8,
+              "unit": "% of machine",
+              "source": "provisional",
+              "origin": "default",
+              "key": "security.cpu_pct_machine"
+            },
+            "n": 1,
+            "calm": {
+              "mean": 0.54,
+              "n": 8,
+              "signal": "security.cpu_pct_machine"
+            },
+            "components": null,
+            "confidence": null,
+            "disprover": {
+              "check": "security-software CPU < 3% of machine on every probe within +-10 s of the hang",
+              "result": "disproved",
+              "values": [
+                {
+                  "ref": "spawnProbes[18]",
+                  "cpuPctMachine": 0.44
+                },
+                {
+                  "ref": "spawnProbes[19]",
+                  "cpuPctMachine": 0.48
+                },
+                {
+                  "ref": "spawnProbes[20]",
+                  "cpuPctMachine": 0.59
+                },
+                {
+                  "ref": "spawnProbes[21]",
+                  "cpuPctMachine": 0.42
+                },
+                {
+                  "ref": "spawnProbes[22]",
+                  "cpuPctMachine": 0.4
+                },
+                {
+                  "ref": "spawnProbes[23]",
+                  "cpuPctMachine": 0.45
+                },
+                {
+                  "ref": "spawnProbes[24]",
+                  "cpuPctMachine": 0.62
+                },
+                {
+                  "ref": "spawnProbes[25]",
+                  "cpuPctMachine": 0.57
+                },
+                {
+                  "ref": "spawnProbes[26]",
+                  "cpuPctMachine": 0.5
+                },
+                {
+                  "ref": "spawnProbes[27]",
+                  "cpuPctMachine": 0.61
+                },
+                {
+                  "ref": "spawnProbes[28]",
+                  "cpuPctMachine": 0.59
+                }
+              ]
+            },
+            "confounds": [
+              {
+                "id": "probe-start-scanning",
+                "text": "probe process starts may trigger scanning",
+                "active": true
+              }
+            ],
+            "extra": {
+              "ratio": 2.5
+            }
+          },
+          {
+            "id": "single-process-dominance",
+            "class": "memory",
+            "fired": false,
+            "reason": "no group holds >= 40% of used memory on >= 3 probes, and no group grows monotonically by >= 10% across >= 3 snapshots",
+            "at": [],
+            "inputs": [],
+            "threshold": {
+              "value": 40,
+              "unit": "% of used memory",
+              "source": "provisional (diagnosis-cause-rules design)",
+              "origin": "default",
+              "key": "single-process-dominance.sharePct"
+            },
+            "n": 0,
+            "calm": {
+              "mean": null,
+              "n": 0,
+              "signal": null
+            },
+            "components": null,
+            "confidence": null,
+            "disprover": {
+              "check": "no group holds >= 20% of used memory and no group grows by >= 10% at any hang",
+              "result": "disproved",
+              "values": [
+                {
+                  "ref": "spawnProbes[13]",
+                  "maxSharePct": 9.2,
+                  "growth": false
+                },
+                {
+                  "ref": "spawnProbes[18]",
+                  "maxSharePct": 9.2,
+                  "growth": false
+                },
+                {
+                  "ref": "spawnProbes[23]",
+                  "maxSharePct": 9.1,
+                  "growth": false
+                }
+              ]
+            },
+            "confounds": []
+          },
+          {
+            "id": "thermal-power-throttle",
+            "class": "thermal-power",
+            "fired": false,
+            "reason": "not sustained (0 of 11 probes, minimum 3; CPU >= 50% with performance < 60% of the calm median 110.87666947860271% or an active limit)",
+            "at": [],
+            "inputs": [],
+            "threshold": {
+              "value": 60,
+              "unit": "% of calm median",
+              "source": "provisional (diagnosis-cause-rules design)",
+              "origin": "default",
+              "key": "thermal-power-throttle.perfPctOfCalm"
+            },
+            "n": 0,
+            "calm": {
+              "mean": 110.12,
+              "n": 8,
+              "signal": "cpu.perf_pct"
+            },
+            "components": null,
+            "confidence": null,
+            "disprover": {
+              "check": "delivered performance >= 90% of the calm median at 2/3 or more of the hangs",
+              "result": "disproved",
+              "values": [
+                {
+                  "ref": "spawnProbes[13]",
+                  "meanPerfPct": 109.5,
+                  "calmMedianPerfPct": 110.87666947860271
+                },
+                {
+                  "ref": "spawnProbes[18]",
+                  "meanPerfPct": 108.5,
+                  "calmMedianPerfPct": 110.87666947860271
+                },
+                {
+                  "ref": "spawnProbes[23]",
+                  "meanPerfPct": 108.2,
+                  "calmMedianPerfPct": 110.87666947860271
+                }
+              ]
+            },
+            "confounds": [
+              {
+                "id": "power-mode-overlay",
+                "text": "an efficiency power mode lowers delivered performance by design",
+                "active": false
+              }
+            ],
+            "extra": {
+              "calmMedianPerfPct": 110.87666947860271,
+              "calmN": 8,
+              "powerSource": "unknown",
+              "limitKind": "unknown",
+              "limitReasons": [],
+              "cpuTempC": null,
+              "efficiencyMode": false
+            }
+          },
+          {
+            "id": "vm-memory-dominance",
+            "class": "memory",
+            "fired": null,
+            "reason": "proc.vm_host_mb not recorded at this hang (no value stored)",
+            "at": [],
+            "inputs": [],
+            "threshold": {
+              "value": 40,
+              "unit": "% of RAM",
+              "source": "provisional (diagnosis-cause-rules design)",
+              "origin": "default",
+              "key": "vm-memory-dominance.vmPctRam"
+            },
+            "n": 0,
+            "calm": {
+              "mean": null,
+              "n": 0,
+              "signal": null
+            },
+            "components": null,
+            "confidence": null,
+            "disprover": {
+              "check": "the configured VM memory cap is at most 50% of RAM, or VM host memory < 25% of RAM at 2/3 or more of the hangs",
+              "result": "not-evaluable",
+              "values": []
+            },
+            "confounds": []
+          }
+        ],
+        "ranked": [
+          "memory-pressure"
+        ]
+      }
+    ],
+    "rollup": [
+      {
+        "id": "memory-pressure",
+        "class": "memory",
+        "hangs": 3,
+        "of": 3,
+        "confidence": 0.95,
+        "hangMean": 91,
+        "hangN": 3,
+        "calm": {
+          "mean": 62.22,
+          "n": 8
+        },
+        "unit": "%",
+        "signal": "mem.committed_pct"
+      }
+    ],
+    "finding": {
+      "class": "memory",
+      "sentence": "3 of 3 usable hangs coincide with memory pressure; commit 91% at hangs vs 62% calm (hangs n=3, calm n=8); 2 confirmed by user mark, 1 probe-only",
+      "strength": "sufficient",
+      "confirmations": {
+        "user-mark": 2,
+        "os-not-responding": 0,
+        "workload-probe": 0,
+        "probe-only": 1
+      },
+      "excludedHangs": 0,
+      "scope": "scoped: postgres, docker",
+      "window": {
+        "start": "2026-01-15T10:00:00.000Z",
+        "end": "2026-01-15T10:01:04.100Z",
+        "observedS": 64
+      },
+      "ruleId": "memory-pressure",
+      "confidence": 0.95
+    },
+    "observations": [],
+    "hwConfigSignal": {
+      "value": "pressure-at-freezes",
+      "atHang": {
+        "mean": 91,
+        "n": 3
+      },
+      "calm": {
+        "mean": 62.2,
+        "n": 8
+      }
+    },
+    "timeLost": {
+      "basis": "measured",
+      "hangs": 3,
+      "frozenS": 5.6,
+      "observedS": 64,
+      "meanFreezeS": 1.87,
+      "userSupplied": null
+    },
+    "eventsUsed": [],
+    "eventsHistory": [],
+    "suggestedActions": []
+  },
+  "sampling": {
+    "cadence": {
+      "nominalS": 2,
+      "achievedMedianS": 2.05,
+      "achievedP95S": 2.4,
+      "n": 30,
+      "basis": "synthetic fixture"
+    },
+    "unobserved": [
+      {
+        "start": "2026-01-15T10:00:52.000Z",
+        "end": "2026-01-15T10:00:55.000Z",
+        "durationS": 3,
+        "reason": "collector-late"
+      }
+    ],
+    "heavyRuns": []
+  },
+  "workload": {
+    "declared": {
+      "phases": [],
+      "probes": [],
+      "config": []
+    },
+    "phases": [
+      {
+        "label": "docker compose up",
+        "startAt": "2026-01-15T10:00:06.000Z",
+        "endAt": "2026-01-15T10:00:42.000Z",
+        "endStatus": "closed",
+        "source": "flag"
+      }
+    ],
+    "phaseSummary": null,
+    "markers": [
+      {
+        "at": "2026-01-15T10:00:08.000Z",
+        "kind": "container-start",
+        "name": "db",
+        "id": "c1"
+      }
+    ],
+    "containers": {
+      "series": [],
+      "outOfScope": [],
+      "unavailable": null
+    },
+    "vm": {
+      "hostMemMB": [],
+      "configuredCapMB": {
+        "value": null,
+        "unavailableReason": "no cap configured"
+      }
+    },
+    "probes": {}
+  }
+}

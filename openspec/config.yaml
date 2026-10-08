@@ -1,0 +1,20 @@
+schema: spec-driven
+
+context: |
+  Tech stack: Node.js (Windows-first, no deps, single-file CLI)
+  Product: Telltale — hang-evidence surface. Numbers + reasons + RCA, never verdicts.
+  Evidence packs: JSON (truth) + MD/HTML (views) under reports/.
+  Conventions: see PRODUCT_MANIFESTO.md, METRIC_REGISTRY.md, USER_PROBLEM.md.
+
+rules:
+  specs:
+    - Every metric emits id, unit, cadence, n, window, collector, healthy range, confounds
+    - Thresholds are recorded per report and provisional until cited
+    - Second-order never overwrites first-order; no single-sample counters as proof
+  tasks:
+    - Mark tasks done only after a live Windows run + review-gate note
+    - Tasks cite requirement names and review finding IDs (e.g. [R02-P0-1]); never source line numbers
+  archive:
+    - A change is archived only when it has spec deltas, or .openspec.yaml sets skip_specs with a one-line reason
+    - The change's review task is checked with a review-gate note (date, command, observed result)
+    - openspec validate <id> --strict passes with no "Archive would refuse" lines
