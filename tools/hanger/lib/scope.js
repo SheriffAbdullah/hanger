@@ -6,7 +6,6 @@ const fs = require('fs');
 const path = require('path');
 const crypto = require('crypto');
 const workloadExt = require('./workload/scope-ext');
-const legacyFiles = require('./legacy');
 
 const STATEMENT = 'Names of software outside this scope were not recorded.';
 const OPEN_BANNER = 'OPEN SCOPE: names of all running software may appear in this report';
@@ -143,10 +142,9 @@ function buildDecl({ mode, source, filePath, sha256, entries, warnings }) {
   };
 }
 
-// ./hanger.scope.json, else a legacy ./telltale.scope.json (honored with a rename hint, never silently ignored)
+// ./hanger.scope.json in the working directory, if present
 function findScopeFile(cwd) {
-  const found = legacyFiles.findWithLegacy(cwd, 'hanger.scope.json', 'telltale.scope.json');
-  return found ? path.basename(found) : null;
+  return fs.existsSync(path.join(cwd, 'hanger.scope.json')) ? 'hanger.scope.json' : null;
 }
 
 // Precedence: --only flag, then --scope PATH / config "scope", then --preset, then ./hanger.scope.json, else open scope.
@@ -187,7 +185,7 @@ function loadScope({ cfg = {}, args = [], cwd = process.cwd() } = {}) {
 function writeTemplateDraft(cwd, presetName) {
   const list = templateEntries(presetName);
   const p = path.join(cwd, 'hanger.scope.json');
-  if (!list || fs.existsSync(p) || fs.existsSync(path.join(cwd, 'telltale.scope.json'))) return null;
+  if (!list || fs.existsSync(p)) return null;
   const body = { version: 1, note: `drafted from template:${presetName}; edit freely`, entries: list.map((e) => ({ ...e, enabled: true })) };
   try { fs.writeFileSync(p, JSON.stringify(body, null, 2) + '\n'); return p; } catch { return null; }
 }

@@ -193,10 +193,6 @@ Early beta. Be clear-eyed about what is validated:
 >
 > Open an issue with the [hang report](../../issues/new?template=hang-report.yml), [wrong diagnosis](../../issues/new?template=wrong-diagnosis.yml) or [missing signal](../../issues/new?template=missing-signal.yml) template. Please keep real hostnames, usernames and serial numbers out of anything you paste.
 
-## Upgrading from Telltale
-
-Hanger was called Telltale. Rename `telltale.config.json` and `telltale.scope.json` to `hanger.config.json` and `hanger.scope.json` (the old names are still found, with a one-line hint), and rename `TELLTALE_*` environment variables to `HANGER_*` (still read, with a notice, for one more release). The report schema id changed from `telltale-json/2` to `hanger-json/2`; it is the same frozen schema, and reports already on disk (`telltale-*.json`) keep loading and rendering. See the [schema changelog](tools/hanger/SCHEMA-CHANGELOG.md).
-
 ## Documentation
 
 - [User guide](docs/USER-GUIDE.md): modes, scope, signals, diagnosis, outputs and the input-response check

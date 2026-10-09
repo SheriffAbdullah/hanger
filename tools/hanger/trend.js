@@ -22,7 +22,7 @@ function plugTxt(p) {
   return '?';
 }
 
-const { readReportFile, schemaVersion, scanTraceReports, V1_LABEL } = require('./lib/reports-io');
+const { readReportFile, schemaVersion, scanTraceReports } = require('./lib/reports-io');
 
 // Returns readable rows; every unreadable or unknown-schema file is printed by name with its error.
 function loadReports(outdir, skipped) {
@@ -41,8 +41,8 @@ function loadOne(full, f, skipped) {
   const rd = readReportFile(full);
   if (!rd.ok) { (skipped || []).push({ file, error: rd.error }); return null; }
   const v = schemaVersion(rd.report);
-  if (v.version !== 'v1' && v.version !== 'v2') {
-    (skipped || []).push({ file, error: `unknown schema ${v.schema === null ? '(none declared)' : `'${v.schema}'`}; this reader knows hanger-json/2 and the legacy telltale-json/1 and /2` });
+  if (v.version !== 'v2') {
+    (skipped || []).push({ file, error: `unknown schema ${v.schema === null ? '(none declared)' : `'${v.schema}'`}; this reader knows hanger-json/2` });
     return null;
   }
   return rowFrom(rd.report, file, v.version);
@@ -56,10 +56,10 @@ function rowFrom(r, f, version) {
   {
     const s = r.summary || {};
     return {
-      version, label: version === 'v1' ? V1_LABEL : null,
+      version, label: null,
       file: f,
       startedAt: String(r.startedAt || ''),
-      date: String(r.startedAt || f.replace(/^(hanger|telltale)-/, '').replace(/\.json$/, '')).slice(0, 19).replace('T', ' '),
+      date: String(r.startedAt || f.replace(/^hanger-/, '').replace(/\.json$/, '')).slice(0, 19).replace('T', ' '),
       verdict: findingClass(r),
       hangs: Number.isFinite(s.hangEventCount) ? s.hangEventCount : null, // unknown, never zero
       hangRate: Number.isFinite(s.hangRatePerMin) ? s.hangRatePerMin : null,

@@ -19,7 +19,7 @@ test('every view says the power source is not recorded when the state is unknown
   assert.ok(!/power-battery/.test(out.html));
 });
 
-test('print renderer CLI renders a v2 fixture and refuses unreadable/v1 files by name', () => {
+test('print renderer CLI renders a v2 fixture and refuses unreadable and unknown-schema files by name', () => {
   const d = fs.mkdtempSync(path.join(os.tmpdir(), 'tt-views-'));
   const script = path.join(__dirname, '..', 'render-print.js');
   const ok = spawnSync(process.execPath, [script, path.join(fx, 'battery-1308.json'), path.join(d, 'o.html')], { encoding: 'utf8' });
@@ -29,10 +29,10 @@ test('print renderer CLI renders a v2 fixture and refuses unreadable/v1 files by
   const bad = spawnSync(process.execPath, [script, path.join(d, 'broken.json')], { encoding: 'utf8' });
   assert.notStrictEqual(bad.status, 0);
   assert.match(bad.stderr, /broken\.json/);
-  const v1 = JSON.parse(fs.readFileSync(path.join(fx, 'battery-1308.json'), 'utf8'));
-  v1.schema = 'telltale-json/1';
-  fs.writeFileSync(path.join(d, 'old.json'), JSON.stringify(v1));
+  const old1 = JSON.parse(fs.readFileSync(path.join(fx, 'battery-1308.json'), 'utf8'));
+  old1.schema = 'hanger-json/1';
+  fs.writeFileSync(path.join(d, 'old.json'), JSON.stringify(old1));
   const old = spawnSync(process.execPath, [script, path.join(d, 'old.json')], { encoding: 'utf8' });
   assert.notStrictEqual(old.status, 0);
-  assert.match(old.stderr, /re-capture/);
+  assert.match(old.stderr, /unknown schema/);
 });

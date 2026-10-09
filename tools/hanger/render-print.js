@@ -39,7 +39,6 @@ function main() {
   const data = rd.raw;
   if (!isPack(data)) {
     const v = schemaVersion(data);
-    if (v.version === 'v1') { console.error(`${path.basename(inPath)}: report is telltale-json/1 (pre-fix, legacy id); renderers need hanger-json/2 - re-capture with this version`); process.exit(1); }
     if (v.version !== 'v2') { console.error(`${path.basename(inPath)}: unknown schema ${v.schema === null ? '(none declared)' : `'${v.schema}'`}; renderer reads hanger-json/2`); process.exit(1); }
   }
   const name = path.basename(inPath);

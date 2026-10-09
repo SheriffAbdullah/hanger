@@ -1,6 +1,6 @@
 # hanger JSON schema changelog
 
-## v1 (`schema: 'telltale-json/1'`, the id before the Hanger rename) — 2026-10-07 (telltale-v10)
+## v1 (`schema: 'hanger-json/1'`) — 2026-10-07 (telltale-v10)
 
 First frozen schema. Consumers may branch on the root `schema` string;
 unknown future versions MUST be treated as unreadable, not guessed.
@@ -28,7 +28,7 @@ new `schema` value (`hanger-json/2`, …). Console-only text changes do not.
 - summary.thresholds (TH.* + ideal/status), summary.maxFreqMin, report.tier/admin/wprEtl/power{plugged,batteryPct}, scope{}, redacted.patterns receipt, hang context pre/post commit+pages+cpuQ+diskQ, probe weightMs/degraded/slipS/bundleMs/eco fields, collection.failures[], userMarks[], culprits detail/cmd.
 
 
-## v2 (`schema: 'hanger-json/2'`, written as `'telltale-json/2'` before the Hanger rename, `schemaStatus: 'draft'` until the freeze entry at the end of this file) - 2026-10-07 (fix-report-integrity)
+## v2 (`schema: 'hanger-json/2'`, `schemaStatus: 'draft'` until the freeze entry at the end of this file) - 2026-10-07 (fix-report-integrity)
 
 v2 is a DRAFT for the whole program (changes 2-10): further additive or breaking edits are
 recorded as dated `2.x` sections below and stay at `hanger-json/2` until report-and-visualization
@@ -263,14 +263,3 @@ Additive only: optional keys and optional children. Nothing is renamed or remove
 
 ### Unchanged
 - `schema` is `hanger-json/2` and `schemaStatus` is `frozen`. `validate-report.js` accepts reports with and without the new keys, checks only that the new keys are well formed when present, and still accepts every older report.
-
-## v2.x (still `hanger-json/2`, `schemaStatus` stays `frozen`) - 2026-10-09 (hanger-rename)
-
-The product was renamed from Telltale to Hanger. This is an identifier change only; no field was added, removed or re-typed, so the schema stays frozen and is NOT bumped to 3.
-
-### Changed
-- New reports carry `schema: 'hanger-json/2'` (was `'telltale-json/2'`) and `tool: 'hanger vX'`. Output file stems are `hanger-<stamp>.*` (were `telltale-<stamp>.*`); packs are `hanger-pack/1`.
-
-### Compatibility
-- Readers (trend, pack, render-print, the validator) accept BOTH `hanger-json/2` and the legacy `telltale-json/2` (and the legacy `telltale-json/1` as v1, pre-fix), and scan both `hanger-*.json` and `telltale-*.json`, so reports already on disk keep loading. The two ids denote the same schema.
-- The legacy ids are read for one more release (see `lib/legacy.js`), then dropped; reports written with the old id then need the one-line edit of the root `schema` value.

@@ -15,7 +15,7 @@ function validateText(text) {
   if (!obj || typeof obj !== 'object' || Array.isArray(obj)) return { ok: false, problems: ['root is not an object'] };
   for (const k of REQUIRED) if (!(k in obj)) problems.push(`missing required key '${k}'`);
   // hanger-json/2 is frozen (report-and-visualization): the status must be declared and an `asset` alias must be gone
-  if (obj.schema === 'hanger-json/2' || obj.schema === 'telltale-json/2') {
+  if (obj.schema === 'hanger-json/2') {
     if (!['draft', 'frozen'].includes(obj.schemaStatus)) problems.push(`schemaStatus must be 'draft' or 'frozen' (found ${JSON.stringify(obj.schemaStatus)})`);
     if ('asset' in obj) problems.push("legacy 'asset' alias present (removed from hanger-json/2; read systemProfile)");
   }
@@ -37,7 +37,7 @@ function validateText(text) {
   });
   // enforced on any report that stores provenance records (older plain-number streams recovered later are not rewritten)
   const usesRecords = [obj.spawnProbes, obj.samples, obj.hangEvents].some((arr) => Array.isArray(arr) && arr.some((row) => row && typeof row === 'object' && Object.values(row).some(isRec)));
-  if ((obj.schema === 'hanger-json/2' || obj.schema === 'telltale-json/2') && (usesRecords || (obj.sampling && obj.sampling.provenance === true))) {
+  if ((obj.schema === 'hanger-json/2') && (usesRecords || (obj.sampling && obj.sampling.provenance === true))) {
     rows(obj.spawnProbes, 'spawnProbes'); rows(obj.samples, 'samples'); rows(obj.hangEvents, 'hangEvents');
   }
   const prec = (v, p) => {

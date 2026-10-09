@@ -39,16 +39,6 @@ test('pack with only an unreadable trace explains why and reports no finding, no
   assert.match(pack.hangs.note, /unreadable/);
 });
 
-test('pack refuses a v1-only directory with a re-capture message', () => {
-  const d = tmp();
-  const v1 = JSON.parse(fs.readFileSync(path.join(fx, 'battery-1308.json'), 'utf8'));
-  v1.schema = 'telltale-json/1';
-  fs.writeFileSync(path.join(d, 'hanger-2026-01-15T10-00-00.json'), JSON.stringify(v1));
-  const r = run(d, 'pack');
-  assert.match(r.stdout, /telltale-json\/1/);
-  assert.match(r.stdout, /re-capture/);
-});
-
 test('trend lists the readable reports and names the invalid file', () => {
   const d = tmp();
   fs.copyFileSync(path.join(fx, 'battery-1308.json'), path.join(d, 'hanger-2026-01-15T10-00-00.json'));

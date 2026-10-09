@@ -4,8 +4,6 @@
 const fs = require('fs');
 const path = require('path');
 const os = require('os');
-const legacy = require('./lib/legacy');
-legacy.applyLegacyEnv(); // TELLTALE_* -> HANGER_* (deprecated aliases, with a notice)
 const { execSync, spawnSync, spawn } = require('child_process');
 const crypto = require('crypto');
 const { num, pct, parseTasklist, rollup } = require('./lib/numbers');
@@ -46,7 +44,7 @@ const args = process.argv.slice(2);
 const _cfgIdx = args.indexOf('--config');
 let CFG = {};
 try {
-  const cfgPath = (_cfgIdx >= 0 && args[_cfgIdx + 1]) ? args[_cfgIdx + 1] : (legacy.findWithLegacy(process.cwd(), 'hanger.config.json', 'telltale.config.json') || path.join(process.cwd(), 'hanger.config.json'));
+  const cfgPath = (_cfgIdx >= 0 && args[_cfgIdx + 1]) ? args[_cfgIdx + 1] : path.join(process.cwd(), 'hanger.config.json');
   if (fs.existsSync(cfgPath)) CFG = JSON.parse(fs.readFileSync(cfgPath, 'utf8'));
 } catch (e) { console.log(`[hanger] config unreadable, ignoring: ${e.message.slice(0, 100)}`); }
 const getArg = (k, d) => {
@@ -635,20 +633,18 @@ function packMode() {
     const full = path.resolve(packInput), file = path.basename(full), rd = reportsIo.readReportFile(full);
     if (!rd.ok) return { files: [{ file, full, ok: false, error: rd.error }] };
     const v = reportsIo.schemaVersion(rd.report);
-    return { files: [v.version === 'v1' || v.version === 'v2' ? { file, full, ok: true, report: rd.report, version: v.version, schema: v.schema } : { file, full, ok: false, error: `unknown schema ${v.schema === null ? '(none declared)' : `'${v.schema}'`}` }] };
+    return { files: [v.version === 'v2' ? { file, full, ok: true, report: rd.report, version: v.version, schema: v.schema } : { file, full, ok: false, error: `unknown schema ${v.schema === null ? '(none declared)' : `'${v.schema}'`}` }] };
   })() : reportsIo.scanTraceReports(OUTDIR);
   const unreadable = scan.files.filter((f) => !f.ok).map((f) => ({ file: f.file, error: f.error }));
-  const v1Files = scan.files.filter((f) => f.ok && f.version === 'v1').map((f) => f.file);
   const v2 = scan.files.filter((f) => f.ok && f.version === 'v2');
   for (const u of unreadable) console.log(`[pack] UNREADABLE trace ${u.file}: ${u.error}`);
   const pick = v2.length ? v2[v2.length - 1] : null;
   const traceFile = pick ? pick.file : null, latest = pick ? pick.report : null;
   const newerBad = pick ? unreadable.filter((u) => u.file > pick.file).map((u) => u.file) : [];
   if (newerBad.length) console.log(`[pack] using ${traceFile}: newer trace file(s) ${newerBad.join(', ')} could not be read (see above)`);
-  if (!pick && v1Files.length) console.log(`[pack] newest readable trace ${v1Files[v1Files.length - 1]} is telltale-json/1 (pre-fix, legacy id); pack needs hanger-json/2 - re-capture with this version`);
   const noTraceNote = unreadable.length
     ? `no readable v2 trace; unreadable: ${unreadable.map((u) => u.file).join(', ')}`
-    : v1Files.length ? `only telltale-json/1 traces present (${v1Files.join(', ')}); re-capture with this version` : 'no trace report found';
+    : 'no trace report found';
   const { rows: bRows, files: bFiles } = loadBaselineRows();
   for (const dep of ['--cost-min', '--ram-cost', '--laptop-cost']) if (getArg(dep, null) !== null) console.log(`[pack] ${dep} is deprecated and ignored (no assumed or purchase context is computed)`);
   const derived = latest ? packCalc.packDerived(latest, TH) : null;
@@ -704,7 +700,7 @@ function packMode() {
       thresholdSources: TH_SRC,
       flags: { hangMs: THU.hang, commit: THU.commit, costRate: getArg('--cost-rate', null), activeMin: getArg('--active-min', null),
         warrantyDate: getArg('--warranty-date', 'unknown'), warrantyNote: getArg('--warranty-note', 'unknown') } },
-    provenance: { traceReport: traceFile, baselineFiles: bFiles, unreadableReports: unreadable, v1ReportsSkipped: v1Files,
+    provenance: { traceReport: traceFile, baselineFiles: bFiles, unreadableReports: unreadable, v1ReportsSkipped: [],
       sustainedBasis: sustained.source, findingBasis: finding ? `diagnosis stored in ${traceFile}` : (findingNote || 'no finding') } };
   fs.mkdirSync(OUTDIR, { recursive: true });
   const stamp = new Date().toISOString().replace(/[:.]/g, '-').slice(0, 19);

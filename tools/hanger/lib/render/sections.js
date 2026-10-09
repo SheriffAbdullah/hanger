@@ -454,7 +454,7 @@ function tlLines(p) {
   return [{ t: 'sub', text: 'Measured time lost (context only)' }, { t: 'ul', items: [`Measured: ${n2(t.frozenS)} s frozen across ${t.hangs} freeze(s).`] }];
 }
 
-function isPack(d) { return !!(d && (d.schema === 'hanger-pack/1' || d.schema === 'telltale-pack/1' || d.tool === 'telltale pack/1' || d.tool === 'hanger pack/1' || (d.sustained && d.audit))); }
+function isPack(d) { return !!(d && (d.schema === 'hanger-pack/1' || d.tool === 'hanger pack/1' || (d.sustained && d.audit))); }
 function buildSections(raw, files) { return isPack(raw) ? packSections(raw, files) : traceSections(raw, files); }
 
 module.exports = { buildSections, traceSections, packSections, isPack, SECTION_ORDER, TITLES, profileRows, adminOnly, gapSentence, findingLines, factVal, inputCheck, durTxt, minTxt, label, sigLabel, topGrower, humanize };
