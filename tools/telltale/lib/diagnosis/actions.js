@@ -25,7 +25,7 @@ function actionKeyOf(res) {
     case 'driver-interrupt-storm': case 'gpu-contention': return 'driver-firmware';
     case 'single-process-dominance': return 'app-memory';
     case 'database-memory-io': return res.class === 'disk' || (res.extra && res.extra.variant === 'io') ? 'storage-health' : 'app-memory';
-    case 'disk-stall': return 'storage-health';
+    case 'disk-stall': case 'disk-nearly-full': return 'storage-health';
     case 'commit-limit-pressure': case 'hard-fault-thrash': return 'memory-capacity';
     default: return null;
   }

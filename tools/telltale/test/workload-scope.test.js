@@ -24,7 +24,7 @@ test('valid extension: phases, a probe with defaults, config entries', () => {
 
 test('old scope files without the new keys behave as before', () => {
   const r = load({});
-  assert.deepStrictEqual(r.workload, { phases: [], probes: [], config: [] });
+  assert.deepStrictEqual(r.workload, { phases: [], probes: [], config: [], drives: [] });
 });
 
 test('a shell-string command is rejected with a message', () => {
@@ -70,5 +70,5 @@ test('loadScope returns the workload extension from a scope file and empty defau
   assert.deepStrictEqual(withFile.workload.phases, ['idle']);
   assert.strictEqual(withFile.workload.probes[0].name, 'q');
   const none = S.loadScope({ cfg: {}, args: ['--only', 'postgres'], cwd: d });
-  assert.deepStrictEqual(none.workload, { phases: [], probes: [], config: [] });
+  assert.deepStrictEqual(none.workload, { phases: [], probes: [], config: [], drives: [] });
 });

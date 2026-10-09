@@ -245,3 +245,21 @@ Everything is additive: an optional root key, optional children and one widened 
 
 ### Unchanged
 - `schema` is `telltale-json/2` and `schemaStatus` is `frozen`. `validate-report.js` accepts the new keys, rejects a bare number for a measurement inside `inputStall`, and still accepts every older report.
+
+## v2.x (still `telltale-json/2`, `schemaStatus` stays `frozen`) - 2026-10-09 (storage-coverage)
+
+Additive only: optional keys and optional children. Nothing is renamed or removed, so this is a `2.x` entry and not a bump to `/3`. Absence of any of these fields means the report predates the change; every reader shows a "not available" placeholder with a reason and keeps working. Readers and validators MUST ignore storage fields they do not understand.
+
+### Added
+- `spawnProbes[].disk.drives` (continuous tier): one entry per physical drive, `{drive, label, diskNumber, letters[], latencyMs, queue, busyPct, readBps, writeBps}`; the five measurements are provenance records (unit, window, source `disk.drive.*@counterSession`, time, precision); `drive` is the counter instance text (for example `0 C:`) and `label` is `Disk <number> (<volume letters>)`. No serial number is read or stored. The machine-total `disk.latencyMs`, `queue`, `busyPct`, `readBps` and `writeBps` are unchanged. `disk.drives` is `null` with `disk.drivesReason` (for example `not-exposed`) when the platform does not expose per-drive counters; one `collection.failures[]` entry (`inference: disk.drives`) is recorded per run.
+- `spawnProbes[].disk.volumes` (continuous tier): one entry per volume letter, `{volume, freePct, freeMB}` as provenance records; `null` with `disk.volumesReason` when not exposed (failure `disk.volumes`).
+- `storage` (root): `{workloadDrives, workloadDrivesReason, source}`. `workloadDrives` is the optional `drives` list the user wrote in the scope file (for example `["D:"]`), or `null` with `workloadDrivesReason: "workload drive not declared"`. The workload drive is never inferred from process activity. The scope file gains the optional key `drives`.
+- `systemProfile.storage.disks.value[].number` (the disk number that joins a per-drive series to its model class, bus and media type) and `numberUnavailableReason` when it was not reported.
+- `systemProfile.virtualMemory.pagefiles.value[].drive` (for example `C:`) and `driveUnavailableReason` when the location has no drive letter.
+- Rule `disk-nearly-full` (drop-in, class `disk`) in `diagnosis.hangs[].rules[]` with its provisional limits in `summary.thresholds.rules['disk-nearly-full']` (`lowFreePct`, `warnFreePct`, `fallMB`, `disproveFreePct`); `extra` holds `{volume, freePct, freeMB, viaWarning, relevantVolumes, trend {firstFreeMB, lastFreeMB, fellMB, fallMBNeeded, points}, ioCulprit}`. Rule `disk-stall` gains `extra {perDrive {recorded, machineTotalQualified, drives[]}, slowDrive {drive, label, class, meanLatencyMs, n, hostsPagefile {value, reason, text}, hostsWorkload {value, reason, text}}, culprit {kind: named | outside-scope | none | not-recorded, text, group?, bps?, sharePct?, groupCount?}}` and its recorded parameters `culpritMinBps`, `culpritSharePct`, `syncClientBps`. A culprit `group` is only ever an in-scope group or a member of the fixed system set; `outside-scope` carries a rate and a group count and no name.
+- New signal ids in rule evidence `inputs[].signal`: `disk.drive_latency_ms[<drive>]`, `disk.drive_queue[<drive>]`, `disk.drive_busy_pct[<drive>]`, `disk.drive_io_bps[<drive>]`, `disk.volume_free_pct[<volume>]`, `disk.volume_free_mb[<volume>]`, `disk.relevant_free_pct`, `disk.relevant_free_mb`, `proc.outside_io_bps` (an anonymous aggregate rate).
+- `diagnosis.suggestedActions[]` may list the existing action `storage-health` for the new rule.
+- Views: a "Storage" block in the evidence section (per-drive hang-versus-calm table, volume free-space table, pagefile and workload placement), per-drive series in the disk charts, and one `Storage:` line in the email draft. These are renderings of the fields above, not new JSON.
+
+### Unchanged
+- `schema` is `telltale-json/2` and `schemaStatus` is `frozen`. `validate-report.js` accepts reports with and without the new keys, checks only that the new keys are well formed when present, and still accepts every older report.

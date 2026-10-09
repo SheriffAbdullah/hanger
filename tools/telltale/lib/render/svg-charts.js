@@ -101,10 +101,13 @@ function planPanels(ex) {
   panels.push({ id: 'clock-thermal-power', title: 'Clock / thermal / power', subs: subs4 });
 
   // 5 disk
-  const dl = withData([mk('diskLat', 'latency (ms)', S.diskLat)]);
-  const dq = withData([mk('diskQ', 'queue length', S.diskQ)]);
-  const db = withData([mk('diskBusy', 'busy (%)', S.diskBusy)]);
-  const dt = withData([mk('diskTput', 'throughput (MB/s)', S.diskTput)]);
+  // machine total first, then one series per physical drive (labelled by disk number and volume letters only)
+  const dr = S.drives || [];
+  const perDrive = (f, key, what) => dr.map((d) => mk(key + d.drive, `${what} ${d.label}`, d[f]));
+  const dl = withData([mk('diskLat', 'latency, machine total (ms)', S.diskLat), ...perDrive('lat', 'drive-lat-', 'latency')]);
+  const dq = withData([mk('diskQ', 'queue length, machine total', S.diskQ), ...perDrive('queue', 'drive-q-', 'queue')]);
+  const db = withData([mk('diskBusy', 'busy, machine total (%)', S.diskBusy), ...perDrive('busy', 'drive-busy-', 'busy')]);
+  const dt = withData([mk('diskTput', 'throughput, machine total (MB/s)', S.diskTput), ...perDrive('tput', 'drive-tput-', 'throughput')]);
   panels.push({ id: 'disk', title: 'Disk', subs: [
     sub({ id: 'disk-lat', title: 'Disk latency (ms)', unit: 'ms', domain: autoDomain(dl, 0, 1.1, 10), series: dl, reason: dl.length ? null : (S.diskLat.reason || 'disk latency was not recorded'), placeholderLabel: 'Disk latency' }),
     sub({ id: 'disk-queue', title: 'Disk queue length (count)', unit: 'count', domain: autoDomain(dq, 0, 1.1, 2), series: dq, reason: dq.length ? null : (S.diskQ.reason || 'disk queue was not recorded'), placeholderLabel: 'Disk queue' }),

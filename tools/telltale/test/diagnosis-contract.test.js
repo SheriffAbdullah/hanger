@@ -52,6 +52,6 @@ test('missing data yields fired:null with a reason that names the signal, never 
 
 test('rules load from lib/diagnosis/rules/*.js and each declares an id, class, evaluate and disprove', () => {
   const rules = loadRules();
-  assert.deepStrictEqual(rules.map((r) => r.id).sort(), ['battery-power-plan', 'commit-limit-pressure', 'cpu-saturation', 'database-memory-io', 'disk-stall', 'driver-interrupt-storm', 'gpu-contention', 'hard-fault-thrash', 'memory-pressure', 'outside-scope', 'security-contention', 'single-process-dominance', 'thermal-power-throttle', 'vm-memory-dominance']);
+  assert.deepStrictEqual(rules.map((r) => r.id).sort(), ['battery-power-plan', 'commit-limit-pressure', 'cpu-saturation', 'database-memory-io', 'disk-nearly-full', 'disk-stall', 'driver-interrupt-storm', 'gpu-contention', 'hard-fault-thrash', 'memory-pressure', 'outside-scope', 'security-contention', 'single-process-dominance', 'thermal-power-throttle', 'vm-memory-dominance']);
   for (const r of rules) assert.ok(typeof r.evaluate === 'function' && typeof r.disprove === 'function' && r.class);
 });

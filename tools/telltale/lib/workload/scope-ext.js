@@ -8,10 +8,15 @@ const CONFIG_KEYS = new Set(['kind', 'connection', 'container', 'note']);
 const CONFIG_KINDS = new Set(['postgres', 'wsl']);
 const MIN_EVERY_SEC = 2;
 
-// returns {phases, probes, config} (normalized, defaults applied); throws Error(message) naming the problem.
+// returns {phases, probes, config, drives} (normalized, defaults applied); throws Error(message) naming the problem.
 function validateWorkloadExt(obj, where, makeError = (m) => new Error(m)) {
   const fail = (m) => { throw makeError(`scope file ${where}: ${m}`); };
-  const out = { phases: [], probes: [], config: [] };
+  const out = { phases: [], probes: [], config: [], drives: [] };
+  if (obj.drives !== undefined) {
+    if (!Array.isArray(obj.drives)) fail('"drives" must be a list of drive letters such as ["D:"]');
+    obj.drives.forEach((d, i) => { if (typeof d !== 'string' || !/^[A-Za-z]:$/.test(d.trim())) fail(`drives[${i}] (${JSON.stringify(d)}) must be a drive letter and colon such as "D:"`); });
+    out.drives = [...new Set(obj.drives.map((d) => d.trim().toUpperCase()))];
+  }
   if (obj.phases !== undefined) {
     if (!Array.isArray(obj.phases) || obj.phases.some((p) => typeof p !== 'string' || !p.trim() || p.length > 40)) fail('"phases" must be a list of non-empty strings (40 characters at most)');
     out.phases = obj.phases.map((p) => p.trim());

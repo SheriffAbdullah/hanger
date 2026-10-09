@@ -95,6 +95,9 @@ signals.registerFamily('proc.group_share_pct', { unit: '% of used memory', failu
 } });
 signals.registerFamily('proc.group_io_bps', { unit: 'bytes/s', failureKeys: ['proc.cpu_io', 'signals.procs'], get: (r, e, g) => { void e; return ioOf(findGroup(r, g)); } });
 
+// the anonymous out-of-scope aggregate: a rate and a count, never a name (storage-coverage)
+signals.register('proc.outside_io_bps', { unit: 'bytes/s', failureKeys: ['proc.cpu_io', 'signals.procs'], get: (r) => (r.procs && r.procs.outOfScope ? ioOf(r.procs.outOfScope) : null) });
+
 // groups a rule may name: in-scope groups, then the system set; the out-of-scope aggregate carries no name and is never listed
 function namedGroups(row) {
   const p = row && row.procs;

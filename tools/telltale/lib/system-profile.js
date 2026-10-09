@@ -181,7 +181,9 @@ function buildStorage(g, ctx) {
     const media = /^(ssd|hdd)$/i.test(f[1]) ? f[1].toUpperCase() : 'unspecified';
     const cap = parseNum(f[3]) > 0 ? round(parseNum(f[3]) / 1e9, 0) : null; // vendor capacity: decimal GB
     const health = f[4] || null;
-    const d = { model: f[0] || null, mediaType: media, bus: f[2] || null, capacityGB: cap, health };
+    const num = parseNum(f[5]);
+    const d = { model: f[0] || null, mediaType: media, bus: f[2] || null, capacityGB: cap, health, number: num !== null && num >= 0 ? num : null };
+    if (d.number === null) d.numberUnavailableReason = 'disk number not reported';
     if (!d.bus) d.busUnavailableReason = 'bus type not reported';
     if (cap === null) d.capacityUnavailableReason = 'capacity not reported';
     if (!health) d.healthUnavailableReason = `health status not readable at ${ctx.elevated ? 'admin' : 'user'} tier`;
@@ -307,8 +309,10 @@ function buildVirtualMemory(g, ctx) {
     const st = settings.find((s) => (s[0] || '').toLowerCase() === (f[0] || '').toLowerCase());
     const maxMB = st && parseNum(st[2]) > 0 ? parseNum(st[2]) : null;
     const initMB = st && parseNum(st[1]) > 0 ? parseNum(st[1]) : null;
-    const p = { location: f[0] || null, currentMB: parseNum(f[1]) > 0 ? parseNum(f[1]) : null, initialMB: initMB, maxMB };
+    const dl = /^([A-Za-z]:)/.exec(String(f[0] || ''));
+    const p = { location: f[0] || null, drive: dl ? dl[1].toUpperCase() : null, currentMB: parseNum(f[1]) > 0 ? parseNum(f[1]) : null, initialMB: initMB, maxMB };
     if (initMB === null) p.initialUnavailableReason = sysManaged ? 'system-managed: no fixed initial size' : 'initial size not reported';
+    if (p.drive === null) p.driveUnavailableReason = 'pagefile location has no drive letter';
     if (p.currentMB === null) p.currentUnavailableReason = 'current size not reported';
     if (maxMB === null) p.maxUnavailableReason = sysManaged ? 'system-managed: no fixed maximum' : (st ? 'no fixed maximum configured (source reports 0)' : 'maximum size not reported');
     return p;
@@ -423,7 +427,7 @@ function buildScript({ elevated = false, limitMs = GROUP_TIMEOUT_MS } = {}) {
 Get-CimInstance Win32_PhysicalMemory -OperationTimeoutSec 7 | ForEach-Object { 'row:module|' + $_.DeviceLocator + '|' + $_.Capacity + '|' + $_.Speed + '|' + $_.ConfiguredClockSpeed + '|' + $_.FormFactor }
 $a = Get-CimInstance Win32_PhysicalMemoryArray -OperationTimeoutSec 7 | Select-Object -First 1
 if ($a) { 'slotsTotal=' + $a.MemoryDevices }`,
-    storage: `Get-PhysicalDisk -ErrorAction SilentlyContinue | ForEach-Object { 'row:disk|' + ($_.FriendlyName -replace '\\|','/') + '|' + $_.MediaType + '|' + $_.BusType + '|' + $_.Size + '|' + $_.HealthStatus }
+    storage: `Get-PhysicalDisk -ErrorAction SilentlyContinue | ForEach-Object { 'row:disk|' + ($_.FriendlyName -replace '\\|','/') + '|' + $_.MediaType + '|' + $_.BusType + '|' + $_.Size + '|' + $_.HealthStatus + '|' + $_.DeviceId }
 'systemDrive=' + $env:SystemDrive
 Get-CimInstance Win32_LogicalDisk -Filter 'DriveType=3' -OperationTimeoutSec 7 | ForEach-Object { 'row:vol|' + $_.DeviceID + '|' + $_.FreeSpace + '|' + $_.Size }`,
     graphics: `Get-CimInstance Win32_VideoController -OperationTimeoutSec 7 | ForEach-Object { 'row:adapter|' + ($_.Name -replace '\\|','/') + '|' + $_.AdapterRAM + '|' + $_.DriverVersion + '|' + $(if ($_.DriverDate) { $_.DriverDate.ToString('yyyy-MM-dd') } else { '' }) }`,

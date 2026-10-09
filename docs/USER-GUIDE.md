@@ -106,9 +106,12 @@ scope, everything else is an anonymous count and total.
   "entries": [{ "name": "postgres" }, { "name": "docker" }, { "name": "com.docker.backend" }],
   "phases": ["idle", "loaded"],
   "probes": [{ "name": "pg-select1", "command": ["docker", "exec", "pg", "psql", "-U", "postgres", "-c", "select 1"], "everySec": 5, "timeoutMs": 5000 }],
-  "config": [{ "kind": "postgres", "container": "pg" }, { "kind": "wsl" }]
+  "config": [{ "kind": "postgres", "container": "pg" }, { "kind": "wsl" }],
+  "drives": ["D:"]
 }
 ```
+
+Optional `"drives": ["D:"]` declares which drive letters hold the monitored workload. It is the only way the report knows the workload drive: it is never guessed from process activity, and without it the report says "workload drive not declared".
 
 Container scope matches on the container name or the image's base name (`postgres:16` matches an entry named `postgres`).
 Run it with `node tools/telltale/telltale.js trace --duration 120 --phase loaded --scope ./telltale.scope.json`.
@@ -250,7 +253,7 @@ Every trace carries `diagnosis`; all views, the pack, `trend` and the console de
 
 ### Cause rules and suggested actions
 
-Fourteen rules run at every usable hang (the five core rules plus nine from `diagnosis-cause-rules`). Each result carries its inputs (resolvable evidence references), the threshold with its source, the calm mean with n, a derived confidence, an evaluated disprover and its confounds. A rule whose signal was not recorded is `fired: null` ("not evaluated") with the missing signal named; absence is never read as "ruled out". Rules judge on the usable probes within +-10 s of the hang (3 or more for "sustained"), never a trace-wide peak or minimum.
+Fifteen rules run at every usable hang (the five core rules, nine from `diagnosis-cause-rules`, and `disk-nearly-full` from `storage-coverage`). Each result carries its inputs (resolvable evidence references), the threshold with its source, the calm mean with n, a derived confidence, an evaluated disprover and its confounds. A rule whose signal was not recorded is `fired: null` ("not evaluated") with the missing signal named; absence is never read as "ruled out". Rules judge on the usable probes within +-10 s of the hang (3 or more for "sustained"), never a trace-wide peak or minimum.
 
 | Rule | Class | Fires when (defaults, all provisional) | Disproved when |
 |---|---|---|---|
@@ -262,11 +265,20 @@ Fourteen rules run at every usable hang (the five core rules plus nine from `dia
 | `thermal-power-throttle` | thermal-power | CPU >= 50% and performance < 60% of the calm median (turbo-aware) or an active performance limit | performance >= 90% of the calm median at 2/3 of hangs |
 | `battery-power-plan` | thermal-power | battery hang rate per minute >= 2x the AC rate (3+ hangs and 10+ probes per side), or 2/3 of hangs under an efficiency mode while < 1/3 of calm probes are | rates within 1.25x |
 | `driver-interrupt-storm` | cpu | DPC + interrupt time >= 10% | below 3% at every hang |
+| `disk-nearly-full` | disk | the system volume, a volume holding a pagefile or a declared workload drive has < 10% free on 3+ probes near the hang, or < 15% free while its free space falls by >= 500 MB across the run | free space >= 25% at 2/3 of hangs |
 | `gpu-contention` | gpu | busiest engine >= 90%, or dedicated memory >= 95% of its total (when a total is known) | engine < 50% and memory < 80% at every hang |
 
 Parameters are recorded in `summary.thresholds.rules.<ruleId>.<param>` and can be overridden in `telltale.config.json`: `{ "rules": { "driver-interrupt-storm": { "sumPct": 15 } } }`. They are provisional until cited.
 
 `diagnosis.suggestedActions[]` maps each fired, non-disproved rule to one action from a fixed table, cheapest first (never ordered by confidence), each citing its rules and the `k/M` hangs: security-software exclusions, VM memory cap, AC power / power mode, driver and firmware check, application memory use, storage health, installed-memory comparison with the workload's commit need. The wording never recommends a purchase. Rules without a mapped action (`memory-pressure`, `cpu-saturation`, `outside-scope`) contribute none; an empty list means "no action suggested by this evidence".
+### Storage: per drive, free space, pagefile placement
+
+- **Per physical drive.** Latency, queue, busy time and read/write throughput are recorded for every physical drive beside the machine total (`spawnProbes[].disk.drives[]`), so a slow drive no longer hides behind a fast one. A drive is labelled `Disk 1 (D:)` (disk number and volume letters) and, in views, by its class from the system profile (for example "NVMe SSD"); no serial number is ever read. When Windows does not expose per-drive counters the value is `null` with a reason and the views say "Per-drive disk data: not available (reason)".
+- **Free space** per volume letter is recorded the same way (`disk.volumes[]`). `disk-nearly-full` judges only the volumes that can matter: the system volume, volumes holding a pagefile, and drives you declared in the scope file's `drives`. If none can be identified every volume is judged and the result says so. Limits are provisional; override them in `telltale.config.json`: `{ "rules": { "disk-nearly-full": { "lowFreePct": 15, "warnFreePct": 20, "fallMB": 300, "disproveFreePct": 30 } } }`. A run with no volume readings is "not evaluated", never "ruled out".
+- **Pagefile placement.** The system profile records the drive of each pagefile. The `disk-stall` rule fires on one slow drive even when the machine total looks fine, names it, and states whether it hosts the pagefile and the declared workload (yes, no, or unknown with the reason).
+- **Who drove the I/O.** A disk finding names a process group only when it is in your declared scope (or the fixed system set) and holds at least half of the observed disk I/O at 5 MB/s or more (`disk-stall` parameters `culpritMinBps`, `culpritSharePct`). When load outside the scope leads, the report states only its rate and group count: "dominated by load outside the declared scope". Out-of-scope names never appear.
+- **Known confound: file-sync clients.** A sync client such as OneDrive reading or writing files under the monitored folders (including a synced repository folder) can cause or mimic a disk stall. It is named as a confound only when it is in your declared scope or the system set and was active near the hang (`syncClientBps`, default 1 MB/s); if it is outside the scope it appears only in the anonymous aggregate. To see it, add it to the scope file.
+
 ### Adding a cause rule
 
 Drop a module in `tools/telltale/lib/diagnosis/rules/` exporting `{id, class, phrase, valueLabel, evaluate(ctx, hang, prior), disprove(ctx, hang)}`; the engine loads it, validates every result against the contract, derives confidence, ranks it and writes it into the finding. Optional: `after: [ruleIds]`, `priority`, `describe(ctx, fired)`; `evaluate` may return a per-hang `class` (a variant of the module class). Files starting with `_` in the rules folder are helpers, not rules (`_kit.js`). Build inputs with `ctx.input(probe, signal)`; register new signals with `lib/diagnosis/signals.js` `register()` (or `registerFamily()` for `name[arg]` signals such as a process group), as `lib/diagnosis/cause-signals.js` does. Return `fired: null` with a reason when data is missing. The full contract is in the header of `lib/diagnosis/engine.js`.

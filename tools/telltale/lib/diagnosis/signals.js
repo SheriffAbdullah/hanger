@@ -40,6 +40,20 @@ register('cpu.pct_total', { unit: '%', get: (r) => r.cpuPct, failureKeys: ['cpu.
 register('cpu.queue_per_lp', { unit: 'per logical processor', get: (r, e) => (num(r.cpuQ) !== null && e.logicalCpus > 0 ? r2(r.cpuQ / e.logicalCpus) : null), failureKeys: ['cpu.queue', 'sys.counters'] });
 register('disk.latency_ms', { unit: 'ms', get: (r) => (r.disk && r.disk.latencyMs !== undefined ? r.disk.latencyMs : (num(r.diskSec) !== null ? r2(r.diskSec * 1000) : null)), failureKeys: ['disk.latency', 'signals.disk'] });
 register('disk.queue', { unit: 'count', get: (r) => (r.disk && r.disk.queue !== undefined ? r.disk.queue : r.diskQ), failureKeys: ['disk.latency', 'disk.queue', 'signals.disk'] });
+// storage-coverage: per-drive series (family addressed by the drive instance, for example 'disk.drive_latency_ms[0 C:]') and
+// per-volume free space (family addressed by the letter). null = not recorded.
+const driveOf = (r, id) => (r.disk && Array.isArray(r.disk.drives) ? r.disk.drives.find((x) => x && x.drive === id) || null : null);
+const volumeOf = (r, id) => (r.disk && Array.isArray(r.disk.volumes) ? r.disk.volumes.find((x) => x && String(x.volume).toUpperCase() === String(id).toUpperCase()) || null : null);
+registerFamily('disk.drive_latency_ms', { unit: 'ms', failureKeys: ['disk.drives', 'signals.disk'], get: (r, e, a) => { const d = driveOf(r, a); return d ? d.latencyMs : null; } });
+registerFamily('disk.drive_queue', { unit: 'count', failureKeys: ['disk.drives', 'signals.disk'], get: (r, e, a) => { const d = driveOf(r, a); return d ? d.queue : null; } });
+registerFamily('disk.drive_busy_pct', { unit: '%', failureKeys: ['disk.drives', 'signals.disk'], get: (r, e, a) => { const d = driveOf(r, a); return d ? d.busyPct : null; } });
+registerFamily('disk.drive_io_bps', { unit: 'bytes/s', failureKeys: ['disk.drives', 'signals.disk'], get: (r, e, a) => { const d = driveOf(r, a); return d && (num(d.readBps) !== null || num(d.writeBps) !== null) ? (num(d.readBps) || 0) + (num(d.writeBps) || 0) : null; } });
+registerFamily('disk.volume_free_pct', { unit: '%', failureKeys: ['disk.volumes', 'signals.disk'], get: (r, e, a) => { const v = volumeOf(r, a); return v ? v.freePct : null; } });
+registerFamily('disk.volume_free_mb', { unit: 'MB', failureKeys: ['disk.volumes', 'signals.disk'], get: (r, e, a) => { const v = volumeOf(r, a); return v ? v.freeMB : null; } });
+// lowest free percent across the relevant volumes (all volumes when none is identified)
+const relevantVols = (r, e) => (r.disk && Array.isArray(r.disk.volumes) ? r.disk.volumes.filter((v) => v && num(v.freePct) !== null && (!e.relevantVolumes || e.relevantVolumes.includes(String(v.volume).toUpperCase()))) : []);
+register('disk.relevant_free_pct', { unit: '%', failureKeys: ['disk.volumes', 'signals.disk'], get: (r, e) => { const v = relevantVols(r, e); return v.length ? Math.min(...v.map((x) => x.freePct)) : null; } });
+register('disk.relevant_free_mb', { unit: 'MB', failureKeys: ['disk.volumes', 'signals.disk'], get: (r, e) => { const v = relevantVols(r, e).sort((a, b) => a.freePct - b.freePct)[0]; return v ? num(v.freeMB) : null; } });
 // security-software CPU as a share of the whole machine (0-100). A stored per-core-scaled value is divided by the logical
 // processor count here, so a raw 180 on 12 logical processors is read as 15 "% of machine".
 register('security.cpu_pct_machine', { unit: '% of machine', get: (r, e) => {
@@ -63,7 +77,7 @@ const rowsOf = (report) => (Array.isArray(report && report.spawnProbes) ? report
 function envOf(report) {
   const m = (report && report.machine) || {};
   const notes = report && report.signals && report.signals.notes;
-  return { logicalCpus: num(m.logicalCpus) || num(m.cpus) || null, totalMB: num(m.totalGB) ? m.totalGB * 1024 : null, defenderIsMachineShare: !!(notes && notes.defender) };
+  return { logicalCpus: num(m.logicalCpus) || num(m.cpus) || null, totalMB: num(m.totalGB) ? m.totalGB * 1024 : null, defenderIsMachineShare: !!(notes && notes.defender), relevantVolumes: require('../storage').relevantVolumes(report) };
 }
 
 module.exports = { register, registerFamily, has, unitOf, failureKeysOf, read, rawOf, rowsOf, envOf, SIGNALS };

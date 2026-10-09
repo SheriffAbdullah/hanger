@@ -3,6 +3,7 @@
 // no re-collection, no re-inference (hang bands come from the stored diagnosis).
 // All times are wall-clock epoch milliseconds taken from the per-row `at` fields.
 const { isRec, plain } = require('../sampler/record');
+const storage = require('../storage');
 
 const get = (o, p) => String(p).split('.').reduce((a, k) => (a === null || a === undefined ? undefined : a[k]), o);
 const numOf = (x) => { const v = isRec(x) ? x.v : x; return typeof v === 'number' && Number.isFinite(v) ? v : null; };
@@ -133,6 +134,15 @@ function extract(raw) {
   S.diskBusy = column(probes, ['disk.busyPct']);
   S.diskTput = column(probes, null, { derive: (p) => { const a = numOf(get(p, 'disk.readBps')), b = numOf(get(p, 'disk.writeBps')); return a === null && b === null ? null : +((((a || 0) + (b || 0)) / 1e6)).toFixed(3); } });
   S.diskTput.src = (probes.find((p) => isRec(get(p, 'disk.readBps'))) ? get(probes.find((p) => isRec(get(p, 'disk.readBps'))), 'disk.readBps.src') : null);
+  // per physical drive (storage-coverage): one series each, beside the machine total; absent when the report predates them
+  const driveOf = (p, d) => (p.disk && Array.isArray(p.disk.drives) ? p.disk.drives.find((y) => y && y.drive === d.drive) : null);
+  const driveCol = (d, f) => {
+    const col = column(probes, null, { derive: (p) => { const x = driveOf(p, d); return x ? numOf(x[f]) : null; } });
+    col.src = 'disk.drive@counterSession';
+    return col;
+  };
+  S.drives = storage.drivesSeen(r).map((d) => ({ ...d, lat: driveCol(d, 'latencyMs'), queue: driveCol(d, 'queue'), busy: driveCol(d, 'busyPct'),
+    tput: column(probes, null, { derive: (p) => { const x = driveOf(p, d); const a = x ? numOf(x.readBps) : null, b = x ? numOf(x.writeBps) : null; return a === null && b === null ? null : +((((a || 0) + (b || 0)) / 1e6)).toFixed(3); } }) }));
   // GPU
   S.gpuUtil = column(probes, ['gpu.totalUtilPct']);
   S.gpuVram = column(probes, ['gpu.vramUsedMB']);

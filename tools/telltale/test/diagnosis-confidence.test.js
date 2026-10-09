@@ -149,5 +149,5 @@ test('every rule threshold records value, unit, source and origin; the disk rule
   const m = d.hangs[0].rules.find((r) => r.id === 'memory-pressure');
   assert.strictEqual(m.threshold.source, 'provisional');
   assert.strictEqual(m.threshold.origin, 'default');
-  assert.deepStrictEqual(Object.keys(d.thresholds).sort(), ['battery-power-plan', 'commit-limit-pressure', 'cpu-saturation', 'database-memory-io', 'disk-stall', 'driver-interrupt-storm', 'gpu-contention', 'hard-fault-thrash', 'memory-pressure', 'outside-scope', 'security-contention', 'single-process-dominance', 'thermal-power-throttle', 'vm-memory-dominance']);
+  assert.deepStrictEqual(Object.keys(d.thresholds).sort(), ['battery-power-plan', 'commit-limit-pressure', 'cpu-saturation', 'database-memory-io', 'disk-nearly-full', 'disk-stall', 'driver-interrupt-storm', 'gpu-contention', 'hard-fault-thrash', 'memory-pressure', 'outside-scope', 'security-contention', 'single-process-dominance', 'thermal-power-throttle', 'vm-memory-dominance']);
 });

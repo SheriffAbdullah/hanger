@@ -15,6 +15,9 @@ const DEFAULTS = Object.freeze({
   'thermal-power-throttle': { cpuPct: [50, '%'], perfPctOfCalm: [60, '% of calm median'], limitPct: [10, '%'], thermalC: [85, 'C'], disprovePerfPctOfCalm: [90, '% of calm median'] },
   'battery-power-plan': { rateRatio: [2, 'x AC rate'], minHangsPerSide: [3, 'count'], minProbesPerSide: [10, 'count'], modeHangShare: [0.667, 'share'], modeCalmShare: [0.333, 'share'], disproveRatio: [1.25, 'x'] },
   'driver-interrupt-storm': { sumPct: [10, '%'], disproveSumPct: [3, '%'] },
+  // storage-coverage
+  'disk-nearly-full': { lowFreePct: [10, '%'], warnFreePct: [15, '%'], fallMB: [500, 'MB'], disproveFreePct: [25, '%'] },
+  'disk-stall': { culpritMinBps: [5242880, 'bytes/s'], culpritSharePct: [50, '% of observed disk I/O'], syncClientBps: [1048576, 'bytes/s'] },
   'gpu-contention': { enginePct: [90, '%'], vramPct: [95, '% of dedicated memory'], disproveEnginePct: [50, '%'], disproveVramPct: [80, '% of dedicated memory'] },
 });
 

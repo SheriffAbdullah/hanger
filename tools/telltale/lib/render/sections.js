@@ -9,6 +9,7 @@ const vocab = require('../diagnosis/vocabulary');
 const { walkFacts } = require('../system-profile');
 const { fmt, na, n2, roundDisplay, unitText } = require('./format');
 const inputCheck = require('./input-check');
+const storageBlock = require('./storage-block');
 const { extract, clock, dateText, offsetLabel, get, numOf, ms } = require('./series');
 
 const SECTION_ORDER = ['header', 'finding', 'actions', 'evidence', 'profile', 'gaps', 'appendix'];
@@ -337,6 +338,7 @@ function traceSections(raw, files = {}) {
     if (ev.notEval.length) evidenceBlocks.push({ t: 'p', cls: 'note', text: `Rules that could not be evaluated: ${ev.notEval.join('; ')}.` });
   } else evidenceBlocks.push({ t: 'p', text: 'No probe reached the freeze threshold, so there is no at-freeze versus calm comparison. The calm run is summarized below.' });
   evidenceBlocks.push(...inputCheck.inputCheckBlocks({ inputStall: r.inputStall, probeAgreement: d && d.probeAgreement, corroboration: d && d.inputStallCorroboration, observerHelper: get(r, 'sampling.observer.helper'), off }));
+  evidenceBlocks.push(...storageBlock.storageBlocks(r));
   evidenceBlocks.push({ t: 'sub', text: 'Run summary' });
   evidenceBlocks.push({ t: 'kv', rows: summaryKv(r) });
   evidenceBlocks.push({ t: 'sub', text: 'Charts' });

@@ -65,7 +65,7 @@ test('a memory-led case: the memory rules fire and rank, the non-firing rules do
 
 test('rule parameters are recorded with a provisional source, and a config override changes one value and its origin', () => {
   const rec = rp.recorded();
-  assert.deepStrictEqual(Object.keys(rec).sort(), [...NEW].sort());
+  assert.deepStrictEqual(Object.keys(rec).sort(), [...NEW, 'disk-nearly-full', 'disk-stall'].sort());
   assert.deepStrictEqual(rec['driver-interrupt-storm'].sumPct, { value: 10, unit: '%', source: 'provisional (diagnosis-cause-rules design)', origin: 'default' });
   const over = rp.recorded({ 'driver-interrupt-storm': { sumPct: 20 }, 'gpu-contention': { enginePct: 'high' } });
   assert.strictEqual(over['driver-interrupt-storm'].sumPct.value, 20);

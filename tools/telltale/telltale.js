@@ -1292,7 +1292,7 @@ async function main() {
   }
   const runStartRec = { at: new Date(traceT0).toISOString(), runStartMs: traceT0, tool: 'telltale v0.6', nominalS: DURATION, intervalMs: INTERVAL, continuousNominalS: 2,
     tier: TIER, settings: SETTINGS, thresholds: { ...TH }, durationUsedS: dur.usedS, logicalCpus: os.cpus().length,
-    workloadDecl: WL.declaration(), workloadScoped: SCOPED, utcOffsetMin: -new Date(traceT0).getTimezoneOffset() };
+    workloadDecl: WL.declaration(), workloadScoped: SCOPED, workloadDrives: SCOPE.workload.drives || [], utcOffsetMin: -new Date(traceT0).getTimezoneOffset() };
   streamAppend('run-start', runStartRec);
   WL.start(); // phases, container / VM polls, probes and config facts begin with the run (all append to the stream)
   for (const f of FAILURES) STREAM.append('failure', f); // failures recorded before the stream opened
@@ -1619,6 +1619,7 @@ async function main() {
     tier: TIER, startedAt: startedAt.toISOString(), hostname: ANON ? '<host>' : os.hostname(), anonymized: ANON,
     machine: { totalGB: +totalGB.toFixed(2), cpus: cpus.length, logicalCpus: cpus.length, cpuModel: cpus[0]?.model, uptimeMin: +(os.uptime() / 60).toFixed(1) },
     systemProfile,
+    storage: core.storage,
     power: { scheme: powerScheme, plan: powerLib.parseActiveScheme(powerScheme), plugged: power.plugged, batteryPct: power.batteryPct, hasBattery: lastCS && lastCS.power ? lastCS.power.hasBattery : null, transitions: core.power.transitions },
     signals: core.signals, 'collection.notCollected': core['collection.notCollected'], procsSummary: core.procsSummary,
     admin, wprEtl,

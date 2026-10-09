@@ -8,6 +8,7 @@ const { n2 } = require('./format');
 const { get, numOf, ms, dateText } = require('./series');
 const sec = require('./sections');
 const inputCheck = require('./input-check');
+const storageBlock = require('./storage-block');
 
 const NA = 'not available';
 
@@ -124,6 +125,7 @@ function buildEmail(raw, files = {}) {
   }
   const inLine = inputLine(r, n, conf, own);
   if (inLine) body.push(inLine);
+  body.push(storageBlock.emailStorageLine(r));
   body.push(scopeSummary(r));
   const adm = sec.adminOnly(r);
   body.push(`Not measurable without admin: ${adm.length ? adm.join('; ') : 'none'}.`);

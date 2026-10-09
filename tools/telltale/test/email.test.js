@@ -50,7 +50,7 @@ test('attachment manifest lists json and report.html with 12-hex hashes, never a
 
 test('no "not available" placeholder for the full-signals fixture; actions listed cheapest-first when present', () => {
   const r = load('full-signals');
-  assert.ok(!/not available/.test(buildEmail(r, F).text));
+  assert.ok(!/not available/.test(buildEmail(r, F).text.replace(/^Storage:.*$/m, '')), 'the storage line is its own placeholder, tested in storage-render.test.js');
   r.diagnosis.suggestedActions = [{ text: 'Set the VM cap', ruleIds: ['a'] }, { text: 'Check the app', ruleIds: ['b'] }];
   const e = buildEmail(r, F);
   assert.match(e.text, /1\) Set the VM cap; 2\) Check the app/);

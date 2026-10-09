@@ -67,6 +67,8 @@ function buildCoreReport(state, meta) {
     samples: samplesRec,
     // data-signals-completeness: run-level facts for the per-sample series carried on spawnProbes[]
     machine: { logicalCpus: s.logicalCpus || null },
+    // storage-coverage: the user-declared workload drives (placement is never inferred)
+    storage: require('./storage').declared({ workloadDrives: s.workloadDrives || [] }),
     power: { transitions: state.powerTransitions || [] },
     signals: state.signals && Object.keys(state.signals).length ? state.signals : null,
     'collection.notCollected': (state.signals && state.signals.notCollected) || NOT_COLLECTED,

@@ -67,6 +67,22 @@ function validateText(text) {
     };
     inStall(obj.inputStall, '$.inputStall', false, []);
   }
+  // storage-coverage (additive 2.x fields): optional, so an older report passes; when present they must be well formed, and
+  // anything the validator does not understand inside them is ignored. A drive label never carries a serial number.
+  if (obj.storage !== undefined) {
+    const w = obj.storage && obj.storage.workloadDrives;
+    if (!obj.storage || typeof obj.storage !== 'object' || Array.isArray(obj.storage)) problems.push('storage must be an object');
+    else if (w !== null && w !== undefined && (!Array.isArray(w) || w.some((x) => typeof x !== 'string' || !/^[A-Z]:$/.test(x)))) problems.push('storage.workloadDrives must be null or a list of drive letters such as "D:"');
+  }
+  for (const [i, row] of (Array.isArray(obj.spawnProbes) ? obj.spawnProbes : []).entries()) {
+    const dk = row && row.disk;
+    if (!dk || typeof dk !== 'object') continue;
+    if (dk.drives !== undefined && dk.drives !== null && !Array.isArray(dk.drives)) problems.push(`spawnProbes[${i}].disk.drives must be null or a list`);
+    if (dk.volumes !== undefined && dk.volumes !== null && !Array.isArray(dk.volumes)) problems.push(`spawnProbes[${i}].disk.volumes must be null or a list`);
+    if (dk.drives === null && typeof dk.drivesReason !== 'string') problems.push(`spawnProbes[${i}].disk.drives is null without a drivesReason`);
+    if (dk.volumes === null && typeof dk.volumesReason !== 'string') problems.push(`spawnProbes[${i}].disk.volumes is null without a volumesReason`);
+    for (const d of Array.isArray(dk.drives) ? dk.drives : []) if (d && /serial/i.test(Object.keys(d).join(' ') + String(d.label))) problems.push(`spawnProbes[${i}].disk.drives holds a serial number`);
+  }
   // a bare Infinity/NaN token is not valid JSON, so JSON.parse already rejected it; belt and braces:
   if (/:\s*-?(Infinity|NaN)\b/.test(text)) problems.push('raw Infinity/NaN token in text');
   return { ok: problems.length === 0, problems, obj };

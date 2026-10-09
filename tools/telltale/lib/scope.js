@@ -44,7 +44,7 @@ class ScopeError extends Error {
 }
 
 // ---------- scope file ----------
-const TOP_KEYS = new Set(['version', 'entries', 'note', 'phases', 'probes', 'config']);
+const TOP_KEYS = new Set(['version', 'entries', 'note', 'phases', 'probes', 'config', 'drives']);
 const ENTRY_KEYS = new Set(['name', 'pattern', 'includeDescendants', 'note', 'enabled']);
 const BAD_PATTERN = /[\[\](){}|+^$\\]/;
 
@@ -173,7 +173,7 @@ function loadScope({ cfg = {}, args = [], cwd = process.cwd() } = {}) {
     if (preset && preset !== 'plain') warnings.push(`unknown --preset '${preset}' (want dev|plain) - using open scope`);
     decl = buildDecl({ mode: 'open', source: 'none', entries, warnings });
   }
-  return { decl, matcher: createMatcher(entries), preset, workload: workload || { phases: [], probes: [], config: [] } };
+  return { decl, matcher: createMatcher(entries), preset, workload: workload || { phases: [], probes: [], config: [], drives: [] } };
 }
 
 // draft scope file written for --preset dev when none exists; returns the path or null

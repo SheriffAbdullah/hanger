@@ -3912,6 +3912,13 @@
         "origin": "default",
         "key": "database-memory-io.memPctRam"
       },
+      "disk-nearly-full": {
+        "value": 10,
+        "unit": "%",
+        "source": "provisional (diagnosis-cause-rules design)",
+        "origin": "default",
+        "key": "disk-nearly-full.lowFreePct"
+      },
       "disk-stall": {
         "value": 25,
         "unit": "ms",
@@ -4347,6 +4354,35 @@
             }
           },
           {
+            "id": "disk-nearly-full",
+            "class": "disk",
+            "fired": null,
+            "reason": "disk.relevant_free_pct not recorded at this hang (no value stored); free space of the system, pagefile and workload volumes is needed",
+            "at": [],
+            "inputs": [],
+            "threshold": {
+              "value": 10,
+              "unit": "%",
+              "source": "provisional (diagnosis-cause-rules design)",
+              "origin": "default",
+              "key": "disk-nearly-full.lowFreePct"
+            },
+            "n": 0,
+            "calm": {
+              "mean": null,
+              "n": 0,
+              "signal": null
+            },
+            "components": null,
+            "confidence": null,
+            "disprover": {
+              "check": "free space of the relevant volumes at or above 25% at 2/3 or more of the hangs",
+              "result": "not-evaluable",
+              "values": []
+            },
+            "confounds": []
+          },
+          {
             "id": "disk-stall",
             "class": "disk",
             "fired": false,
@@ -4369,7 +4405,7 @@
             "components": null,
             "confidence": null,
             "disprover": {
-              "check": "latency < 10 ms and queue < 1 on every probe within +-10 s of the hang",
+              "check": "latency < 10 ms and queue < 1 on every probe within +-10 s of the hang, for the machine total and for every drive with a reading",
               "result": "disproved",
               "values": [
                 {
@@ -4429,7 +4465,21 @@
                 }
               ]
             },
-            "confounds": []
+            "confounds": [
+              {
+                "id": "sync-client-io",
+                "text": "a file-sync client in the declared scope was reading or writing near the hang",
+                "active": false
+              }
+            ],
+            "extra": {
+              "perDrive": {
+                "recorded": false,
+                "text": "per-drive data not recorded"
+              },
+              "slowDrive": null,
+              "culprit": null
+            }
           },
           {
             "id": "driver-interrupt-storm",
@@ -5414,6 +5464,35 @@
             }
           },
           {
+            "id": "disk-nearly-full",
+            "class": "disk",
+            "fired": null,
+            "reason": "disk.relevant_free_pct not recorded at this hang (no value stored); free space of the system, pagefile and workload volumes is needed",
+            "at": [],
+            "inputs": [],
+            "threshold": {
+              "value": 10,
+              "unit": "%",
+              "source": "provisional (diagnosis-cause-rules design)",
+              "origin": "default",
+              "key": "disk-nearly-full.lowFreePct"
+            },
+            "n": 0,
+            "calm": {
+              "mean": null,
+              "n": 0,
+              "signal": null
+            },
+            "components": null,
+            "confidence": null,
+            "disprover": {
+              "check": "free space of the relevant volumes at or above 25% at 2/3 or more of the hangs",
+              "result": "not-evaluable",
+              "values": []
+            },
+            "confounds": []
+          },
+          {
             "id": "disk-stall",
             "class": "disk",
             "fired": false,
@@ -5436,7 +5515,7 @@
             "components": null,
             "confidence": null,
             "disprover": {
-              "check": "latency < 10 ms and queue < 1 on every probe within +-10 s of the hang",
+              "check": "latency < 10 ms and queue < 1 on every probe within +-10 s of the hang, for the machine total and for every drive with a reading",
               "result": "disproved",
               "values": [
                 {
@@ -5496,7 +5575,21 @@
                 }
               ]
             },
-            "confounds": []
+            "confounds": [
+              {
+                "id": "sync-client-io",
+                "text": "a file-sync client in the declared scope was reading or writing near the hang",
+                "active": false
+              }
+            ],
+            "extra": {
+              "perDrive": {
+                "recorded": false,
+                "text": "per-drive data not recorded"
+              },
+              "slowDrive": null,
+              "culprit": null
+            }
           },
           {
             "id": "driver-interrupt-storm",
@@ -6436,6 +6529,35 @@
             }
           },
           {
+            "id": "disk-nearly-full",
+            "class": "disk",
+            "fired": null,
+            "reason": "disk.relevant_free_pct not recorded at this hang (no value stored); free space of the system, pagefile and workload volumes is needed",
+            "at": [],
+            "inputs": [],
+            "threshold": {
+              "value": 10,
+              "unit": "%",
+              "source": "provisional (diagnosis-cause-rules design)",
+              "origin": "default",
+              "key": "disk-nearly-full.lowFreePct"
+            },
+            "n": 0,
+            "calm": {
+              "mean": null,
+              "n": 0,
+              "signal": null
+            },
+            "components": null,
+            "confidence": null,
+            "disprover": {
+              "check": "free space of the relevant volumes at or above 25% at 2/3 or more of the hangs",
+              "result": "not-evaluable",
+              "values": []
+            },
+            "confounds": []
+          },
+          {
             "id": "disk-stall",
             "class": "disk",
             "fired": false,
@@ -6458,7 +6580,7 @@
             "components": null,
             "confidence": null,
             "disprover": {
-              "check": "latency < 10 ms and queue < 1 on every probe within +-10 s of the hang",
+              "check": "latency < 10 ms and queue < 1 on every probe within +-10 s of the hang, for the machine total and for every drive with a reading",
               "result": "disproved",
               "values": [
                 {
@@ -6518,7 +6640,21 @@
                 }
               ]
             },
-            "confounds": []
+            "confounds": [
+              {
+                "id": "sync-client-io",
+                "text": "a file-sync client in the declared scope was reading or writing near the hang",
+                "active": false
+              }
+            ],
+            "extra": {
+              "perDrive": {
+                "recorded": false,
+                "text": "per-drive data not recorded"
+              },
+              "slowDrive": null,
+              "culprit": null
+            }
           },
           {
             "id": "driver-interrupt-storm",

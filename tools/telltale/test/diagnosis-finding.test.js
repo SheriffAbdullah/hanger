@@ -57,7 +57,7 @@ test('undetermined: enough probes and hangs but no rule fires, and every rule is
   const probes = [...lead, ...calm(12, 10, 1), { t: 40, ms: 1500, hang: true }, { t: 60, ms: 1500, hang: true }, { t: 80, ms: 1500, hang: true }];
   const d = diagnose(mkReport({ probes }));
   assert.strictEqual(d.finding.class, 'undetermined');
-  assert.deepStrictEqual(d.finding.rulesChecked.map((r) => r.id).sort(), ['battery-power-plan', 'commit-limit-pressure', 'cpu-saturation', 'database-memory-io', 'disk-stall', 'driver-interrupt-storm', 'gpu-contention', 'hard-fault-thrash', 'memory-pressure', 'outside-scope', 'security-contention', 'single-process-dominance', 'thermal-power-throttle', 'vm-memory-dominance']);
+  assert.deepStrictEqual(d.finding.rulesChecked.map((r) => r.id).sort(), ['battery-power-plan', 'commit-limit-pressure', 'cpu-saturation', 'database-memory-io', 'disk-nearly-full', 'disk-stall', 'driver-interrupt-storm', 'gpu-contention', 'hard-fault-thrash', 'memory-pressure', 'outside-scope', 'security-contention', 'single-process-dominance', 'thermal-power-throttle', 'vm-memory-dominance']);
   assert.ok(d.finding.rulesChecked.every((r) => r.reason || r.disproved));
   assert.deepStrictEqual(d.rollup, []);
 });
