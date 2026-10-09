@@ -1,0 +1,53 @@
+name: Hang report / early feedback
+description: You ran Hanger on a freezing machine. Tell us how the report worked for the person who has to act on it.
+title: "[hang report] "
+labels: ["feedback"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for trying Hanger. **Do not paste real hostnames, usernames, serial numbers or internal software names.** Use `--anonymize` and read the report before sharing any part of it.
+  - type: dropdown
+    id: role
+    attributes:
+      label: Who are you in this story?
+      options:
+        - Developer (I ran it on my machine)
+        - IT / tech-ops (I read the report)
+        - Both
+    validations:
+      required: true
+  - type: textarea
+    id: usable
+    attributes:
+      label: Did the report give IT what it needed to act?
+      description: What was enough, and what would still have needed a follow-up question?
+    validations:
+      required: true
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What were you doing when it froze?
+      description: Workload, how often, how long. A few lines is enough.
+  - type: textarea
+    id: finding
+    attributes:
+      label: What did Hanger say, and did it match reality?
+      description: The finding, the top candidate cause and its confidence, and whether it felt right. For a clearly wrong diagnosis use the "Wrong diagnosis" template.
+  - type: input
+    id: version
+    attributes:
+      label: Hanger version or commit
+      placeholder: "output of: git rev-parse --short HEAD"
+  - type: input
+    id: env
+    attributes:
+      label: Windows build, Node version, laptop or desktop
+      placeholder: "Windows 11 23H2, Node 20, laptop"
+  - type: checkboxes
+    id: privacy
+    attributes:
+      label: Privacy check
+      options:
+        - label: I removed real hostnames, usernames, serial numbers and internal software names from anything I pasted.
+          required: true

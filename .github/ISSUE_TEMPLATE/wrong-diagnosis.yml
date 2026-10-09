@@ -1,0 +1,51 @@
+name: Wrong diagnosis
+description: Hanger ranked a cause that turned out to be wrong, or missed the real one.
+title: "[wrong diagnosis] "
+labels: ["diagnosis"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Wrong diagnoses are the most valuable feedback we can get. **Do not paste real hostnames, usernames, serial numbers or internal software names.** Anonymized, scoped output only.
+  - type: textarea
+    id: said
+    attributes:
+      label: What Hanger said
+      description: The finding class and the ranked causes with their confidence and "what would disprove this" lines.
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: What turned out to be true
+      description: What actually fixed it, or what you believe the cause was, and how you know.
+    validations:
+      required: true
+  - type: textarea
+    id: numbers
+    attributes:
+      label: The numbers that look wrong
+      description: Which rule fired or stayed quiet, and the values at the freeze versus calm periods that you think point elsewhere.
+  - type: dropdown
+    id: kind
+    attributes:
+      label: Kind of miss
+      options:
+        - A cause was ranked that was not the cause (false positive)
+        - The real cause was not listed (false negative)
+        - Confidence was too high or too low
+        - Reported "no freeze observed" but there was one
+        - Not sure
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Hanger version or commit
+  - type: checkboxes
+    id: privacy
+    attributes:
+      label: Privacy check
+      options:
+        - label: I removed real hostnames, usernames, serial numbers and internal software names from anything I pasted.
+          required: true

@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400" role="img" aria-label="Hang in there sticker">
+  <rect width="400" height="400" rx="40" fill="#FFD84D"/>
+  <g transform="translate(72 24)">
+    <g fill="none" stroke="#2B2F3A" stroke-width="8" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M128 92 V76 C128 66 146 62 146 46 C146 33 137 26 127 26 C115 26 108 35 108 46"/>
+      <path d="M128 92 L36 134 Q26 140 38 140 H218 Q230 140 220 134 Z"/>
+    </g>
+  </g>
+  <text x="200" y="262" text-anchor="middle" font-family="Impact, 'Arial Black', sans-serif" font-size="46" fill="#2B2F3A">HANG IN THERE</text>
+  <text x="200" y="304" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="#2B2F3A">the evidence is being captured</text>
+  <text x="200" y="360" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="700" fill="#2B2F3A">hanger · hang evidence, captured while it happens</text>
+</svg>

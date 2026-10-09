@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="Hanger">
+  <rect width="64" height="64" rx="14" fill="#2B2F3A"/>
+  <path d="M32 25 V21 C32 17 39 16 39 11 C39 7.5 36 6 33 6 C29.500 6 27 8.500 27 12" fill="none" stroke="#F4EFE6" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M9 45 L32 25 L55 45" fill="none" stroke="#F4EFE6" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M9 45 H22 L28 35 L35 57 L40 45 H55" fill="none" stroke="#FF6A3D" stroke-width="5.500" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400" role="img" aria-label="Hanging in there? So is the evidence. sticker">
+  <rect width="400" height="400" rx="40" fill="#1F2937"/>
+  <path d="M20 90 Q200 140 380 90" fill="none" stroke="#9CA3AF" stroke-width="5" stroke-linecap="round"/>
+  <g stroke="#F4EFE6" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M110 108 V130 M200 119 V141 M290 108 V130"/>
+  </g>
+  <rect x="82" y="128" width="56" height="42" rx="6" fill="#3B82F6"/>
+  <rect x="172" y="139" width="56" height="42" rx="6" fill="#E4572E"/>
+  <rect x="262" y="128" width="56" height="42" rx="6" fill="#10B981"/>
+  <g stroke="#fff" stroke-width="3.500" stroke-linecap="round" fill="none">
+    <path d="M100 142 l6 6 M106 142 l-6 6 M114 142 l6 6 M120 142 l-6 6 M102 160 q9 -6 18 0"/>
+    <path d="M190 153 l6 6 M196 153 l-6 6 M204 153 l6 6 M210 153 l-6 6 M192 171 q9 -6 18 0"/>
+    <path d="M280 142 l6 6 M286 142 l-6 6 M294 142 l6 6 M300 142 l-6 6 M282 160 q9 -6 18 0"/>
+  </g>
+  <text x="200" y="244" text-anchor="middle" font-family="Impact, 'Arial Black', sans-serif" font-size="36" fill="#F4EFE6">HANGING IN THERE?</text>
+  <text x="200" y="292" text-anchor="middle" font-family="Impact, 'Arial Black', sans-serif" font-size="36" fill="#FFD84D">SO IS THE EVIDENCE.</text>
+  <text x="200" y="360" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="700" fill="#F4EFE6">hanger</text>
+</svg>

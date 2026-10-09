@@ -1,0 +1,11 @@
+Subject: Freeze evidence - SX-1 Laptop SYN0000001 - 5 freezes in 1 min
+
+During normal work on 2026-01-15 (on battery, power plan Balanced), the laptop froze 5 times, the longest for 2 s (threshold 800 ms; 0 confirmed by Windows, 1 by your marks).
+Finding: At freezes: commit 88.3% vs no calm baseline (n=3/0); leading cause: memory pressure in 3 of 5 usable freezes. Not observed: disk stall. Confidence 0.5 (derived from the rule, not a probability); evidence strength: sufficient.
+Input-response check (automatic, nothing typed or clicked is recorded): 1 stall episode at the 250 ms threshold; 1 of 5 freezes also seen by the check; probe precision 1 of 1, probe recall 1 of 1.
+Storage: not available (per-drive counters were not recorded in this report; volume free-space counters were not recorded in this report).
+Scope: OPEN SCOPE: names of all running software may appear in the attached report.
+Not measurable without admin: battery design capacity.
+Machine: Synthetic CPU 8-thread, 16 GB RAM, Synthetic NVMe 512 (SSD), Windows build 26200, BIOS SYN 1.02.
+Suggested next steps (cheapest first): none suggested by this evidence.
+Attached: sample-hanger.json (sha256 aa90ccdfd55b), sample-hanger.report.html (sha256 979347d4d0ba).

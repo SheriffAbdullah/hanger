@@ -1,0 +1,28 @@
+name: Missing signal
+description: Something that would have explained the hang is not in the report.
+title: "[missing signal] "
+labels: ["signal"]
+body:
+  - type: textarea
+    id: signal
+    attributes:
+      label: Which signal is missing?
+      description: For example a counter, an event log, a driver, a tool's own metric.
+    validations:
+      required: true
+  - type: textarea
+    id: why
+    attributes:
+      label: Why would it have mattered?
+      description: What question from IT would it answer, or which diagnosis would it have changed?
+    validations:
+      required: true
+  - type: textarea
+    id: how
+    attributes:
+      label: How could it be collected?
+      description: A built-in Windows counter, a PowerShell command, an event ID. Say whether it needs admin, and whether it could expose anything outside the declared scope.
+  - type: input
+    id: version
+    attributes:
+      label: Hanger version or commit
