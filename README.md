@@ -1,9 +1,6 @@
 <div align="center">
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="assets/wordmark-dark.svg">
-  <img src="assets/wordmark.svg" alt="Hanger: hang evidence, captured while it happens" width="520">
-</picture>
+<img src="assets/wordmark.svg" alt="Hanger: hang evidence, captured while it happens" width="520">
 
 **Hang evidence, captured while it happens.**
 
