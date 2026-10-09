@@ -2,7 +2,7 @@
 
 ## Why
 
-On the machines Telltale targets, the collector itself is the problem. Each 2 s probe launches a shell, a runtime process, and a full PowerShell session. On the reference loaded laptop (i7-1255U, 15.6 GB, commit 87-92%) a probe bundle took 2.5-14 s. The real cadence was about 5-8 s instead of 2 s. A "20 s" trace covered 78 s of wall time, and the event loop stalled for up to 14 s, so key-press marks were stamped late (R02 §1h). The "melting" gate trips whenever a bundle exceeds 1 s, which is below the bundle's own normal cost under load. As a result the calm path never runs (R02-P1-3). Trace length is capped at 300 s (R02-P1-9). Stored values carry no unit, window, n, or source (R02-P1-14), and some are kept with 15 decimals (R02-P2-4). The tool's own launches add page-ins that later read as memory thrash (R03-L3-5).
+On the machines Hanger targets, the collector itself is the problem. Each 2 s probe launches a shell, a runtime process, and a full PowerShell session. On the reference loaded laptop (i7-1255U, 15.6 GB, commit 87-92%) a probe bundle took 2.5-14 s. The real cadence was about 5-8 s instead of 2 s. A "20 s" trace covered 78 s of wall time, and the event loop stalled for up to 14 s, so key-press marks were stamped late (R02 §1h). The "melting" gate trips whenever a bundle exceeds 1 s, which is below the bundle's own normal cost under load. As a result the calm path never runs (R02-P1-3). Trace length is capped at 300 s (R02-P1-9). Stored values carry no unit, window, n, or source (R02-P1-14), and some are kept with 15 decimals (R02-P2-4). The tool's own launches add page-ins that later read as memory thrash (R03-L3-5).
 
 This change rebuilds sampling so that observation stays cheap and honest under load. It must land before the new signals (changes 6 and 7) and the diagnosis rebuild (change 8), because every one of them depends on trustworthy cadence, gap records, observer cost, and per-value provenance.
 
@@ -23,15 +23,15 @@ This change rebuilds sampling so that observation stays cheap and honest under l
 ## Capabilities
 
 ### New Capabilities
-- `sampling`: How Telltale schedules, budgets, and records its own observation. Covers the continuous vs on-trigger tiers, achieved cadence and unobserved gaps, observer cost and budget, long capture, non-blocking input capture, collector-failure evidence, locale-independent parsing, and stored precision.
+- `sampling`: How Hanger schedules, budgets, and records its own observation. Covers the continuous vs on-trigger tiers, achieved cadence and unobserved gaps, observer cost and budget, long capture, non-blocking input capture, collector-failure evidence, locale-independent parsing, and stored precision.
 
 ### Modified Capabilities
 - `evidence-surface`: "Number every metric" becomes a per-value provenance contract enforced in the stored JSON, not only in rendered views.
 
 ## Impact
 
-- **Code:** new `tools/telltale/lib/sampler/` (scheduler, continuous session, trigger runner, observer meter, registry, provenance and precision helpers, locale-safe parser). The trace and watch loops in `tools/telltale/telltale.js` move onto the sampler. The `COLLECTORS` table and the `MELT`/`melting()`/`gate()` logic are replaced by the registry.
-- **Schema:** additive `2.x` section in `tools/telltale/SCHEMA-CHANGELOG.md` covering provenance records, `sampling.cadence`, `sampling.unobserved[]`, `sampling.observer`, and `collection.failures[].at`. Probe-level bare keys are replaced, which the changelog records as a rename. The schema stays `telltale-json/2` because v2 is a draft until report-and-visualization freezes it (IMPLEMENTATION-PLAN §2).
+- **Code:** new `tools/hanger/lib/sampler/` (scheduler, continuous session, trigger runner, observer meter, registry, provenance and precision helpers, locale-safe parser). The trace and watch loops in `tools/hanger/hanger.js` move onto the sampler. The `COLLECTORS` table and the `MELT`/`melting()`/`gate()` logic are replaced by the registry.
+- **Schema:** additive `2.x` section in `tools/hanger/SCHEMA-CHANGELOG.md` covering provenance records, `sampling.cadence`, `sampling.unobserved[]`, `sampling.observer`, and `collection.failures[].at`. Probe-level bare keys are replaced, which the changelog records as a rename. The schema stays `hanger-json/2` because v2 is a draft until report-and-visualization freezes it (IMPLEMENTATION-PLAN §2).
 - **Consumers:** `render-print.js`, `render-charts.js`, and `trend.js` read values through one accessor that understands provenance records. They keep reading v2 fields during the transition.
 - **Dependencies:** none added (zero-dependency rule).
 - **Depends on:** `fix-report-integrity` (wall-clock timebase, incremental persistence, test harness) and `software-inventory-and-scope` (scope resolver used by scope-aware collectors).

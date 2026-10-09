@@ -3,9 +3,9 @@
 Reviewer: Opus (review only, no code changed). Scope: the logic ladder from raw data to inference, and everything the tool outputs. Raw collector internals and spec structure belong to other reviewers. They are touched here only where they decide whether an inference is valid.
 
 Evidence base:
-- `tools/telltale/telltale.js` (1669 lines), `render-print.js`, `render-charts.js`, `trend.js`.
+- `tools/hanger/hanger.js` (1669 lines), `render-print.js`, `render-charts.js`, `trend.js`.
 - `openspec/explorations/orders-framework.md`, `ontology.md`, `persona-it.md`, and `openspec/specs/evidence-surface/spec.md`.
-- The tracked sample `reports/sample-telltale.{md,html,json}`.
+- The tracked sample `reports/sample-hanger.{md,html,json}`.
 - 25 local, untracked trace JSONs in `reports/`, which I read but did not change.
 - Renders I produced in the scratchpad: `sample.print.html` and `.png`, `sample.charts.html` and `.png`, and `sample.print.pdf`. I rendered them from a repaired copy of the sample JSON, because the shipped one does not parse (P0-1).
 
@@ -15,7 +15,7 @@ Evidence base:
 
 The repo has a real, documented evidence ladder. The data layer underneath it is honest about gaps (`collection.failures`, null-not-zero, receipts). The top two rungs are where it breaks:
 
-1. **The headline verdict is wrong on the repo's own flagship sample.** `reports/sample-telltale.md` says `STATE: RAM-BOUND`. The same file shows 0 hangs, commit 52 to 65% (threshold 85), and pagefile usage at 8%. The two reasons behind the verdict both come from the first seconds of the trace: one 500 ms `os.freemem` sample, and one pages/sec spike on the first probe, which took 8.8 s because the tool itself was starting up. The HTML colours this verdict green (`ok`). The cause text then predicts "Playwright timeouts, Docker OOM risk" on a machine where Docker is not installed.
+1. **The headline verdict is wrong on the repo's own flagship sample.** `reports/sample-hanger.md` says `STATE: RAM-BOUND`. The same file shows 0 hangs, commit 52 to 65% (threshold 85), and pagefile usage at 8%. The two reasons behind the verdict both come from the first seconds of the trace: one 500 ms `os.freemem` sample, and one pages/sec spike on the first probe, which took 8.8 s because the tool itself was starting up. The HTML colours this verdict green (`ok`). The cause text then predicts "Playwright timeouts, Docker OOM risk" on a machine where Docker is not installed.
 2. **The verdict is named after RAM, but it is really "two of any seven predicates fired".** Any two of these produce `RAM-BOUND`: a stall, a disk stall, or 1002 events from the Application log that are not filtered to the trace window. Per-hang RCA blames memory using the commit peak for the whole trace, not the value at the hang.
 3. **IT cannot get a usable artifact out of a default run.** With `anonymize: true` in the shipped config, the JSON (the declared "truth") is invalid. That also breaks `--print` and `--charts`. No ready-to-send summary or email exists. The static system profile (asset block) is collected but not shown in the MD or HTML. Only RAM, commit and pages are charted. CPU, disk, Defender, `%maxFreq`, AC/battery and temperature are collected per probe but never drawn.
 
@@ -29,7 +29,7 @@ The docs (`orders-framework.md` L3-42, `ontology.md`) name four orders: zeroth-d
 
 | Order (owner's term) | Doc name | What it is in code | Inputs → outputs | Where |
 |---|---|---|---|---|
-| **L0 Raw data** | zeroth-data | `samples[]` (os.freemem every `INTERVAL`); `spawnProbes[]` (2 s: `node -e ""` spawn latency + one PDH bundle of about 25 counters + plug state); end snapshots (tasklist WS rollup, `privateTop`, CIM cmdlines, GPU per-PID, docker/wsl, Event 1002/1000/2004, WER, admin tier); `userMarks[]` | collectors → timestamped rows | `telltale.js` L1130-1236, L745-813, L1266-1303, L1424 |
+| **L0 Raw data** | zeroth-data | `samples[]` (os.freemem every `INTERVAL`); `spawnProbes[]` (2 s: `node -e ""` spawn latency + one PDH bundle of about 25 counters + plug state); end snapshots (tasklist WS rollup, `privateTop`, CIM cmdlines, GPU per-PID, docker/wsl, Event 1002/1000/2004, WER, admin tier); `userMarks[]` | collectors → timestamped rows | `hanger.js` L1130-1236, L745-813, L1266-1303, L1424 |
 | **L1 Named states** | first-order | `hangEvents` (`ms >= --hang 800`); seven `reasons[]` predicates (commit peak, min-free, secs>85, pages peak+"sustained", disk stall, 1002 count, STALL count) | L0 → booleans + strings | L1332, L1436-1448 |
 | **L2 Derived** | second-order | rates, %frozen, MTTR (L1360-1365); ±10 s pre/post context (L1346-1357); calmShare (L1421); `pagesSus` (L1440); discriminator deltas (L560-593); cost v1/v2 (L1469-1477, L539) | L0/L1 → numbers | as listed |
 | **L3 Inference** | (verdict, RCA) | **three parallel, unconnected inferences:** (a) `verdict` + `cause` (L1451-1468); (b) per-hang `rca[].ranked` with confidences (L1479-1492); (c) `discriminator.call` ram-signal / reimage-signal / unclear (L560). Plus a fourth: (d) the pack renderer invents its own `STALL-OBSERVED / SUSTAINED-PRESSURE / NO-STALL` taxonomy (`render-print.js` L68-71) | L1/L2 → labels | as listed |
@@ -76,8 +76,8 @@ The docs (`orders-framework.md` L3-42, `ontology.md`) name four orders: zeroth-d
 
 **P0-1. Anonymized JSON is invalid, so the "truth" layer and both renderers break on default config.**
 - `anon()` (L285-291) runs on the serialized JSON string (L1585, L734) and replaces `C:\\Users\\name` with `C:\Users\<user>` (single backslash). The result is an invalid `\U` escape.
-- `telltale.config.json` ships `"anonymize": true`, so every default run writes broken JSON.
-- The committed `reports/sample-telltale.json` fails `JSON.parse` at L461.
+- `hanger.config.json` ships `"anonymize": true`, so every default run writes broken JSON.
+- The committed `reports/sample-hanger.json` fails `JSON.parse` at L461.
 - `render-print.js` exits with "Invalid JSON", and `--print`/`--charts` fail silently into a console line (L1664). `trend.js` skips the file (`catch { return null }`, trend L55), so trend history silently loses runs.
 - The "recompute reproduces" promise (`evidence-surface/spec.md` L69-77) cannot be checked by anyone.
 - Fix: anonymize the object before stringify, or escape the replacement.
@@ -209,7 +209,7 @@ Each rule below should emit `{id, fired, at[] (tSec list), inputs[] (probe refs 
 
 | Output | When | Earns its place? | Notes |
 |---|---|---|---|
-| `telltale-*.json` | every trace | **Yes, it is the truth.** Broken under anonymize (P0-1) | Holds L0-L3. Good: thresholds and sources recorded, failures listed |
+| `hanger-*.json` | every trace | **Yes, it is the truth.** Broken under anonymize (P0-1) | Holds L0-L3. Good: thresholds and sources recorded, failures listed |
 | `.md` | every trace | Partly | Wrong order, hidden asset block, unrounded numbers, raw shell errors |
 | `.html` (legacy) | every trace | **No** | Duplicate of the print view; wrong colour (P0-5) |
 | `.print.html` | `--print` | **Yes (best artifact)** | Clean A4, numbered sections, receipts, method footnote. Fix power-unknown bug, add profile, add an inline SVG mini-timeline |
@@ -310,7 +310,7 @@ Full report + raw data attached (<files>, sha256 <hash>).
 ## 6. Recommended change list (not applied)
 
 **Fix first (P0)**
-1. Anonymize the object, not the serialized string. Then re-generate `reports/sample-telltale.*` and add a `JSON.parse` self-check before writing (`telltale.js` L285-291, L1585, L734).
+1. Anonymize the object, not the serialized string. Then re-generate `reports/sample-hanger.*` and add a `JSON.parse` self-check before writing (`hanger.js` L285-291, L1585, L734).
 2. Replace the `reasons.length >= 2` STATE with the per-hang rule engine (§3). Rename the STATE to an association ("freezes coincide with memory pressure, N/M") or drop it in favour of the ranked list. Require at-hang values, probe-level provenance, and a minimum n (≥ 10 probes, ≥ 3 for "sustained").
 3. Exclude self-load probes (`bundleMs` > 2000 / `slipS` > 1) from every rule.
 4. Window event-log queries to the trace (`StartTime`) and filter 2004 by provider.

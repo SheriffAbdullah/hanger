@@ -9,7 +9,7 @@ See proposal.md for motivation. The current code:
 - writes several datum paths without consulting scope at all (R02-P0-2 list);
 - runs a second, independent filter (`--hide`/`--focus`/`--extras`) with receipts that disclose the hidden names.
 
-Watch matches by name only, while trace also matches labels, so the two modes disagree (R02-P1-10). This change depends on `fix-report-integrity` for the test harness (`node --test tools/telltale/test/`), the `require.main` guard, and value-level serialization.
+Watch matches by name only, while trace also matches labels, so the two modes disagree (R02-P1-10). This change depends on `fix-report-integrity` for the test harness (`node --test tools/hanger/test/`), the `require.main` guard, and value-level serialization.
 
 ## Goals / Non-Goals
 
@@ -28,7 +28,7 @@ Watch matches by name only, while trace also matches labels, so the two modes di
 ## Decisions
 
 1. **Scope file instead of a flag list.**
-   - Choice: `telltale.scope.json` (default path at repo root; the `scope` key in config or `--scope PATH` overrides). The file is authored by the user, with `inventory --write-scope` producing a draft that has every entry commented as `"enabled": false`.
+   - Choice: `hanger.scope.json` (default path at repo root; the `scope` key in config or `--scope PATH` overrides). The file is authored by the user, with `inventory --write-scope` producing a draft that has every entry commented as `"enabled": false`.
    - Alternatives considered: keep `--only` as the primary input (rejected: no provenance, no review step); an interactive picker only (rejected: not reproducible).
    - `--only a,b` still works and is recorded as `source: "flag"`.
 2. **Match semantics: exact name or explicit pattern.**
@@ -49,15 +49,15 @@ Watch matches by name only, while trace also matches labels, so the two modes di
    - With no scope file and no `--only`, the declaration is `{mode: "open"}`. Every view's first block reads "OPEN SCOPE: names of all running software may appear in this report".
    - `record` with no scope file runs `inventory` first, prints the draft path, and asks before continuing. Without a TTY, it runs open scope and declares it.
 6. **Retire redaction (OQ-3, BREAKING).**
-   - `--hide`, `--focus`, and `--extras` exit with code 2 and the message `--hide was removed: list what to monitor in telltale.scope.json (see README "Scope")`.
+   - `--hide`, `--focus`, and `--extras` exit with code 2 and the message `--hide was removed: list what to monitor in hanger.scope.json (see README "Scope")`.
    - The `hide`, `focus`, and `extras` config keys produce the same error.
-   - Report `redacted.*` and `focus.*` blocks are removed. This is a schema removal. While `telltale-json/2` is a draft (IMPLEMENTATION-PLAN §2) it is recorded in a dated `2.x` SCHEMA-CHANGELOG section without a version bump.
+   - Report `redacted.*` and `focus.*` blocks are removed. This is a schema removal. While `hanger-json/2` is a draft (IMPLEMENTATION-PLAN §2) it is recorded in a dated `2.x` SCHEMA-CHANGELOG section without a version bump.
 7. **Command lines (OQ-5).** Command lines are read only for in-scope processes, and only in memory to derive a label through a fixed rule table. Examples: `node-script` (base name of the first `.js`/`.mjs`/`.ts` argument), `postgres-db` (value of `-D` base name or `dbname`), `container-name`. The label and rule id are persisted; the raw command line never is.
 8. **Inventory artifact is private.** It is written to `reports/private/inventory-<stamp>.json`. Pack, renderers, and the attachment manifest refuse paths under `private/`. The artifact itself carries `"shareable": false`.
 
 ## Data / schema shape
 
-Scope file (`telltale.scope.json`):
+Scope file (`hanger.scope.json`):
 ```json
 {
   "version": 1,
@@ -75,7 +75,7 @@ Scope declaration (report root `scope`):
 {
   "mode": "allowlist" | "open",
   "source": "file" | "template:dev" | "flag",
-  "path": "telltale.scope.json", "sha256": "<64 hex>",
+  "path": "hanger.scope.json", "sha256": "<64 hex>",
   "entries": [ { "name": "postgres", "includeDescendants": false } ],
   "matchRule": "exact-name-or-pattern; descendants only when opted in",
   "systemSet": { "listVersion": 1, "categories": ["os","security","virtualization"] },
@@ -106,7 +106,7 @@ Inventory artifact (`reports/private/inventory-<stamp>.json`):
   - `resolver(matcher)` returns `{resolve(rows), scopeSafe(text), aggregates()}`;
   - `SYSTEM_SET`;
   - `APP_LABEL_RULES`.
-- The current single choke points to rewire are `applyScope`, `hit`, `isRedacted`, `ONLY`, `HIDE`, `FOCUS`, and `EXTRAS` in `telltale.js`.
+- The current single choke points to rewire are `applyScope`, `hit`, `isRedacted`, `ONLY`, `HIDE`, `FOCUS`, and `EXTRAS` in `hanger.js`.
 - Leak sites (R02 line refs at e2bacca):
   - `Where-Object { !$_.Responding }` list → keep only in-scope and system names; count the rest;
   - the light `Get-Process` path → resolve before `slice(0,3)`;
@@ -130,7 +130,7 @@ Inventory artifact (`reports/private/inventory-<stamp>.json`):
 ## Migration
 
 - **BREAKING** flags `--hide`, `--focus`, `--extras` and config keys `hide`, `focus`, `extras`: exit 2 with a message.
-- `telltale.config.json`: remove `hide`, `focus`, and `extras`, and add `"scope": "telltale.scope.json"` (optional).
+- `hanger.config.json`: remove `hide`, `focus`, and `extras`, and add `"scope": "hanger.scope.json"` (optional).
 - `--preset dev|plain`: `dev` writes a draft scope file from the dev template (node, docker executables, postgres, redis-server, chromium) when none exists, and records `source: "template:dev"`. `code` and `playwright` are no longer in it (fixes R01-P1-3h). `plain` means open scope.
 - Old reports carrying `redacted.*` remain readable by `trend` (field ignored).
 

@@ -1,4 +1,4 @@
-# Tasks — telltale-v12
+# Tasks — hanger-v12
 
 - [x] Asset block (WMI model/RAM/disk/OS + warranty flag/config; unknowns labeled)
 - [x] Cost pipeline v2 (printed basis; --ram-cost/--laptop-cost context inputs)

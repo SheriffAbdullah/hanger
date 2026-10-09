@@ -1,4 +1,4 @@
-# Change: telltale-v06 — dividend winners + admin tiers
+# Change: hanger-v06 — dividend winners + admin tiers
 
 ## Why
 Tribunal (`dividend.md`) + admin relitigation settled what to collect. v0.5 lacks:

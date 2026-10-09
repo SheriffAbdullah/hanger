@@ -4,7 +4,7 @@
 
 See proposal.md (Why). Constraints:
 - No dependencies: Node 18+, single-repo CLI, Windows-first, often on locked-down machines with no CDN access.
-- JSON is truth (`evidence-surface` "JSON is truth, MD and HTML are views"). Renderers read only the trace/pack JSON (`telltale-json/2`) and never re-collect or re-infer.
+- JSON is truth (`evidence-surface` "JSON is truth, MD and HTML are views"). Renderers read only the trace/pack JSON (`hanger-json/2`) and never re-collect or re-infer.
 - Upstream inputs this change consumes:
   - from `scope`: the scope-declaration record and the rule that it leads every shareable view;
   - from `system-profile`: the facts, each a value or null with an unavailable reason;
@@ -69,7 +69,7 @@ See proposal.md (Why). Constraints:
 ```
 +--------------------------------------------------------------------------+
 | Freeze evidence — <model> (<serial>)          <date> · observed <T> min  |
-| Tier: user · Report schema telltale-json/2 · Run finished: yes|NO        |
+| Tier: user · Report schema hanger-json/2 · Run finished: yes|NO        |
 | SCOPE: <rendered from scope declaration record — owned by `scope`>       |
 +--------------------------------------------------------------------------+
 | FINDING                                                                  |
@@ -136,12 +136,12 @@ Exact JSON paths are fixed by the upstream schemas. The binding table in `lib/re
 
 | Output | Status | Note |
 |---|---|---|
-| `telltale-<stamp>.json` | keep | truth |
-| `telltale-<stamp>.md` | keep | same section order as HTML |
-| `telltale-<stamp>.report.html` | keep (renamed from `.print.html`) | the only HTML view; charts inline |
-| `telltale-<stamp>.email.txt` | new | ready-to-send draft |
-| `telltale-<stamp>.html` (legacy) | **remove** | duplicate with wrong colour class |
-| `telltale-<stamp>.charts.html` | **remove** (folded) | `--charts` alias for one release |
+| `hanger-<stamp>.json` | keep | truth |
+| `hanger-<stamp>.md` | keep | same section order as HTML |
+| `hanger-<stamp>.report.html` | keep (renamed from `.print.html`) | the only HTML view; charts inline |
+| `hanger-<stamp>.email.txt` | new | ready-to-send draft |
+| `hanger-<stamp>.html` (legacy) | **remove** | duplicate with wrong colour class |
+| `hanger-<stamp>.charts.html` | **remove** (folded) | `--charts` alias for one release |
 | `pack-<stamp>.json` / `.report.html` | keep | same renderer and order |
 | inventory artifact | never rendered or attached | local-only (`scope`) |
 

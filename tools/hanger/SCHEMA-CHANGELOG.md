@@ -1,12 +1,12 @@
 # hanger JSON schema changelog
 
-## v1 (`schema: 'hanger-json/1'`) — 2026-10-07 (telltale-v10)
+## v1 (`schema: 'hanger-json/1'`) — 2026-10-07 (hanger-v10)
 
 First frozen schema. Consumers may branch on the root `schema` string;
 unknown future versions MUST be treated as unreadable, not guessed.
 
 ### Added
-- `schema` (root string, always `'telltale-json/1'` in v1 reports).
+- `schema` (root string, always `'hanger-json/1'` in v1 reports).
 - `redacted.perName[]` — `[{name, mb}]` per redacted group (receipt: which
   names the `--hide`/config filter removed and how many MB each held).
 - `redacted.filterSha1` — first 12 hex chars of sha1 over the sorted hide

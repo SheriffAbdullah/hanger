@@ -1,4 +1,4 @@
-# Change: telltale-v10 — CLI-first tool, one demographic, backend moat
+# Change: hanger-v10 — CLI-first tool, one demographic, backend moat
 
 ## Why
 Demographic: Windows dev, Docker + Node + Playwright, 8-16GB box, must prove
@@ -15,7 +15,7 @@ contract (mac-stub). Presentation stays thin by design.
 - Sensible defaults for the demographic: 60s trace, scope presets
   (`--preset dev|plain`: dev = node/docker/postgres/redis/chromium/warp)
 - Backend moat (no new UI): watch-trigger auto-trace, multi-trace trend compare
-  (`telltale trend`), JSON schema v1 freeze + changelog, single-flight collector
+  (`hanger trend`), JSON schema v1 freeze + changelog, single-flight collector
   cache (one CIM/WMI walk shared per snapshot round)
 - Docs: README as the 60-second pitch (problem → one command → evidence);
   honesty items from v0.9 ride along (n-disclosure, cost basis, receipts)

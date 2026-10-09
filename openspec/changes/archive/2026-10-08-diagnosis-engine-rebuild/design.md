@@ -2,7 +2,7 @@
 
 ## Context
 
-See proposal.md for the motivation. Today `telltale.js` builds L3 in one block: `reasons[]`, then `verdict`/`cause`, then `rca[]` (constants 0.4/0.35/0.2 and `0.4+0.3x+0.15`), then `discriminate()`, then `costNote` v1. The pack and print renderers re-derive their own labels. By wave 5 the earlier changes provide:
+See proposal.md for the motivation. Today `hanger.js` builds L3 in one block: `reasons[]`, then `verdict`/`cause`, then `rca[]` (constants 0.4/0.35/0.2 and `0.4+0.3x+0.15`), then `discriminate()`, then `costNote` v1. The pack and print renderers re-derive their own labels. By wave 5 the earlier changes provide:
 - per-probe values with provenance (unit, window, n, measuredAt) and recorded unobserved intervals and observer cost (`sampling-engine-and-provenance`);
 - machine-normalized security CPU, per-process CPU, disk latency in ms, temperature, and performance % (`data-signals-completeness`);
 - per-hang in-scope and out-of-scope aggregates and in-scope-only not-responding checks (`software-inventory-and-scope`);
@@ -82,7 +82,7 @@ Inputs come from the scope change's per-hang `{inScope: {commitMB, cpuPct}, outO
 ### D8. Time-lost (OQ-9 default)
 Shown only with at least 1 usable hang. Measured: `frozenS = Σ hang durations`, `observedS` from the timebase. Extrapolation to per-day or currency happens only if the user passes `--active-min` and `--cost-rate`, labelled user-supplied. Rendered in the appendix only. Cost v1 is deleted.
 
-## Data / schema shape (`telltale-json/2`, draft)
+## Data / schema shape (`hanger-json/2`, draft)
 
 ```jsonc
 "diagnosis": {
@@ -132,7 +132,7 @@ Vocabulary (`lib/diagnosis/vocabulary.js`): `memory | cpu | disk | thermal-power
 ## Non-binding implementation hints
 
 - Build `ctx` once: usable probes, calm set, means per signal, marks joined (±2 s), windowed events, scope shares. Rules read only `ctx` and the hang. This keeps rules pure and fixture-testable.
-- Fixtures: put `fixtures/diagnosis/sample-r03.json` (shape copied from `reports/sample-telltale.json` values) and `fixtures/diagnosis/memory-13-08-14.json` (synthetic, 30 probes) under `tools/telltale/test/fixtures/`, plus small hand-built cases per scenario. Use the fixture builder from `fix-report-integrity`.
+- Fixtures: put `fixtures/diagnosis/sample-r03.json` (shape copied from `reports/sample-hanger.json` values) and `fixtures/diagnosis/memory-13-08-14.json` (synthetic, 30 probes) under `tools/hanger/test/fixtures/`, plus small hand-built cases per scenario. Use the fixture builder from `fix-report-integrity`.
 - Write a reference-resolution test helper that walks `diagnosis.hangs[].rules[].inputs[].ref` and asserts each one resolves into the same JSON with an equal value and `at`.
 - Console: replace `stateCard` with a "Finding" card that prints `finding.sentence`, the confirmations, and the top 3 rollup rows.
 - `trend.js`: map v1/v2 `summary.verdict` strings to `legacy:<string>`, and use `diagnosis.finding.class` for v3.
@@ -150,8 +150,8 @@ Vocabulary (`lib/diagnosis/vocabulary.js`): `memory | cpu | disk | thermal-power
 ## Migration
 
 - Removed: `summary.verdict`, `summary.cause`, `summary.costNote`, `summary.costParams`, `summary.costV2`, `summary.discriminator`, and top-level `rca`. Added: `diagnosis`.
-- `SCHEMA-CHANGELOG.md` gets a dated `2.x` section listing them. The schema string stays `telltale-json/2` because v2 is a draft until report-and-visualization freezes it (IMPLEMENTATION-PLAN §2).
-- Regenerate `reports/sample-telltale.*` from the synthetic fixture, so it now reads `no-freeze-observed`.
+- `SCHEMA-CHANGELOG.md` gets a dated `2.x` section listing them. The schema string stays `hanger-json/2` because v2 is a draft until report-and-visualization freezes it (IMPLEMENTATION-PLAN §2).
+- Regenerate `reports/sample-hanger.*` from the synthetic fixture, so it now reads `no-freeze-observed`.
 - Rollback: revert the change. v2 reports remain readable by the old code.
 
 ## Open Questions

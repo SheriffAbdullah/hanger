@@ -3,8 +3,8 @@
 Reviewer: Opus (review only, no code changed). Date: 2026-10-07. Commit reviewed: `e2bacca`.
 Scope: everything that *obtains, timestamps, filters, and persists* a datum. Implementation choices (which API or command) are not critiqued. The questions are whether the datum is obtained, whether it can be trusted, whether its unit, time, and provenance are clear, whether it degrades honestly, and whether its cadence can explain a hang.
 
-Primary code: `tools/telltale/telltale.js` (single 1,639-line file; all line refs below are to it unless noted).
-Contract docs compared against: `METRIC_REGISTRY.md`, `openspec/specs/metrics/spec.md`, `openspec/specs/tracking/spec.md`, `tools/telltale/SCHEMA-CHANGELOG.md`.
+Primary code: `tools/hanger/hanger.js` (single 1,639-line file; all line refs below are to it unless noted).
+Contract docs compared against: `METRIC_REGISTRY.md`, `openspec/specs/metrics/spec.md`, `openspec/specs/tracking/spec.md`, `tools/hanger/SCHEMA-CHANGELOG.md`.
 
 ---
 
@@ -17,7 +17,7 @@ Machine: HP ProBook 440 G9 laptop, i7-1255U (12 threads), 15.6 GB RAM, Windows 1
 | `--help` | — | OK |
 | `check-stub` | — | 16/16 "GREEN" in **52 s**. The per-PID GPU poll alone took **16.5 s**. Battery reported "unknown (desktop/no battery)" on a laptop at 99%. |
 | `trace --duration 20` (repo config: interval 500, anonymize, hide claude) | 20 s | **169 s wall**. Probe slip reached **58.4 s** by nominal t+20 s. Bundle took **2.5–14.1 s** per probe (the registry says ~0.1–0.3 s). Event-loop max lag was 6.8 s. The end phase took about 90 s. |
-| Resulting JSON | — | **Not valid JSON** (`Bad escaped character … line 584`). The committed `reports/sample-telltale.json` also fails `JSON.parse` (line 461). |
+| Resulting JSON | — | **Not valid JSON** (`Bad escaped character … line 584`). The committed `reports/sample-hanger.json` also fails `JSON.parse` (line 461). |
 | `watch --watch-secs 10` | 10 s, "every 2 s" | **33 s wall**, 5 rows at a real cadence of about 4–5.5 s. `batteryPct: null` on every row. |
 | `pack` | — | "hangs: unknown … no trace report found" and **cost $0**, because the trace JSON from the run above could not be parsed and was skipped without any message. |
 | `trace --duration 10 --only postgres --hang 100` (Postgres not running, so **nothing** should be in scope) | — | 5 hang rows. Every row contains `osHungWindows: ["Microsoft.Notes","SystemSettings"]` with `osConfirmed: true`, so **out-of-scope process names are written into the scoped JSON 10 times**. `docker.wsl` lists the distro name. |
@@ -97,7 +97,7 @@ Legend: **Hang** = needed to explain a hang. **IT** = needed for the static IT p
 | Scope matching precision | – | – | **risky** | Substring match on exe name **or friendly label** (`:419, :345`). The `dev` preset includes `code` (`:413`) even though README `:29-30` says `code` is intentionally out. `code` substring-matches `opencode.exe` and the label "Claude Code CLI" for `claude.exe` (`:426`), so the dev preset pulls in agent tools the user may not want. A PPID closure from a matched VS Code adopts every shell and tool launched from its terminal. PID reuse can adopt unrelated processes. |
 | `--hide` receipt | – | – | by design, note | `redacted.perName` writes the exact hidden exe names and MB (`:1569`). That works as a receipt, but it discloses more than the pattern did (pattern `vpn` becomes `CorpVPNClient.exe=210MB`). |
 | Command lines persisted | – | – | **risk** | `culprits[].cmd` keeps up to 160 chars of the command line (`:1392`). These can carry tokens, passwords, DB names and client paths. `anon()` only rewrites `C:\Users\<name>` with backslashes. Forward-slash paths, other drives, OneDrive org folders and other encodings pass through. Verified: `C--Users-AbdullahSher…` survived anonymization in my run. |
-| Self-exclusion | Y | – | **no** | The tool never excludes its own PID or its children. In my run the top end culprit was `node.exe` labelled **"Node: telltale.js"** with 2.6 GB. The label came from the tool's own command line and was applied to the whole 4-process node group (`:1387-1392`). The probe's `powershell.exe` and `node -e` children also count in rollups. |
+| Self-exclusion | Y | – | **no** | The tool never excludes its own PID or its children. In my run the top end culprit was `node.exe` labelled **"Node: hanger.js"** with 2.6 GB. The label came from the tool's own command line and was applied to the whole 4-process node group (`:1387-1392`). The probe's `powershell.exe` and `node -e` children also count in rollups. |
 | Postgres native attribution | Y | – | partial | Grouped by `postgres.exe`, with a label from the command line (`:397`). WS only, no CPU or I/O. |
 | Postgres / any service in a container | Y | – | **no** | Only one end-of-run `docker stats` row per container (`:1281`): no time series, no start/stop, nothing at the hang. |
 | Workload markers (container start/stop, process start/exit) | Y | – | **no** | Only user keypress marks (`:1118-1122`). Those are timestamped **when the blocked event loop gets round to them**, which can be up to 14 s late in my run, not when the key was pressed. |
@@ -131,8 +131,8 @@ Legend: **Hang** = needed to explain a hang. **IT** = needed for the static IT p
 | Overhead | **high on the target box** | Per probe: one shell plus runtime spawn and one full PowerShell start. On a hang: tasklist plus process enumeration. End phase: a GPU poll of 11–16 s, a full process-and-command-line enumeration, and event-log queries. The observer adds commit, page-ins and Defender scans to a machine that is already starved. `bundleMs` and `slipS` are recorded (good), but `hangRatePerMin`, `pctFrozen` and `over85` are divided by **nominal** DURATION (`:1312, :1360, :1544`), not by the real window. My 20 s run (78 s real) reported 3 hangs/min where the true rate was about 0.8/min. |
 | Units / provenance per value | **no** | The spec requires `{id, value, unit, windowS, n, collector}` per value (`metrics/spec.md:4,14`; `METRIC_REGISTRY.md:3`). The code emits bare keys (`committed`, `pages`, `cpuQ`, `diskSec`, `defender`, `maxFreq`) with no units, no window and no collector. |
 | Null vs zero | **mixed** | Many fields correctly stay null with a reason (GPU, asset). But `diskSecPeak/diskQPeak` default to **0** when no data (`:1321-1322`), `pagesAvg` to 0 (`:1326`), `pct([])` to 0 (`:929-930`), and `minFree` to `Infinity` when there are no samples (`:1310`). |
-| Schema versioning | **violated** | SCHEMA-CHANGELOG says any additive field needs a new `schema` value. v1.1 additions and the later GPU, asset, costV2 and discriminator blocks all still ship as `telltale-json/1`. |
-| Report validity | **broken when anonymized** | `anon()` runs on the **serialized** JSON and turns `C:\\Users\\x` into `C:\Users\<user>` (`:285-290, :1585, :734`). That produces an invalid `\U` escape. Downstream readers (`latestTraceReport` `:661`, `trend.js:39-53`) skip unparsable files **silently**. Anonymize is the repo default (`telltale.config.json`). |
+| Schema versioning | **violated** | SCHEMA-CHANGELOG says any additive field needs a new `schema` value. v1.1 additions and the later GPU, asset, costV2 and discriminator blocks all still ship as `hanger-json/1`. |
+| Report validity | **broken when anonymized** | `anon()` runs on the **serialized** JSON and turns `C:\\Users\\x` into `C:\Users\<user>` (`:285-290, :1585, :734`). That produces an invalid `\U` escape. Downstream readers (`latestTraceReport` `:661`, `trend.js:39-53`) skip unparsable files **silently**. Anonymize is the repo default (`hanger.config.json`). |
 
 ---
 
@@ -140,7 +140,7 @@ Legend: **Hang** = needed to explain a hang. **IT** = needed for the static IT p
 
 ### P0: the evidence is wrong, lost, or leaks
 
-1. **Anonymized reports are invalid JSON, and every consumer skips them silently.** `anon()` rewrites path text inside already-serialized JSON and emits single backslashes (`:285-290`, applied at `:1585`, `:734`). Verified on a fresh run and on the committed `reports/sample-telltale.json`. `pack` then reported "no trace report found" and **$0 cost**, and `trend` drops the file. With `anonymize: true` as the repo default, the IT handoff path is broken end to end.
+1. **Anonymized reports are invalid JSON, and every consumer skips them silently.** `anon()` rewrites path text inside already-serialized JSON and emits single backslashes (`:285-290`, applied at `:1585`, `:734`). Verified on a fresh run and on the committed `reports/sample-hanger.json`. `pack` then reported "no trace report found" and **$0 cost**, and `trend` drops the file. With `anonymize: true` as the repo default, the IT handoff path is broken end to end.
 2. **Scope is not enforced at collection, and out-of-scope names reach the persisted report.** Verified with `--only postgres`: unrelated process names appear in every hang row through `osHungWindows`. Code paths that also leak: the melting light snapshot ignores `ONLY` (`:1180-1187`), the event-2004 message text (`:1303`), raw docker/WSL strings (`:1575`), the console and log (`:1219` plus `elevated-trace.bat`), and the full-command-line enumeration of every process (`:326`), held in memory. The report claims "never collected" (`:1626`). The owner's privacy model is a declared scope, with nothing outside it stored. That is the core promise, and it is broken.
 3. **No per-process CPU and no per-process I/O.** The tool cannot say *which* process saturated CPU or disk at a hang. It only ranks working set. For "Postgres plus Docker makes my laptop hang", CPU and I/O attribution are half the answer.
 4. **No temperature time series, and the throttling datum is wrong for turbo laptops.** Temperature is admin-only, one sample, at the end. `% of Maximum Frequency` stays at 100 while a laptop is clamped from turbo to base clock. Unelevated temperature, throttle-reason and real-performance data exist on this exact laptop. The owner named temperature explicitly.
@@ -154,7 +154,7 @@ Legend: **Hang** = needed to explain a hang. **IT** = needed for the static IT p
 2. **Event-log reasons are not time-bounded.** `hangCount` from the last 5 events of all time feeds a verdict reason (`:1302-1304, :1447`). "No events" is recorded as `timeout` (`:1305`).
 3. **The melting gate makes the "calm" path dead code on exactly the machines this tool targets.** Its threshold (bundle > 1 s, `:108`) is below the bundle's own normal cost under load (2.3–14 s measured).
 4. **Scoped at-hang culprits are top-3 overall, then filtered** (`:1165-1170`). In-scope offenders ranked 4th or lower disappear, which produced empty `culpritsAtHang` in my scoped run.
-5. **No self-exclusion.** The tool's own node and probe children are attributed as workload. The whole node group was labelled "Node: telltale.js" (`:1387-1392`).
+5. **No self-exclusion.** The tool's own node and probe children are attributed as workload. The whole node group was labelled "Node: hanger.js" (`:1387-1392`).
 6. **EcoQoS state is collected post-trace but stored on hang rows** as if it were at-hang state (`:1244-1250`). It was all denied or unknown here.
 7. **WSL2 / Docker Desktop VM is a black box.** There is no guest memory, no VM cap, no container time series and no container lifecycle. This is the owner's headline scenario (Docker plus Postgres).
 8. **Defender CPU is per-core scaled** (observed 79–190%) against a 20% threshold. Observer-induced Defender scanning is not flagged as a confound.
@@ -252,5 +252,5 @@ Ordered by leverage. Each is phrased as a data-layer requirement, not an API cho
 - **The Defender alibi** compares a per-core-scaled value (up to N×100) against 20%. It fires on nearly every probe on a 12-thread box, and the observer itself plausibly causes part of the Defender load.
 - **Counter values are post-stall**: they are sampled during a bundle that starts after the spawn probe and can take up to 14 s. "Commit at hang" means "commit up to about 14 s after the hang".
 - **The discriminator and RAM-bound verdict rest on WS rollups and commit %** only. There is no per-process CPU or I/O, so a CPU- or I/O-caused hang will be misread as memory, or as "unclear", whenever commit is high for unrelated reasons.
-- **The top culprit can be the tool itself** ("Node: telltale.js"). Rendering should not present it as workload until self-exclusion lands.
+- **The top culprit can be the tool itself** ("Node: hanger.js"). Rendering should not present it as workload until self-exclusion lands.
 - Anonymized reports currently do not parse. Any renderer or trend test passing today is running on non-anonymized or hand-fixed input (the committed sample also fails to parse).

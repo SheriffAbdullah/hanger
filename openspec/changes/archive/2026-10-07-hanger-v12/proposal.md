@@ -1,4 +1,4 @@
-# Change: telltale-v12 — persona pipelines (backend)
+# Change: hanger-v12 — persona pipelines (backend)
 
 ## Why
 Three persona briefs (developer/IT/manager) demand pipelines, not more collectors:

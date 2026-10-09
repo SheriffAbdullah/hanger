@@ -1,4 +1,4 @@
-# Tasks — telltale-v09 (honesty overhaul; absorbed items noted)
+# Tasks — hanger-v09 (honesty overhaul; absorbed items noted)
 
 - [x] n-disclosure + history trend table; watch-first docs/UX (absorbed: v10 trend + n-suffixes + README)
 - [x] Cost assumption block (absorbed: v10 cost basis block in MD/console/JSON)

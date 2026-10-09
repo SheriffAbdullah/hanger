@@ -1,15 +1,15 @@
-# Change: telltale-v05 — always-on baseline, named processes, power truth
+# Change: hanger-v05 — always-on baseline, named processes, power truth
 
 ## Why
 Owner needs usage-pattern tracking whether hanging or calm, zero unknown process
 names, and per-sample power truth (plugged? optimized? throttled?) to separate
 "unplugged throttles" from "plugged in, still hangs". Seven rival dives (WPR/WPA,
 Sysinternals, DEX, ThousandEyes, Netdata/Glances, LatencyMon, DebugDiag/WER) each
-contributed adoptable mechanisms (table below); without this change Telltale only
+contributed adoptable mechanisms (table below); without this change Hanger only
 does incident traces with raw exe names and no power context.
 
 ## What Changes
-- `telltale watch` (light 2s JSONL baseline + pressure hint) alongside `telltale trace`
+- `hanger watch` (light 2s JSONL baseline + pressure hint) alongside `hanger trace`
 - Human process identities: KNOWN map → FileDescription fallback → `unresolved` flag
 - Power truth per sample: plugged, battery %, scheme, %max frequency
 - Calm-linked evidence, WER AppHang counts, Responding OS-confirm, enriched hang context
@@ -31,7 +31,7 @@ per sample (plugged?, optimized?, throttled?) to separate "unplugged throttles" 
 | WPR/WPA | `Pages Input/sec` + pagefile% mid-run, pool-nonpaged + uptime, opt-in `--wpr` capture | `disk.pagefile_vs_app`, `sys.boot_context` |
 | Sysinternals (CLI-parse) | `Responding==false` OS-confirm, PPID/CommandLine trees, Sysmon ID1/5 if present | `hang.os_confirm`, `proc.tree` |
 | DebugDiag/WER | fault-bucket grouping `(exe,ms-bin,commit-bin)`, WER archive counts, gated `--dump` | `wer.bucket_count`, `dump.minidump_optin` |
-| DEX (ControlUp/SysTrack) | penalty score as LABELED composite (never headline), impact-min/5m buckets, self-baseline mean+2σ from `reports/*.json` | `telltale.score`, `hang.impact_min`, `baseline.delta` |
+| DEX (ControlUp/SysTrack) | penalty score as LABELED composite (never headline), impact-min/5m buckets, self-baseline mean+2σ from `reports/*.json` | `hanger.score`, `hang.impact_min`, `baseline.delta` |
 | ThousandEyes model | TCP-vs-SELECT1 local/network split, per-proc net I/O, Wi-Fi/DNS event rows per HANG | `net.vs_app`, `net.io_perproc`, `sys.event_net` |
 
 ## v0.5 scope (this change)

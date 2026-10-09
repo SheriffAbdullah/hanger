@@ -3,7 +3,7 @@
 ## Context
 
 See proposal.md for the motivation. Today's state:
-- `telltale.js` is a 1,669-line script that runs `main()` when required, so nothing can be unit-tested.
+- `hanger.js` is a 1,669-line script that runs `main()` when required, so nothing can be unit-tested.
 - `anon()` runs regex replacements on the serialized JSON text. A replacement such as `C:\Users\<user>` inserts an invalid `\U` escape.
 - The trace JSON is written once, after an end phase that takes about 90 s.
 - RAM samples carry `tSec=(i+1)*INTERVAL`, and summary rates divide by `DURATION`, which is nominal. Under load, a nominal 20 s ran 78 s of wall-clock time.
@@ -14,7 +14,7 @@ See proposal.md for the motivation. Today's state:
 ## Goals / Non-Goals
 
 **Goals**
-- Every artifact Telltale writes parses, whether or not it is anonymized, and a parse failure is loud.
+- Every artifact Hanger writes parses, whether or not it is anonymized, and a parse failure is loud.
 - Evidence survives interruption.
 - Every time in the report is a measured wall-clock time, and every rate uses the observed window.
 - A zero-dependency test harness exists that later changes extend.
@@ -29,21 +29,21 @@ See proposal.md for the motivation. Today's state:
 
 1. **Scrub values, not text.** Anonymization walks the report object and rewrites string values (and object keys that are paths) before `JSON.stringify`. The text views (MD, HTML, console) apply the same scrubber to the strings they build. *Alternative:* escape replacement strings inside the serialized JSON. Rejected because it is fragile: any future pattern can break escaping again.
 2. **Parse-back self-check.** After writing, the file is read and parsed. On failure the tool writes `<base>.json.invalid`, prints the error with the file name, exits non-zero, and does not render views from it. *Alternative:* validate only in tests. Rejected because the bug shipped despite review.
-3. **Append-only JSONL stream plus final summary.** During the run, records `{type: run-start|sample|probe|hang|mark|failure|run-end, ...}` are appended to `telltale-<stamp>.jsonl` and flushed per record. At the end, the summary JSON (`telltale-<stamp>.json`, schema v2) is assembled from the in-memory state, which is identical to the stream. A run without `run-end` is *unfinished*. `telltale recover <stream>` builds the summary JSON from the stream with `run.status: "unfinished"` and `run.endReason`. Signal handlers (SIGINT, SIGHUP, SIGBREAK, uncaughtException) write `run-end{status:"interrupted"}` and then attempt a best-effort summary. *Alternative:* periodic full rewrites of the JSON. Rejected because of O(n²) I/O and the risk of a torn write during a hang.
+3. **Append-only JSONL stream plus final summary.** During the run, records `{type: run-start|sample|probe|hang|mark|failure|run-end, ...}` are appended to `hanger-<stamp>.jsonl` and flushed per record. At the end, the summary JSON (`hanger-<stamp>.json`, schema v2) is assembled from the in-memory state, which is identical to the stream. A run without `run-end` is *unfinished*. `hanger recover <stream>` builds the summary JSON from the stream with `run.status: "unfinished"` and `run.endReason`. Signal handlers (SIGINT, SIGHUP, SIGBREAK, uncaughtException) write `run-end{status:"interrupted"}` and then attempt a best-effort summary. *Alternative:* periodic full rewrites of the JSON. Rejected because of O(n²) I/O and the risk of a torn write during a hang.
 4. **Timebase.** Each sample records `at` (ISO wall-clock time taken immediately after measurement) and `tSec = (at − runStart)/1000`. `window.observedS` is the last measured time minus `runStart`; `window.nominalS` is the requested duration. All rates and shares divide by `observedS`. Nominal-derived values are kept only in `window` for comparison.
 5. **Self-exclusion by PID set.** The tool records its own PID and every child PID it spawns (probes, shells, collector helpers) in a set. Culprit, rollup and top-process builders drop those PIDs and attribute their working set, CPU and count to `observer` instead. Name-based exclusion was rejected because it would also hide the user's own `node.exe` workloads.
 6. **Event windowing.** Queries are bounded by the run start time (minus a 60 s lead, recorded) through the run end. Older records are fetched separately only as `history` (count plus newest timestamp) and never reach the verdict reasons. Resource-exhaustion records are filtered to their detector provider. "No events" is a distinct result: `mode: "none-in-window"`.
 7. **Effective settings.** A single `settings` object is built once at startup: `{name: {value, source: "flag"|"config"|"default", requested?, clamped?: {from, to, reason}}}`. It is written to the report and echoed on the console when any value is clamped.
-8. **Schema v2.** Bump to `telltale-json/2`. Readers branch on `schema`. `trend` reads v1 but labels those rows "v1 (pre-fix; rates may be overstated)" (OQ-14). `pack` and the renderers refuse v1 with a message.
-9. **Synthetic sample.** `test/fixtures/build-fixtures.js` deterministically emits the fixtures and the shipped `reports/sample-telltale.json`. The MD and HTML are rendered from it (OQ-16).
+8. **Schema v2.** Bump to `hanger-json/2`. Readers branch on `schema`. `trend` reads v1 but labels those rows "v1 (pre-fix; rates may be overstated)" (OQ-14). `pack` and the renderers refuse v1 with a message.
+9. **Synthetic sample.** `test/fixtures/build-fixtures.js` deterministically emits the fixtures and the shipped `reports/sample-hanger.json`. The MD and HTML are rendered from it (OQ-16).
 
 ## Data / schema shape (v2 additions and changes)
 
 ```
 {
-  schema: "telltale-json/2",
+  schema: "hanger-json/2",
   run: { status: "complete"|"unfinished"|"interrupted", endReason?, startedAt, endedAt,
-         stream: "telltale-<stamp>.jsonl" },
+         stream: "hanger-<stamp>.jsonl" },
   window: { nominalS, observedS, probesExpected, probesObserved, samplesExpected, samplesObserved },
   settings: { duration:{value,source,requested?,clamped?}, interval:{...}, anonymize:{...},
               scope:{...}, thresholds:{hang:{value,source}, ...} },

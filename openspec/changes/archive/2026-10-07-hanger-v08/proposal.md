@@ -1,4 +1,4 @@
-# Change: telltale-v08 — drill-down attribution + redaction/focus (presentation)
+# Change: hanger-v08 — drill-down attribution + redaction/focus (presentation)
 
 ## Why
 Two presentation gaps block real use: (1) process names don't answer "WHICH Node?

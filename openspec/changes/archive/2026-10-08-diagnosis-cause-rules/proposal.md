@@ -38,7 +38,7 @@ The data to test them is already collected, or arrives with `data-signals-comple
 
 ## Impact
 
-- Code: new `tools/telltale/lib/diagnosis/rules/*.js` (one file per rule), new `tools/telltale/lib/diagnosis/actions.js`, registration of the rules in the engine's rule list, and new fixtures and tests under `tools/telltale/test/`.
+- Code: new `tools/hanger/lib/diagnosis/rules/*.js` (one file per rule), new `tools/hanger/lib/diagnosis/actions.js`, registration of the rules in the engine's rule list, and new fixtures and tests under `tools/hanger/test/`.
 - Report JSON: each rule's results appear in the existing ranked cause list. A `suggestedActions[]` array is added (additive; recorded in `SCHEMA-CHANGELOG.md` as a 2.x section).
 - Renderers: none required. `report-and-visualization` renders whatever ranked rules and actions exist.
 - Depends on: `diagnosis-engine-rebuild` (rule contract, vocabulary, calm windows, minimum n), `data-signals-completeness` (signal ids), and `workload-session-and-containers` (VM cap, database configuration facts).

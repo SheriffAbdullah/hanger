@@ -1,4 +1,4 @@
-# Tasks — telltale-v06
+# Tasks — hanger-v06
 
 - [x] Bundle+: DPC/Interrupt %, standby tiers, modified list, lifetime, pool-nonpaged (+transFaults, pagesIn, pagefile, maxFreq)
 - [x] Tier detection (`collection.tier` per signal, graceful `admin-skipped`)

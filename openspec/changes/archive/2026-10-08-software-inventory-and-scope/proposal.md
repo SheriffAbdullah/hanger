@@ -14,10 +14,10 @@ The owner's privacy model is **declared scope, not redaction**. The user first s
 - **Collection-time enforcement**. Every datum that names a process passes the resolver before it is written or printed. Paths covered: not-responding lists, light/melting snapshot, event-message excerpts, docker/WSL text, console HANG line, log redirect, GPU PID maps, watch JSONL, and receipts. Reports say "not recorded", never "never collected".
 - **Out-of-scope load as anonymous aggregates** (count, memory, CPU share) at run level and at **every hang**, together with the in-scope share at each hang.
 - A **scope declaration leads every shareable view**, before any per-process table. With no scope declared, every view states "OPEN SCOPE".
-- **BREAKING**: `--hide`, `--focus`, and `--extras` are retired. Each exits with code 2 and a migration message. The committed `"hide": "claude"` default is removed from `telltale.config.json`.
+- **BREAKING**: `--hide`, `--focus`, and `--extras` are retired. Each exits with code 2 and a migration message. The committed `"hide": "claude"` default is removed from `hanger.config.json`.
 - Raw command lines are never persisted. In-scope processes carry a derived application label and the rule that produced it.
 - On-hang top-N is taken **within scope**, not overall-then-filtered.
-- Non-goal stated: Telltale is not a software-compliance scanner. The IT persona's policy-gate text is updated to match.
+- Non-goal stated: Hanger is not a software-compliance scanner. The IT persona's policy-gate text is updated to match.
 
 ## Capabilities
 
@@ -30,11 +30,11 @@ The owner's privacy model is **declared scope, not redaction**. The user first s
 
 ## Impact
 
-- Code: new `tools/telltale/lib/scope.js` (resolver, scope file loader, aggregates). `telltale.js` (every enumeration and output site, new `inventory` mode, flag retirement). `render-print.js` (scope block first). `trend.js` and the pack path (resolver use). `elevated-trace.bat` (log redirect).
-- Config: `telltale.config.json` loses `hide`, `focus`, and `extras`. A new optional `scope` path key is added.
+- Code: new `tools/hanger/lib/scope.js` (resolver, scope file loader, aggregates). `hanger.js` (every enumeration and output site, new `inventory` mode, flag retirement). `render-print.js` (scope block first). `trend.js` and the pack path (resolver use). `elevated-trace.bat` (log redirect).
+- Config: `hanger.config.json` loses `hide`, `focus`, and `extras`. A new optional `scope` path key is added.
 - Docs: `README.md` (scope workflow; fixes the stale `--preset dev` text), `openspec/explorations/persona-it.md` (policy gate becomes a non-goal).
-- Tests: new `tools/telltale/test/scope.test.js` and `tools/telltale/test/canary-leak.js`.
-- Schema: additive `scope` declaration and `outOfScope` aggregate blocks (SCHEMA-CHANGELOG `2.x` entry). `redacted.*` and `focus.*` are removed. This is recorded in a dated `2.x` changelog section, and the schema stays `telltale-json/2` while it is a draft (IMPLEMENTATION-PLAN §2).
+- Tests: new `tools/hanger/test/scope.test.js` and `tools/hanger/test/canary-leak.js`.
+- Schema: additive `scope` declaration and `outOfScope` aggregate blocks (SCHEMA-CHANGELOG `2.x` entry). `redacted.*` and `focus.*` are removed. This is recorded in a dated `2.x` changelog section, and the schema stays `hanger-json/2` while it is a draft (IMPLEMENTATION-PLAN §2).
 - Depends on `fix-report-integrity` (test harness, lib seams, valid serialization).
 
 ## Findings addressed

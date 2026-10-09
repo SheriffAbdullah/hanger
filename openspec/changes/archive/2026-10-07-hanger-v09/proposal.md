@@ -1,4 +1,4 @@
-# Change: telltale-v09 — honesty overhaul (5-audit synthesis)
+# Change: hanger-v09 — honesty overhaul (5-audit synthesis)
 
 ## Why
 Five auditors (manifesto, manager, engineer, vision, user-advocate) converged:

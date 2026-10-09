@@ -2,14 +2,14 @@
 
 ## Context
 
-See proposal.md (Why). The current trace loop (`tools/telltale/telltale.js`, `main()`) runs one synchronous loop. Each tick it takes an in-process RAM sample. Every 2 s it times a `node -e ""` spawn through a shell, then blocks on a freshly spawned PowerShell bundle of about 25 counters. On hang it blocks again on enumeration, the not-responding poll, and the GPU poll. Everything is synchronous, so a 14 s bundle also freezes key-press capture and timestamps. The `COLLECTORS` table declares weights, but only `gate()` and `melting()` read them, and the melting threshold (bundle > 1000 ms) is below the bundle's normal cost under load.
+See proposal.md (Why). The current trace loop (`tools/hanger/hanger.js`, `main()`) runs one synchronous loop. Each tick it takes an in-process RAM sample. Every 2 s it times a `node -e ""` spawn through a shell, then blocks on a freshly spawned PowerShell bundle of about 25 counters. On hang it blocks again on enumeration, the not-responding poll, and the GPU poll. Everything is synchronous, so a 14 s bundle also freezes key-press capture and timestamps. The `COLLECTORS` table declares weights, but only `gate()` and `melting()` read them, and the melting threshold (bundle > 1000 ms) is below the bundle's normal cost under load.
 
 Change 2 (`fix-report-integrity`) provides:
 - wall-clock measurement times;
 - observed-window rates;
 - incremental append-only persistence with an unfinished marker;
 - null-not-zero;
-- the test harness (`node --test tools/telltale/test/`, `test/helpers/validate-report.js`).
+- the test harness (`node --test tools/hanger/test/`, `test/helpers/validate-report.js`).
 
 Change 3 (`software-inventory-and-scope`) provides the scope resolver. Both are prerequisites.
 
@@ -111,7 +111,7 @@ registerCollector({
 ```
 
 Rules:
-- `parse` is pure. All its tests use canned text in `tools/telltale/test/fixtures/collectors/`.
+- `parse` is pure. All its tests use canned text in `tools/hanger/test/fixtures/collectors/`.
 - Continuous collectors contribute counter paths to the one shared session. They never launch their own process.
 - The registry rejects a duplicate `id`, a missing `unit`, or a continuous collector with `source.kind !== 'counter-session'`.
 - `check-stub --strict` keeps working: each mac-stub inference must map to at least one registered collector.

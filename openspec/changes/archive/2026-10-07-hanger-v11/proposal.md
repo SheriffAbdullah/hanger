@@ -1,4 +1,4 @@
-# telltale-v11 — per-process GPU attribution
+# hanger-v11 — per-process GPU attribution
 
 ## Why
 GPU stalls (dwm compositor, warp, Chromium) are invisible: registry tracks only

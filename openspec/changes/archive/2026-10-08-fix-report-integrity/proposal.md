@@ -2,15 +2,15 @@
 
 ## Why
 
-Telltale's evidence is broken before anyone reads it. With the shipped default `anonymize: true`, every trace JSON is invalid (R02-P0-1, R03-P0-1). Pack and trend then skip it silently and report "no trace" and $0. Nothing is written until the run ends, so a hang, a reboot or Ctrl+C loses everything (R02-P0-6). Under load, sample times are nominal rather than measured, so rates are overstated about 4x (R02-P0-7). The tool also blames itself ("Node: telltale.js") as the top culprit (R02-P1-5). Every later change (scope, signals, diagnosis, report) builds on this layer, so it has to be trustworthy first. This change also creates the test harness that every later change uses.
+Hanger's evidence is broken before anyone reads it. With the shipped default `anonymize: true`, every trace JSON is invalid (R02-P0-1, R03-P0-1). Pack and trend then skip it silently and report "no trace" and $0. Nothing is written until the run ends, so a hang, a reboot or Ctrl+C loses everything (R02-P0-6). Under load, sample times are nominal rather than measured, so rates are overstated about 4x (R02-P0-7). The tool also blames itself ("Node: hanger.js") as the top culprit (R02-P1-5). Every later change (scope, signals, diagnosis, report) builds on this layer, so it has to be trustworthy first. This change also creates the test harness that every later change uses.
 
 ## What Changes
 
-- **Test harness** (zero dependencies): `node --test tools/telltale/test/` with synthetic fixtures and helpers that validate reports and grep artifacts. Pure logic moves to `tools/telltale/lib/`, and `telltale.js` becomes requirable without running. This closes v09's open file-split item.
+- **Test harness** (zero dependencies): `node --test tools/hanger/test/` with synthetic fixtures and helpers that validate reports and grep artifacts. Pure logic moves to `tools/hanger/lib/`, and `hanger.js` becomes requirable without running. This closes v09's open file-split item.
 - **Valid JSON under anonymization.** Values are scrubbed before serialization, never in the serialized text. Every written report is parsed back, and the write fails loudly if the parse fails.
 - **Broader anonymization:** forward-slash paths, other drive letters, hostname, encoded username fragments (`C--Users-<name>`), and OneDrive organization folder names. Command-line scrubbing is an interim measure; the scope change stops persisting raw command lines.
 - **Loud readers.** Pack, trend and both renderers name each unreadable file and its parse error. Pack never reports "no trace" or $0 because a file was unreadable.
-- **BREAKING:** the schema moves to `telltale-json/2` and `SCHEMA-CHANGELOG.md` gets a v2 section. Readers handle v1 as described in OQ-14.
+- **BREAKING:** the schema moves to `hanger-json/2` and `SCHEMA-CHANGELOG.md` gets a v2 section. Readers handle v1 as described in OQ-14.
 - **Incremental, crash-safe persistence.** Each sample, probe and hang is appended to a stream as it happens, and the summary is written at the end. Interrupted runs stay parseable and are marked `unfinished`, and a `recover` path summarizes them.
 - **Real timebase.** Each sample carries the wall-clock time of its measurement. Rates and shares (hang rate, % frozen, seconds over threshold, MTTR, cost inputs) use the observed window, and the nominal window is recorded next to it. Hang context windows are ±10 s of wall-clock time.
 - **Null, not zero.** Missing peaks, averages and minimums are null with a reason. They are never 0 or Infinity.
@@ -37,11 +37,11 @@ Telltale's evidence is broken before anyone reads it. With the shipped default `
 
 ## Impact
 
-- Code: `tools/telltale/telltale.js` (serialization, trace and watch loops, summary math, event queries, pack), new `tools/telltale/lib/{serialize,anonymize,timebase,persist,events,settings}.js`, `trend.js`, `render-print.js`, and `render-charts.js` (reader and power-line wording only).
-- Docs: `tools/telltale/SCHEMA-CHANGELOG.md` (v2), README (watch log name, `recover`).
-- Artifacts: `reports/sample-telltale.{json,md,html}` regenerated from the fixture. New `reports/telltale-<stamp>.jsonl` stream files.
+- Code: `tools/hanger/hanger.js` (serialization, trace and watch loops, summary math, event queries, pack), new `tools/hanger/lib/{serialize,anonymize,timebase,persist,events,settings}.js`, `trend.js`, `render-print.js`, and `render-charts.js` (reader and power-line wording only).
+- Docs: `tools/hanger/SCHEMA-CHANGELOG.md` (v2), README (watch log name, `recover`).
+- Artifacts: `reports/sample-hanger.{json,md,html}` regenerated from the fixture. New `reports/hanger-<stamp>.jsonl` stream files.
 - Consumers: v1 reports remain readable by `trend` but are labelled pre-fix. `pack` and the renderers require v2.
-- Tests: new `tools/telltale/test/**`.
+- Tests: new `tools/hanger/test/**`.
 
 ## Findings addressed
 

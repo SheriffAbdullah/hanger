@@ -2,7 +2,7 @@
 
 ## Context
 
-See proposal.md, "Why". Three main specs exist (`metrics`, `tracking`, `evidence-surface`). The change folders for v05-v13 hold only `proposal.md` and `tasks.md`, so archiving them merged nothing. `openspec validate --all` currently fails on `telltale-v09` and `telltale-v13`, because neither has deltas. The review-driven plan (`openspec/IMPLEMENTATION-PLAN.md`) assigns each existing requirement to at most one change (§4). This change owns only "OS first-order bundle via no-admin collectors".
+See proposal.md, "Why". Three main specs exist (`metrics`, `tracking`, `evidence-surface`). The change folders for v05-v13 hold only `proposal.md` and `tasks.md`, so archiving them merged nothing. `openspec validate --all` currently fails on `hanger-v09` and `hanger-v13`, because neither has deltas. The review-driven plan (`openspec/IMPLEMENTATION-PLAN.md`) assigns each existing requirement to at most one change (§4). This change owns only "OS first-order bundle via no-admin collectors".
 
 ## Goals / Non-Goals
 
@@ -69,14 +69,14 @@ rules:
 ## Non-binding implementation hints
 
 - Verify that scenarios hold with these commands:
-  - `node tools/telltale/telltale.js check-stub --strict`
-  - `node tools/telltale/telltale.js trend`
-  - `node tools/telltale/telltale.js watch --rollup weekly`
-  - `node tools/telltale/telltale.js pack`
-  - `grep -n "LogName='Security'" tools/telltale/telltale.js`
-  - `grep -n "wmic" tools/telltale/telltale.js`
+  - `node tools/hanger/hanger.js check-stub --strict`
+  - `node tools/hanger/hanger.js trend`
+  - `node tools/hanger/hanger.js watch --rollup weekly`
+  - `node tools/hanger/hanger.js pack`
+  - `grep -n "LogName='Security'" tools/hanger/hanger.js`
+  - `grep -n "wmic" tools/hanger/hanger.js`
 - Tier detection today is an administrator-role check at startup. The admin snapshot returns `{tier:'user', skipped:'process not elevated...'}`, and the kernel trace capture prints "needs elevation: skipped" when unelevated. The ETL path is written to `report.wprEtl`.
-- Archive closure: `openspec archive telltale-v09 --skip-specs -y` and `openspec archive telltale-v13 --skip-specs -y`.
+- Archive closure: `openspec archive hanger-v09 --skip-specs -y` and `openspec archive hanger-v13 --skip-specs -y`.
 
 ## Risks / Trade-offs
 

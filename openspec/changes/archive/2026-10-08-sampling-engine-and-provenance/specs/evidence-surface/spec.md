@@ -21,5 +21,5 @@ The system SHALL express every reported metric as a number with an explicit unit
 #### Scenario: Report validator rejects bare keys
 
 - **GIVEN** a report whose probe stores `committed: 87.46` as a bare number
-- **WHEN** `node tools/telltale/test/helpers/validate-report.js` checks it
+- **WHEN** `node tools/hanger/test/helpers/validate-report.js` checks it
 - **THEN** the validator exits non-zero and names the field `committed`

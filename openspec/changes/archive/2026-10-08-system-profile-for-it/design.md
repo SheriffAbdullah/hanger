@@ -2,7 +2,7 @@
 
 ## Context
 
-See proposal.md (Why). The current `assetBlock()` in `tools/telltale/telltale.js` makes three
+See proposal.md (Why). The current `assetBlock()` in `tools/hanger/hanger.js` makes three
 queries. It fills `unknown` strings on failure and records failures in
 `collection.failures[]`. The serial is read from a source that never carries it, so it is
 always `unknown` unless `--serial` is passed. On the reference laptop (HP ProBook 440 G9,
@@ -11,7 +11,7 @@ i7-1255U, unelevated) R02 verified that the firmware serial is readable without 
 
 This change depends on `fix-report-integrity`, which provides:
 - the `node --test` harness and fixtures directory
-- schema `telltale-json/2` and `SCHEMA-CHANGELOG.md` discipline
+- schema `hanger-json/2` and `SCHEMA-CHANGELOG.md` discipline
 - the null-with-reason rule ("Absent data is null with a reason")
 - values-first anonymization
 

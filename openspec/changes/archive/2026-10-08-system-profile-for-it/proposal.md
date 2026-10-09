@@ -50,11 +50,11 @@ platform (R01-P1-5, R02-P1-12, R03-P1-2). It mislabels 12 logical processors as 
 ## Impact
 
 - **Code:**
-  - new `tools/telltale/lib/system-profile.js`
-  - one call site in `tools/telltale/telltale.js` (report assembly, console summary)
+  - new `tools/hanger/lib/system-profile.js`
+  - one call site in `tools/hanger/hanger.js` (report assembly, console summary)
   - `assetBlock()` reduced to an alias derived from the profile
-- **Tests:** new `tools/telltale/test/system-profile.test.js`, plus canned collector
-  outputs in `tools/telltale/test/fixtures/system-profile/`.
+- **Tests:** new `tools/hanger/test/system-profile.test.js`, plus canned collector
+  outputs in `tools/hanger/test/fixtures/system-profile/`.
 - **Schema:** additive `systemProfile`. The `SCHEMA-CHANGELOG.md` entry is required.
 - **Dependencies:** `fix-report-integrity` (test harness, schema v2, null-not-zero). Runs
   in parallel with `software-inventory-and-scope`. The merge hotspot is report assembly:

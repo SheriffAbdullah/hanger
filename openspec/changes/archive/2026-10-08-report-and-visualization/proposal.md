@@ -28,9 +28,9 @@ An IT reader who receives today's report rejects it within a minute. The verdict
 
 ## Impact
 
-- Code: `tools/telltale/render-print.js` becomes the report renderer (trace + pack). New `tools/telltale/lib/render/{sections,svg-charts,format,email}.js`. `render-charts.js` is removed (or kept as a thin alias shim for one release). The MD writer and the legacy HTML writer in `telltale.js` are replaced: the MD uses the shared section model, and the legacy HTML is deleted.
+- Code: `tools/hanger/render-print.js` becomes the report renderer (trace + pack). New `tools/hanger/lib/render/{sections,svg-charts,format,email}.js`. `render-charts.js` is removed (or kept as a thin alias shim for one release). The MD writer and the legacy HTML writer in `hanger.js` are replaced: the MD uses the shared section model, and the legacy HTML is deleted.
 - Outputs: `.html` and `.charts.html` are no longer written. `.report.html` and `.email.txt` are new. `--print` is on by default for `trace` and `record` (see design D5).
-- Tests: new `tools/telltale/test/render-*.test.js` and `email.test.js` using fixtures from `fix-report-integrity` and `diagnosis-engine-rebuild`.
+- Tests: new `tools/hanger/test/render-*.test.js` and `email.test.js` using fixtures from `fix-report-integrity` and `diagnosis-engine-rebuild`.
 - Docs: README "Outputs" section.
 - Dependencies: none added. ECharts and the CDN are removed.
 

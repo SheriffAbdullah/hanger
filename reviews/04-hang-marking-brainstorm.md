@@ -6,10 +6,10 @@ Status: research only. No repo file other than this one was changed. Every exper
 ## 0. The problem today
 
 - `lib/sampler/keycap-child.js` puts the terminal's stdin in raw mode and stamps each byte with `Date.now()` in a helper
-  process. `K|ms` is a mark, `I|ms` is Ctrl+C, and `P|ms` is the phase key `p` (only when `TELLTALE_PHASE_KEY=1`).
-  `telltale.js:1170` turns a mark into `{tSec, at}`, appends it to the stream, and prints `** user-mark`.
+  process. `K|ms` is a mark, `I|ms` is Ctrl+C, and `P|ms` is the phase key `p` (only when `HANGER_PHASE_KEY=1`).
+  `hanger.js:1170` turns a mark into `{tSec, at}`, appends it to the stream, and prints `** user-mark`.
 - The helper solved the old problem: a mark that the blocked main loop stamped up to 14 s late (review 02). It did not solve
-  focus. Only the Warp window that runs telltale delivers keys to it. A user who is typing in VS Code, a browser or psql
+  focus. Only the Warp window that runs hanger delivers keys to it. A user who is typing in VS Code, a browser or psql
   has to switch windows first. During the very stall we want to capture, they often can't.
 - Gaps in the current marks:
   - They have no `kind`. Code always reads `hung` (`diagnosis/context.js:70`), although `tracking/spec.md` defines `hung|fine` plus a note.
@@ -92,17 +92,17 @@ Legend:
 | J | **Low-level keyboard hook (`WH_KEYBOARD_LL`)**, for double-tap Ctrl, Caps x3 or key-mash | yes | event-stamped (`KBDLLHOOKSTRUCT.time`). But a hook that does not return within `LowLevelHooksTimeout` is **silently removed** during a stall | **sees every keystroke: keylogger-class.** EDR (Sure Sense / Defender) may flag it | Ctrl x2 FP: medium; mashing FP: high | none | low to medium (every key system-wide passes through us, adding latency to every app) | yes | very ergonomic | high, but the trust cost is unacceptable. **Reject** |
 | K | **Raw keyboard input sink** | yes | event-stamped | keylogger-class, same as J | | none | medium | yes | | **Reject** |
 | L | **Terminal key (today)** | **no** | yes (child stamps at read) | none | low | none | ~0 | yes | needs focus | high, when available |
-| M | **CLI `telltale mark [--ago 20] [--over] [--note ..]`** from any shell, or a `tt-mark` alias | needs some shell with focus | no: it is retro by nature | note text is user-authored; warn not to paste secrets | low | none | 0 | yes | discoverable in README | medium (retro) |
+| M | **CLI `hanger mark [--ago 20] [--over] [--note ..]`** from any shell, or a `tt-mark` alias | needs some shell with focus | no: it is retro by nature | note text is user-authored; warn not to paste secrets | low | none | 0 | yes | discoverable in README | medium (retro) |
 | N | **Phone companion** (QR code -> local page, big button) | yes | **phone-side time is independent of the laptop stall**: best stamp possible, needs clock-offset handshake | LAN listener. Exposes a port | low | an inbound firewall rule usually needs admin / IT on a managed laptop | low | no install on laptop, but needs a firewall exception | good for one-handed users | high if the offset is measured. Operationally heavy. Stretch goal |
 | O | **Mic-mute / volume key** (watch endpoint mute state via Core Audio callback) | yes | no: the audio service delivers the callback when it runs, so it is stamped late | side effect: it mutes the mic (bad in meetings) | medium | none | low | yes | already a physical key | low |
 | P | **Unplug AC as a signal** | yes | power events delayed | none | low | none | 0 | yes | | **Reject**: it changes the power state the diagnosis studies (battery rule) |
 | Q | **Lid / power button** | yes | no | none | | changing power-button behaviour needs settings | 0 | | | **Reject**: sleeps the machine |
 | R | **Fingerprint touch** | WBF capture without a prompt needs focus (system pool) or a privileged pool | no | biometric | | yes for a private pool | | | | **Reject** |
-| S | **Voice phrase** (System.Speech grammar "telltale hang") | yes | no: the audio pipeline starves in exactly these stalls, and the recognizer CPU is non-trivial | **always-open mic.** The mic indicator shows; speech near confidential calls | FP: medium; FN: high in noise | none | over budget likely (unverified) | yes (SAPI in-box) | good for motor-impaired users | low. Opt-in only, if ever |
+| S | **Voice phrase** (System.Speech grammar "hanger hang") | yes | no: the audio pipeline starves in exactly these stalls, and the recognizer CPU is non-trivial | **always-open mic.** The mic indicator shows; speech near confidential calls | FP: medium; FN: high in noise | none | over budget likely (unverified) | yes (SAPI in-box) | good for motor-impaired users | low. Opt-in only, if ever |
 | T | **Knock / clap via mic RMS threshold** (no audio stored) | yes | no (audio starvation) | open mic, even if no audio is kept | FP: high | none | low to medium | yes | | low |
 | U | **Webcam gesture** | yes | no | camera on: unacceptable | | | high | | | **Reject** |
 | V | **Clipboard sentinel** (copy the word `HANG`) | yes | no | requires reading the clipboard, which holds passwords and tokens | | none | low | yes | | **Reject** |
-| W | **File-touch / drop file** (`echo > %LOCALAPPDATA%\telltale\mark`) | needs a shell | no (FS watcher latency) | none | low | none | ~0 | yes | | low, superseded by M |
+| W | **File-touch / drop file** (`echo > %LOCALAPPDATA%\hanger\mark`) | needs a shell | no (FS watcher latency) | none | low | none | ~0 | yes | | low, superseded by M |
 | X | **Accelerometer tap** | n/a | | | | | | | | **Not available**: no sensor on this G9 |
 | Y | **OS hang evidence** (Event 1002, DWM ghost window, `IsHungAppWindow`) | yes | after the fact. Threshold 5 s, coarser than 2-3 s freezes | already scope-filtered in `notresponding.js` | FN high for short freezes | none | ~0 | yes | n/a | medium (already a confirmation source) |
 | Z | **ETW Win32k input-delay / UI-delay events** | yes | event-stamped by the kernel | provider payloads can include window and process info, so filter in memory | low | real-time ETW session needs admin or Performance Log Users | low to medium | yes | n/a | high. **Admin-tier option**, unverified here |
@@ -114,7 +114,7 @@ Legend:
 | 1 | **A: global hotkey in an independent helper exe, stamped with the OS message time** (+ B delivery lag) | primary, "hang NOW" / "it's over" | Works from any app. Its timestamp survives a stall (verified here). Sees only its own chord, needs no admin, costs ~0 CPU and ~12 MB, and needs no install |
 | 2 | **D + E: passive input-without-response detector + heartbeat lag** | automatic, no user action | Measures the felt symptom (UI not answering while the user is interacting). Raises recall, corroborates marks, and validates the spawn-probe proxy. Measured cost <0.1% |
 | 3 | **F: topmost no-activate click target**, plus **C: pedal/macro pad** mapped to F13 to F24 | backup / accessibility | Same event-time guarantee as A. F suits mouse users and avoids chords; C suits one-handed users and constant typists |
-| 4 | **G: tray menu + M: CLI `telltale mark --ago`** | retro-marking and discoverability | The system has recovered by then, so event time isn't needed. The user declares an offset with an uncertainty |
+| 4 | **G: tray menu + M: CLI `hanger mark --ago`** | retro-marking and discoverability | The system has recovered by then, so event time isn't needed. The user declares an offset with an uncertainty |
 | 5 | **L: terminal key** (keep as is) | legacy | Already works when Warp has focus |
 | 6 | N phone companion | stretch | Best clock independence, but needs a firewall exception on a managed laptop |
 | 7 | H hot corner, I mouse shake | optional gestures | Discoverability and FP issues |
@@ -130,7 +130,7 @@ and recorded in the report. Avoid `Win+` combos: Microsoft reserves them, and `W
 
 **Retro mark:**
 - Tray menu: "It froze 10 / 20 / 30 / 60 s ago" plus a "lasted ~N s" picker.
-- CLI: `telltale mark --ago 20s [--for 8s] [--note "psql"]`, which talks to the helper over a named pipe; with no helper running it appends to the sidecar.
+- CLI: `hanger mark --ago 20s [--for 8s] [--note "psql"]`, which talks to the helper over a named pipe; with no helper running it appends to the sidecar.
 - Retro marks carry `uncertaintyS` (default ±5 s, or ±25% of `ago`, whichever is larger). They join with that window.
 - They are counted separately from live marks. They never feed "precision" in the same bucket as event-stamped marks.
 
@@ -138,9 +138,9 @@ and recorded in the report. Avoid `Win+` combos: Microsoft reserves them, and `W
 
 ### 4.1 Process model
 
-- `telltale.js` spawns `telltale-input-helper.exe` next to the existing keycap child. The exe is compiled once by
+- `hanger.js` spawns `hanger-input-helper.exe` next to the existing keycap child. The exe is compiled once by
   Windows PowerShell 5.1 `Add-Type -OutputAssembly` from C# source shipped in `lib/sampler/`, and cached by source hash in
-  `%LOCALAPPDATA%\telltale\bin\`. That folder is outside OneDrive and outside `reports/`.
+  `%LOCALAPPDATA%\hanger\bin\`. That folder is outside OneDrive and outside `reports/`.
 - If compiling or running fails, the run continues with the terminal key only. The report records
   `input.helper: unavailable (<reason>)`. Optional fallback: a long-lived `powershell.exe` doing the same work (84 MB; it must
   fit the 150 MB private budget; record it).
@@ -164,7 +164,7 @@ and recorded in the report. Avoid `Win+` combos: Microsoft reserves them, and `W
 - **Delivery lag** = helper receive time minus press time. It is its own signal: a lag ≥ 500 ms means the helper was starved at that moment.
 - The parent **never re-stamps** a mark. Its own `Date.now()` is kept only as `parentReceivedAt`.
 
-### 4.3 Record shapes (stream + sidecar `reports/telltale-<stamp>.input.jsonl`)
+### 4.3 Record shapes (stream + sidecar `reports/hanger-<stamp>.input.jsonl`)
 
 ```
 {type:"mark", v:2, kind:"hung"|"over"|"fine", source:"hotkey"|"pedal"|"click"|"terminal-key"|"tray"|"cli",
@@ -233,7 +233,7 @@ and recorded in the report. Avoid `Win+` combos: Microsoft reserves them, and `W
   - A passive input-without-response detector.
   - New confirmation sources.
   - Privacy guarantees.
-- **Impact:** specs `sampling`, `tracking`, `diagnosis`, `evidence-persistence`, `scope`, `report-views`, `metrics`; code `lib/sampler/` (new helper + bridge), `telltale.js`, `diagnosis/context.js`, `render/`, `recover`.
+- **Impact:** specs `sampling`, `tracking`, `diagnosis`, `evidence-persistence`, `scope`, `report-views`, `metrics`; code `lib/sampler/` (new helper + bridge), `hanger.js`, `diagnosis/context.js`, `render/`, `recover`.
 
 ### Spec deltas (requirements + scenarios in outline)
 
@@ -276,7 +276,7 @@ and recorded in the report. Avoid `Win+` combos: Microsoft reserves them, and `W
 3. Episode state machine + auto-end. `kind` support end to end (this also fixes the review 01 gap).
 4. Passive detector thread with an input-gated WM_NULL probe, heartbeat lag, interval coalescing, and a `--ui-lag` threshold in the citations table.
 5. Topmost no-activate click target (opt-in `--mark-button`), and F13 to F24 pedal registration.
-6. Retro: `telltale mark` CLI over a named pipe, sidecar fallback, and a tray menu (optional, phase 2).
+6. Retro: `hanger mark` CLI over a named pipe, sidecar fallback, and a tray menu (optional, phase 2).
 7. Diagnosis join (`context.js`): episodes, retro, `input-unresponsive`, corroboration, proxy vs passive.
 8. Renderers: bands, strip, legend. Finding line counts.
 9. `recover` merges the sidecar. Schema changelog entry.
@@ -286,7 +286,7 @@ and recorded in the report. Avoid `Win+` combos: Microsoft reserves them, and `W
     - Static privacy grep.
     - Join fixtures.
 11. Budget check: helper CPU and private bytes go into `sampling.observer`.
-12. README: "Mark a freeze from anywhere: Ctrl+Alt+Shift+H, press again when it's back; `telltale mark --ago 20s` afterwards."
+12. README: "Mark a freeze from anywhere: Ctrl+Alt+Shift+H, press again when it's back; `hanger mark --ago 20s` afterwards."
 
 ## 6. Open questions for the owner
 

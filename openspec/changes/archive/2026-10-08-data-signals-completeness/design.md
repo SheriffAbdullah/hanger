@@ -185,7 +185,7 @@ These name APIs, which the specs deliberately do not.
 
 - Additive series follow plan §2 (a dated `2.x` section in `SCHEMA-CHANGELOG.md`).
 - EcoQoS field removal (`ecoQoS`, `ecoDeferred`, `weightMs.eco`) is a removal. While
-  `telltale-json/2` is a draft (IMPLEMENTATION-PLAN §2), it is recorded in a dated `2.x`
+  `hanger-json/2` is a draft (IMPLEMENTATION-PLAN §2), it is recorded in a dated `2.x`
   changelog section without a version bump. Readers (`trend`) treat missing
   EcoQoS fields as absent, never as an error.
 - `metrics` requirement text loses API names. `METRIC_REGISTRY.md` keeps the API mapping

@@ -1,6 +1,6 @@
 ## Purpose
 
-Guarantee that every evidence artifact Telltale writes is valid, versioned, anonymized without corruption, persisted while the run happens, and read back loudly, so that no reader ever acts on silently missing or broken evidence.
+Guarantee that every evidence artifact Hanger writes is valid, versioned, anonymized without corruption, persisted while the run happens, and read back loudly, so that no reader ever acts on silently missing or broken evidence.
 
 ## ADDED Requirements
 
@@ -10,7 +10,7 @@ The system SHALL write every JSON report so that it parses as valid JSON whether
 #### Scenario: Anonymized trace parses
 - **GIVEN** anonymization is enabled and the user profile path contains `C:\Users\Alice`
 - **WHEN** a 30 s trace completes
-- **THEN** parsing the written `telltale-<stamp>.json` succeeds
+- **THEN** parsing the written `hanger-<stamp>.json` succeeds
 - **AND** the string `Alice` does not appear in the file
 
 #### Scenario: Self-check catches a corrupt write
@@ -37,7 +37,7 @@ When anonymization is enabled, the system SHALL replace the hostname, the userna
 Every component that reads stored reports (pack, trend, and all renderers) SHALL report each unreadable file by name together with its parse error. It SHALL NOT substitute a default such as "no trace found" or zero cost because a file could not be read.
 
 #### Scenario: Pack names the unreadable trace
-- **GIVEN** the newest `telltale-*.json` in the output directory is not valid JSON
+- **GIVEN** the newest `hanger-*.json` in the output directory is not valid JSON
 - **WHEN** the user runs `pack`
 - **THEN** the output names that file and its parse error
 - **AND** the pack does not report "no trace report found" or a cost of 0 on account of that file
@@ -86,17 +86,17 @@ Every report SHALL declare its schema version and status (`draft` or `frozen`). 
 
 #### Scenario: Reports declare v2
 - **WHEN** any trace report is written after this change
-- **THEN** its root `schema` value is `telltale-json/2` and its `schemaStatus` is `draft`
+- **THEN** its root `schema` value is `hanger-json/2` and its `schemaStatus` is `draft`
 - **AND** the schema changelog has a v2 section listing the new and changed fields
 
 #### Scenario: Old and unknown versions handled explicitly
-- **GIVEN** one report with schema `telltale-json/1` and one with `telltale-json/9`
+- **GIVEN** one report with schema `hanger-json/1` and one with `hanger-json/9`
 - **WHEN** the user runs `trend`
 - **THEN** the v1 row is shown labelled as pre-fix with rates that may be overstated
 - **AND** the v9 file is reported as an unknown schema and not shown
 
 #### Scenario: Pack requires v2
-- **GIVEN** the only trace report has schema `telltale-json/1`
+- **GIVEN** the only trace report has schema `hanger-json/1`
 - **WHEN** the user runs `pack`
 - **THEN** the output states that the report is v1 and must be re-captured
 
@@ -120,4 +120,4 @@ The sample report shipped in the repository SHALL be generated deterministically
 #### Scenario: Sample regenerates identically and validates
 - **WHEN** the fixture builder is run twice
 - **THEN** both runs produce byte-identical sample JSON
-- **AND** the sample passes report validation with schema `telltale-json/2`
+- **AND** the sample passes report validation with schema `hanger-json/2`

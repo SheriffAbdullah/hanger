@@ -1,4 +1,4 @@
-# Tasks — telltale-v08
+# Tasks — hanger-v08
 
 - [x] CommandLine capture (Win32_Process, top-10 end) → app labels (Node: script, Postgres DB, Playwright, VS Code project)
 - [x] Docker per-container rows when stats responsive (else vmmem aggregate + reason)

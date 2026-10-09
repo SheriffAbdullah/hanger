@@ -20,8 +20,8 @@ The main specs still describe v0.5. Changes v06 to v13 shipped and were archived
   - fix the stale Purpose lines in `metrics` and `tracking`;
   - replace both "v0.6 deferrals" blocks with a dated "Deferred" section that points to IMPLEMENTATION-PLAN §6.5.
 - Process repairs:
-  - close the zombie `telltale-v09` by relocating its two open items, then archive it with `--skip-specs`;
-  - review and archive `telltale-v13` with `--skip-specs`;
+  - close the zombie `hanger-v09` by relocating its two open items, then archive it with `--skip-specs`;
+  - review and archive `hanger-v13` with `--skip-specs`;
   - record the missing v08 review;
   - add archive gates and citation rules to `openspec/config.yaml`.
 - Docs: mark the correlation and culprit-confidence formula claims in `orders-framework.md` and `ontology.md` as not implemented (DEF-2).
@@ -42,8 +42,8 @@ None.
 
 ## Impact
 
-- Files: `openspec/specs/{metrics,tracking}/spec.md` (Purpose and Deferred sections, edited directly), `openspec/config.yaml`, `openspec/changes/telltale-v09/`, `openspec/changes/telltale-v13/`, `openspec/changes/archive/2026-10-07-telltale-v08/tasks.md`, `openspec/explorations/orders-framework.md`, `openspec/explorations/ontology.md`.
-- No changes to `tools/telltale/**`, `telltale.config.json`, or `README.md` (README preset text belongs to `software-inventory-and-scope`).
+- Files: `openspec/specs/{metrics,tracking}/spec.md` (Purpose and Deferred sections, edited directly), `openspec/config.yaml`, `openspec/changes/hanger-v09/`, `openspec/changes/hanger-v13/`, `openspec/changes/archive/2026-10-07-hanger-v08/tasks.md`, `openspec/explorations/orders-framework.md`, `openspec/explorations/ontology.md`.
+- No changes to `tools/hanger/**`, `hanger.config.json`, or `README.md` (README preset text belongs to `software-inventory-and-scope`).
 - Unblocks: `openspec validate --all --strict` as a gate for every later change.
 
 ## Findings addressed

@@ -30,8 +30,8 @@ The inference layer (L3) is four parallel, unconnected labels: the `STATE` verdi
 
 ## Impact
 
-- Code: new `tools/telltale/lib/diagnosis/{engine,vocabulary,confidence}.js` and `lib/diagnosis/rules/*.js`. `tools/telltale/telltale.js` replaces the verdict/cause/reasons/rca/discriminator/costNote block and the console STATE card. `render-print.js`, `render-charts.js`, `trend.js`, and pack mode read `diagnosis.finding` (vocabulary only; layout belongs to `report-and-visualization`).
-- Schema: `summary.verdict`, `summary.cause`, `summary.costNote`, `summary.costParams`, `rca[]`, and `summary.discriminator` are removed. `diagnosis{}` is added. Removals are recorded in a dated `2.x` SCHEMA-CHANGELOG section; the schema stays `telltale-json/2` because v2 is a draft until report-and-visualization freezes it (IMPLEMENTATION-PLAN §2). `trend` reads older reports' verdict strings as legacy labels.
+- Code: new `tools/hanger/lib/diagnosis/{engine,vocabulary,confidence}.js` and `lib/diagnosis/rules/*.js`. `tools/hanger/hanger.js` replaces the verdict/cause/reasons/rca/discriminator/costNote block and the console STATE card. `render-print.js`, `render-charts.js`, `trend.js`, and pack mode read `diagnosis.finding` (vocabulary only; layout belongs to `report-and-visualization`).
+- Schema: `summary.verdict`, `summary.cause`, `summary.costNote`, `summary.costParams`, `rca[]`, and `summary.discriminator` are removed. `diagnosis{}` is added. Removals are recorded in a dated `2.x` SCHEMA-CHANGELOG section; the schema stays `hanger-json/2` because v2 is a draft until report-and-visualization freezes it (IMPLEMENTATION-PLAN §2). `trend` reads older reports' verdict strings as legacy labels.
 - Depends on: `software-inventory-and-scope` (per-hang in/out-of-scope aggregates), `sampling-engine-and-provenance` (provenance, unobserved intervals, observer cost), `data-signals-completeness` (normalized AV CPU, CPU %, disk ms), and `workload-session-and-containers` (workload latency probe).
 - Docs: `openspec/explorations/orders-framework.md` and `ontology.md` mark the correlation and 0.4/0.3/0.2/0.1 formula claims as superseded by `diagnosis` (DEF-2).
 

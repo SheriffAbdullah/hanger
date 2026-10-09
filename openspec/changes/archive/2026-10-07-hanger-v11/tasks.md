@@ -1,4 +1,4 @@
-# Tasks — telltale-v11 (+ review gate fixes)
+# Tasks — hanger-v11 (+ review gate fixes)
 
 - [x] 1. `gpuEngines` collector: per-PID % grouped by `pid_N`; absent counters → `unavailable` gap. (No-driver RED path untested — needs Basic-Display box.)
 - [x] 2. Keep 2s bundle `_Total`-only GPU sample (cheap path, no `(*)` poll). Verified honest-null on WDDM (no _Total instances); 60s p95 baseline not run.

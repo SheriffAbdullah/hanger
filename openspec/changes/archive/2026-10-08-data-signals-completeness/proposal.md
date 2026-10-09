@@ -55,9 +55,9 @@ plugged-in vs battery, disk), and the diagnosis rules in waves 5-6 consume them.
 
 ## Impact
 
-- Code: new `tools/telltale/lib/collectors/*.js` (one module per signal family),
+- Code: new `tools/hanger/lib/collectors/*.js` (one module per signal family),
   registered through the collector registration interface of
-  `sampling-engine-and-provenance`. `telltale.js` changes only at registration and to
+  `sampling-engine-and-provenance`. `hanger.js` changes only at registration and to
   remove EcoQoS. `check-stub` battery wording. `mac-stub.json` entries for the new
   inferences.
 - Schema: new per-sample series and summary fields in `SCHEMA-CHANGELOG.md`. EcoQoS
