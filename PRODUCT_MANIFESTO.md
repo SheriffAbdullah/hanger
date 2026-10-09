@@ -1,11 +1,19 @@
-# Product Manifesto — machine-not-sufficient / telltale
+# Product Manifesto — machine-not-sufficient / hanger
 
 ## What this product is NOT
-- It does NOT decide whether someone "deserves" another machine.
+- It does NOT tell anyone what to buy or who should get which machine; that decision belongs to IT and the organization.
 - It does NOT say "buy 32GB" as a verdict. Cost math is context, never the judgment.
 - No presentation-layer persuasion. No verdict theater.
 
 ## What it IS
+Hang evidence, captured while it happens.
+
+The primary reader is the IT / tech-ops team. The collector is the developer, who
+reproduces the freeze on their own machine and hands the report over, so the first
+ticket already holds the evidence IT needs and nothing has to be asked for twice.
+The hang is the shared problem, not a dispute. Deployment is collection on request:
+no fleet rollout, no telemetry, nothing leaves the machine, zero dependencies.
+
 An evidence surface. It observes the machine, numbers every metric, explains every
 number with a reason, and traces causes (RCA) from first-order data to second-order
 insight — presented plainly so any developer, manager, or IT engineer can see the

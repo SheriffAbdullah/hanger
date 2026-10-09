@@ -1,9 +1,9 @@
 # Persona: Engineering Manager
 
 ## 1. Story (3 lines)
-I own sprint velocity and hardware budget for 6–12 devs; finance asks "prove it" for every upgrade.
+I own sprint velocity and hardware budget for 6–12 devs; finance asks for the numbers behind every upgrade request, and IT owns the decision.
 I can't read ETW traces and won't open JSON — I need one page I can forward to IT/finance.
-If Telltale can't turn freezes into lost-hours + team pattern + cost context, I buy nothing.
+If Hanger can't turn freezes into lost-hours + team pattern + cost context, I have nothing to bring to the conversation with IT and finance.
 
 ## 2. Evidence I demand
 
@@ -28,7 +28,7 @@ If Telltale can't turn freezes into lost-hours + team pattern + cost context, I 
 - Verdict theater: "buy new laptop" with no recompute path; thresholds hidden.
 - Non-printable output, broken pagination, or JSON-or-bust handoff to finance.
 
-## 4. Pipeline(s) Telltale must build for me
+## 4. Pipeline(s) Hanger must build for me
 1. **Cost-arithmetic pipeline (second-order, versioned):** hang rate → frozen % → lost-min/day → $/day/mo with flags recorded; recompute from JSON reproduces the page.
-2. **Trend / team-rollup pipeline:** `trend` over `reports/telltale-*.json` → per-machine STATE history + cross-machine culprit frequency; answers "pattern or one box."
+2. **Trend / team-rollup pipeline:** `trend` over `reports/hanger-*.json` → per-machine STATE history + cross-machine culprit frequency; answers "pattern or one box."
 3. **Printable renderer pipeline:** JSON (truth) → one-page MD/HTML with print CSS (STATE, HANG table, culprit table, power line, cost line + method footnote). Presentation is a renderer — paper/PDF is the contract.

@@ -1,33 +1,36 @@
-# Persona: IT Asset Admin (approver for 200 laptops)
+# Persona: IT / Tech-ops (primary reader and customer)
 
 ## 1. Story (3 lines)
-I own the fleet: purchase dates, warranty expiries, images, and security policy for 200 laptops. Users file "machine too slow" tickets daily; I must separate hardware exhaustion from bloat, misconfig, and unsanctioned software before I spend. One anecdotal screenshot never unlocks budget — a reproducible, policy-clean evidence pack might.
+I run IT and tech-ops for a few hundred laptops: images, warranty, security policy, and the ticket queue. "My machine freezes sometimes" is the hardest ticket I get, because I cannot see it from my desk and the first report rarely says enough to act on.
+The developer on the other end wants it fixed as much as I do; the hang is the shared problem. What I need is for the first ticket to arrive already holding the evidence, so I do not spend three round-trips asking for it.
+I ask a developer to reproduce the freeze with Hanger running; the report comes back complete, scoped, and checkable. I do not run an agent on the fleet and I do not want one.
 
-## 2. Evidence I demand
+## 2. What I need from a report
 
-**Must (no pack without these):**
-- Asset context block: hostname/serial, model (e.g. HP ProBook), RAM fitted, disk free %, OS build, purchase date + warranty status. A trace without age/warranty is unactionable.
-- Sustained-vs-threshold over weeks, not one 10s trace: `watch` aggregates — % work-hours with committed >85%, pages/sec p95/day, hang events ≥800ms/day, n + window + cadence per metric. Single-sample counters are not proof.
-- RAM-vs-reimage discriminator: top-group MB with signed identity (publisher + path) + startup/AV load (Defender scan overlap?) + committed/pages at hang vs calm. `node 753MB + commit 86% at HANG vs 62% calm` = RAM case; `Br-uxendm.exe 2283MB bloat + clean commit` = reimage/remove case.
-- Scope declaration audit: the declared scope (source, scope-file path and SHA-256, entries, match rule, always-monitored system set) first in the pack, the out-of-scope load as an anonymous aggregate (group/process/memory totals, never names), `collection.tier: user|admin`, `unavailable` reasons. I re-run the same scope file to reproduce; what is outside the scope must be counted, never silent.
-- Admin-tier signals when elevatable: thermal throttle (%maxFreq <60 on AC), SMART health, Sysmon/driver faults, WER AppHang/Event-1002 history. Tier must be labeled; user-tier gaps must say why, not zero-fill.
+**Must (a report is only useful with these):**
+- System profile: model, serial or asset tag, RAM fitted, disk type and free space, OS build, BIOS, power plan, WSL limits. A trace without the machine it came from cannot be acted on.
+- Reproduced under load, not a one-off screenshot: the hang table (time, length, what was running), plus calm periods from the same run so I can compare at-freeze against fine.
+- Candidate causes ranked with a stated confidence and a "what would disprove this" line, and the signal each rule used. I want evidence I can check, not a verdict.
+- Scope declaration audit: the declared scope (source, scope-file path and SHA-256, entries, match rule, always-monitored system set) first in the report, the out-of-scope load as an anonymous aggregate (counts and totals, never names), the collection tier (`user` or `admin`), and `unavailable` reasons. I can re-run the same scope file to reproduce; what is outside the scope is counted, never silent.
+- Honest gaps: a signal that could not be collected says why, never a zero. Thresholds are stated and recorded in the report; JSON, Markdown and the email agree.
 
 **Should:**
-- Ticket linkage: helpdesk ticket count for this asset (last 90d), calm-window proof ("all green at 11:40, AC + Best performance") alongside hang rows.
-- Power truth per sample: AC/battery, scheme GUID, battery % — kills "just plug it in" disputes.
-- Cost/time-lost with explicit params (`--cost-min/--cost-rate`, workdays/mo) as context only, never a verdict.
+- Power truth per sample: AC or battery, scheme, battery percent, so a power-plan question is answered inside the report.
+- The one-line "what IT can do" list, cheapest first, each tied to the rule that raised it. Suggested checks, not purchase advice.
+- A ready-to-paste email draft whose numbers are verified against the JSON.
 
 **Could:**
-- Fleet percentile: this asset's p95 commit/hang-rate vs fleet median; warranty-batch defect clustering.
+- Admin-tier signals when the collector could elevate: thermal throttling, disk health, driver faults, WER AppHang history (the tier is always labelled).
+- Several reports over time for the same machine (`trend`) so a pattern is visible across tickets.
 
-## 3. Instant reject (red flags)
-- Unknown rows (`unresolved`) presented as fact, or out-of-scope MB missing from the aggregate totals — looks like tampering to inflate a claim.
-- Thresholds unstated or changed between runs (`--hang 800` unrecorded); JSON/MD disagree; averages with n=1.
-- Privacy violation: full cmdlines, usernames, hostnames, container names leaked despite `--anonymize`; raw docker strings unmasked.
-- Security risk: EDR/Defender disabled to "improve numbers." (The always-monitored system set keeps registered security products visible.) Non-goal: Telltale is not a software-compliance scanner; it does not flag unsanctioned or unsigned software outside the user's declared scope. Its legitimacy rests on declared scope plus anonymous aggregates.
-- Cherry-picked 10s pressure trace with no calm baseline and no multi-day `watch` trend.
+## 3. What would make me distrust a report (red flags)
+- Unknown rows (`unresolved`) presented as fact, or out-of-scope memory missing from the aggregate totals: the numbers no longer add up.
+- Thresholds unstated or changed between runs; JSON and Markdown disagree; averages with n=1; no calm baseline at all.
+- Privacy slips: full command lines, usernames, hostnames or container names leaking despite `--anonymize`.
+- A security product disabled to "improve the numbers". (The always-monitored system set keeps registered security products visible.)
+- Non-goal: Hanger is not a software-compliance scanner and is not meant to see software the developer has not declared. It does not flag unsanctioned or unsigned software outside the declared scope; its legitimacy rests on declared scope plus anonymous aggregates. Hidden-software detection is deliberately out of scope.
 
-## 4. Pipelines Telltale must build for me
-1. **Fleet intake:** `watch` (light continuous) → weekly rollup per asset + ticket join → triage queue (replace / reimage / remove-bloat / monitor).
-2. **Approval pack:** one JSON (truth) + MD/HTML view with asset block, sustained metrics, hang↔pressure RCA with confidence, filter/tier audit, power truth, reimage-vs-RAM call supported by numbers.
-3. **Policy gate (non-goal; replaced by a scope declaration audit):** verify the declared scope, its file hash and the out-of-scope aggregate; reject packs that fail reproducibility before they reach my desk. Not a policy gate: no signature or allowlist check of software outside the declared scope (non-goal: not a compliance scanner).
+## 4. How Hanger reaches me
+1. **Collection on request.** I ask a developer to run `trace` (or `record`) while they reproduce the freeze. No fleet rollout, no telemetry, nothing leaves the machine until the developer sends the files.
+2. **Complete first ticket.** One report (HTML, Markdown, JSON) plus an email draft: profile, scope, hang table, ranked causes, calm comparison, gaps. Often enough to act without a follow-up question.
+3. **Scope audit instead of a policy gate.** I verify the declared scope, its file hash and the out-of-scope aggregate. Not a policy gate: no signature or allowlist check of software outside the declared scope (non-goal: not a compliance scanner).

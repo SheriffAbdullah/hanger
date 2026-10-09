@@ -12,7 +12,7 @@ Modern local stack = Docker Desktop (2-3GB idle) + Postgres + Redis + Chrome/VSC
 - **r/docker: hardware requirements** — old 128GB-disk / 8GB-RAM MacBooks choke on Docker, mostly WSL2 VM + volume mounts.
 - **Hacker News: 8GB M1 + Docker?** — "Will Docker be the first thing that needs more than 8GB?" Yes.
 - **Blog consensus 2025-26:** Docker Desktop idle ~2GB+, `vmmem` on WSL2 is #1 complaint. OrbStack (~1/3 RAM, <2s start) vs Docker Desktop is now default comparison.
-- **Management angle:** almost no threads on "how to prove to IT" — devs post screenshots of Task Manager / `docker stats` / htop. Ad-hoc, not convincing.
+- **Management angle:** almost no threads on "what to send IT so the first ticket is complete" — devs post screenshots of Task Manager / `docker stats` / htop. Ad-hoc, and not enough for IT to act on.
 
 ## 2. The situation (plain English)
 
@@ -46,8 +46,8 @@ Pattern: not Postgres/Redis alone — it's **sum + Docker overhead + browser/IDE
 
 - **Who:** Full-stack/backend dev, 1-5 yrs exp, in startup/agency/SMB, issued 8-16GB laptop (Windows/Mac), builds with Docker Compose daily.
 - **Job:** ship features locally with prod-like stack (App + Postgres + Redis).
-- **Pain:** machine lags/crashes, loses 30-90 min/day, can't prove it's hardware not "bad code".
-- **Decision maker to convince:** Engineering Manager / IT / Finance — wants numbers, cost justification, not screenshots.
+- **Pain:** machine lags/crashes, loses 30-90 min/day, can't show whether it is hardware, configuration or the workload.
+- **Decision makers who need the numbers:** Engineering Manager / IT / Finance — wants numbers, cost justification, not screenshots.
 - **Willing to do:** run one script/compose file that generates a PDF/report: "here's my RAM, lag score, crash log, lost time, recommended 32GB."
 - **Case study fit:** Persona B above is ICP v1. If we solve "evidence in 5 minutes" for them, A + C follow.
 
