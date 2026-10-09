@@ -4,7 +4,7 @@ When the box hangs, observation itself costs. Rule: light path always, heavy pat
 
 ## 1. Similar problems elsewhere (one line each)
 
-- Heisenberg/profiler effect: instrumenting changes timing; lesson: measure spawn cost AFTER the signal, never inside it (bundle runs after `lat`, telltale.js:399-403).
+- Heisenberg/profiler effect: instrumenting changes timing; lesson: measure spawn cost AFTER the signal, never inside it (bundle runs after `lat`, hanger.js:399-403).
 - eBPF overhead budgets: kernel tracers cap instructions + drop on overload; lesson: cap snapshot (top-3, 6 PIDs) and skip rather than queue.
 - ICU monitor alarms: alarming drains the nurse it warns; lesson: observer budget — `slipS`/`bundleMs`/`snapMs`/`ecoMs` are first-class fields, alert on them.
 - Flight-recorder ring buffers: always-on light ring, dump heavy on trigger; lesson: `watch` JSONL is the ring, `trace`/WPR dumps only on pressure.

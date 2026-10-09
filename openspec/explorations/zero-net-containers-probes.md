@@ -1,6 +1,6 @@
 # Zero-Net / Containers / Active Probes — Zeroth-Order Surface
 
-No admin, local-first. Supplements `METRIC_REGISTRY.md` + `telltale.js` probeBundle/spawn/docker sections.
+No admin, local-first. Supplements `METRIC_REGISTRY.md` + `hanger.js` probeBundle/spawn/docker sections.
 
 ## 1. Network (local counters only)
 
@@ -24,7 +24,7 @@ No admin, local-first. Supplements `METRIC_REGISTRY.md` + `telltale.js` probeBun
 
 ## 3. Active probes WE run
 
-- **node -e spawn ms**: `sh('node -e ""')` wall ms (telltale 2s). Unit ms. Cost ~30-80ms self-load. Confound: AV cold-start; bundle AFTER spawn.
+- **node -e spawn ms**: `sh('node -e ""')` wall ms (hanger 2s). Unit ms. Cost ~30-80ms self-load. Confound: AV cold-start; bundle AFTER spawn.
 - **hrtime/setImmediate drift**: 50ms `hrtime→setImmediate` delta. Unit ms. Cost negligible. Confound: sync execSync self-block — supporting only.
 - **1ms timer-slack overshoot**: `setTimeout(1)` actual-vs-expected. Unit ms. Cost negligible. Confound: coalescing/power-throttle.
 - **echo/cmd baseline**: timed `cmd /c echo ok`. Unit ms. Cost low. Confound: conhost/pty slower than raw spawn.

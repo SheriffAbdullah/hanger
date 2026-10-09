@@ -52,5 +52,5 @@ The system SHALL classify the foreground application of every evaluated moment w
 The system SHALL decide membership of the foreground application inside the helper at collection time, before anything is written, so that out-of-scope identity exists only in the helper's memory for the duration of the decision. The helper file SHALL be subject to the same canary check as every other output.
 
 #### Scenario: Helper file passes the canary check
-- **WHEN** `node tools/telltale/test/canary-leak.js` runs with an out-of-scope foreground canary
+- **WHEN** `node tools/hanger/test/canary-leak.js` runs with an out-of-scope foreground canary
 - **THEN** the helper file is among the searched artifacts and reports zero hits

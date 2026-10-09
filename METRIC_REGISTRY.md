@@ -1,4 +1,4 @@
-# Metric Registry — telltale v0.4 (merged from 3 spec crews)
+# Metric Registry — hanger v0.4 (merged from 3 spec crews)
 
 Rule (manifesto): every value emits `{id, value, unit, windowS, n, threshold?, conf?}`.
 First-order never overwritten. Thresholds recorded per report. Version: `registry v0.4`.

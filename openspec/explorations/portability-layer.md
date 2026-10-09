@@ -1,6 +1,6 @@
 # Portability layer: collectors (OS-specific) vs inferences (universal)
 
-## 1. Audit: where telltale.js mixes vs separates
+## 1. Audit: where hanger.js mixes vs separates
 
 Mixed (collector + inference fused):
 - `probeBundle()` (L170–230): one `Get-Counter` call hardcodes Windows paths AND maps them to universal keys (`committed`, `pages`, `cpuQ`) via `p.includes(...)`. Names are portable, parsing is Windows-locked.

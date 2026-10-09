@@ -26,12 +26,12 @@ The system SHALL keep helper observations in the helper's own append-only file b
 - **THEN** the recovered `inputStall.episodes` equal those in the original report
 
 ### Requirement: Input-stall fields are additive under the schema freeze
-The system SHALL add the detector's report fields as additive fields of `telltale-json/2`, record them in a dated `2.x` section of the schema changelog, and SHALL NOT rename or remove any existing field. `schemaStatus` SHALL remain `frozen`. Readers SHALL display an unknown confirmation label unchanged. The fields are `inputStall`, `settings.inputStall`, `diagnosis.probeAgreement`, `diagnosis.inputStallCorroboration`, per-hang `helperLate` and the `input-stall` label.
+The system SHALL add the detector's report fields as additive fields of `hanger-json/2`, record them in a dated `2.x` section of the schema changelog, and SHALL NOT rename or remove any existing field. `schemaStatus` SHALL remain `frozen`. Readers SHALL display an unknown confirmation label unchanged. The fields are `inputStall`, `settings.inputStall`, `diagnosis.probeAgreement`, `diagnosis.inputStallCorroboration`, per-hang `helperLate` and the `input-stall` label.
 
 #### Scenario: Changelog records the fields
 - **WHEN** this change is complete
-- **THEN** `tools/telltale/SCHEMA-CHANGELOG.md` has a dated `2.x` section listing every added field
-- **AND** the root `schema` of new reports is still `telltale-json/2` with `schemaStatus` `frozen`
+- **THEN** `tools/hanger/SCHEMA-CHANGELOG.md` has a dated `2.x` section listing every added field
+- **AND** the root `schema` of new reports is still `hanger-json/2` with `schemaStatus` `frozen`
 
 #### Scenario: Existing consumers still read the report
 - **GIVEN** a report with `input-stall` confirmations
@@ -40,5 +40,5 @@ The system SHALL add the detector's report fields as additive fields of `telltal
 
 #### Scenario: Older reports still validate
 - **GIVEN** a frozen v2 report written before this change
-- **WHEN** `node tools/telltale/test/helpers/validate-report.js` checks it
+- **WHEN** `node tools/hanger/test/helpers/validate-report.js` checks it
 - **THEN** it passes

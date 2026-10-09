@@ -1,0 +1,6 @@
+{
+  "_note": "hanger persistent defaults. CLI flags override these. Privacy is declared scope, not redaction: list what to monitor in hanger.scope.json (see README 'Scope'). Optional key: \"scope\": \"path/to/scope.json\".",
+  "anonymize": true,
+  "duration": "60",
+  "interval": "500"
+}

@@ -28,7 +28,7 @@ The system SHALL provide an `inventory` mode that lists running software groups 
 The system SHALL accept an allow-list authored by the user as a scope file, and SHALL record in every report the scope provenance: source (`file`, `template:<name>`, or `flag`), file path when present, and a SHA-256 hash of the file content. Presets SHALL only write a draft scope file. An invalid scope file SHALL stop the run with exit code 2 naming the path and the offending key.
 
 #### Scenario: Provenance recorded from a scope file
-- **GIVEN** a valid scope file `telltale.scope.json` with one entry `postgres`
+- **GIVEN** a valid scope file `hanger.scope.json` with one entry `postgres`
 - **WHEN** a trace runs with that scope
 - **THEN** the report `scope.source` is `file`, `scope.path` names the file, and `scope.sha256` equals the SHA-256 of the file bytes
 

@@ -46,7 +46,7 @@ Scope-file extension (additive):
 ```
 `connection` is a non-secret hint. Any key named like `password`/`pwd`/`secret` is rejected at load with a message.
 
-Report (JSON, `telltale-json/2`, changelog `2.x` additive):
+Report (JSON, `hanger-json/2`, changelog `2.x` additive):
 ```json
 "workload": {
   "phases": [{ "label": "loaded", "startAt": "ISO", "endAt": "ISO|null", "source": "key|flag|scope-file" }],

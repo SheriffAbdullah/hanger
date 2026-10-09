@@ -7,7 +7,7 @@ See proposal.md (Why). Constraints inherited from earlier changes:
 - Every stored number is a provenance record `{v, unit, windowS, n, src, at, prec}` (`record.js`).
 - `lib/scope.js` is the only authority on what may reach disk, console or logs. `test/canary-leak.js` is the check.
 - The diagnosis context (`lib/diagnosis/context.js`) already joins marks, OS not-responding and workload probes to hangs, and `confidence.js` derives confidence from recorded components, capped at 0.95.
-- Schema `telltale-json/2` is `frozen`: additive fields are dated `2.x` changelog entries; removal or rename bumps to `/3`.
+- Schema `hanger-json/2` is `frozen`: additive fields are dated `2.x` changelog entries; removal or rename bumps to `/3`.
 - Key capture today is `keycap.js` plus `keycap-child.js` (a Node child that stamps keys at read time, terminal focus only). Review 04 measured that a compiled helper polling at 4 Hz costs under 0.1% of one CPU and about 12 MB, and that Windows PowerShell 5.1 can compile C# in-box. It did not measure sensitivity on a real freeze.
 
 ## Goals / Non-Goals
@@ -89,7 +89,7 @@ Computed in `diagnosis` from stored first-order data (episodes, probes, evaluabl
 ### 9. Cost and degradation
 
 - Budget: helper average CPU at most 0.5% of one logical CPU and private memory at most 40 MB for the compiled helper (100 MB if the PowerShell fallback is used, still within the 150 MB tool total). Both are measured through `observer.js` (new source role `input-helper`) and reported in `sampling.observer`, with an exceedance recorded like the existing budget.
-- Build chain, in order: (a) cached compiled helper in `%LOCALAPPDATA%\telltale\bin\` named by source hash (outside OneDrive and outside `reports/`); (b) compile with the in-box .NET Framework C# compiler; (c) long-lived PowerShell fallback doing the same duties with in-memory compilation of the Win32 calls; (d) unavailable with the reason. Each step failure is recorded. A policy block (AppLocker, WDAC, EDR quarantine) produces `unavailable` and a plain reason; the run continues.
+- Build chain, in order: (a) cached compiled helper in `%LOCALAPPDATA%\hanger\bin\` named by source hash (outside OneDrive and outside `reports/`); (b) compile with the in-box .NET Framework C# compiler; (c) long-lived PowerShell fallback doing the same duties with in-memory compilation of the Win32 calls; (d) unavailable with the reason. Each step failure is recorded. A policy block (AppLocker, WDAC, EDR quarantine) produces `unavailable` and a plain reason; the run continues.
 - The helper is lowest necessary priority except its timer thread, so it can notice starvation without competing for CPU. It keeps its working set small so it is less likely to be paged out in a memory-pressure stall.
 - Disabling: `--no-input-stall` flag or `inputStall.enabled: false` in config; the report says `not-requested`.
 
@@ -99,7 +99,7 @@ Computed in `diagnosis` from stored first-order data (episodes, probes, evaluabl
 "inputStall": {
   "status": "running",                       // running | unavailable | not-requested
   "reason": null, "determinedAt": "…Z",
-  "helper": { "build": "cached|compiled|powershell-fallback", "file": "telltale-<stamp>.input.jsonl", "badLines": 0 },
+  "helper": { "build": "cached|compiled|powershell-fallback", "file": "hanger-<stamp>.input.jsonl", "badLines": 0 },
   "settings": { "stallMs": {"v":250,"unit":"ms","source":"default","provisional":true},
                 "recentInputMs": {…}, "mergeGapMs": {…}, "lateMs": {…}, "ignoreGroups": {"v":[],"source":"default"} },
   "evaluable": { "observedS": {…}, "evaluatedS": {…}, "idleS": {…}, "notEvaluableS": {…},
@@ -145,7 +145,7 @@ Provenance format follows `record.js` (`v, unit, windowS, n, src, at, prec`). Wh
 - `IsHungAppWindow` can add a boolean "OS considers the window hung" to a stall sample (no name). Optional.
 - Windows may replace a hung window with a ghost window that answers liveness requests. If the first live check shows episodes ending early because of this, record it in the review-gate note and in `cannotSee`.
 - The helper source and a hash-named compiled copy: keep the source in `lib/sampler/input-helper/`; the bridge `lib/sampler/input-helper.js` follows the shape of `keycap.js` (spawn, parse lines, `stop()`, `child.on('error')` degrades).
-- Test hooks follow the existing pattern (`TELLTALE_TEST_KEYS`): `TELLTALE_TEST_HELPER_FAIL=compile|start|exit@<sec>`, and a fake-clock constructor for the pure modules.
+- Test hooks follow the existing pattern (`HANGER_TEST_KEYS`): `HANGER_TEST_HELPER_FAIL=compile|start|exit@<sec>`, and a fake-clock constructor for the pure modules.
 
 ## Risks / Trade-offs
 
@@ -159,7 +159,7 @@ Provenance format follows `record.js` (`v, unit, windowS, n, src, at, prec`). Wh
 ## Open questions (owner), with the default used
 
 - **OQ-1 Default on or off?** Default: on, announced at start, `--no-input-stall` to disable.
-- **OQ-2 Threshold:** 250 ms stall, 1000 ms recent-input window, 1000 ms merge gap, 200 ms late threshold, 250 ms tick. All provisional and configurable in `telltale.config.json` under `inputStall`.
+- **OQ-2 Threshold:** 250 ms stall, 1000 ms recent-input window, 1000 ms merge gap, 200 ms late threshold, 250 ms tick. All provisional and configurable in `hanger.config.json` under `inputStall`.
 - **OQ-3 Confirmation weight of `input-stall` alone:** 0.5 versus 1.0 for a user mark. Default 0.5.
 - **OQ-4 Out-of-scope episodes confirm hangs?** Default no (shown anonymously, separate bucket).
 - **OQ-5 Helper lateness as a confirmation source?** Default no; corroboration only.

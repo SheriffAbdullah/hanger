@@ -1,0 +1,895 @@
+{
+  "tool": "hanger v0.6",
+  "schema": "hanger-json/2",
+  "schemaStatus": "frozen",
+  "registry": "registry v0.4",
+  "run": {
+    "status": "complete",
+    "endReason": null,
+    "startedAt": "2026-01-15T10:00:00.000Z",
+    "endedAt": "2026-01-15T10:00:19.600Z",
+    "utcOffsetMin": 0,
+    "stream": "hanger-sample-r03.jsonl"
+  },
+  "window": {
+    "nominalS": 10,
+    "spanS": 19.5,
+    "unobservedS": 0,
+    "observedS": 19.5,
+    "probesExpected": 5,
+    "probesObserved": 5,
+    "samplesExpected": 10,
+    "samplesObserved": 10
+  },
+  "settings": {
+    "duration": {
+      "value": 10,
+      "source": "flag"
+    },
+    "interval": {
+      "value": 1000,
+      "source": "config"
+    },
+    "anonymize": {
+      "value": true,
+      "source": "config"
+    },
+    "scope": {
+      "value": {
+        "mode": "open"
+      },
+      "source": "default"
+    },
+    "thresholds": {
+      "hang": {
+        "value": 800,
+        "source": "default"
+      },
+      "commit": {
+        "value": 85,
+        "source": "default"
+      },
+      "minFreeGB": {
+        "value": 2,
+        "source": "default"
+      },
+      "pages": {
+        "value": 500,
+        "source": "default"
+      },
+      "queue": {
+        "value": 4,
+        "source": "default"
+      },
+      "diskSec": {
+        "value": 0.025,
+        "source": "default"
+      },
+      "ramHigh": {
+        "value": 85,
+        "source": "default"
+      },
+      "severeCommit": {
+        "value": 90,
+        "source": "default"
+      },
+      "severeFree": {
+        "value": 1.5,
+        "source": "default"
+      },
+      "defender": {
+        "value": 20,
+        "source": "default"
+      },
+      "recovery": {
+        "value": 400,
+        "source": "default"
+      }
+    }
+  },
+  "observer": {
+    "pidCount": 3,
+    "wsMB": 96,
+    "wsMBAvg": 90,
+    "cpuPctAvg": null,
+    "note": "synthetic fixture"
+  },
+  "tier": "user",
+  "startedAt": "2026-01-15T10:00:00.000Z",
+  "hostname": "<host>",
+  "anonymized": true,
+  "machine": {
+    "totalGB": 16,
+    "cpus": 8,
+    "cpuModel": "Synthetic CPU 8-thread",
+    "uptimeMin": 1234.5
+  },
+  "systemProfile": {
+    "collectedAt": "2026-01-15T10:00:00.000Z",
+    "collectionMs": 1200,
+    "tier": "user",
+    "workloadConfigRef": null,
+    "groupStatus": {},
+    "identity": {
+      "hostname": {
+        "value": "<host>",
+        "source": "os",
+        "tier": "user",
+        "asOf": "2026-01-15T10:00:00.000Z"
+      },
+      "manufacturer": {
+        "value": "Synthetic Corp",
+        "source": "firmware-system-info",
+        "tier": "user",
+        "asOf": "2026-01-15T10:00:00.000Z"
+      },
+      "model": {
+        "value": "SX-1 Laptop",
+        "source": "firmware-system-info",
+        "tier": "user",
+        "asOf": "2026-01-15T10:00:00.000Z"
+      },
+      "serial": {
+        "value": "SYN0000001",
+        "source": "firmware-bios",
+        "tier": "user",
+        "asOf": "2026-01-15T10:00:00.000Z"
+      }
+    },
+    "processor": {
+      "model": {
+        "value": "Synthetic CPU 8-thread",
+        "source": "cpu-info",
+        "tier": "user",
+        "asOf": "2026-01-15T10:00:00.000Z"
+      },
+      "physicalCores": {
+        "value": 4,
+        "unit": "cores",
+        "source": "cpu-info",
+        "tier": "user",
+        "asOf": "2026-01-15T10:00:00.000Z"
+      },
+      "logicalProcessors": {
+        "value": 8,
+        "unit": "threads",
+        "source": "cpu-info",
+        "tier": "user",
+        "asOf": "2026-01-15T10:00:00.000Z"
+      },
+      "baseClockMHz": {
+        "value": 2400,
+        "unit": "MHz",
+        "source": "cpu-info",
+        "tier": "user",
+        "asOf": "2026-01-15T10:00:00.000Z"
+      },
+      "maxClockMHz": {
+        "value": null,
+        "unit": "MHz",
+        "source": "cpu-info",
+        "tier": "user",
+        "asOf": "2026-01-15T10:00:00.000Z",
+        "unavailableReason": "max turbo clock not exposed at user tier"
+      }
+    },
+    "memory": {
+      "installedGB": {
+        "value": 16,
+        "unit": "GB",
+        "source": "physical-memory-info",
+        "tier": "user",
+        "asOf": "2026-01-15T10:00:00.000Z"
+      },
+      "modules": {
+        "value": [
+          {
+            "slot": "Slot 1",
+            "sizeGB": 16,
+            "speedMTs": 3200,
+            "formFactor": "SODIMM"
+          }
+        ],
+        "source": "physical-memory-info",
+        "tier": "user",
+        "asOf": "2026-01-15T10:00:00.000Z"
+      },
+      "slotsUsed": {
+        "value": 1,
+        "source": "physical-memory-info",
+        "tier": "user",
+        "asOf": "2026-01-15T10:00:00.000Z"
+      },
+      "slotsTotal": {
+        "value": 2,
+        "source": "physical-memory-info",
+        "tier": "user",
+        "asOf": "2026-01-15T10:00:00.000Z"
+      }
+    },
+    "storage": {
+      "disks": {
+        "value": [
+          {
+            "model": "Synthetic NVMe 512",
+            "mediaType": "SSD",
+            "bus": "NVMe",
+            "capacityGB": 512,
+            "health": "Healthy"
+          }
+        ],
+        "source": "physical-disk-info",
+        "tier": "user",
+        "asOf": "2026-01-15T10:00:00.000Z"
+      },
+      "systemVolume": {
+        "value": {
+          "volume": "C:",
+          "freeGB": 190,
+          "totalGB": 460
+        },
+        "unit": "GB",
+        "source": "logical-disk-info",
+        "tier": "user",
+        "asOf": "2026-01-15T10:00:00.000Z"
+      }
+    },
+    "firmware": {
+      "biosVendor": {
+        "value": "Synthetic",
+        "source": "firmware-bios",
+        "tier": "user",
+        "asOf": "2026-01-15T10:00:00.000Z"
+      },
+      "biosVersion": {
+        "value": "SYN 1.02",
+        "source": "firmware-bios",
+        "tier": "user",
+        "asOf": "2026-01-15T10:00:00.000Z"
+      },
+      "biosDate": {
+        "value": "2025-06-01",
+        "source": "firmware-bios",
+        "tier": "user",
+        "asOf": "2026-01-15T10:00:00.000Z"
+      }
+    },
+    "os": {
+      "edition": {
+        "value": "Windows 11 Pro",
+        "source": "os-info",
+        "tier": "user",
+        "asOf": "2026-01-15T10:00:00.000Z"
+      },
+      "version": {
+        "value": "10.0.26200",
+        "source": "os-info",
+        "tier": "user",
+        "asOf": "2026-01-15T10:00:00.000Z"
+      },
+      "build": {
+        "value": "26200",
+        "source": "os-info",
+        "tier": "user",
+        "asOf": "2026-01-15T10:00:00.000Z"
+      },
+      "uptimeMin": {
+        "value": 1234,
+        "unit": "min",
+        "source": "os-info",
+        "tier": "user",
+        "asOf": "2026-01-15T10:00:00.000Z"
+      }
+    },
+    "power": {
+      "planName": {
+        "value": "Balanced",
+        "source": "powercfg",
+        "tier": "user",
+        "asOf": "2026-01-15T10:00:00.000Z"
+      },
+      "powerMode": {
+        "value": "Balanced",
+        "source": "powercfg",
+        "tier": "user",
+        "asOf": "2026-01-15T10:00:00.000Z"
+      },
+      "batteryDesignWh": {
+        "value": null,
+        "unit": "Wh",
+        "source": "battery-static-data",
+        "tier": "user",
+        "asOf": "2026-01-15T10:00:00.000Z",
+        "unavailableReason": "requires admin"
+      }
+    },
+    "virtualMemory": {
+      "pagefiles": {
+        "value": [
+          {
+            "location": "C:pagefile.sys",
+            "currentMB": 2048,
+            "initialMB": 4096,
+            "maxMB": 8192
+          }
+        ],
+        "source": "pagefile-info",
+        "tier": "user",
+        "asOf": "2026-01-15T10:00:00.000Z"
+      },
+      "systemManaged": {
+        "value": false,
+        "source": "pagefile-info",
+        "tier": "user",
+        "asOf": "2026-01-15T10:00:00.000Z"
+      },
+      "commitLimitGB": {
+        "value": 24,
+        "unit": "GB",
+        "source": "os-info",
+        "tier": "user",
+        "asOf": "2026-01-15T10:00:00.000Z"
+      }
+    },
+    "security": {
+      "products": {
+        "value": [
+          {
+            "name": "Synthetic Defender",
+            "state": "enabled"
+          }
+        ],
+        "source": "security-center",
+        "tier": "user",
+        "asOf": "2026-01-15T10:00:00.000Z"
+      },
+      "domainJoined": {
+        "value": false,
+        "source": "domain-join-info",
+        "tier": "user",
+        "asOf": "2026-01-15T10:00:00.000Z"
+      }
+    }
+  },
+  "power": {
+    "scheme": "Power Scheme GUID: 00000000-0000-0000-0000-000000000000  (Balanced)",
+    "plugged": true,
+    "batteryPct": null
+  },
+  "admin": {
+    "tier": "user",
+    "skipped": "process not elevated; re-run as admin for thermal/SMART/Sysmon/WER-sys/SeDebug"
+  },
+  "wprEtl": null,
+  "gpu": {
+    "engines": {
+      "unavailable": "synthetic fixture: no GPU data"
+    },
+    "mem": {
+      "unavailable": "synthetic fixture: no GPU data"
+    },
+    "nvidia": {
+      "present": false,
+      "reason": "synthetic fixture"
+    },
+    "bundleTotalNote": "synthetic fixture"
+  },
+  "summary": {
+    "windowBasis": "observed",
+    "avgUsedPct": 68.1,
+    "minFreeGB": 4.89,
+    "committedPeak": 64.8,
+    "pagesPeak": 66,
+    "pagesAvg": 57,
+    "diskSecPeak": 0.004,
+    "diskQPeak": 0.2,
+    "maxFreqMin": 100,
+    "loopP50ms": 1.1,
+    "loopP95ms": 2.5,
+    "loopMaxMs": 2.5,
+    "spawnP50ms": 169,
+    "spawnP95ms": 211,
+    "spawnMaxMs": 211,
+    "hangThresholdMs": 800,
+    "hangEventCount": 0,
+    "hangRatePerMin": 0,
+    "pctFrozenFull": 0,
+    "pctFrozenExcess": 0,
+    "mttrMs": null,
+    "mttrN": 0,
+    "meanFreezeS": null,
+    "secsOverRamHigh": 0,
+    "secsOverRamHighBasis": "time above 85% RAM, each sample weighted by its measured spacing",
+    "calmSharePct": 100,
+    "recoveryThresholdMs": 400,
+    "granularityMs": 1000,
+    "totalSamples": 10,
+    "totalSpawnProbes": 5,
+    "thresholds": {
+      "hang": 800,
+      "commit": 85,
+      "minFreeGB": 2,
+      "pages": 500,
+      "queue": 4,
+      "diskSec": 0.025,
+      "ramHigh": 85,
+      "severeCommit": 90,
+      "severeFree": 1.5,
+      "defender": 20,
+      "recovery": 400,
+      "sources": {
+        "hang": "NN/g response limits [cited]",
+        "commit": "MS perf troubleshooting [derived]"
+      },
+      "ideal": "TBD (orders-framework ideal table)",
+      "status": "provisional"
+    },
+    "nulls": {
+      "mttrMs": "no hangs observed",
+      "meanFreezeS": "no hangs observed"
+    },
+    "committedStart": 52.4,
+    "committedEnd": 64.8,
+    "pagesStart": 43,
+    "pagesEnd": 60,
+    "availMB": 4096,
+    "cpuQueue": 1,
+    "loopN": 5,
+    "bundleOkProbes": "5/5",
+    "loopConfoundNote": "synthetic fixture",
+    "loopNote": null,
+    "warpSeenMB": null,
+    "openspecSeenMB": null,
+    "unresolvedNames": 0,
+    "werArchive": {
+      "total": 12,
+      "apphang": 3
+    },
+    "hangCount": 0
+  },
+  "hangEvents": [],
+  "userMarks": [],
+  "culprits": [
+    {
+      "name": "chrome.exe",
+      "friendly": "Chrome browser",
+      "detail": "Browser (tabs share processes)",
+      "totalMB": 2100,
+      "instances": 22,
+      "source": "known"
+    }
+  ],
+  "privateTop": [
+    {
+      "name": "node.exe",
+      "privateMB": 2100,
+      "instances": 14
+    }
+  ],
+  "topProcesses": [
+    {
+      "name": "chrome.exe",
+      "pid": 1100,
+      "memMB": 2100
+    }
+  ],
+  "scope": {
+    "mode": "open",
+    "source": "none",
+    "path": null,
+    "sha256": null,
+    "entries": [],
+    "matchRule": "case-insensitive executable name (with or without .exe) or explicit * ? pattern; descendants only when an entry opts in",
+    "systemSet": {
+      "listVersion": 1,
+      "categories": [
+        "os",
+        "security",
+        "virtualization"
+      ],
+      "names": [
+        "system",
+        "system idle process",
+        "registry",
+        "memory compression",
+        "secure system",
+        "smss",
+        "csrss",
+        "wininit",
+        "winlogon",
+        "services",
+        "lsass",
+        "fontdrvhost",
+        "dwm",
+        "svchost",
+        "searchindexer",
+        "msmpeng",
+        "mpdefendercoreservice",
+        "nissrv",
+        "securityhealthservice",
+        "securityhealthsystray",
+        "mssense",
+        "sense",
+        "vmmem",
+        "vmmemwsl",
+        "vmmemcmfnd",
+        "vmcompute",
+        "vmwp",
+        "docker-desktop",
+        "docker-desktop-data"
+      ]
+    },
+    "counts": {
+      "inScopeGroups": 1,
+      "systemGroups": 0,
+      "outOfScopeGroups": 0
+    },
+    "fallbacks": [],
+    "statement": "OPEN SCOPE: names of all running software may appear in this report"
+  },
+  "outOfScope": {
+    "groups": 0,
+    "processes": 0,
+    "memMB": 0,
+    "cpuPctOfMachine": 0,
+    "inScope": {
+      "memMB": 2100,
+      "cpuPctOfMachine": null
+    },
+    "system": {
+      "memMB": 0,
+      "cpuPctOfMachine": 0
+    },
+    "measuredAt": "2026-01-15T10:00:00.000Z"
+  },
+  "containers": null,
+  "containersNote": "synthetic fixture: no daemon",
+  "flags": {
+    "hasChromeHeadless": false,
+    "hasDockerVmmem": false,
+    "hasWarp": false,
+    "hasOpenspec": false
+  },
+  "events": {
+    "window": {
+      "from": "2026-01-15T09:59:00.000Z",
+      "to": "2026-01-15T10:00:19.600Z",
+      "leadS": 60
+    },
+    "mode": "none-in-window",
+    "inWindow": {
+      "appHang": [],
+      "appCrash": [],
+      "resourceExhaustion": []
+    },
+    "history": {
+      "appHang": {
+        "count": 1,
+        "newest": "2026-01-14T09:00:00.000Z",
+        "countCapped": false
+      },
+      "appCrash": {
+        "count": 0,
+        "newest": null,
+        "countCapped": false
+      },
+      "resourceExhaustion": {
+        "count": 0,
+        "newest": null,
+        "countCapped": false
+      }
+    }
+  },
+  "wer": {
+    "archivePresent": true,
+    "searchedWindow": {
+      "from": "2026-01-15T10:00:00.000Z",
+      "to": "2026-01-15T10:00:19.600Z"
+    },
+    "inRun": {
+      "total": 0,
+      "apphang": 0
+    },
+    "history": {
+      "total": 12,
+      "apphang": 3,
+      "window": "all-time",
+      "capped": false
+    }
+  },
+  "docker": {
+    "present": false,
+    "containers": {
+      "total": 0,
+      "inScope": [],
+      "outOfScopeCount": 0
+    },
+    "statsOutOfScopeCount": 0,
+    "wsl": {
+      "present": false,
+      "distros": [],
+      "outOfScopeCount": 0
+    }
+  },
+  "disk": "C: 190.0/460.0GB free",
+  "errors": [],
+  "collection.failures": [],
+  "spawnProbes": [
+    {
+      "tSec": 2,
+      "at": "2026-01-15T10:00:02.000Z",
+      "ms": 158,
+      "usedPct": 66,
+      "hang": false,
+      "bundleMs": 8849,
+      "slipS": 0,
+      "plugged": true,
+      "batteryPct": null,
+      "weightMs": {
+        "spawn": 158,
+        "bundle": 8849
+      },
+      "degraded": [],
+      "committed": 52.4,
+      "pages": 43,
+      "cpuQ": 1,
+      "diskQ": 0.2,
+      "diskSec": 0.004,
+      "maxFreq": 100
+    },
+    {
+      "tSec": 11,
+      "at": "2026-01-15T10:00:11.000Z",
+      "ms": 204,
+      "usedPct": 67,
+      "hang": false,
+      "bundleMs": 210,
+      "slipS": 0.2,
+      "plugged": true,
+      "batteryPct": null,
+      "weightMs": {
+        "spawn": 204,
+        "bundle": 210
+      },
+      "degraded": [],
+      "committed": 55.1,
+      "pages": 54,
+      "cpuQ": 1,
+      "diskQ": 0.2,
+      "diskSec": 0.004,
+      "maxFreq": 100
+    },
+    {
+      "tSec": 14,
+      "at": "2026-01-15T10:00:14.000Z",
+      "ms": 211,
+      "usedPct": 68,
+      "hang": false,
+      "bundleMs": 210,
+      "slipS": 0.2,
+      "plugged": true,
+      "batteryPct": null,
+      "weightMs": {
+        "spawn": 211,
+        "bundle": 210
+      },
+      "degraded": [],
+      "committed": 58.9,
+      "pages": 66,
+      "cpuQ": 1,
+      "diskQ": 0.2,
+      "diskSec": 0.004,
+      "maxFreq": 100
+    },
+    {
+      "tSec": 17,
+      "at": "2026-01-15T10:00:17.000Z",
+      "ms": 169,
+      "usedPct": 69,
+      "hang": false,
+      "bundleMs": 210,
+      "slipS": 0.2,
+      "plugged": true,
+      "batteryPct": null,
+      "weightMs": {
+        "spawn": 169,
+        "bundle": 210
+      },
+      "degraded": [],
+      "committed": 61.7,
+      "pages": 61,
+      "cpuQ": 1,
+      "diskQ": 0.2,
+      "diskSec": 0.004,
+      "maxFreq": 100
+    },
+    {
+      "tSec": 19.5,
+      "at": "2026-01-15T10:00:19.500Z",
+      "ms": 166,
+      "usedPct": 70,
+      "hang": false,
+      "bundleMs": 210,
+      "slipS": 0.2,
+      "plugged": true,
+      "batteryPct": null,
+      "weightMs": {
+        "spawn": 166,
+        "bundle": 210
+      },
+      "degraded": [],
+      "committed": 64.8,
+      "pages": 60,
+      "cpuQ": 1,
+      "diskQ": 0.2,
+      "diskSec": 0.004,
+      "maxFreq": 100
+    }
+  ],
+  "samples": [
+    {
+      "at": "2026-01-15T10:00:01.000Z",
+      "tSec": 1,
+      "freeGB": 5.09,
+      "usedPct": 68.16
+    },
+    {
+      "at": "2026-01-15T10:00:02.000Z",
+      "tSec": 2,
+      "freeGB": 5.39,
+      "usedPct": 66.32
+    },
+    {
+      "at": "2026-01-15T10:00:03.000Z",
+      "tSec": 3,
+      "freeGB": 5.16,
+      "usedPct": 67.77
+    },
+    {
+      "at": "2026-01-15T10:00:04.000Z",
+      "tSec": 4,
+      "freeGB": 5.31,
+      "usedPct": 66.82
+    },
+    {
+      "at": "2026-01-15T10:00:05.000Z",
+      "tSec": 5,
+      "freeGB": 4.95,
+      "usedPct": 69.09
+    },
+    {
+      "at": "2026-01-15T10:00:15.000Z",
+      "tSec": 15,
+      "freeGB": 5.05,
+      "usedPct": 68.44
+    },
+    {
+      "at": "2026-01-15T10:00:16.000Z",
+      "tSec": 16,
+      "freeGB": 5.01,
+      "usedPct": 68.66
+    },
+    {
+      "at": "2026-01-15T10:00:17.000Z",
+      "tSec": 17,
+      "freeGB": 5.14,
+      "usedPct": 67.89
+    },
+    {
+      "at": "2026-01-15T10:00:18.000Z",
+      "tSec": 18,
+      "freeGB": 5.06,
+      "usedPct": 68.39
+    },
+    {
+      "at": "2026-01-15T10:00:19.000Z",
+      "tSec": 19,
+      "freeGB": 4.89,
+      "usedPct": 69.46
+    }
+  ],
+  "diagnosis": {
+    "engine": "diagnosis/1",
+    "hangDefinition": {
+      "probe": "process-start-latency",
+      "thresholdMs": 800,
+      "source": "default",
+      "intervalS": 3,
+      "cannotSee": [
+        "freezes shorter than the probe interval",
+        "UI input lag that does not delay process start"
+      ],
+      "inputResponse": {
+        "status": "not evaluated",
+        "reason": "report predates the input-response check"
+      }
+    },
+    "usable": {
+      "probes": 4,
+      "excluded": 1,
+      "minimum": 10,
+      "sustainedMin": 3
+    },
+    "excludedProbes": [
+      {
+        "ref": "spawnProbes[0]",
+        "reasons": [
+          "startup-window",
+          "observer-slow"
+        ]
+      }
+    ],
+    "calm": {
+      "definition": "usable, latency < 400 ms, not within 10 s of a hang",
+      "n": 4,
+      "means": {}
+    },
+    "proxyValidation": {
+      "status": "not validated",
+      "reason": "no hung user marks were recorded"
+    },
+    "marks": {
+      "joined": [],
+      "unmatched": []
+    },
+    "confidenceModel": {
+      "confirmationWeights": {
+        "user-mark": 1,
+        "os-not-responding": 1,
+        "workload-probe": 1,
+        "input-stall": 0.5,
+        "probe-only": 0
+      },
+      "weights": {
+        "C": 0.35,
+        "D": 0.25,
+        "O": 0.25,
+        "K": 0.15
+      },
+      "penaltyPerConfound": 0.1,
+      "penaltyMax": 0.3,
+      "cap": 0.95
+    },
+    "thresholds": {},
+    "probeAgreement": {
+      "status": "not evaluated",
+      "reason": "report predates the input-response check",
+      "toleranceMs": 2000,
+      "stallMs": null,
+      "probeIntervalS": null
+    },
+    "inputStallCorroboration": {
+      "status": "not evaluated",
+      "reason": "report predates the input-response check"
+    },
+    "hangs": [],
+    "rollup": [],
+    "finding": {
+      "class": "no-freeze-observed",
+      "sentence": "No freeze observed: 0 of 4 usable probes reached 800 ms (slowest 211 ms); 1 probe(s) excluded as observer-affected. This is not evidence that the machine never freezes.",
+      "strength": "insufficient (4 usable probes, minimum 10)",
+      "confirmations": {
+        "user-mark": 0,
+        "os-not-responding": 0,
+        "workload-probe": 0,
+        "probe-only": 0
+      },
+      "excludedHangs": 0,
+      "scope": "open scope",
+      "window": {
+        "start": "2026-01-15T10:00:00.000Z",
+        "end": "2026-01-15T10:00:19.600Z",
+        "observedS": 19.5
+      }
+    },
+    "observations": [
+      "4 usable probes of 5 (1 excluded: startup-window, observer-slow)",
+      "commit 55-65% across 4 usable probes"
+    ],
+    "hwConfigSignal": null,
+    "timeLost": null,
+    "eventsUsed": [],
+    "eventsHistory": [],
+    "suggestedActions": []
+  }
+}

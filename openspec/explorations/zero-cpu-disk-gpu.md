@@ -1,6 +1,6 @@
 # Zero-Order CPU / Disk / GPU Surface (Windows, no admin)
 
-Scope: what telltale v0.4 samples today vs what it must add. All collectors no-admin, bundled into the 1×/2s `probeBundle()` ps call unless noted.
+Scope: what hanger v0.4 samples today vs what it must add. All collectors no-admin, bundled into the 1×/2s `probeBundle()` ps call unless noted.
 
 ## A. CPU / Scheduler
 

@@ -1,4 +1,4 @@
-# Orders Framework — telltale evidence ladder
+# Orders Framework — hanger evidence ladder
 
 ## Zeroth order (no thresholds, no joins)
 

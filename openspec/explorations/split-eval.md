@@ -1,6 +1,6 @@
-# telltale.js split evaluation
+# hanger.js split evaluation
 
-Total: **1129 lines** (`tools/telltale/telltale.js`).
+Total: **1129 lines** (`tools/hanger/hanger.js`).
 
 ## Line counts (approx, by function)
 
@@ -23,9 +23,9 @@ Collectors ≈ 340; probes/loop ≈ 219; analysis/verdict/RCA ≈ 167; renderers
 
 Rule: split at 1200–1500. At 1129, file is under threshold. `trend` already extracted. No split now; re-evaluate when >1200 or next collector added. Below is the pre-approved map for that point.
 
-## If-split module map (no build, no deps, `node tools/telltale/telltale.js` keeps working)
+## If-split module map (no build, no deps, `node tools/hanger/hanger.js` keeps working)
 
-`telltale.js` stays as CLI + loop + `require()` glue (~300 lines). CommonJS only, relative paths, Windows-safe `path.join(__dirname,…)`.
+`hanger.js` stays as CLI + loop + `require()` glue (~300 lines). CommonJS only, relative paths, Windows-safe `path.join(__dirname,…)`.
 
 - `lib/exec.js` ← `sh/ps/sleep/cleanOut/num/anon` (~45 lines). No deps. Exports `{sh,ps,sleep,num}`.
 - `lib/config.js` ← args/CFG/getArg/hasFlag/TH/HIDE/FOCUS/PRESET/ONLY/EXTRAS/OUTDIR/ANON (~65 lines). Deps: none.
@@ -33,12 +33,12 @@ Rule: split at 1200–1500. At 1129, file is under threshold. `trend` already ex
 - `lib/analysis.js` ← aggregates/hang-ctx/frozen/MTTR/verdict/RCA/calm/WER pure fns (~170 lines). Deps: none (takes data + TH).
 - `lib/render.js` ← banner/sparkline/stateCard/JSON/MD/HTML/console (~125 lines). Deps: none.
 - `lib/modes.js` ← watchMode/checkStub/printHelp (~140 lines). Deps: `exec/collectors/render`.
-- Direction: `telltale.js → modes/collectors/analysis/render → config/exec`. Never reverse; no cycles.
+- Direction: `hanger.js → modes/collectors/analysis/render → config/exec`. Never reverse; no cycles.
 
 Order smallest-first, each with smoke check:
-1. `exec.js` — `node -e "require('./tools/telltale/lib/exec.js')"` loads.
-2. `config.js` — `node tools/telltale/telltale.js --help` identical output.
-3. `render.js` — `node tools/telltale/telltale.js check-stub` passes as before.
+1. `exec.js` — `node -e "require('./tools/hanger/lib/exec.js')"` loads.
+2. `config.js` — `node tools/hanger/hanger.js --help` identical output.
+3. `render.js` — `node tools/hanger/hanger.js check-stub` passes as before.
 4. `analysis.js` — unit-check verdict on fixture JSON (2 cases).
 5. `collectors.js` — `check-stub` green count unchanged.
 6. `modes.js` — `watch --watch-secs 6` writes JSONL; `trend` unchanged.

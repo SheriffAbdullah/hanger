@@ -45,7 +45,7 @@ The system SHALL automatically detect an input-response stall, meaning input occ
 - **THEN** a stall sample is recorded with the timeout flag set and the timeout as its latency lower bound
 
 #### Scenario: Thresholds are configurable and recorded
-- **GIVEN** `telltale.config.json` sets the stall threshold to 400 ms and the recent-input window to 1500 ms
+- **GIVEN** `hanger.config.json` sets the stall threshold to 400 ms and the recent-input window to 1500 ms
 - **WHEN** a run completes
 - **THEN** the report records both values with source `config`, and a measurement of 350 ms is not a stall sample
 

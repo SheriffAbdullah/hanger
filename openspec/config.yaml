@@ -2,7 +2,7 @@ schema: spec-driven
 
 context: |
   Tech stack: Node.js (Windows-first, no deps, single-file CLI)
-  Product: Telltale — hang-evidence surface. Numbers + reasons + RCA, never verdicts.
+  Product: Hanger — hang-evidence surface. Numbers + reasons + RCA, never verdicts.
   Evidence packs: JSON (truth) + MD/HTML (views) under reports/.
   Conventions: see PRODUCT_MANIFESTO.md, METRIC_REGISTRY.md, USER_PROBLEM.md.
 

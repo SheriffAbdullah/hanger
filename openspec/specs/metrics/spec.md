@@ -1,7 +1,7 @@
 # metrics Specification
 
 ## Purpose
-Define the telltale metric contract: first-order OS and app/process sets, hang events, and self-load accounting. Every value emits `{id, value, unit, windowS, n, threshold?, conf?}`; first-order is never overwritten and thresholds are recorded per report.
+Define the hanger metric contract: first-order OS and app/process sets, hang events, and self-load accounting. Every value emits `{id, value, unit, windowS, n, threshold?, conf?}`; first-order is never overwritten and thresholds are recorded per report.
 
 ## Requirements
 

@@ -10,7 +10,7 @@ The system SHALL store every numeric value of the detector (durations, latencies
 
 #### Scenario: Validator rejects a bare number
 - **GIVEN** a report whose `inputStall.episodes[0].durationMs` is a bare number
-- **WHEN** `node tools/telltale/test/helpers/validate-report.js` checks it
+- **WHEN** `node tools/hanger/test/helpers/validate-report.js` checks it
 - **THEN** it exits non-zero and names the field
 
 #### Scenario: No data is null with a reason

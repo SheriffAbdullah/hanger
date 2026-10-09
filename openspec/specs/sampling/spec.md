@@ -1,7 +1,7 @@
 # sampling Specification
 
 ## Purpose
-Defines how Telltale schedules, budgets, and records its own observation, so that collection stays cheap and honest on a machine that is already starved. It covers cadence and gaps, observer cost, capture length, input capture, failures, number parsing, and stored precision.
+Defines how Hanger schedules, budgets, and records its own observation, so that collection stays cheap and honest on a machine that is already starved. It covers cadence and gaps, observer cost, capture length, input capture, failures, number parsing, and stored precision.
 
 ## Requirements
 
@@ -21,7 +21,7 @@ The system SHALL collect the continuous-tier signal set without launching any pr
 
 #### Scenario: Cadence target on a loaded machine
 - **GIVEN** the reference laptop with commit at or above 85% throughout
-- **WHEN** `node tools/telltale/telltale.js trace --duration 120` completes
+- **WHEN** `node tools/hanger/hanger.js trace --duration 120` completes
 - **THEN** the report's achieved median continuous interval is at most 2.5 s
 
 ### Requirement: Unobserved intervals are recorded
@@ -148,5 +148,5 @@ The system SHALL round every stored value at store time to the precision declare
 - **THEN** the stored value is 64.7 with precision 0.1
 
 #### Scenario: No over-precise values in a report
-- **WHEN** `node tools/telltale/test/helpers/validate-report.js` checks any report produced by this change
+- **WHEN** `node tools/hanger/test/helpers/validate-report.js` checks any report produced by this change
 - **THEN** it finds no numeric value with more decimal places than its declared precision

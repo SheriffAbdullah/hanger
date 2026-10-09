@@ -1,7 +1,7 @@
 # tracking Specification
 
 ## Purpose
-User-started usage-pattern tracking for Telltale: a light continuous `watch` log plus a deep `trace` mode for hang incidents. Every sample carries human process names, power truth, and both hang-linked and calm-linked evidence. Numbers + reasons + RCA, never verdicts.
+User-started usage-pattern tracking for Hanger: a light continuous `watch` log plus a deep `trace` mode for hang incidents. Every sample carries human process names, power truth, and both hang-linked and calm-linked evidence. Numbers + reasons + RCA, never verdicts.
 
 ## Requirements
 

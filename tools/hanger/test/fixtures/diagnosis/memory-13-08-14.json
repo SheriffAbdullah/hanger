@@ -1,0 +1,5316 @@
+{
+  "tool": "hanger v0.6",
+  "schema": "hanger-json/2",
+  "schemaStatus": "frozen",
+  "registry": "registry v0.4",
+  "run": {
+    "status": "complete",
+    "endReason": null,
+    "startedAt": "2026-01-15T10:00:00.000Z",
+    "endedAt": "2026-01-15T10:01:08.100Z",
+    "utcOffsetMin": 0,
+    "stream": "hanger-memory-13-08-14.jsonl"
+  },
+  "window": {
+    "nominalS": 60,
+    "spanS": 68,
+    "unobservedS": 0,
+    "observedS": 68,
+    "probesExpected": 30,
+    "probesObserved": 30,
+    "samplesExpected": 60,
+    "samplesObserved": 68
+  },
+  "settings": {
+    "duration": {
+      "value": 60,
+      "source": "flag"
+    },
+    "interval": {
+      "value": 1000,
+      "source": "config"
+    },
+    "anonymize": {
+      "value": true,
+      "source": "config"
+    },
+    "scope": {
+      "value": {
+        "mode": "open"
+      },
+      "source": "default"
+    },
+    "thresholds": {
+      "hang": {
+        "value": 800,
+        "source": "default"
+      },
+      "commit": {
+        "value": 85,
+        "source": "default"
+      },
+      "minFreeGB": {
+        "value": 2,
+        "source": "default"
+      },
+      "pages": {
+        "value": 500,
+        "source": "default"
+      },
+      "queue": {
+        "value": 4,
+        "source": "default"
+      },
+      "diskSec": {
+        "value": 0.025,
+        "source": "default"
+      },
+      "ramHigh": {
+        "value": 85,
+        "source": "default"
+      },
+      "severeCommit": {
+        "value": 90,
+        "source": "default"
+      },
+      "severeFree": {
+        "value": 1.5,
+        "source": "default"
+      },
+      "defender": {
+        "value": 20,
+        "source": "default"
+      },
+      "recovery": {
+        "value": 400,
+        "source": "default"
+      }
+    }
+  },
+  "observer": {
+    "pidCount": 3,
+    "wsMB": 96,
+    "wsMBAvg": 90,
+    "cpuPctAvg": null,
+    "note": "synthetic fixture"
+  },
+  "tier": "user",
+  "startedAt": "2026-01-15T10:00:00.000Z",
+  "hostname": "<host>",
+  "anonymized": true,
+  "machine": {
+    "totalGB": 16,
+    "cpus": 8,
+    "cpuModel": "Synthetic CPU 8-thread",
+    "uptimeMin": 1234.5
+  },
+  "systemProfile": {
+    "collectedAt": "2026-01-15T10:00:00.000Z",
+    "collectionMs": 1200,
+    "tier": "user",
+    "workloadConfigRef": null,
+    "groupStatus": {},
+    "identity": {
+      "hostname": {
+        "value": "<host>",
+        "source": "os",
+        "tier": "user",
+        "asOf": "2026-01-15T10:00:00.000Z"
+      },
+      "manufacturer": {
+        "value": "Synthetic Corp",
+        "source": "firmware-system-info",
+        "tier": "user",
+        "asOf": "2026-01-15T10:00:00.000Z"
+      },
+      "model": {
+        "value": "SX-1 Laptop",
+        "source": "firmware-system-info",
+        "tier": "user",
+        "asOf": "2026-01-15T10:00:00.000Z"
+      },
+      "serial": {
+        "value": "SYN0000001",
+        "source": "firmware-bios",
+        "tier": "user",
+        "asOf": "2026-01-15T10:00:00.000Z"
+      }
+    },
+    "processor": {
+      "model": {
+        "value": "Synthetic CPU 8-thread",
+        "source": "cpu-info",
+        "tier": "user",
+        "asOf": "2026-01-15T10:00:00.000Z"
+      },
+      "physicalCores": {
+        "value": 4,
+        "unit": "cores",
+        "source": "cpu-info",
+        "tier": "user",
+        "asOf": "2026-01-15T10:00:00.000Z"
+      },
+      "logicalProcessors": {
+        "value": 8,
+        "unit": "threads",
+        "source": "cpu-info",
+        "tier": "user",
+        "asOf": "2026-01-15T10:00:00.000Z"
+      },
+      "baseClockMHz": {
+        "value": 2400,
+        "unit": "MHz",
+        "source": "cpu-info",
+        "tier": "user",
+        "asOf": "2026-01-15T10:00:00.000Z"
+      },
+      "maxClockMHz": {
+        "value": null,
+        "unit": "MHz",
+        "source": "cpu-info",
+        "tier": "user",
+        "asOf": "2026-01-15T10:00:00.000Z",
+        "unavailableReason": "max turbo clock not exposed at user tier"
+      }
+    },
+    "memory": {
+      "installedGB": {
+        "value": 16,
+        "unit": "GB",
+        "source": "physical-memory-info",
+        "tier": "user",
+        "asOf": "2026-01-15T10:00:00.000Z"
+      },
+      "modules": {
+        "value": [
+          {
+            "slot": "Slot 1",
+            "sizeGB": 16,
+            "speedMTs": 3200,
+            "formFactor": "SODIMM"
+          }
+        ],
+        "source": "physical-memory-info",
+        "tier": "user",
+        "asOf": "2026-01-15T10:00:00.000Z"
+      },
+      "slotsUsed": {
+        "value": 1,
+        "source": "physical-memory-info",
+        "tier": "user",
+        "asOf": "2026-01-15T10:00:00.000Z"
+      },
+      "slotsTotal": {
+        "value": 2,
+        "source": "physical-memory-info",
+        "tier": "user",
+        "asOf": "2026-01-15T10:00:00.000Z"
+      }
+    },
+    "storage": {
+      "disks": {
+        "value": [
+          {
+            "model": "Synthetic NVMe 512",
+            "mediaType": "SSD",
+            "bus": "NVMe",
+            "capacityGB": 512,
+            "health": "Healthy"
+          }
+        ],
+        "source": "physical-disk-info",
+        "tier": "user",
+        "asOf": "2026-01-15T10:00:00.000Z"
+      },
+      "systemVolume": {
+        "value": {
+          "volume": "C:",
+          "freeGB": 190,
+          "totalGB": 460
+        },
+        "unit": "GB",
+        "source": "logical-disk-info",
+        "tier": "user",
+        "asOf": "2026-01-15T10:00:00.000Z"
+      }
+    },
+    "firmware": {
+      "biosVendor": {
+        "value": "Synthetic",
+        "source": "firmware-bios",
+        "tier": "user",
+        "asOf": "2026-01-15T10:00:00.000Z"
+      },
+      "biosVersion": {
+        "value": "SYN 1.02",
+        "source": "firmware-bios",
+        "tier": "user",
+        "asOf": "2026-01-15T10:00:00.000Z"
+      },
+      "biosDate": {
+        "value": "2025-06-01",
+        "source": "firmware-bios",
+        "tier": "user",
+        "asOf": "2026-01-15T10:00:00.000Z"
+      }
+    },
+    "os": {
+      "edition": {
+        "value": "Windows 11 Pro",
+        "source": "os-info",
+        "tier": "user",
+        "asOf": "2026-01-15T10:00:00.000Z"
+      },
+      "version": {
+        "value": "10.0.26200",
+        "source": "os-info",
+        "tier": "user",
+        "asOf": "2026-01-15T10:00:00.000Z"
+      },
+      "build": {
+        "value": "26200",
+        "source": "os-info",
+        "tier": "user",
+        "asOf": "2026-01-15T10:00:00.000Z"
+      },
+      "uptimeMin": {
+        "value": 1234,
+        "unit": "min",
+        "source": "os-info",
+        "tier": "user",
+        "asOf": "2026-01-15T10:00:00.000Z"
+      }
+    },
+    "power": {
+      "planName": {
+        "value": "Balanced",
+        "source": "powercfg",
+        "tier": "user",
+        "asOf": "2026-01-15T10:00:00.000Z"
+      },
+      "powerMode": {
+        "value": "Balanced",
+        "source": "powercfg",
+        "tier": "user",
+        "asOf": "2026-01-15T10:00:00.000Z"
+      },
+      "batteryDesignWh": {
+        "value": null,
+        "unit": "Wh",
+        "source": "battery-static-data",
+        "tier": "user",
+        "asOf": "2026-01-15T10:00:00.000Z",
+        "unavailableReason": "requires admin"
+      }
+    },
+    "virtualMemory": {
+      "pagefiles": {
+        "value": [
+          {
+            "location": "C:pagefile.sys",
+            "currentMB": 2048,
+            "initialMB": 4096,
+            "maxMB": 8192
+          }
+        ],
+        "source": "pagefile-info",
+        "tier": "user",
+        "asOf": "2026-01-15T10:00:00.000Z"
+      },
+      "systemManaged": {
+        "value": false,
+        "source": "pagefile-info",
+        "tier": "user",
+        "asOf": "2026-01-15T10:00:00.000Z"
+      },
+      "commitLimitGB": {
+        "value": 24,
+        "unit": "GB",
+        "source": "os-info",
+        "tier": "user",
+        "asOf": "2026-01-15T10:00:00.000Z"
+      }
+    },
+    "security": {
+      "products": {
+        "value": [
+          {
+            "name": "Synthetic Defender",
+            "state": "enabled"
+          }
+        ],
+        "source": "security-center",
+        "tier": "user",
+        "asOf": "2026-01-15T10:00:00.000Z"
+      },
+      "domainJoined": {
+        "value": false,
+        "source": "domain-join-info",
+        "tier": "user",
+        "asOf": "2026-01-15T10:00:00.000Z"
+      }
+    }
+  },
+  "power": {
+    "scheme": "Power Scheme GUID: 00000000-0000-0000-0000-000000000000  (Balanced)",
+    "plugged": false,
+    "batteryPct": 58
+  },
+  "admin": {
+    "tier": "user",
+    "skipped": "process not elevated; re-run as admin for thermal/SMART/Sysmon/WER-sys/SeDebug"
+  },
+  "wprEtl": null,
+  "gpu": {
+    "engines": {
+      "unavailable": "synthetic fixture: no GPU data"
+    },
+    "mem": {
+      "unavailable": "synthetic fixture: no GPU data"
+    },
+    "nvidia": {
+      "present": false,
+      "reason": "synthetic fixture"
+    },
+    "bundleTotalNote": "synthetic fixture"
+  },
+  "summary": {
+    "windowBasis": "observed",
+    "avgUsedPct": 67.9,
+    "minFreeGB": 4.8,
+    "committedPeak": 92,
+    "pagesPeak": 1060,
+    "pagesAvg": 235,
+    "diskSecPeak": 0.004,
+    "diskQPeak": 0.2,
+    "maxFreqMin": 100,
+    "loopP50ms": 1.1,
+    "loopP95ms": 2.5,
+    "loopMaxMs": 2.5,
+    "spawnP50ms": 181,
+    "spawnP95ms": 2300,
+    "spawnMaxMs": 2600,
+    "hangThresholdMs": 800,
+    "hangEventCount": 5,
+    "hangRatePerMin": 4.41,
+    "pctFrozenFull": 14.71,
+    "pctFrozenExcess": 8.82,
+    "mttrMs": 127,
+    "mttrN": 5,
+    "meanFreezeS": 2,
+    "secsOverRamHigh": 0,
+    "secsOverRamHighBasis": "time above 85% RAM, each sample weighted by its measured spacing",
+    "calmSharePct": 83.3,
+    "recoveryThresholdMs": 400,
+    "granularityMs": 1000,
+    "totalSamples": 68,
+    "totalSpawnProbes": 30,
+    "thresholds": {
+      "hang": 800,
+      "commit": 85,
+      "minFreeGB": 2,
+      "pages": 500,
+      "queue": 4,
+      "diskSec": 0.025,
+      "ramHigh": 85,
+      "severeCommit": 90,
+      "severeFree": 1.5,
+      "defender": 20,
+      "recovery": 400,
+      "sources": {
+        "hang": "NN/g response limits [cited]",
+        "commit": "MS perf troubleshooting [derived]"
+      },
+      "ideal": "TBD (orders-framework ideal table)",
+      "status": "provisional"
+    },
+    "nulls": {},
+    "committedStart": 61.85,
+    "committedEnd": 61.61,
+    "pagesStart": 52,
+    "pagesEnd": 81,
+    "availMB": 4096,
+    "cpuQueue": 1,
+    "loopN": 5,
+    "bundleOkProbes": "30/30",
+    "loopConfoundNote": "synthetic fixture",
+    "loopNote": null,
+    "warpSeenMB": null,
+    "openspecSeenMB": null,
+    "unresolvedNames": 0,
+    "werArchive": {
+      "total": 12,
+      "apphang": 3
+    },
+    "hangCount": 0
+  },
+  "hangEvents": [
+    {
+      "tSec": 30,
+      "at": "2026-01-15T10:00:30.000Z",
+      "ms": 1400,
+      "usedPct": 93,
+      "hang": true,
+      "bundleMs": 180,
+      "slipS": 0,
+      "plugged": false,
+      "batteryPct": 58,
+      "weightMs": {
+        "spawn": 1400,
+        "bundle": 180
+      },
+      "degraded": [],
+      "committed": 88,
+      "pages": 900,
+      "cpuQ": 3,
+      "diskQ": 0.2,
+      "diskSec": 0.004,
+      "maxFreq": 100,
+      "culpritsAtHang": [
+        {
+          "name": "node.exe",
+          "totalMB": 6200,
+          "n": 14,
+          "pids": [
+            1100,
+            1104,
+            1108
+          ]
+        }
+      ],
+      "availMB": 280,
+      "label": "HANG 1400ms at 10:00:30 (t+30s, RAM 93%)",
+      "context": {
+        "windowS": 10,
+        "basis": "wall-clock offsets",
+        "ramPreAvg": 67.5,
+        "ramPostAvg": 68.1,
+        "commitPreAvg": 75,
+        "commitPostAvg": 90.5,
+        "pagesPreAvg": 120,
+        "pagesPostAvg": 960,
+        "cpuQPreAvg": 1,
+        "cpuQPostAvg": 3,
+        "diskQPreAvg": 0.2,
+        "diskQPostAvg": 0.2,
+        "gpuPreAvg": null,
+        "gpuPostAvg": null,
+        "culpritDelta": null,
+        "culpritDeltaNote": "pre-hang culprits not sampled (snapshot is post-measure by design); see culpritsAtHang",
+        "recoveryMs": 127,
+        "recoveryGapS": 31
+      }
+    },
+    {
+      "tSec": 35,
+      "at": "2026-01-15T10:00:35.000Z",
+      "ms": 1700,
+      "usedPct": 93,
+      "hang": true,
+      "bundleMs": 180,
+      "slipS": 0,
+      "plugged": false,
+      "batteryPct": 58,
+      "weightMs": {
+        "spawn": 1700,
+        "bundle": 180
+      },
+      "degraded": [],
+      "committed": 90,
+      "pages": 940,
+      "cpuQ": 3,
+      "diskQ": 0.2,
+      "diskSec": 0.004,
+      "maxFreq": 100,
+      "culpritsAtHang": [
+        {
+          "name": "node.exe",
+          "totalMB": 6200,
+          "n": 14,
+          "pids": [
+            1100,
+            1104,
+            1108
+          ]
+        }
+      ],
+      "availMB": 295,
+      "label": "HANG 1700ms at 10:00:35 (t+35s, RAM 93%)",
+      "context": {
+        "windowS": 10,
+        "basis": "wall-clock offsets",
+        "ramPreAvg": 68.1,
+        "ramPostAvg": 67.4,
+        "commitPreAvg": 84,
+        "commitPostAvg": 91.5,
+        "pagesPreAvg": 510,
+        "pagesPostAvg": 1000,
+        "cpuQPreAvg": 2,
+        "cpuQPostAvg": 3,
+        "diskQPreAvg": 0.2,
+        "diskQPostAvg": 0.2,
+        "gpuPreAvg": null,
+        "gpuPostAvg": null,
+        "culpritDelta": null,
+        "culpritDeltaNote": "pre-hang culprits not sampled (snapshot is post-measure by design); see culpritsAtHang",
+        "recoveryMs": 127,
+        "recoveryGapS": 26
+      }
+    },
+    {
+      "tSec": 40,
+      "at": "2026-01-15T10:00:40.000Z",
+      "ms": 2000,
+      "usedPct": 93,
+      "hang": true,
+      "bundleMs": 180,
+      "slipS": 0,
+      "plugged": false,
+      "batteryPct": 58,
+      "weightMs": {
+        "spawn": 2000,
+        "bundle": 180
+      },
+      "degraded": [],
+      "committed": 91,
+      "pages": 980,
+      "cpuQ": 3,
+      "diskQ": 0.2,
+      "diskSec": 0.004,
+      "maxFreq": 100,
+      "culpritsAtHang": [
+        {
+          "name": "node.exe",
+          "totalMB": 6200,
+          "n": 14,
+          "pids": [
+            1100,
+            1104,
+            1108
+          ]
+        }
+      ],
+      "availMB": 310,
+      "label": "HANG 2000ms at 10:00:40 (t+40s, RAM 93%)",
+      "context": {
+        "windowS": 10,
+        "basis": "wall-clock offsets",
+        "ramPreAvg": 68.3,
+        "ramPostAvg": 67.9,
+        "commitPreAvg": 89,
+        "commitPostAvg": 90.5,
+        "pagesPreAvg": 920,
+        "pagesPostAvg": 1040,
+        "cpuQPreAvg": 3,
+        "cpuQPostAvg": 3,
+        "diskQPreAvg": 0.2,
+        "diskQPostAvg": 0.2,
+        "gpuPreAvg": null,
+        "gpuPostAvg": null,
+        "culpritDelta": null,
+        "culpritDeltaNote": "pre-hang culprits not sampled (snapshot is post-measure by design); see culpritsAtHang",
+        "recoveryMs": 127,
+        "recoveryGapS": 21
+      }
+    },
+    {
+      "tSec": 45,
+      "at": "2026-01-15T10:00:45.000Z",
+      "ms": 2300,
+      "usedPct": 93,
+      "hang": true,
+      "bundleMs": 180,
+      "slipS": 0,
+      "plugged": false,
+      "batteryPct": 58,
+      "weightMs": {
+        "spawn": 2300,
+        "bundle": 180
+      },
+      "degraded": [],
+      "committed": 92,
+      "pages": 1020,
+      "cpuQ": 3,
+      "diskQ": 0.2,
+      "diskSec": 0.004,
+      "maxFreq": 100,
+      "culpritsAtHang": [
+        {
+          "name": "node.exe",
+          "totalMB": 6200,
+          "n": 14,
+          "pids": [
+            1100,
+            1104,
+            1108
+          ]
+        }
+      ],
+      "availMB": 325,
+      "label": "HANG 2300ms at 10:00:45 (t+45s, RAM 93%)",
+      "context": {
+        "windowS": 10,
+        "basis": "wall-clock offsets",
+        "ramPreAvg": 67.5,
+        "ramPostAvg": 68.1,
+        "commitPreAvg": 90.5,
+        "commitPostAvg": 89,
+        "pagesPreAvg": 960,
+        "pagesPostAvg": 1060,
+        "cpuQPreAvg": 3,
+        "cpuQPostAvg": 3,
+        "diskQPreAvg": 0.2,
+        "diskQPostAvg": 0.2,
+        "gpuPreAvg": null,
+        "gpuPostAvg": null,
+        "culpritDelta": null,
+        "culpritDeltaNote": "pre-hang culprits not sampled (snapshot is post-measure by design); see culpritsAtHang",
+        "recoveryMs": 127,
+        "recoveryGapS": 16
+      }
+    },
+    {
+      "tSec": 50,
+      "at": "2026-01-15T10:00:50.000Z",
+      "ms": 2600,
+      "usedPct": 93,
+      "hang": true,
+      "bundleMs": 180,
+      "slipS": 0,
+      "plugged": false,
+      "batteryPct": 58,
+      "weightMs": {
+        "spawn": 2600,
+        "bundle": 180
+      },
+      "degraded": [],
+      "committed": 89,
+      "pages": 1060,
+      "cpuQ": 3,
+      "diskQ": 0.2,
+      "diskSec": 0.004,
+      "maxFreq": 100,
+      "culpritsAtHang": [
+        {
+          "name": "node.exe",
+          "totalMB": 6200,
+          "n": 14,
+          "pids": [
+            1100,
+            1104,
+            1108
+          ]
+        }
+      ],
+      "availMB": 340,
+      "label": "HANG 2600ms at 10:00:50 (t+50s, RAM 93%)",
+      "context": {
+        "windowS": 10,
+        "basis": "wall-clock offsets",
+        "ramPreAvg": 67.7,
+        "ramPostAvg": 67.8,
+        "commitPreAvg": 91.5,
+        "commitPostAvg": null,
+        "pagesPreAvg": 1000,
+        "pagesPostAvg": null,
+        "cpuQPreAvg": 3,
+        "cpuQPostAvg": null,
+        "diskQPreAvg": 0.2,
+        "diskQPostAvg": null,
+        "gpuPreAvg": null,
+        "gpuPostAvg": null,
+        "culpritDelta": null,
+        "culpritDeltaNote": "pre-hang culprits not sampled (snapshot is post-measure by design); see culpritsAtHang",
+        "recoveryMs": 127,
+        "recoveryGapS": 11
+      }
+    }
+  ],
+  "userMarks": [
+    {
+      "tSec": 30.8,
+      "at": "2026-01-15T10:00:30.800Z",
+      "kind": "hung",
+      "note": "terminal froze"
+    },
+    {
+      "tSec": 40.5,
+      "at": "2026-01-15T10:00:40.500Z",
+      "kind": "hung",
+      "note": "editor froze"
+    }
+  ],
+  "culprits": [
+    {
+      "name": "node.exe",
+      "friendly": "Node.js runtime",
+      "detail": "Node.js runtime",
+      "totalMB": 6349,
+      "instances": 14,
+      "source": "known"
+    }
+  ],
+  "privateTop": [
+    {
+      "name": "node.exe",
+      "privateMB": 6349,
+      "instances": 14
+    }
+  ],
+  "topProcesses": [
+    {
+      "name": "node.exe",
+      "pid": 1100,
+      "memMB": 6349
+    }
+  ],
+  "scope": {
+    "mode": "open",
+    "source": "none",
+    "path": null,
+    "sha256": null,
+    "entries": [],
+    "matchRule": "case-insensitive executable name (with or without .exe) or explicit * ? pattern; descendants only when an entry opts in",
+    "systemSet": {
+      "listVersion": 1,
+      "categories": [
+        "os",
+        "security",
+        "virtualization"
+      ],
+      "names": [
+        "system",
+        "system idle process",
+        "registry",
+        "memory compression",
+        "secure system",
+        "smss",
+        "csrss",
+        "wininit",
+        "winlogon",
+        "services",
+        "lsass",
+        "fontdrvhost",
+        "dwm",
+        "svchost",
+        "searchindexer",
+        "msmpeng",
+        "mpdefendercoreservice",
+        "nissrv",
+        "securityhealthservice",
+        "securityhealthsystray",
+        "mssense",
+        "sense",
+        "vmmem",
+        "vmmemwsl",
+        "vmmemcmfnd",
+        "vmcompute",
+        "vmwp",
+        "docker-desktop",
+        "docker-desktop-data"
+      ]
+    },
+    "counts": {
+      "inScopeGroups": 1,
+      "systemGroups": 0,
+      "outOfScopeGroups": 0
+    },
+    "fallbacks": [],
+    "statement": "OPEN SCOPE: names of all running software may appear in this report"
+  },
+  "outOfScope": {
+    "groups": 0,
+    "processes": 0,
+    "memMB": 0,
+    "cpuPctOfMachine": 0,
+    "inScope": {
+      "memMB": 6349,
+      "cpuPctOfMachine": null
+    },
+    "system": {
+      "memMB": 0,
+      "cpuPctOfMachine": 0
+    },
+    "measuredAt": "2026-01-15T10:00:00.000Z"
+  },
+  "containers": null,
+  "containersNote": "synthetic fixture: no daemon",
+  "flags": {
+    "hasChromeHeadless": false,
+    "hasDockerVmmem": false,
+    "hasWarp": false,
+    "hasOpenspec": false
+  },
+  "events": {
+    "window": {
+      "from": "2026-01-15T09:59:00.000Z",
+      "to": "2026-01-15T10:01:08.100Z",
+      "leadS": 60
+    },
+    "mode": "none-in-window",
+    "inWindow": {
+      "appHang": [],
+      "appCrash": [],
+      "resourceExhaustion": []
+    },
+    "history": {
+      "appHang": {
+        "count": 1,
+        "newest": "2026-01-14T09:00:00.000Z",
+        "countCapped": false
+      },
+      "appCrash": {
+        "count": 0,
+        "newest": null,
+        "countCapped": false
+      },
+      "resourceExhaustion": {
+        "count": 0,
+        "newest": null,
+        "countCapped": false
+      }
+    }
+  },
+  "wer": {
+    "archivePresent": true,
+    "searchedWindow": {
+      "from": "2026-01-15T10:00:00.000Z",
+      "to": "2026-01-15T10:01:08.100Z"
+    },
+    "inRun": {
+      "total": 0,
+      "apphang": 0
+    },
+    "history": {
+      "total": 12,
+      "apphang": 3,
+      "window": "all-time",
+      "capped": false
+    }
+  },
+  "docker": {
+    "present": false,
+    "containers": {
+      "total": 0,
+      "inScope": [],
+      "outOfScopeCount": 0
+    },
+    "statsOutOfScopeCount": 0,
+    "wsl": {
+      "present": false,
+      "distros": [],
+      "outOfScopeCount": 0
+    }
+  },
+  "disk": "C: 190.0/460.0GB free",
+  "errors": [],
+  "collection.failures": [],
+  "spawnProbes": [
+    {
+      "tSec": 2,
+      "at": "2026-01-15T10:00:02.000Z",
+      "ms": 178,
+      "usedPct": 66.53,
+      "hang": false,
+      "bundleMs": 180,
+      "slipS": 0,
+      "plugged": false,
+      "batteryPct": 58,
+      "weightMs": {
+        "spawn": 178,
+        "bundle": 180
+      },
+      "degraded": [],
+      "committed": 61.85,
+      "pages": 52,
+      "cpuQ": 1,
+      "diskQ": 0.2,
+      "diskSec": 0.004,
+      "maxFreq": 100,
+      "availMB": 5200
+    },
+    {
+      "tSec": 4,
+      "at": "2026-01-15T10:00:04.000Z",
+      "ms": 135,
+      "usedPct": 67.23,
+      "hang": false,
+      "bundleMs": 180,
+      "slipS": 0,
+      "plugged": false,
+      "batteryPct": 58,
+      "weightMs": {
+        "spawn": 135,
+        "bundle": 180
+      },
+      "degraded": [],
+      "committed": 63.18,
+      "pages": 86,
+      "cpuQ": 1,
+      "diskQ": 0.2,
+      "diskSec": 0.004,
+      "maxFreq": 100,
+      "availMB": 5200
+    },
+    {
+      "tSec": 6,
+      "at": "2026-01-15T10:00:06.000Z",
+      "ms": 159,
+      "usedPct": 66.83,
+      "hang": false,
+      "bundleMs": 180,
+      "slipS": 0,
+      "plugged": false,
+      "batteryPct": 58,
+      "weightMs": {
+        "spawn": 159,
+        "bundle": 180
+      },
+      "degraded": [],
+      "committed": 61.52,
+      "pages": 96,
+      "cpuQ": 1,
+      "diskQ": 0.2,
+      "diskSec": 0.004,
+      "maxFreq": 100,
+      "availMB": 5200
+    },
+    {
+      "tSec": 8,
+      "at": "2026-01-15T10:00:08.000Z",
+      "ms": 142,
+      "usedPct": 68.36,
+      "hang": false,
+      "bundleMs": 180,
+      "slipS": 0,
+      "plugged": false,
+      "batteryPct": 58,
+      "weightMs": {
+        "spawn": 142,
+        "bundle": 180
+      },
+      "degraded": [],
+      "committed": 60.68,
+      "pages": 84,
+      "cpuQ": 1,
+      "diskQ": 0.2,
+      "diskSec": 0.004,
+      "maxFreq": 100,
+      "availMB": 5200
+    },
+    {
+      "tSec": 10,
+      "at": "2026-01-15T10:00:10.000Z",
+      "ms": 163,
+      "usedPct": 68.39,
+      "hang": false,
+      "bundleMs": 180,
+      "slipS": 0,
+      "plugged": false,
+      "batteryPct": 58,
+      "weightMs": {
+        "spawn": 163,
+        "bundle": 180
+      },
+      "degraded": [],
+      "committed": 60.07,
+      "pages": 98,
+      "cpuQ": 1,
+      "diskQ": 0.2,
+      "diskSec": 0.004,
+      "maxFreq": 100,
+      "availMB": 5200
+    },
+    {
+      "tSec": 11,
+      "at": "2026-01-15T10:00:11.000Z",
+      "ms": 193,
+      "usedPct": 66.73,
+      "hang": false,
+      "bundleMs": 180,
+      "slipS": 0,
+      "plugged": false,
+      "batteryPct": 58,
+      "weightMs": {
+        "spawn": 193,
+        "bundle": 180
+      },
+      "degraded": [],
+      "committed": 60.67,
+      "pages": 108,
+      "cpuQ": 1,
+      "diskQ": 0.2,
+      "diskSec": 0.004,
+      "maxFreq": 100,
+      "availMB": 5190
+    },
+    {
+      "tSec": 12,
+      "at": "2026-01-15T10:00:12.000Z",
+      "ms": 181,
+      "usedPct": 67.44,
+      "hang": false,
+      "bundleMs": 180,
+      "slipS": 0,
+      "plugged": false,
+      "batteryPct": 58,
+      "weightMs": {
+        "spawn": 181,
+        "bundle": 180
+      },
+      "degraded": [],
+      "committed": 64.1,
+      "pages": 87,
+      "cpuQ": 1,
+      "diskQ": 0.2,
+      "diskSec": 0.004,
+      "maxFreq": 100,
+      "availMB": 5180
+    },
+    {
+      "tSec": 13,
+      "at": "2026-01-15T10:00:13.000Z",
+      "ms": 172,
+      "usedPct": 68.62,
+      "hang": false,
+      "bundleMs": 180,
+      "slipS": 0,
+      "plugged": false,
+      "batteryPct": 58,
+      "weightMs": {
+        "spawn": 172,
+        "bundle": 180
+      },
+      "degraded": [],
+      "committed": 61.74,
+      "pages": 72,
+      "cpuQ": 1,
+      "diskQ": 0.2,
+      "diskSec": 0.004,
+      "maxFreq": 100,
+      "availMB": 5170
+    },
+    {
+      "tSec": 14,
+      "at": "2026-01-15T10:00:14.000Z",
+      "ms": 172,
+      "usedPct": 68.39,
+      "hang": false,
+      "bundleMs": 180,
+      "slipS": 0,
+      "plugged": false,
+      "batteryPct": 58,
+      "weightMs": {
+        "spawn": 172,
+        "bundle": 180
+      },
+      "degraded": [],
+      "committed": 63.32,
+      "pages": 75,
+      "cpuQ": 1,
+      "diskQ": 0.2,
+      "diskSec": 0.004,
+      "maxFreq": 100,
+      "availMB": 5160
+    },
+    {
+      "tSec": 15,
+      "at": "2026-01-15T10:00:15.000Z",
+      "ms": 216,
+      "usedPct": 66.78,
+      "hang": false,
+      "bundleMs": 180,
+      "slipS": 0,
+      "plugged": false,
+      "batteryPct": 58,
+      "weightMs": {
+        "spawn": 216,
+        "bundle": 180
+      },
+      "degraded": [],
+      "committed": 62.28,
+      "pages": 66,
+      "cpuQ": 1,
+      "diskQ": 0.2,
+      "diskSec": 0.004,
+      "maxFreq": 100,
+      "availMB": 5150
+    },
+    {
+      "tSec": 16,
+      "at": "2026-01-15T10:00:16.000Z",
+      "ms": 213,
+      "usedPct": 66.1,
+      "hang": false,
+      "bundleMs": 180,
+      "slipS": 0,
+      "plugged": false,
+      "batteryPct": 58,
+      "weightMs": {
+        "spawn": 213,
+        "bundle": 180
+      },
+      "degraded": [],
+      "committed": 60.4,
+      "pages": 68,
+      "cpuQ": 1,
+      "diskQ": 0.2,
+      "diskSec": 0.004,
+      "maxFreq": 100,
+      "availMB": 5140
+    },
+    {
+      "tSec": 17,
+      "at": "2026-01-15T10:00:17.000Z",
+      "ms": 148,
+      "usedPct": 66.44,
+      "hang": false,
+      "bundleMs": 180,
+      "slipS": 0,
+      "plugged": false,
+      "batteryPct": 58,
+      "weightMs": {
+        "spawn": 148,
+        "bundle": 180
+      },
+      "degraded": [],
+      "committed": 62.33,
+      "pages": 71,
+      "cpuQ": 1,
+      "diskQ": 0.2,
+      "diskSec": 0.004,
+      "maxFreq": 100,
+      "availMB": 5130
+    },
+    {
+      "tSec": 18,
+      "at": "2026-01-15T10:00:18.000Z",
+      "ms": 198,
+      "usedPct": 66.01,
+      "hang": false,
+      "bundleMs": 180,
+      "slipS": 0,
+      "plugged": false,
+      "batteryPct": 58,
+      "weightMs": {
+        "spawn": 198,
+        "bundle": 180
+      },
+      "degraded": [],
+      "committed": 62.74,
+      "pages": 109,
+      "cpuQ": 1,
+      "diskQ": 0.2,
+      "diskSec": 0.004,
+      "maxFreq": 100,
+      "availMB": 5120
+    },
+    {
+      "tSec": 19,
+      "at": "2026-01-15T10:00:19.000Z",
+      "ms": 154,
+      "usedPct": 67.39,
+      "hang": false,
+      "bundleMs": 180,
+      "slipS": 0,
+      "plugged": false,
+      "batteryPct": 58,
+      "weightMs": {
+        "spawn": 154,
+        "bundle": 180
+      },
+      "degraded": [],
+      "committed": 64.01,
+      "pages": 94,
+      "cpuQ": 1,
+      "diskQ": 0.2,
+      "diskSec": 0.004,
+      "maxFreq": 100,
+      "availMB": 5110
+    },
+    {
+      "tSec": 21,
+      "at": "2026-01-15T10:00:21.000Z",
+      "ms": 260,
+      "usedPct": 78,
+      "hang": false,
+      "bundleMs": 180,
+      "slipS": 0,
+      "plugged": false,
+      "batteryPct": 58,
+      "weightMs": {
+        "spawn": 260,
+        "bundle": 180
+      },
+      "degraded": [],
+      "committed": 70,
+      "pages": 120,
+      "cpuQ": 1,
+      "diskQ": 0.2,
+      "diskSec": 0.004,
+      "maxFreq": 100,
+      "availMB": 2800
+    },
+    {
+      "tSec": 24,
+      "at": "2026-01-15T10:00:24.000Z",
+      "ms": 280,
+      "usedPct": 80,
+      "hang": false,
+      "bundleMs": 180,
+      "slipS": 0,
+      "plugged": false,
+      "batteryPct": 58,
+      "weightMs": {
+        "spawn": 280,
+        "bundle": 180
+      },
+      "degraded": [],
+      "committed": 75,
+      "pages": 120,
+      "cpuQ": 1,
+      "diskQ": 0.2,
+      "diskSec": 0.004,
+      "maxFreq": 100,
+      "availMB": 2500
+    },
+    {
+      "tSec": 27,
+      "at": "2026-01-15T10:00:27.000Z",
+      "ms": 300,
+      "usedPct": 82,
+      "hang": false,
+      "bundleMs": 180,
+      "slipS": 0,
+      "plugged": false,
+      "batteryPct": 58,
+      "weightMs": {
+        "spawn": 300,
+        "bundle": 180
+      },
+      "degraded": [],
+      "committed": 80,
+      "pages": 120,
+      "cpuQ": 1,
+      "diskQ": 0.2,
+      "diskSec": 0.004,
+      "maxFreq": 100,
+      "availMB": 2200
+    },
+    {
+      "tSec": 30,
+      "at": "2026-01-15T10:00:30.000Z",
+      "ms": 1400,
+      "usedPct": 93,
+      "hang": true,
+      "bundleMs": 180,
+      "slipS": 0,
+      "plugged": false,
+      "batteryPct": 58,
+      "weightMs": {
+        "spawn": 1400,
+        "bundle": 180
+      },
+      "degraded": [],
+      "committed": 88,
+      "pages": 900,
+      "cpuQ": 3,
+      "diskQ": 0.2,
+      "diskSec": 0.004,
+      "maxFreq": 100,
+      "culpritsAtHang": [
+        {
+          "name": "node.exe",
+          "totalMB": 6200,
+          "n": 14,
+          "pids": [
+            1100,
+            1104,
+            1108
+          ]
+        }
+      ],
+      "availMB": 280
+    },
+    {
+      "tSec": 35,
+      "at": "2026-01-15T10:00:35.000Z",
+      "ms": 1700,
+      "usedPct": 93,
+      "hang": true,
+      "bundleMs": 180,
+      "slipS": 0,
+      "plugged": false,
+      "batteryPct": 58,
+      "weightMs": {
+        "spawn": 1700,
+        "bundle": 180
+      },
+      "degraded": [],
+      "committed": 90,
+      "pages": 940,
+      "cpuQ": 3,
+      "diskQ": 0.2,
+      "diskSec": 0.004,
+      "maxFreq": 100,
+      "culpritsAtHang": [
+        {
+          "name": "node.exe",
+          "totalMB": 6200,
+          "n": 14,
+          "pids": [
+            1100,
+            1104,
+            1108
+          ]
+        }
+      ],
+      "availMB": 295
+    },
+    {
+      "tSec": 40,
+      "at": "2026-01-15T10:00:40.000Z",
+      "ms": 2000,
+      "usedPct": 93,
+      "hang": true,
+      "bundleMs": 180,
+      "slipS": 0,
+      "plugged": false,
+      "batteryPct": 58,
+      "weightMs": {
+        "spawn": 2000,
+        "bundle": 180
+      },
+      "degraded": [],
+      "committed": 91,
+      "pages": 980,
+      "cpuQ": 3,
+      "diskQ": 0.2,
+      "diskSec": 0.004,
+      "maxFreq": 100,
+      "culpritsAtHang": [
+        {
+          "name": "node.exe",
+          "totalMB": 6200,
+          "n": 14,
+          "pids": [
+            1100,
+            1104,
+            1108
+          ]
+        }
+      ],
+      "availMB": 310
+    },
+    {
+      "tSec": 45,
+      "at": "2026-01-15T10:00:45.000Z",
+      "ms": 2300,
+      "usedPct": 93,
+      "hang": true,
+      "bundleMs": 180,
+      "slipS": 0,
+      "plugged": false,
+      "batteryPct": 58,
+      "weightMs": {
+        "spawn": 2300,
+        "bundle": 180
+      },
+      "degraded": [],
+      "committed": 92,
+      "pages": 1020,
+      "cpuQ": 3,
+      "diskQ": 0.2,
+      "diskSec": 0.004,
+      "maxFreq": 100,
+      "culpritsAtHang": [
+        {
+          "name": "node.exe",
+          "totalMB": 6200,
+          "n": 14,
+          "pids": [
+            1100,
+            1104,
+            1108
+          ]
+        }
+      ],
+      "availMB": 325
+    },
+    {
+      "tSec": 50,
+      "at": "2026-01-15T10:00:50.000Z",
+      "ms": 2600,
+      "usedPct": 93,
+      "hang": true,
+      "bundleMs": 180,
+      "slipS": 0,
+      "plugged": false,
+      "batteryPct": 58,
+      "weightMs": {
+        "spawn": 2600,
+        "bundle": 180
+      },
+      "degraded": [],
+      "committed": 89,
+      "pages": 1060,
+      "cpuQ": 3,
+      "diskQ": 0.2,
+      "diskSec": 0.004,
+      "maxFreq": 100,
+      "culpritsAtHang": [
+        {
+          "name": "node.exe",
+          "totalMB": 6200,
+          "n": 14,
+          "pids": [
+            1100,
+            1104,
+            1108
+          ]
+        }
+      ],
+      "availMB": 340
+    },
+    {
+      "tSec": 61,
+      "at": "2026-01-15T10:01:01.000Z",
+      "ms": 127,
+      "usedPct": 67.57,
+      "hang": false,
+      "bundleMs": 180,
+      "slipS": 0,
+      "plugged": false,
+      "batteryPct": 58,
+      "weightMs": {
+        "spawn": 127,
+        "bundle": 180
+      },
+      "degraded": [],
+      "committed": 62.2,
+      "pages": 80,
+      "cpuQ": 1,
+      "diskQ": 0.2,
+      "diskSec": 0.004,
+      "maxFreq": 100,
+      "availMB": 5000
+    },
+    {
+      "tSec": 62,
+      "at": "2026-01-15T10:01:02.000Z",
+      "ms": 190,
+      "usedPct": 68.65,
+      "hang": false,
+      "bundleMs": 180,
+      "slipS": 0,
+      "plugged": false,
+      "batteryPct": 58,
+      "weightMs": {
+        "spawn": 190,
+        "bundle": 180
+      },
+      "degraded": [],
+      "committed": 60.48,
+      "pages": 90,
+      "cpuQ": 1,
+      "diskQ": 0.2,
+      "diskSec": 0.004,
+      "maxFreq": 100,
+      "availMB": 5010
+    },
+    {
+      "tSec": 63,
+      "at": "2026-01-15T10:01:03.000Z",
+      "ms": 141,
+      "usedPct": 67.93,
+      "hang": false,
+      "bundleMs": 180,
+      "slipS": 0,
+      "plugged": false,
+      "batteryPct": 58,
+      "weightMs": {
+        "spawn": 141,
+        "bundle": 180
+      },
+      "degraded": [],
+      "committed": 61.38,
+      "pages": 79,
+      "cpuQ": 1,
+      "diskQ": 0.2,
+      "diskSec": 0.004,
+      "maxFreq": 100,
+      "availMB": 5020
+    },
+    {
+      "tSec": 64,
+      "at": "2026-01-15T10:01:04.000Z",
+      "ms": 163,
+      "usedPct": 68.8,
+      "hang": false,
+      "bundleMs": 180,
+      "slipS": 0,
+      "plugged": false,
+      "batteryPct": 58,
+      "weightMs": {
+        "spawn": 163,
+        "bundle": 180
+      },
+      "degraded": [],
+      "committed": 61.4,
+      "pages": 92,
+      "cpuQ": 1,
+      "diskQ": 0.2,
+      "diskSec": 0.004,
+      "maxFreq": 100,
+      "availMB": 5030
+    },
+    {
+      "tSec": 65,
+      "at": "2026-01-15T10:01:05.000Z",
+      "ms": 156,
+      "usedPct": 66.76,
+      "hang": false,
+      "bundleMs": 180,
+      "slipS": 0,
+      "plugged": false,
+      "batteryPct": 58,
+      "weightMs": {
+        "spawn": 156,
+        "bundle": 180
+      },
+      "degraded": [],
+      "committed": 63.19,
+      "pages": 53,
+      "cpuQ": 1,
+      "diskQ": 0.2,
+      "diskSec": 0.004,
+      "maxFreq": 100,
+      "availMB": 5040
+    },
+    {
+      "tSec": 66,
+      "at": "2026-01-15T10:01:06.000Z",
+      "ms": 196,
+      "usedPct": 68.56,
+      "hang": false,
+      "bundleMs": 180,
+      "slipS": 0,
+      "plugged": false,
+      "batteryPct": 58,
+      "weightMs": {
+        "spawn": 196,
+        "bundle": 180
+      },
+      "degraded": [],
+      "committed": 61.98,
+      "pages": 82,
+      "cpuQ": 1,
+      "diskQ": 0.2,
+      "diskSec": 0.004,
+      "maxFreq": 100,
+      "availMB": 5050
+    },
+    {
+      "tSec": 67,
+      "at": "2026-01-15T10:01:07.000Z",
+      "ms": 178,
+      "usedPct": 68.75,
+      "hang": false,
+      "bundleMs": 180,
+      "slipS": 0,
+      "plugged": false,
+      "batteryPct": 58,
+      "weightMs": {
+        "spawn": 178,
+        "bundle": 180
+      },
+      "degraded": [],
+      "committed": 61.28,
+      "pages": 57,
+      "cpuQ": 1,
+      "diskQ": 0.2,
+      "diskSec": 0.004,
+      "maxFreq": 100,
+      "availMB": 5060
+    },
+    {
+      "tSec": 68,
+      "at": "2026-01-15T10:01:08.000Z",
+      "ms": 146,
+      "usedPct": 68.43,
+      "hang": false,
+      "bundleMs": 180,
+      "slipS": 0,
+      "plugged": false,
+      "batteryPct": 58,
+      "weightMs": {
+        "spawn": 146,
+        "bundle": 180
+      },
+      "degraded": [],
+      "committed": 61.61,
+      "pages": 81,
+      "cpuQ": 1,
+      "diskQ": 0.2,
+      "diskSec": 0.004,
+      "maxFreq": 100,
+      "availMB": 5070
+    }
+  ],
+  "samples": [
+    {
+      "at": "2026-01-15T10:00:01.000Z",
+      "tSec": 1,
+      "freeGB": 4.8,
+      "usedPct": 69.98
+    },
+    {
+      "at": "2026-01-15T10:00:02.000Z",
+      "tSec": 2,
+      "freeGB": 4.81,
+      "usedPct": 69.96
+    },
+    {
+      "at": "2026-01-15T10:00:03.000Z",
+      "tSec": 3,
+      "freeGB": 4.96,
+      "usedPct": 68.98
+    },
+    {
+      "at": "2026-01-15T10:00:04.000Z",
+      "tSec": 4,
+      "freeGB": 5.35,
+      "usedPct": 66.55
+    },
+    {
+      "at": "2026-01-15T10:00:05.000Z",
+      "tSec": 5,
+      "freeGB": 5.41,
+      "usedPct": 66.19
+    },
+    {
+      "at": "2026-01-15T10:00:06.000Z",
+      "tSec": 6,
+      "freeGB": 4.89,
+      "usedPct": 69.42
+    },
+    {
+      "at": "2026-01-15T10:00:07.000Z",
+      "tSec": 7,
+      "freeGB": 4.81,
+      "usedPct": 69.96
+    },
+    {
+      "at": "2026-01-15T10:00:08.000Z",
+      "tSec": 8,
+      "freeGB": 5.24,
+      "usedPct": 67.24
+    },
+    {
+      "at": "2026-01-15T10:00:09.000Z",
+      "tSec": 9,
+      "freeGB": 5,
+      "usedPct": 68.73
+    },
+    {
+      "at": "2026-01-15T10:00:10.000Z",
+      "tSec": 10,
+      "freeGB": 5.15,
+      "usedPct": 67.79
+    },
+    {
+      "at": "2026-01-15T10:00:11.000Z",
+      "tSec": 11,
+      "freeGB": 5.04,
+      "usedPct": 68.53
+    },
+    {
+      "at": "2026-01-15T10:00:12.000Z",
+      "tSec": 12,
+      "freeGB": 5.25,
+      "usedPct": 67.19
+    },
+    {
+      "at": "2026-01-15T10:00:13.000Z",
+      "tSec": 13,
+      "freeGB": 5.2,
+      "usedPct": 67.47
+    },
+    {
+      "at": "2026-01-15T10:00:14.000Z",
+      "tSec": 14,
+      "freeGB": 5.15,
+      "usedPct": 67.78
+    },
+    {
+      "at": "2026-01-15T10:00:15.000Z",
+      "tSec": 15,
+      "freeGB": 5.22,
+      "usedPct": 67.39
+    },
+    {
+      "at": "2026-01-15T10:00:16.000Z",
+      "tSec": 16,
+      "freeGB": 5.1,
+      "usedPct": 68.12
+    },
+    {
+      "at": "2026-01-15T10:00:17.000Z",
+      "tSec": 17,
+      "freeGB": 5.27,
+      "usedPct": 67.08
+    },
+    {
+      "at": "2026-01-15T10:00:18.000Z",
+      "tSec": 18,
+      "freeGB": 5.24,
+      "usedPct": 67.28
+    },
+    {
+      "at": "2026-01-15T10:00:19.000Z",
+      "tSec": 19,
+      "freeGB": 5.13,
+      "usedPct": 67.92
+    },
+    {
+      "at": "2026-01-15T10:00:20.000Z",
+      "tSec": 20,
+      "freeGB": 4.94,
+      "usedPct": 69.11
+    },
+    {
+      "at": "2026-01-15T10:00:21.000Z",
+      "tSec": 21,
+      "freeGB": 5.24,
+      "usedPct": 67.27
+    },
+    {
+      "at": "2026-01-15T10:00:22.000Z",
+      "tSec": 22,
+      "freeGB": 4.98,
+      "usedPct": 68.9
+    },
+    {
+      "at": "2026-01-15T10:00:23.000Z",
+      "tSec": 23,
+      "freeGB": 5.19,
+      "usedPct": 67.57
+    },
+    {
+      "at": "2026-01-15T10:00:24.000Z",
+      "tSec": 24,
+      "freeGB": 5.42,
+      "usedPct": 66.11
+    },
+    {
+      "at": "2026-01-15T10:00:25.000Z",
+      "tSec": 25,
+      "freeGB": 5.43,
+      "usedPct": 66.04
+    },
+    {
+      "at": "2026-01-15T10:00:26.000Z",
+      "tSec": 26,
+      "freeGB": 5.34,
+      "usedPct": 66.61
+    },
+    {
+      "at": "2026-01-15T10:00:27.000Z",
+      "tSec": 27,
+      "freeGB": 4.85,
+      "usedPct": 69.71
+    },
+    {
+      "at": "2026-01-15T10:00:28.000Z",
+      "tSec": 28,
+      "freeGB": 5.29,
+      "usedPct": 66.94
+    },
+    {
+      "at": "2026-01-15T10:00:29.000Z",
+      "tSec": 29,
+      "freeGB": 5.33,
+      "usedPct": 66.71
+    },
+    {
+      "at": "2026-01-15T10:00:30.000Z",
+      "tSec": 30,
+      "freeGB": 5.12,
+      "usedPct": 68.01
+    },
+    {
+      "at": "2026-01-15T10:00:31.000Z",
+      "tSec": 31,
+      "freeGB": 4.85,
+      "usedPct": 69.66
+    },
+    {
+      "at": "2026-01-15T10:00:32.000Z",
+      "tSec": 32,
+      "freeGB": 5.1,
+      "usedPct": 68.1
+    },
+    {
+      "at": "2026-01-15T10:00:33.000Z",
+      "tSec": 33,
+      "freeGB": 4.82,
+      "usedPct": 69.9
+    },
+    {
+      "at": "2026-01-15T10:00:34.000Z",
+      "tSec": 34,
+      "freeGB": 4.83,
+      "usedPct": 69.8
+    },
+    {
+      "at": "2026-01-15T10:00:35.000Z",
+      "tSec": 35,
+      "freeGB": 5.28,
+      "usedPct": 66.97
+    },
+    {
+      "at": "2026-01-15T10:00:36.000Z",
+      "tSec": 36,
+      "freeGB": 5.15,
+      "usedPct": 67.79
+    },
+    {
+      "at": "2026-01-15T10:00:37.000Z",
+      "tSec": 37,
+      "freeGB": 5.04,
+      "usedPct": 68.5
+    },
+    {
+      "at": "2026-01-15T10:00:38.000Z",
+      "tSec": 38,
+      "freeGB": 5.21,
+      "usedPct": 67.44
+    },
+    {
+      "at": "2026-01-15T10:00:39.000Z",
+      "tSec": 39,
+      "freeGB": 5.28,
+      "usedPct": 66.99
+    },
+    {
+      "at": "2026-01-15T10:00:40.000Z",
+      "tSec": 40,
+      "freeGB": 5.4,
+      "usedPct": 66.23
+    },
+    {
+      "at": "2026-01-15T10:00:41.000Z",
+      "tSec": 41,
+      "freeGB": 4.97,
+      "usedPct": 68.94
+    },
+    {
+      "at": "2026-01-15T10:00:42.000Z",
+      "tSec": 42,
+      "freeGB": 5.28,
+      "usedPct": 67.03
+    },
+    {
+      "at": "2026-01-15T10:00:43.000Z",
+      "tSec": 43,
+      "freeGB": 5.16,
+      "usedPct": 67.74
+    },
+    {
+      "at": "2026-01-15T10:00:44.000Z",
+      "tSec": 44,
+      "freeGB": 5.27,
+      "usedPct": 67.07
+    },
+    {
+      "at": "2026-01-15T10:00:45.000Z",
+      "tSec": 45,
+      "freeGB": 5.38,
+      "usedPct": 66.4
+    },
+    {
+      "at": "2026-01-15T10:00:46.000Z",
+      "tSec": 46,
+      "freeGB": 4.93,
+      "usedPct": 69.2
+    },
+    {
+      "at": "2026-01-15T10:00:47.000Z",
+      "tSec": 47,
+      "freeGB": 5.05,
+      "usedPct": 68.43
+    },
+    {
+      "at": "2026-01-15T10:00:48.000Z",
+      "tSec": 48,
+      "freeGB": 5.32,
+      "usedPct": 66.73
+    },
+    {
+      "at": "2026-01-15T10:00:49.000Z",
+      "tSec": 49,
+      "freeGB": 4.89,
+      "usedPct": 69.44
+    },
+    {
+      "at": "2026-01-15T10:00:50.000Z",
+      "tSec": 50,
+      "freeGB": 5.19,
+      "usedPct": 67.57
+    },
+    {
+      "at": "2026-01-15T10:00:51.000Z",
+      "tSec": 51,
+      "freeGB": 5.4,
+      "usedPct": 66.22
+    },
+    {
+      "at": "2026-01-15T10:00:52.000Z",
+      "tSec": 52,
+      "freeGB": 5.29,
+      "usedPct": 66.95
+    },
+    {
+      "at": "2026-01-15T10:00:53.000Z",
+      "tSec": 53,
+      "freeGB": 4.89,
+      "usedPct": 69.43
+    },
+    {
+      "at": "2026-01-15T10:00:54.000Z",
+      "tSec": 54,
+      "freeGB": 5.12,
+      "usedPct": 67.98
+    },
+    {
+      "at": "2026-01-15T10:00:55.000Z",
+      "tSec": 55,
+      "freeGB": 4.96,
+      "usedPct": 68.98
+    },
+    {
+      "at": "2026-01-15T10:00:56.000Z",
+      "tSec": 56,
+      "freeGB": 4.99,
+      "usedPct": 68.81
+    },
+    {
+      "at": "2026-01-15T10:00:57.000Z",
+      "tSec": 57,
+      "freeGB": 5.41,
+      "usedPct": 66.19
+    },
+    {
+      "at": "2026-01-15T10:00:58.000Z",
+      "tSec": 58,
+      "freeGB": 5.06,
+      "usedPct": 68.37
+    },
+    {
+      "at": "2026-01-15T10:00:59.000Z",
+      "tSec": 59,
+      "freeGB": 5.28,
+      "usedPct": 66.98
+    },
+    {
+      "at": "2026-01-15T10:01:00.000Z",
+      "tSec": 60,
+      "freeGB": 5.05,
+      "usedPct": 68.46
+    },
+    {
+      "at": "2026-01-15T10:01:01.000Z",
+      "tSec": 61,
+      "freeGB": 5.3,
+      "usedPct": 66.88
+    },
+    {
+      "at": "2026-01-15T10:01:02.000Z",
+      "tSec": 62,
+      "freeGB": 5.16,
+      "usedPct": 67.75
+    },
+    {
+      "at": "2026-01-15T10:01:03.000Z",
+      "tSec": 63,
+      "freeGB": 5.35,
+      "usedPct": 66.54
+    },
+    {
+      "at": "2026-01-15T10:01:04.000Z",
+      "tSec": 64,
+      "freeGB": 5.16,
+      "usedPct": 67.77
+    },
+    {
+      "at": "2026-01-15T10:01:05.000Z",
+      "tSec": 65,
+      "freeGB": 4.91,
+      "usedPct": 69.28
+    },
+    {
+      "at": "2026-01-15T10:01:06.000Z",
+      "tSec": 66,
+      "freeGB": 4.84,
+      "usedPct": 69.76
+    },
+    {
+      "at": "2026-01-15T10:01:07.000Z",
+      "tSec": 67,
+      "freeGB": 5.22,
+      "usedPct": 67.36
+    },
+    {
+      "at": "2026-01-15T10:01:08.000Z",
+      "tSec": 68,
+      "freeGB": 4.93,
+      "usedPct": 69.18
+    }
+  ],
+  "diagnosis": {
+    "engine": "diagnosis/1",
+    "hangDefinition": {
+      "probe": "process-start-latency",
+      "thresholdMs": 800,
+      "source": "default",
+      "intervalS": 1,
+      "cannotSee": [
+        "freezes shorter than the probe interval",
+        "UI input lag that does not delay process start"
+      ],
+      "inputResponse": {
+        "status": "not evaluated",
+        "reason": "report predates the input-response check"
+      }
+    },
+    "usable": {
+      "probes": 26,
+      "excluded": 4,
+      "minimum": 10,
+      "sustainedMin": 3
+    },
+    "excludedProbes": [
+      {
+        "ref": "spawnProbes[0]",
+        "reasons": [
+          "startup-window"
+        ]
+      },
+      {
+        "ref": "spawnProbes[1]",
+        "reasons": [
+          "startup-window"
+        ]
+      },
+      {
+        "ref": "spawnProbes[2]",
+        "reasons": [
+          "startup-window"
+        ]
+      },
+      {
+        "ref": "spawnProbes[3]",
+        "reasons": [
+          "startup-window"
+        ]
+      }
+    ],
+    "calm": {
+      "definition": "usable, latency < 400 ms, not within 10 s of a hang",
+      "n": 18,
+      "means": {
+        "disk.latency_ms": 4,
+        "mem.committed_pct": 61.95
+      }
+    },
+    "proxyValidation": {
+      "status": "validated",
+      "precision": {
+        "num": 2,
+        "den": 5,
+        "value": 0.4
+      },
+      "recall": {
+        "num": 2,
+        "den": 2,
+        "value": 1
+      }
+    },
+    "marks": {
+      "joined": [
+        {
+          "at": "2026-01-15T10:00:30.800Z",
+          "kind": "hung",
+          "note": "terminal froze",
+          "ref": "spawnProbes[17]",
+          "gapMs": 800,
+          "onHang": true,
+          "role": "hang-confirmed"
+        },
+        {
+          "at": "2026-01-15T10:00:40.500Z",
+          "kind": "hung",
+          "note": "editor froze",
+          "ref": "spawnProbes[19]",
+          "gapMs": 500,
+          "onHang": true,
+          "role": "hang-confirmed"
+        }
+      ],
+      "unmatched": []
+    },
+    "confidenceModel": {
+      "confirmationWeights": {
+        "user-mark": 1,
+        "os-not-responding": 1,
+        "workload-probe": 1,
+        "input-stall": 0.5,
+        "probe-only": 0
+      },
+      "weights": {
+        "C": 0.35,
+        "D": 0.25,
+        "O": 0.25,
+        "K": 0.15
+      },
+      "penaltyPerConfound": 0.1,
+      "penaltyMax": 0.3,
+      "cap": 0.95
+    },
+    "thresholds": {
+      "battery-power-plan": {
+        "value": 2,
+        "unit": "x AC rate",
+        "source": "provisional (diagnosis-cause-rules design)",
+        "origin": "default",
+        "key": "battery-power-plan.rateRatio"
+      },
+      "commit-limit-pressure": {
+        "value": 90,
+        "unit": "%",
+        "source": "provisional (diagnosis-cause-rules design)",
+        "origin": "default",
+        "key": "commit-limit-pressure.commitPct"
+      },
+      "cpu-saturation": {
+        "value": 90,
+        "unit": "%",
+        "source": "provisional",
+        "origin": "default",
+        "key": "cpu.pct_total"
+      },
+      "database-memory-io": {
+        "value": 25,
+        "unit": "% of RAM",
+        "source": "provisional (diagnosis-cause-rules design)",
+        "origin": "default",
+        "key": "database-memory-io.memPctRam"
+      },
+      "disk-nearly-full": {
+        "value": 10,
+        "unit": "%",
+        "source": "provisional (diagnosis-cause-rules design)",
+        "origin": "default",
+        "key": "disk-nearly-full.lowFreePct"
+      },
+      "disk-stall": {
+        "value": 25,
+        "unit": "ms",
+        "source": "provisional",
+        "origin": "default",
+        "key": "disk.latency_ms"
+      },
+      "driver-interrupt-storm": {
+        "value": 10,
+        "unit": "%",
+        "source": "provisional (diagnosis-cause-rules design)",
+        "origin": "default",
+        "key": "driver-interrupt-storm.sumPct"
+      },
+      "gpu-contention": {
+        "value": 90,
+        "unit": "%",
+        "source": "provisional (diagnosis-cause-rules design)",
+        "origin": "default",
+        "key": "gpu-contention.enginePct"
+      },
+      "hard-fault-thrash": {
+        "value": 100,
+        "unit": "/s",
+        "source": "provisional (diagnosis-cause-rules design)",
+        "origin": "default",
+        "key": "hard-fault-thrash.pagesOutPerS"
+      },
+      "memory-pressure": {
+        "value": 85,
+        "unit": "%",
+        "source": "MS perf troubleshooting [derived]",
+        "origin": "default",
+        "key": "mem.commit"
+      },
+      "outside-scope": {
+        "value": 85,
+        "unit": "%",
+        "source": "MS perf troubleshooting [derived]",
+        "origin": "default",
+        "key": "mem.commit"
+      },
+      "security-contention": {
+        "value": 8,
+        "unit": "% of machine",
+        "source": "provisional",
+        "origin": "default",
+        "key": "security.cpu_pct_machine"
+      },
+      "single-process-dominance": {
+        "value": 40,
+        "unit": "% of used memory",
+        "source": "provisional (diagnosis-cause-rules design)",
+        "origin": "default",
+        "key": "single-process-dominance.sharePct"
+      },
+      "thermal-power-throttle": {
+        "value": 60,
+        "unit": "% of calm median",
+        "source": "provisional (diagnosis-cause-rules design)",
+        "origin": "default",
+        "key": "thermal-power-throttle.perfPctOfCalm"
+      },
+      "vm-memory-dominance": {
+        "value": 40,
+        "unit": "% of RAM",
+        "source": "provisional (diagnosis-cause-rules design)",
+        "origin": "default",
+        "key": "vm-memory-dominance.vmPctRam"
+      }
+    },
+    "probeAgreement": {
+      "status": "not evaluated",
+      "reason": "report predates the input-response check",
+      "toleranceMs": 2000,
+      "stallMs": null,
+      "probeIntervalS": null
+    },
+    "inputStallCorroboration": {
+      "status": "not evaluated",
+      "reason": "report predates the input-response check"
+    },
+    "hangs": [
+      {
+        "ref": "spawnProbes[17]",
+        "at": "2026-01-15T10:00:30.000Z",
+        "ms": 1400,
+        "confirmedBy": [
+          "user-mark"
+        ],
+        "helperLate": "not evaluated",
+        "helperLateReason": "report predates the input-response check",
+        "rules": [
+          {
+            "id": "battery-power-plan",
+            "class": "thermal-power",
+            "fired": null,
+            "reason": "rate comparison not evaluated: single power source observed; power mode not evaluated: power mode / energy saver known at 0 hangs and 0 calm probes (needs 3 of each)",
+            "at": [],
+            "inputs": [],
+            "threshold": {
+              "value": 2,
+              "unit": "x AC rate",
+              "source": "provisional (diagnosis-cause-rules design)",
+              "origin": "default",
+              "key": "battery-power-plan.rateRatio"
+            },
+            "n": 0,
+            "calm": {
+              "mean": null,
+              "n": 0,
+              "signal": null
+            },
+            "components": null,
+            "confidence": null,
+            "disprover": {
+              "check": "battery and AC hang rates per minute within 1.25x of each other (each side with enough hangs and probes)",
+              "result": "not-evaluable",
+              "values": [
+                {
+                  "reason": "single power source observed"
+                }
+              ]
+            },
+            "confounds": [],
+            "extra": {
+              "via": null,
+              "battery": {
+                "hangs": 5,
+                "probes": 26,
+                "observedMin": 0.7,
+                "ratePerMin": 6.977
+              },
+              "ac": {
+                "hangs": 0,
+                "probes": 0,
+                "observedMin": 0,
+                "ratePerMin": null
+              },
+              "ratio": null,
+              "rateComparison": "not evaluated: single power source observed",
+              "mode": {
+                "evaluated": false,
+                "hangShare": null,
+                "calmShare": null,
+                "reason": "power mode / energy saver known at 0 hangs and 0 calm probes (needs 3 of each)"
+              }
+            }
+          },
+          {
+            "id": "commit-limit-pressure",
+            "class": "memory",
+            "fired": null,
+            "reason": "mem.pagefile_pct not recorded at this hang (no value stored); a rising page file needs at least 3 readings",
+            "at": [],
+            "inputs": [],
+            "threshold": {
+              "value": 90,
+              "unit": "%",
+              "source": "provisional (diagnosis-cause-rules design)",
+              "origin": "default",
+              "key": "commit-limit-pressure.commitPct"
+            },
+            "n": 0,
+            "calm": {
+              "mean": null,
+              "n": 0,
+              "signal": null
+            },
+            "components": null,
+            "confidence": null,
+            "disprover": {
+              "check": "commit < 80% of the limit at 2/3 or more of the hangs",
+              "result": "not-disproved",
+              "values": [
+                {
+                  "ref": "spawnProbes[17]",
+                  "commitPct": 88
+                },
+                {
+                  "ref": "spawnProbes[18]",
+                  "commitPct": 90
+                },
+                {
+                  "ref": "spawnProbes[19]",
+                  "commitPct": 91
+                },
+                {
+                  "ref": "spawnProbes[20]",
+                  "commitPct": 92
+                },
+                {
+                  "ref": "spawnProbes[21]",
+                  "commitPct": 89
+                }
+              ]
+            },
+            "confounds": []
+          },
+          {
+            "id": "cpu-saturation",
+            "class": "cpu",
+            "fired": null,
+            "reason": "cpu.pct_total not recorded at this hang (no value stored)",
+            "at": [],
+            "inputs": [],
+            "threshold": {
+              "value": 90,
+              "unit": "%",
+              "source": "provisional",
+              "origin": "default",
+              "key": "cpu.pct_total"
+            },
+            "n": 0,
+            "calm": {
+              "mean": null,
+              "n": 0,
+              "signal": null
+            },
+            "components": null,
+            "confidence": null,
+            "disprover": {
+              "check": "CPU < 60% and queue < 1 per logical processor on every probe within +-10 s of the hang",
+              "result": "not-evaluable",
+              "values": []
+            },
+            "confounds": []
+          },
+          {
+            "id": "database-memory-io",
+            "class": "memory",
+            "fired": null,
+            "reason": "proc.group_mem_mb[database] not recorded at this hang (no value stored)",
+            "at": [],
+            "inputs": [],
+            "threshold": {
+              "value": 25,
+              "unit": "% of RAM",
+              "source": "provisional (diagnosis-cause-rules design)",
+              "origin": "default",
+              "key": "database-memory-io.memPctRam"
+            },
+            "n": 0,
+            "calm": {
+              "mean": null,
+              "n": 0,
+              "signal": null
+            },
+            "components": null,
+            "confidence": null,
+            "disprover": {
+              "check": "disk latency < 10 ms and database group memory < 10% of RAM within +-10 s of every hang",
+              "result": "not-evaluable",
+              "values": []
+            },
+            "confounds": []
+          },
+          {
+            "id": "disk-nearly-full",
+            "class": "disk",
+            "fired": null,
+            "reason": "disk.relevant_free_pct not recorded at this hang (no value stored); free space of the system, pagefile and workload volumes is needed",
+            "at": [],
+            "inputs": [],
+            "threshold": {
+              "value": 10,
+              "unit": "%",
+              "source": "provisional (diagnosis-cause-rules design)",
+              "origin": "default",
+              "key": "disk-nearly-full.lowFreePct"
+            },
+            "n": 0,
+            "calm": {
+              "mean": null,
+              "n": 0,
+              "signal": null
+            },
+            "components": null,
+            "confidence": null,
+            "disprover": {
+              "check": "free space of the relevant volumes at or above 25% at 2/3 or more of the hangs",
+              "result": "not-evaluable",
+              "values": []
+            },
+            "confounds": []
+          },
+          {
+            "id": "disk-stall",
+            "class": "disk",
+            "fired": false,
+            "reason": "not sustained (0 of 6 probes, minimum 3; latency > 25 ms with queue >= 1)",
+            "at": [],
+            "inputs": [],
+            "threshold": {
+              "value": 25,
+              "unit": "ms",
+              "source": "provisional",
+              "origin": "default",
+              "key": "disk.latency_ms"
+            },
+            "n": 0,
+            "calm": {
+              "mean": 4,
+              "n": 18,
+              "signal": "disk.latency_ms"
+            },
+            "components": null,
+            "confidence": null,
+            "disprover": {
+              "check": "latency < 10 ms and queue < 1 on every probe within +-10 s of the hang, for the machine total and for every drive with a reading",
+              "result": "disproved",
+              "values": [
+                {
+                  "ref": "spawnProbes[14]",
+                  "latencyMs": 4,
+                  "queue": 0.2
+                },
+                {
+                  "ref": "spawnProbes[15]",
+                  "latencyMs": 4,
+                  "queue": 0.2
+                },
+                {
+                  "ref": "spawnProbes[16]",
+                  "latencyMs": 4,
+                  "queue": 0.2
+                },
+                {
+                  "ref": "spawnProbes[17]",
+                  "latencyMs": 4,
+                  "queue": 0.2
+                },
+                {
+                  "ref": "spawnProbes[18]",
+                  "latencyMs": 4,
+                  "queue": 0.2
+                },
+                {
+                  "ref": "spawnProbes[19]",
+                  "latencyMs": 4,
+                  "queue": 0.2
+                }
+              ]
+            },
+            "confounds": [
+              {
+                "id": "sync-client-io",
+                "text": "a file-sync client in the declared scope was reading or writing near the hang",
+                "active": false
+              }
+            ],
+            "extra": {
+              "perDrive": {
+                "recorded": false,
+                "text": "per-drive data not recorded"
+              },
+              "slowDrive": null,
+              "culprit": null
+            }
+          },
+          {
+            "id": "driver-interrupt-storm",
+            "class": "cpu",
+            "fired": null,
+            "reason": "cpu.dpc_intr_pct not recorded at this hang (no value stored)",
+            "at": [],
+            "inputs": [],
+            "threshold": {
+              "value": 10,
+              "unit": "%",
+              "source": "provisional (diagnosis-cause-rules design)",
+              "origin": "default",
+              "key": "driver-interrupt-storm.sumPct"
+            },
+            "n": 0,
+            "calm": {
+              "mean": null,
+              "n": 0,
+              "signal": null
+            },
+            "components": null,
+            "confidence": null,
+            "disprover": {
+              "check": "DPC + interrupt time < 3% on every probe within +-10 s of every hang",
+              "result": "not-evaluable",
+              "values": []
+            },
+            "confounds": []
+          },
+          {
+            "id": "gpu-contention",
+            "class": "gpu",
+            "fired": null,
+            "reason": "gpu.engine_util_pct not recorded at this hang (no value stored)",
+            "at": [],
+            "inputs": [],
+            "threshold": {
+              "value": 90,
+              "unit": "%",
+              "source": "provisional (diagnosis-cause-rules design)",
+              "origin": "default",
+              "key": "gpu-contention.enginePct"
+            },
+            "n": 0,
+            "calm": {
+              "mean": null,
+              "n": 0,
+              "signal": null
+            },
+            "components": null,
+            "confidence": null,
+            "disprover": {
+              "check": "busiest GPU engine < 50% and dedicated memory < 80% of its total within +-10 s of every hang",
+              "result": "not-evaluable",
+              "values": []
+            },
+            "confounds": []
+          },
+          {
+            "id": "hard-fault-thrash",
+            "class": "memory",
+            "fired": null,
+            "reason": "mem.pages_out_per_s not recorded at this hang (no value stored)",
+            "at": [],
+            "inputs": [],
+            "threshold": {
+              "value": 100,
+              "unit": "/s",
+              "source": "provisional (diagnosis-cause-rules design)",
+              "origin": "default",
+              "key": "hard-fault-thrash.pagesOutPerS"
+            },
+            "n": 0,
+            "calm": {
+              "mean": null,
+              "n": 0,
+              "signal": null
+            },
+            "components": null,
+            "confidence": null,
+            "disprover": {
+              "check": "pages written out < 20/s on every probe within +-10 s of every hang",
+              "result": "not-evaluable",
+              "values": []
+            },
+            "confounds": []
+          },
+          {
+            "id": "memory-pressure",
+            "class": "memory",
+            "fired": true,
+            "reason": null,
+            "at": [
+              "2026-01-15T10:00:30.000Z"
+            ],
+            "inputs": [
+              {
+                "ref": "spawnProbes[17]",
+                "signal": "mem.committed_pct",
+                "at": "2026-01-15T10:00:30.000Z",
+                "value": 88,
+                "unit": "%"
+              },
+              {
+                "ref": "spawnProbes[17]",
+                "signal": "mem.avail_mb",
+                "at": "2026-01-15T10:00:30.000Z",
+                "value": 280,
+                "unit": "MB"
+              }
+            ],
+            "threshold": {
+              "value": 85,
+              "unit": "%",
+              "source": "MS perf troubleshooting [derived]",
+              "origin": "default",
+              "key": "mem.commit"
+            },
+            "n": 1,
+            "calm": {
+              "mean": 61.95,
+              "n": 18,
+              "signal": "mem.committed_pct"
+            },
+            "components": {
+              "C": 1,
+              "D": 1,
+              "O": 1,
+              "K": 0.4,
+              "P": 0
+            },
+            "confidence": 0.91,
+            "disprover": {
+              "check": "commit < 70% and available > 2 GB on every probe within +-10 s of the hang",
+              "result": "not-disproved",
+              "values": [
+                {
+                  "ref": "spawnProbes[14]",
+                  "commitPct": 70,
+                  "availMB": 2800
+                },
+                {
+                  "ref": "spawnProbes[15]",
+                  "commitPct": 75,
+                  "availMB": 2500
+                },
+                {
+                  "ref": "spawnProbes[16]",
+                  "commitPct": 80,
+                  "availMB": 2200
+                },
+                {
+                  "ref": "spawnProbes[17]",
+                  "commitPct": 88,
+                  "availMB": 280
+                },
+                {
+                  "ref": "spawnProbes[18]",
+                  "commitPct": 90,
+                  "availMB": 295
+                },
+                {
+                  "ref": "spawnProbes[19]",
+                  "commitPct": 91,
+                  "availMB": 310
+                }
+              ]
+            },
+            "confounds": [],
+            "confirmationWeight": 1,
+            "hangValue": 88
+          },
+          {
+            "id": "outside-scope",
+            "class": "outside-scope",
+            "fired": null,
+            "reason": "open scope",
+            "at": [],
+            "inputs": [],
+            "threshold": {
+              "value": 85,
+              "unit": "%",
+              "source": "MS perf troubleshooting [derived]",
+              "origin": "default",
+              "key": "mem.commit"
+            },
+            "n": 0,
+            "calm": {
+              "mean": null,
+              "n": 0,
+              "signal": null
+            },
+            "components": null,
+            "confidence": null,
+            "disprover": {
+              "check": "machine commit < 70% and CPU < 60% on every probe within +-10 s of the hang",
+              "result": "not-evaluable",
+              "values": []
+            },
+            "confounds": []
+          },
+          {
+            "id": "security-contention",
+            "class": "security-software",
+            "fired": null,
+            "reason": "security.cpu_pct_machine not recorded at this hang (no value stored)",
+            "at": [],
+            "inputs": [],
+            "threshold": {
+              "value": 8,
+              "unit": "% of machine",
+              "source": "provisional",
+              "origin": "default",
+              "key": "security.cpu_pct_machine"
+            },
+            "n": 0,
+            "calm": {
+              "mean": null,
+              "n": 0,
+              "signal": null
+            },
+            "components": null,
+            "confidence": null,
+            "disprover": {
+              "check": "security-software CPU < 3% of machine on every probe within +-10 s of the hang",
+              "result": "not-evaluable",
+              "values": []
+            },
+            "confounds": [
+              {
+                "id": "probe-start-scanning",
+                "text": "probe process starts may trigger scanning",
+                "active": true
+              }
+            ]
+          },
+          {
+            "id": "single-process-dominance",
+            "class": "memory",
+            "fired": null,
+            "reason": "proc.group_mem_mb not recorded at this hang (no value stored)",
+            "at": [],
+            "inputs": [],
+            "threshold": {
+              "value": 40,
+              "unit": "% of used memory",
+              "source": "provisional (diagnosis-cause-rules design)",
+              "origin": "default",
+              "key": "single-process-dominance.sharePct"
+            },
+            "n": 0,
+            "calm": {
+              "mean": null,
+              "n": 0,
+              "signal": null
+            },
+            "components": null,
+            "confidence": null,
+            "disprover": {
+              "check": "no group holds >= 20% of used memory and no group grows by >= 10% at any hang",
+              "result": "not-evaluable",
+              "values": []
+            },
+            "confounds": []
+          },
+          {
+            "id": "thermal-power-throttle",
+            "class": "thermal-power",
+            "fired": null,
+            "reason": "cpu.perf_pct not recorded at this hang (no value stored); no performance-limit signal either, so throttling is neither shown nor ruled out",
+            "at": [],
+            "inputs": [],
+            "threshold": {
+              "value": 60,
+              "unit": "% of calm median",
+              "source": "provisional (diagnosis-cause-rules design)",
+              "origin": "default",
+              "key": "thermal-power-throttle.perfPctOfCalm"
+            },
+            "n": 0,
+            "calm": {
+              "mean": null,
+              "n": 0,
+              "signal": null
+            },
+            "components": null,
+            "confidence": null,
+            "disprover": {
+              "check": "delivered performance >= 90% of the calm median at 2/3 or more of the hangs",
+              "result": "not-evaluable",
+              "values": []
+            },
+            "confounds": []
+          },
+          {
+            "id": "vm-memory-dominance",
+            "class": "memory",
+            "fired": null,
+            "reason": "proc.vm_host_mb not recorded at this hang (no value stored)",
+            "at": [],
+            "inputs": [],
+            "threshold": {
+              "value": 40,
+              "unit": "% of RAM",
+              "source": "provisional (diagnosis-cause-rules design)",
+              "origin": "default",
+              "key": "vm-memory-dominance.vmPctRam"
+            },
+            "n": 0,
+            "calm": {
+              "mean": null,
+              "n": 0,
+              "signal": null
+            },
+            "components": null,
+            "confidence": null,
+            "disprover": {
+              "check": "the configured VM memory cap is at most 50% of RAM, or VM host memory < 25% of RAM at 2/3 or more of the hangs",
+              "result": "not-evaluable",
+              "values": []
+            },
+            "confounds": []
+          }
+        ],
+        "ranked": [
+          "memory-pressure"
+        ]
+      },
+      {
+        "ref": "spawnProbes[18]",
+        "at": "2026-01-15T10:00:35.000Z",
+        "ms": 1700,
+        "confirmedBy": [
+          "probe-only"
+        ],
+        "helperLate": "not evaluated",
+        "helperLateReason": "report predates the input-response check",
+        "rules": [
+          {
+            "id": "battery-power-plan",
+            "class": "thermal-power",
+            "fired": null,
+            "reason": "rate comparison not evaluated: single power source observed; power mode not evaluated: power mode / energy saver known at 0 hangs and 0 calm probes (needs 3 of each)",
+            "at": [],
+            "inputs": [],
+            "threshold": {
+              "value": 2,
+              "unit": "x AC rate",
+              "source": "provisional (diagnosis-cause-rules design)",
+              "origin": "default",
+              "key": "battery-power-plan.rateRatio"
+            },
+            "n": 0,
+            "calm": {
+              "mean": null,
+              "n": 0,
+              "signal": null
+            },
+            "components": null,
+            "confidence": null,
+            "disprover": {
+              "check": "battery and AC hang rates per minute within 1.25x of each other (each side with enough hangs and probes)",
+              "result": "not-evaluable",
+              "values": [
+                {
+                  "reason": "single power source observed"
+                }
+              ]
+            },
+            "confounds": [],
+            "extra": {
+              "via": null,
+              "battery": {
+                "hangs": 5,
+                "probes": 26,
+                "observedMin": 0.7,
+                "ratePerMin": 6.977
+              },
+              "ac": {
+                "hangs": 0,
+                "probes": 0,
+                "observedMin": 0,
+                "ratePerMin": null
+              },
+              "ratio": null,
+              "rateComparison": "not evaluated: single power source observed",
+              "mode": {
+                "evaluated": false,
+                "hangShare": null,
+                "calmShare": null,
+                "reason": "power mode / energy saver known at 0 hangs and 0 calm probes (needs 3 of each)"
+              }
+            }
+          },
+          {
+            "id": "commit-limit-pressure",
+            "class": "memory",
+            "fired": null,
+            "reason": "mem.pagefile_pct not recorded at this hang (no value stored); a rising page file needs at least 3 readings",
+            "at": [],
+            "inputs": [],
+            "threshold": {
+              "value": 90,
+              "unit": "%",
+              "source": "provisional (diagnosis-cause-rules design)",
+              "origin": "default",
+              "key": "commit-limit-pressure.commitPct"
+            },
+            "n": 0,
+            "calm": {
+              "mean": null,
+              "n": 0,
+              "signal": null
+            },
+            "components": null,
+            "confidence": null,
+            "disprover": {
+              "check": "commit < 80% of the limit at 2/3 or more of the hangs",
+              "result": "not-disproved",
+              "values": [
+                {
+                  "ref": "spawnProbes[17]",
+                  "commitPct": 88
+                },
+                {
+                  "ref": "spawnProbes[18]",
+                  "commitPct": 90
+                },
+                {
+                  "ref": "spawnProbes[19]",
+                  "commitPct": 91
+                },
+                {
+                  "ref": "spawnProbes[20]",
+                  "commitPct": 92
+                },
+                {
+                  "ref": "spawnProbes[21]",
+                  "commitPct": 89
+                }
+              ]
+            },
+            "confounds": []
+          },
+          {
+            "id": "cpu-saturation",
+            "class": "cpu",
+            "fired": null,
+            "reason": "cpu.pct_total not recorded at this hang (no value stored)",
+            "at": [],
+            "inputs": [],
+            "threshold": {
+              "value": 90,
+              "unit": "%",
+              "source": "provisional",
+              "origin": "default",
+              "key": "cpu.pct_total"
+            },
+            "n": 0,
+            "calm": {
+              "mean": null,
+              "n": 0,
+              "signal": null
+            },
+            "components": null,
+            "confidence": null,
+            "disprover": {
+              "check": "CPU < 60% and queue < 1 per logical processor on every probe within +-10 s of the hang",
+              "result": "not-evaluable",
+              "values": []
+            },
+            "confounds": []
+          },
+          {
+            "id": "database-memory-io",
+            "class": "memory",
+            "fired": null,
+            "reason": "proc.group_mem_mb[database] not recorded at this hang (no value stored)",
+            "at": [],
+            "inputs": [],
+            "threshold": {
+              "value": 25,
+              "unit": "% of RAM",
+              "source": "provisional (diagnosis-cause-rules design)",
+              "origin": "default",
+              "key": "database-memory-io.memPctRam"
+            },
+            "n": 0,
+            "calm": {
+              "mean": null,
+              "n": 0,
+              "signal": null
+            },
+            "components": null,
+            "confidence": null,
+            "disprover": {
+              "check": "disk latency < 10 ms and database group memory < 10% of RAM within +-10 s of every hang",
+              "result": "not-evaluable",
+              "values": []
+            },
+            "confounds": []
+          },
+          {
+            "id": "disk-nearly-full",
+            "class": "disk",
+            "fired": null,
+            "reason": "disk.relevant_free_pct not recorded at this hang (no value stored); free space of the system, pagefile and workload volumes is needed",
+            "at": [],
+            "inputs": [],
+            "threshold": {
+              "value": 10,
+              "unit": "%",
+              "source": "provisional (diagnosis-cause-rules design)",
+              "origin": "default",
+              "key": "disk-nearly-full.lowFreePct"
+            },
+            "n": 0,
+            "calm": {
+              "mean": null,
+              "n": 0,
+              "signal": null
+            },
+            "components": null,
+            "confidence": null,
+            "disprover": {
+              "check": "free space of the relevant volumes at or above 25% at 2/3 or more of the hangs",
+              "result": "not-evaluable",
+              "values": []
+            },
+            "confounds": []
+          },
+          {
+            "id": "disk-stall",
+            "class": "disk",
+            "fired": false,
+            "reason": "not sustained (0 of 5 probes, minimum 3; latency > 25 ms with queue >= 1)",
+            "at": [],
+            "inputs": [],
+            "threshold": {
+              "value": 25,
+              "unit": "ms",
+              "source": "provisional",
+              "origin": "default",
+              "key": "disk.latency_ms"
+            },
+            "n": 0,
+            "calm": {
+              "mean": 4,
+              "n": 18,
+              "signal": "disk.latency_ms"
+            },
+            "components": null,
+            "confidence": null,
+            "disprover": {
+              "check": "latency < 10 ms and queue < 1 on every probe within +-10 s of the hang, for the machine total and for every drive with a reading",
+              "result": "disproved",
+              "values": [
+                {
+                  "ref": "spawnProbes[16]",
+                  "latencyMs": 4,
+                  "queue": 0.2
+                },
+                {
+                  "ref": "spawnProbes[17]",
+                  "latencyMs": 4,
+                  "queue": 0.2
+                },
+                {
+                  "ref": "spawnProbes[18]",
+                  "latencyMs": 4,
+                  "queue": 0.2
+                },
+                {
+                  "ref": "spawnProbes[19]",
+                  "latencyMs": 4,
+                  "queue": 0.2
+                },
+                {
+                  "ref": "spawnProbes[20]",
+                  "latencyMs": 4,
+                  "queue": 0.2
+                }
+              ]
+            },
+            "confounds": [
+              {
+                "id": "sync-client-io",
+                "text": "a file-sync client in the declared scope was reading or writing near the hang",
+                "active": false
+              }
+            ],
+            "extra": {
+              "perDrive": {
+                "recorded": false,
+                "text": "per-drive data not recorded"
+              },
+              "slowDrive": null,
+              "culprit": null
+            }
+          },
+          {
+            "id": "driver-interrupt-storm",
+            "class": "cpu",
+            "fired": null,
+            "reason": "cpu.dpc_intr_pct not recorded at this hang (no value stored)",
+            "at": [],
+            "inputs": [],
+            "threshold": {
+              "value": 10,
+              "unit": "%",
+              "source": "provisional (diagnosis-cause-rules design)",
+              "origin": "default",
+              "key": "driver-interrupt-storm.sumPct"
+            },
+            "n": 0,
+            "calm": {
+              "mean": null,
+              "n": 0,
+              "signal": null
+            },
+            "components": null,
+            "confidence": null,
+            "disprover": {
+              "check": "DPC + interrupt time < 3% on every probe within +-10 s of every hang",
+              "result": "not-evaluable",
+              "values": []
+            },
+            "confounds": []
+          },
+          {
+            "id": "gpu-contention",
+            "class": "gpu",
+            "fired": null,
+            "reason": "gpu.engine_util_pct not recorded at this hang (no value stored)",
+            "at": [],
+            "inputs": [],
+            "threshold": {
+              "value": 90,
+              "unit": "%",
+              "source": "provisional (diagnosis-cause-rules design)",
+              "origin": "default",
+              "key": "gpu-contention.enginePct"
+            },
+            "n": 0,
+            "calm": {
+              "mean": null,
+              "n": 0,
+              "signal": null
+            },
+            "components": null,
+            "confidence": null,
+            "disprover": {
+              "check": "busiest GPU engine < 50% and dedicated memory < 80% of its total within +-10 s of every hang",
+              "result": "not-evaluable",
+              "values": []
+            },
+            "confounds": []
+          },
+          {
+            "id": "hard-fault-thrash",
+            "class": "memory",
+            "fired": null,
+            "reason": "mem.pages_out_per_s not recorded at this hang (no value stored)",
+            "at": [],
+            "inputs": [],
+            "threshold": {
+              "value": 100,
+              "unit": "/s",
+              "source": "provisional (diagnosis-cause-rules design)",
+              "origin": "default",
+              "key": "hard-fault-thrash.pagesOutPerS"
+            },
+            "n": 0,
+            "calm": {
+              "mean": null,
+              "n": 0,
+              "signal": null
+            },
+            "components": null,
+            "confidence": null,
+            "disprover": {
+              "check": "pages written out < 20/s on every probe within +-10 s of every hang",
+              "result": "not-evaluable",
+              "values": []
+            },
+            "confounds": []
+          },
+          {
+            "id": "memory-pressure",
+            "class": "memory",
+            "fired": true,
+            "reason": null,
+            "at": [
+              "2026-01-15T10:00:35.000Z"
+            ],
+            "inputs": [
+              {
+                "ref": "spawnProbes[18]",
+                "signal": "mem.committed_pct",
+                "at": "2026-01-15T10:00:35.000Z",
+                "value": 90,
+                "unit": "%"
+              },
+              {
+                "ref": "spawnProbes[18]",
+                "signal": "mem.avail_mb",
+                "at": "2026-01-15T10:00:35.000Z",
+                "value": 295,
+                "unit": "MB"
+              }
+            ],
+            "threshold": {
+              "value": 85,
+              "unit": "%",
+              "source": "MS perf troubleshooting [derived]",
+              "origin": "default",
+              "key": "mem.commit"
+            },
+            "n": 1,
+            "calm": {
+              "mean": 61.95,
+              "n": 18,
+              "signal": "mem.committed_pct"
+            },
+            "components": {
+              "C": 1,
+              "D": 1,
+              "O": 1,
+              "K": 0.4,
+              "P": 0
+            },
+            "confidence": 0.91,
+            "disprover": {
+              "check": "commit < 70% and available > 2 GB on every probe within +-10 s of the hang",
+              "result": "not-disproved",
+              "values": [
+                {
+                  "ref": "spawnProbes[16]",
+                  "commitPct": 80,
+                  "availMB": 2200
+                },
+                {
+                  "ref": "spawnProbes[17]",
+                  "commitPct": 88,
+                  "availMB": 280
+                },
+                {
+                  "ref": "spawnProbes[18]",
+                  "commitPct": 90,
+                  "availMB": 295
+                },
+                {
+                  "ref": "spawnProbes[19]",
+                  "commitPct": 91,
+                  "availMB": 310
+                },
+                {
+                  "ref": "spawnProbes[20]",
+                  "commitPct": 92,
+                  "availMB": 325
+                }
+              ]
+            },
+            "confounds": [],
+            "confirmationWeight": 0,
+            "hangValue": 90
+          },
+          {
+            "id": "outside-scope",
+            "class": "outside-scope",
+            "fired": null,
+            "reason": "open scope",
+            "at": [],
+            "inputs": [],
+            "threshold": {
+              "value": 85,
+              "unit": "%",
+              "source": "MS perf troubleshooting [derived]",
+              "origin": "default",
+              "key": "mem.commit"
+            },
+            "n": 0,
+            "calm": {
+              "mean": null,
+              "n": 0,
+              "signal": null
+            },
+            "components": null,
+            "confidence": null,
+            "disprover": {
+              "check": "machine commit < 70% and CPU < 60% on every probe within +-10 s of the hang",
+              "result": "not-evaluable",
+              "values": []
+            },
+            "confounds": []
+          },
+          {
+            "id": "security-contention",
+            "class": "security-software",
+            "fired": null,
+            "reason": "security.cpu_pct_machine not recorded at this hang (no value stored)",
+            "at": [],
+            "inputs": [],
+            "threshold": {
+              "value": 8,
+              "unit": "% of machine",
+              "source": "provisional",
+              "origin": "default",
+              "key": "security.cpu_pct_machine"
+            },
+            "n": 0,
+            "calm": {
+              "mean": null,
+              "n": 0,
+              "signal": null
+            },
+            "components": null,
+            "confidence": null,
+            "disprover": {
+              "check": "security-software CPU < 3% of machine on every probe within +-10 s of the hang",
+              "result": "not-evaluable",
+              "values": []
+            },
+            "confounds": [
+              {
+                "id": "probe-start-scanning",
+                "text": "probe process starts may trigger scanning",
+                "active": true
+              }
+            ]
+          },
+          {
+            "id": "single-process-dominance",
+            "class": "memory",
+            "fired": null,
+            "reason": "proc.group_mem_mb not recorded at this hang (no value stored)",
+            "at": [],
+            "inputs": [],
+            "threshold": {
+              "value": 40,
+              "unit": "% of used memory",
+              "source": "provisional (diagnosis-cause-rules design)",
+              "origin": "default",
+              "key": "single-process-dominance.sharePct"
+            },
+            "n": 0,
+            "calm": {
+              "mean": null,
+              "n": 0,
+              "signal": null
+            },
+            "components": null,
+            "confidence": null,
+            "disprover": {
+              "check": "no group holds >= 20% of used memory and no group grows by >= 10% at any hang",
+              "result": "not-evaluable",
+              "values": []
+            },
+            "confounds": []
+          },
+          {
+            "id": "thermal-power-throttle",
+            "class": "thermal-power",
+            "fired": null,
+            "reason": "cpu.perf_pct not recorded at this hang (no value stored); no performance-limit signal either, so throttling is neither shown nor ruled out",
+            "at": [],
+            "inputs": [],
+            "threshold": {
+              "value": 60,
+              "unit": "% of calm median",
+              "source": "provisional (diagnosis-cause-rules design)",
+              "origin": "default",
+              "key": "thermal-power-throttle.perfPctOfCalm"
+            },
+            "n": 0,
+            "calm": {
+              "mean": null,
+              "n": 0,
+              "signal": null
+            },
+            "components": null,
+            "confidence": null,
+            "disprover": {
+              "check": "delivered performance >= 90% of the calm median at 2/3 or more of the hangs",
+              "result": "not-evaluable",
+              "values": []
+            },
+            "confounds": []
+          },
+          {
+            "id": "vm-memory-dominance",
+            "class": "memory",
+            "fired": null,
+            "reason": "proc.vm_host_mb not recorded at this hang (no value stored)",
+            "at": [],
+            "inputs": [],
+            "threshold": {
+              "value": 40,
+              "unit": "% of RAM",
+              "source": "provisional (diagnosis-cause-rules design)",
+              "origin": "default",
+              "key": "vm-memory-dominance.vmPctRam"
+            },
+            "n": 0,
+            "calm": {
+              "mean": null,
+              "n": 0,
+              "signal": null
+            },
+            "components": null,
+            "confidence": null,
+            "disprover": {
+              "check": "the configured VM memory cap is at most 50% of RAM, or VM host memory < 25% of RAM at 2/3 or more of the hangs",
+              "result": "not-evaluable",
+              "values": []
+            },
+            "confounds": []
+          }
+        ],
+        "ranked": [
+          "memory-pressure"
+        ]
+      },
+      {
+        "ref": "spawnProbes[19]",
+        "at": "2026-01-15T10:00:40.000Z",
+        "ms": 2000,
+        "confirmedBy": [
+          "user-mark"
+        ],
+        "helperLate": "not evaluated",
+        "helperLateReason": "report predates the input-response check",
+        "rules": [
+          {
+            "id": "battery-power-plan",
+            "class": "thermal-power",
+            "fired": null,
+            "reason": "rate comparison not evaluated: single power source observed; power mode not evaluated: power mode / energy saver known at 0 hangs and 0 calm probes (needs 3 of each)",
+            "at": [],
+            "inputs": [],
+            "threshold": {
+              "value": 2,
+              "unit": "x AC rate",
+              "source": "provisional (diagnosis-cause-rules design)",
+              "origin": "default",
+              "key": "battery-power-plan.rateRatio"
+            },
+            "n": 0,
+            "calm": {
+              "mean": null,
+              "n": 0,
+              "signal": null
+            },
+            "components": null,
+            "confidence": null,
+            "disprover": {
+              "check": "battery and AC hang rates per minute within 1.25x of each other (each side with enough hangs and probes)",
+              "result": "not-evaluable",
+              "values": [
+                {
+                  "reason": "single power source observed"
+                }
+              ]
+            },
+            "confounds": [],
+            "extra": {
+              "via": null,
+              "battery": {
+                "hangs": 5,
+                "probes": 26,
+                "observedMin": 0.7,
+                "ratePerMin": 6.977
+              },
+              "ac": {
+                "hangs": 0,
+                "probes": 0,
+                "observedMin": 0,
+                "ratePerMin": null
+              },
+              "ratio": null,
+              "rateComparison": "not evaluated: single power source observed",
+              "mode": {
+                "evaluated": false,
+                "hangShare": null,
+                "calmShare": null,
+                "reason": "power mode / energy saver known at 0 hangs and 0 calm probes (needs 3 of each)"
+              }
+            }
+          },
+          {
+            "id": "commit-limit-pressure",
+            "class": "memory",
+            "fired": null,
+            "reason": "mem.pagefile_pct not recorded at this hang (no value stored); a rising page file needs at least 3 readings",
+            "at": [],
+            "inputs": [],
+            "threshold": {
+              "value": 90,
+              "unit": "%",
+              "source": "provisional (diagnosis-cause-rules design)",
+              "origin": "default",
+              "key": "commit-limit-pressure.commitPct"
+            },
+            "n": 0,
+            "calm": {
+              "mean": null,
+              "n": 0,
+              "signal": null
+            },
+            "components": null,
+            "confidence": null,
+            "disprover": {
+              "check": "commit < 80% of the limit at 2/3 or more of the hangs",
+              "result": "not-disproved",
+              "values": [
+                {
+                  "ref": "spawnProbes[17]",
+                  "commitPct": 88
+                },
+                {
+                  "ref": "spawnProbes[18]",
+                  "commitPct": 90
+                },
+                {
+                  "ref": "spawnProbes[19]",
+                  "commitPct": 91
+                },
+                {
+                  "ref": "spawnProbes[20]",
+                  "commitPct": 92
+                },
+                {
+                  "ref": "spawnProbes[21]",
+                  "commitPct": 89
+                }
+              ]
+            },
+            "confounds": []
+          },
+          {
+            "id": "cpu-saturation",
+            "class": "cpu",
+            "fired": null,
+            "reason": "cpu.pct_total not recorded at this hang (no value stored)",
+            "at": [],
+            "inputs": [],
+            "threshold": {
+              "value": 90,
+              "unit": "%",
+              "source": "provisional",
+              "origin": "default",
+              "key": "cpu.pct_total"
+            },
+            "n": 0,
+            "calm": {
+              "mean": null,
+              "n": 0,
+              "signal": null
+            },
+            "components": null,
+            "confidence": null,
+            "disprover": {
+              "check": "CPU < 60% and queue < 1 per logical processor on every probe within +-10 s of the hang",
+              "result": "not-evaluable",
+              "values": []
+            },
+            "confounds": []
+          },
+          {
+            "id": "database-memory-io",
+            "class": "memory",
+            "fired": null,
+            "reason": "proc.group_mem_mb[database] not recorded at this hang (no value stored)",
+            "at": [],
+            "inputs": [],
+            "threshold": {
+              "value": 25,
+              "unit": "% of RAM",
+              "source": "provisional (diagnosis-cause-rules design)",
+              "origin": "default",
+              "key": "database-memory-io.memPctRam"
+            },
+            "n": 0,
+            "calm": {
+              "mean": null,
+              "n": 0,
+              "signal": null
+            },
+            "components": null,
+            "confidence": null,
+            "disprover": {
+              "check": "disk latency < 10 ms and database group memory < 10% of RAM within +-10 s of every hang",
+              "result": "not-evaluable",
+              "values": []
+            },
+            "confounds": []
+          },
+          {
+            "id": "disk-nearly-full",
+            "class": "disk",
+            "fired": null,
+            "reason": "disk.relevant_free_pct not recorded at this hang (no value stored); free space of the system, pagefile and workload volumes is needed",
+            "at": [],
+            "inputs": [],
+            "threshold": {
+              "value": 10,
+              "unit": "%",
+              "source": "provisional (diagnosis-cause-rules design)",
+              "origin": "default",
+              "key": "disk-nearly-full.lowFreePct"
+            },
+            "n": 0,
+            "calm": {
+              "mean": null,
+              "n": 0,
+              "signal": null
+            },
+            "components": null,
+            "confidence": null,
+            "disprover": {
+              "check": "free space of the relevant volumes at or above 25% at 2/3 or more of the hangs",
+              "result": "not-evaluable",
+              "values": []
+            },
+            "confounds": []
+          },
+          {
+            "id": "disk-stall",
+            "class": "disk",
+            "fired": false,
+            "reason": "not sustained (0 of 5 probes, minimum 3; latency > 25 ms with queue >= 1)",
+            "at": [],
+            "inputs": [],
+            "threshold": {
+              "value": 25,
+              "unit": "ms",
+              "source": "provisional",
+              "origin": "default",
+              "key": "disk.latency_ms"
+            },
+            "n": 0,
+            "calm": {
+              "mean": 4,
+              "n": 18,
+              "signal": "disk.latency_ms"
+            },
+            "components": null,
+            "confidence": null,
+            "disprover": {
+              "check": "latency < 10 ms and queue < 1 on every probe within +-10 s of the hang, for the machine total and for every drive with a reading",
+              "result": "disproved",
+              "values": [
+                {
+                  "ref": "spawnProbes[17]",
+                  "latencyMs": 4,
+                  "queue": 0.2
+                },
+                {
+                  "ref": "spawnProbes[18]",
+                  "latencyMs": 4,
+                  "queue": 0.2
+                },
+                {
+                  "ref": "spawnProbes[19]",
+                  "latencyMs": 4,
+                  "queue": 0.2
+                },
+                {
+                  "ref": "spawnProbes[20]",
+                  "latencyMs": 4,
+                  "queue": 0.2
+                },
+                {
+                  "ref": "spawnProbes[21]",
+                  "latencyMs": 4,
+                  "queue": 0.2
+                }
+              ]
+            },
+            "confounds": [
+              {
+                "id": "sync-client-io",
+                "text": "a file-sync client in the declared scope was reading or writing near the hang",
+                "active": false
+              }
+            ],
+            "extra": {
+              "perDrive": {
+                "recorded": false,
+                "text": "per-drive data not recorded"
+              },
+              "slowDrive": null,
+              "culprit": null
+            }
+          },
+          {
+            "id": "driver-interrupt-storm",
+            "class": "cpu",
+            "fired": null,
+            "reason": "cpu.dpc_intr_pct not recorded at this hang (no value stored)",
+            "at": [],
+            "inputs": [],
+            "threshold": {
+              "value": 10,
+              "unit": "%",
+              "source": "provisional (diagnosis-cause-rules design)",
+              "origin": "default",
+              "key": "driver-interrupt-storm.sumPct"
+            },
+            "n": 0,
+            "calm": {
+              "mean": null,
+              "n": 0,
+              "signal": null
+            },
+            "components": null,
+            "confidence": null,
+            "disprover": {
+              "check": "DPC + interrupt time < 3% on every probe within +-10 s of every hang",
+              "result": "not-evaluable",
+              "values": []
+            },
+            "confounds": []
+          },
+          {
+            "id": "gpu-contention",
+            "class": "gpu",
+            "fired": null,
+            "reason": "gpu.engine_util_pct not recorded at this hang (no value stored)",
+            "at": [],
+            "inputs": [],
+            "threshold": {
+              "value": 90,
+              "unit": "%",
+              "source": "provisional (diagnosis-cause-rules design)",
+              "origin": "default",
+              "key": "gpu-contention.enginePct"
+            },
+            "n": 0,
+            "calm": {
+              "mean": null,
+              "n": 0,
+              "signal": null
+            },
+            "components": null,
+            "confidence": null,
+            "disprover": {
+              "check": "busiest GPU engine < 50% and dedicated memory < 80% of its total within +-10 s of every hang",
+              "result": "not-evaluable",
+              "values": []
+            },
+            "confounds": []
+          },
+          {
+            "id": "hard-fault-thrash",
+            "class": "memory",
+            "fired": null,
+            "reason": "mem.pages_out_per_s not recorded at this hang (no value stored)",
+            "at": [],
+            "inputs": [],
+            "threshold": {
+              "value": 100,
+              "unit": "/s",
+              "source": "provisional (diagnosis-cause-rules design)",
+              "origin": "default",
+              "key": "hard-fault-thrash.pagesOutPerS"
+            },
+            "n": 0,
+            "calm": {
+              "mean": null,
+              "n": 0,
+              "signal": null
+            },
+            "components": null,
+            "confidence": null,
+            "disprover": {
+              "check": "pages written out < 20/s on every probe within +-10 s of every hang",
+              "result": "not-evaluable",
+              "values": []
+            },
+            "confounds": []
+          },
+          {
+            "id": "memory-pressure",
+            "class": "memory",
+            "fired": true,
+            "reason": null,
+            "at": [
+              "2026-01-15T10:00:40.000Z"
+            ],
+            "inputs": [
+              {
+                "ref": "spawnProbes[19]",
+                "signal": "mem.committed_pct",
+                "at": "2026-01-15T10:00:40.000Z",
+                "value": 91,
+                "unit": "%"
+              },
+              {
+                "ref": "spawnProbes[19]",
+                "signal": "mem.avail_mb",
+                "at": "2026-01-15T10:00:40.000Z",
+                "value": 310,
+                "unit": "MB"
+              }
+            ],
+            "threshold": {
+              "value": 85,
+              "unit": "%",
+              "source": "MS perf troubleshooting [derived]",
+              "origin": "default",
+              "key": "mem.commit"
+            },
+            "n": 1,
+            "calm": {
+              "mean": 61.95,
+              "n": 18,
+              "signal": "mem.committed_pct"
+            },
+            "components": {
+              "C": 1,
+              "D": 1,
+              "O": 1,
+              "K": 0.4,
+              "P": 0
+            },
+            "confidence": 0.91,
+            "disprover": {
+              "check": "commit < 70% and available > 2 GB on every probe within +-10 s of the hang",
+              "result": "not-disproved",
+              "values": [
+                {
+                  "ref": "spawnProbes[17]",
+                  "commitPct": 88,
+                  "availMB": 280
+                },
+                {
+                  "ref": "spawnProbes[18]",
+                  "commitPct": 90,
+                  "availMB": 295
+                },
+                {
+                  "ref": "spawnProbes[19]",
+                  "commitPct": 91,
+                  "availMB": 310
+                },
+                {
+                  "ref": "spawnProbes[20]",
+                  "commitPct": 92,
+                  "availMB": 325
+                },
+                {
+                  "ref": "spawnProbes[21]",
+                  "commitPct": 89,
+                  "availMB": 340
+                }
+              ]
+            },
+            "confounds": [],
+            "confirmationWeight": 1,
+            "hangValue": 91
+          },
+          {
+            "id": "outside-scope",
+            "class": "outside-scope",
+            "fired": null,
+            "reason": "open scope",
+            "at": [],
+            "inputs": [],
+            "threshold": {
+              "value": 85,
+              "unit": "%",
+              "source": "MS perf troubleshooting [derived]",
+              "origin": "default",
+              "key": "mem.commit"
+            },
+            "n": 0,
+            "calm": {
+              "mean": null,
+              "n": 0,
+              "signal": null
+            },
+            "components": null,
+            "confidence": null,
+            "disprover": {
+              "check": "machine commit < 70% and CPU < 60% on every probe within +-10 s of the hang",
+              "result": "not-evaluable",
+              "values": []
+            },
+            "confounds": []
+          },
+          {
+            "id": "security-contention",
+            "class": "security-software",
+            "fired": null,
+            "reason": "security.cpu_pct_machine not recorded at this hang (no value stored)",
+            "at": [],
+            "inputs": [],
+            "threshold": {
+              "value": 8,
+              "unit": "% of machine",
+              "source": "provisional",
+              "origin": "default",
+              "key": "security.cpu_pct_machine"
+            },
+            "n": 0,
+            "calm": {
+              "mean": null,
+              "n": 0,
+              "signal": null
+            },
+            "components": null,
+            "confidence": null,
+            "disprover": {
+              "check": "security-software CPU < 3% of machine on every probe within +-10 s of the hang",
+              "result": "not-evaluable",
+              "values": []
+            },
+            "confounds": [
+              {
+                "id": "probe-start-scanning",
+                "text": "probe process starts may trigger scanning",
+                "active": true
+              }
+            ]
+          },
+          {
+            "id": "single-process-dominance",
+            "class": "memory",
+            "fired": null,
+            "reason": "proc.group_mem_mb not recorded at this hang (no value stored)",
+            "at": [],
+            "inputs": [],
+            "threshold": {
+              "value": 40,
+              "unit": "% of used memory",
+              "source": "provisional (diagnosis-cause-rules design)",
+              "origin": "default",
+              "key": "single-process-dominance.sharePct"
+            },
+            "n": 0,
+            "calm": {
+              "mean": null,
+              "n": 0,
+              "signal": null
+            },
+            "components": null,
+            "confidence": null,
+            "disprover": {
+              "check": "no group holds >= 20% of used memory and no group grows by >= 10% at any hang",
+              "result": "not-evaluable",
+              "values": []
+            },
+            "confounds": []
+          },
+          {
+            "id": "thermal-power-throttle",
+            "class": "thermal-power",
+            "fired": null,
+            "reason": "cpu.perf_pct not recorded at this hang (no value stored); no performance-limit signal either, so throttling is neither shown nor ruled out",
+            "at": [],
+            "inputs": [],
+            "threshold": {
+              "value": 60,
+              "unit": "% of calm median",
+              "source": "provisional (diagnosis-cause-rules design)",
+              "origin": "default",
+              "key": "thermal-power-throttle.perfPctOfCalm"
+            },
+            "n": 0,
+            "calm": {
+              "mean": null,
+              "n": 0,
+              "signal": null
+            },
+            "components": null,
+            "confidence": null,
+            "disprover": {
+              "check": "delivered performance >= 90% of the calm median at 2/3 or more of the hangs",
+              "result": "not-evaluable",
+              "values": []
+            },
+            "confounds": []
+          },
+          {
+            "id": "vm-memory-dominance",
+            "class": "memory",
+            "fired": null,
+            "reason": "proc.vm_host_mb not recorded at this hang (no value stored)",
+            "at": [],
+            "inputs": [],
+            "threshold": {
+              "value": 40,
+              "unit": "% of RAM",
+              "source": "provisional (diagnosis-cause-rules design)",
+              "origin": "default",
+              "key": "vm-memory-dominance.vmPctRam"
+            },
+            "n": 0,
+            "calm": {
+              "mean": null,
+              "n": 0,
+              "signal": null
+            },
+            "components": null,
+            "confidence": null,
+            "disprover": {
+              "check": "the configured VM memory cap is at most 50% of RAM, or VM host memory < 25% of RAM at 2/3 or more of the hangs",
+              "result": "not-evaluable",
+              "values": []
+            },
+            "confounds": []
+          }
+        ],
+        "ranked": [
+          "memory-pressure"
+        ]
+      },
+      {
+        "ref": "spawnProbes[20]",
+        "at": "2026-01-15T10:00:45.000Z",
+        "ms": 2300,
+        "confirmedBy": [
+          "probe-only"
+        ],
+        "helperLate": "not evaluated",
+        "helperLateReason": "report predates the input-response check",
+        "rules": [
+          {
+            "id": "battery-power-plan",
+            "class": "thermal-power",
+            "fired": null,
+            "reason": "rate comparison not evaluated: single power source observed; power mode not evaluated: power mode / energy saver known at 0 hangs and 0 calm probes (needs 3 of each)",
+            "at": [],
+            "inputs": [],
+            "threshold": {
+              "value": 2,
+              "unit": "x AC rate",
+              "source": "provisional (diagnosis-cause-rules design)",
+              "origin": "default",
+              "key": "battery-power-plan.rateRatio"
+            },
+            "n": 0,
+            "calm": {
+              "mean": null,
+              "n": 0,
+              "signal": null
+            },
+            "components": null,
+            "confidence": null,
+            "disprover": {
+              "check": "battery and AC hang rates per minute within 1.25x of each other (each side with enough hangs and probes)",
+              "result": "not-evaluable",
+              "values": [
+                {
+                  "reason": "single power source observed"
+                }
+              ]
+            },
+            "confounds": [],
+            "extra": {
+              "via": null,
+              "battery": {
+                "hangs": 5,
+                "probes": 26,
+                "observedMin": 0.7,
+                "ratePerMin": 6.977
+              },
+              "ac": {
+                "hangs": 0,
+                "probes": 0,
+                "observedMin": 0,
+                "ratePerMin": null
+              },
+              "ratio": null,
+              "rateComparison": "not evaluated: single power source observed",
+              "mode": {
+                "evaluated": false,
+                "hangShare": null,
+                "calmShare": null,
+                "reason": "power mode / energy saver known at 0 hangs and 0 calm probes (needs 3 of each)"
+              }
+            }
+          },
+          {
+            "id": "commit-limit-pressure",
+            "class": "memory",
+            "fired": null,
+            "reason": "mem.pagefile_pct not recorded at this hang (no value stored); a rising page file needs at least 3 readings",
+            "at": [],
+            "inputs": [],
+            "threshold": {
+              "value": 90,
+              "unit": "%",
+              "source": "provisional (diagnosis-cause-rules design)",
+              "origin": "default",
+              "key": "commit-limit-pressure.commitPct"
+            },
+            "n": 0,
+            "calm": {
+              "mean": null,
+              "n": 0,
+              "signal": null
+            },
+            "components": null,
+            "confidence": null,
+            "disprover": {
+              "check": "commit < 80% of the limit at 2/3 or more of the hangs",
+              "result": "not-disproved",
+              "values": [
+                {
+                  "ref": "spawnProbes[17]",
+                  "commitPct": 88
+                },
+                {
+                  "ref": "spawnProbes[18]",
+                  "commitPct": 90
+                },
+                {
+                  "ref": "spawnProbes[19]",
+                  "commitPct": 91
+                },
+                {
+                  "ref": "spawnProbes[20]",
+                  "commitPct": 92
+                },
+                {
+                  "ref": "spawnProbes[21]",
+                  "commitPct": 89
+                }
+              ]
+            },
+            "confounds": []
+          },
+          {
+            "id": "cpu-saturation",
+            "class": "cpu",
+            "fired": null,
+            "reason": "cpu.pct_total not recorded at this hang (no value stored)",
+            "at": [],
+            "inputs": [],
+            "threshold": {
+              "value": 90,
+              "unit": "%",
+              "source": "provisional",
+              "origin": "default",
+              "key": "cpu.pct_total"
+            },
+            "n": 0,
+            "calm": {
+              "mean": null,
+              "n": 0,
+              "signal": null
+            },
+            "components": null,
+            "confidence": null,
+            "disprover": {
+              "check": "CPU < 60% and queue < 1 per logical processor on every probe within +-10 s of the hang",
+              "result": "not-evaluable",
+              "values": []
+            },
+            "confounds": []
+          },
+          {
+            "id": "database-memory-io",
+            "class": "memory",
+            "fired": null,
+            "reason": "proc.group_mem_mb[database] not recorded at this hang (no value stored)",
+            "at": [],
+            "inputs": [],
+            "threshold": {
+              "value": 25,
+              "unit": "% of RAM",
+              "source": "provisional (diagnosis-cause-rules design)",
+              "origin": "default",
+              "key": "database-memory-io.memPctRam"
+            },
+            "n": 0,
+            "calm": {
+              "mean": null,
+              "n": 0,
+              "signal": null
+            },
+            "components": null,
+            "confidence": null,
+            "disprover": {
+              "check": "disk latency < 10 ms and database group memory < 10% of RAM within +-10 s of every hang",
+              "result": "not-evaluable",
+              "values": []
+            },
+            "confounds": []
+          },
+          {
+            "id": "disk-nearly-full",
+            "class": "disk",
+            "fired": null,
+            "reason": "disk.relevant_free_pct not recorded at this hang (no value stored); free space of the system, pagefile and workload volumes is needed",
+            "at": [],
+            "inputs": [],
+            "threshold": {
+              "value": 10,
+              "unit": "%",
+              "source": "provisional (diagnosis-cause-rules design)",
+              "origin": "default",
+              "key": "disk-nearly-full.lowFreePct"
+            },
+            "n": 0,
+            "calm": {
+              "mean": null,
+              "n": 0,
+              "signal": null
+            },
+            "components": null,
+            "confidence": null,
+            "disprover": {
+              "check": "free space of the relevant volumes at or above 25% at 2/3 or more of the hangs",
+              "result": "not-evaluable",
+              "values": []
+            },
+            "confounds": []
+          },
+          {
+            "id": "disk-stall",
+            "class": "disk",
+            "fired": false,
+            "reason": "not sustained (0 of 4 probes, minimum 3; latency > 25 ms with queue >= 1)",
+            "at": [],
+            "inputs": [],
+            "threshold": {
+              "value": 25,
+              "unit": "ms",
+              "source": "provisional",
+              "origin": "default",
+              "key": "disk.latency_ms"
+            },
+            "n": 0,
+            "calm": {
+              "mean": 4,
+              "n": 18,
+              "signal": "disk.latency_ms"
+            },
+            "components": null,
+            "confidence": null,
+            "disprover": {
+              "check": "latency < 10 ms and queue < 1 on every probe within +-10 s of the hang, for the machine total and for every drive with a reading",
+              "result": "disproved",
+              "values": [
+                {
+                  "ref": "spawnProbes[18]",
+                  "latencyMs": 4,
+                  "queue": 0.2
+                },
+                {
+                  "ref": "spawnProbes[19]",
+                  "latencyMs": 4,
+                  "queue": 0.2
+                },
+                {
+                  "ref": "spawnProbes[20]",
+                  "latencyMs": 4,
+                  "queue": 0.2
+                },
+                {
+                  "ref": "spawnProbes[21]",
+                  "latencyMs": 4,
+                  "queue": 0.2
+                }
+              ]
+            },
+            "confounds": [
+              {
+                "id": "sync-client-io",
+                "text": "a file-sync client in the declared scope was reading or writing near the hang",
+                "active": false
+              }
+            ],
+            "extra": {
+              "perDrive": {
+                "recorded": false,
+                "text": "per-drive data not recorded"
+              },
+              "slowDrive": null,
+              "culprit": null
+            }
+          },
+          {
+            "id": "driver-interrupt-storm",
+            "class": "cpu",
+            "fired": null,
+            "reason": "cpu.dpc_intr_pct not recorded at this hang (no value stored)",
+            "at": [],
+            "inputs": [],
+            "threshold": {
+              "value": 10,
+              "unit": "%",
+              "source": "provisional (diagnosis-cause-rules design)",
+              "origin": "default",
+              "key": "driver-interrupt-storm.sumPct"
+            },
+            "n": 0,
+            "calm": {
+              "mean": null,
+              "n": 0,
+              "signal": null
+            },
+            "components": null,
+            "confidence": null,
+            "disprover": {
+              "check": "DPC + interrupt time < 3% on every probe within +-10 s of every hang",
+              "result": "not-evaluable",
+              "values": []
+            },
+            "confounds": []
+          },
+          {
+            "id": "gpu-contention",
+            "class": "gpu",
+            "fired": null,
+            "reason": "gpu.engine_util_pct not recorded at this hang (no value stored)",
+            "at": [],
+            "inputs": [],
+            "threshold": {
+              "value": 90,
+              "unit": "%",
+              "source": "provisional (diagnosis-cause-rules design)",
+              "origin": "default",
+              "key": "gpu-contention.enginePct"
+            },
+            "n": 0,
+            "calm": {
+              "mean": null,
+              "n": 0,
+              "signal": null
+            },
+            "components": null,
+            "confidence": null,
+            "disprover": {
+              "check": "busiest GPU engine < 50% and dedicated memory < 80% of its total within +-10 s of every hang",
+              "result": "not-evaluable",
+              "values": []
+            },
+            "confounds": []
+          },
+          {
+            "id": "hard-fault-thrash",
+            "class": "memory",
+            "fired": null,
+            "reason": "mem.pages_out_per_s not recorded at this hang (no value stored)",
+            "at": [],
+            "inputs": [],
+            "threshold": {
+              "value": 100,
+              "unit": "/s",
+              "source": "provisional (diagnosis-cause-rules design)",
+              "origin": "default",
+              "key": "hard-fault-thrash.pagesOutPerS"
+            },
+            "n": 0,
+            "calm": {
+              "mean": null,
+              "n": 0,
+              "signal": null
+            },
+            "components": null,
+            "confidence": null,
+            "disprover": {
+              "check": "pages written out < 20/s on every probe within +-10 s of every hang",
+              "result": "not-evaluable",
+              "values": []
+            },
+            "confounds": []
+          },
+          {
+            "id": "memory-pressure",
+            "class": "memory",
+            "fired": true,
+            "reason": null,
+            "at": [
+              "2026-01-15T10:00:45.000Z"
+            ],
+            "inputs": [
+              {
+                "ref": "spawnProbes[20]",
+                "signal": "mem.committed_pct",
+                "at": "2026-01-15T10:00:45.000Z",
+                "value": 92,
+                "unit": "%"
+              },
+              {
+                "ref": "spawnProbes[20]",
+                "signal": "mem.avail_mb",
+                "at": "2026-01-15T10:00:45.000Z",
+                "value": 325,
+                "unit": "MB"
+              }
+            ],
+            "threshold": {
+              "value": 85,
+              "unit": "%",
+              "source": "MS perf troubleshooting [derived]",
+              "origin": "default",
+              "key": "mem.commit"
+            },
+            "n": 1,
+            "calm": {
+              "mean": 61.95,
+              "n": 18,
+              "signal": "mem.committed_pct"
+            },
+            "components": {
+              "C": 1,
+              "D": 1,
+              "O": 1,
+              "K": 0.4,
+              "P": 0
+            },
+            "confidence": 0.91,
+            "disprover": {
+              "check": "commit < 70% and available > 2 GB on every probe within +-10 s of the hang",
+              "result": "not-disproved",
+              "values": [
+                {
+                  "ref": "spawnProbes[18]",
+                  "commitPct": 90,
+                  "availMB": 295
+                },
+                {
+                  "ref": "spawnProbes[19]",
+                  "commitPct": 91,
+                  "availMB": 310
+                },
+                {
+                  "ref": "spawnProbes[20]",
+                  "commitPct": 92,
+                  "availMB": 325
+                },
+                {
+                  "ref": "spawnProbes[21]",
+                  "commitPct": 89,
+                  "availMB": 340
+                }
+              ]
+            },
+            "confounds": [],
+            "confirmationWeight": 0,
+            "hangValue": 92
+          },
+          {
+            "id": "outside-scope",
+            "class": "outside-scope",
+            "fired": null,
+            "reason": "open scope",
+            "at": [],
+            "inputs": [],
+            "threshold": {
+              "value": 85,
+              "unit": "%",
+              "source": "MS perf troubleshooting [derived]",
+              "origin": "default",
+              "key": "mem.commit"
+            },
+            "n": 0,
+            "calm": {
+              "mean": null,
+              "n": 0,
+              "signal": null
+            },
+            "components": null,
+            "confidence": null,
+            "disprover": {
+              "check": "machine commit < 70% and CPU < 60% on every probe within +-10 s of the hang",
+              "result": "not-evaluable",
+              "values": []
+            },
+            "confounds": []
+          },
+          {
+            "id": "security-contention",
+            "class": "security-software",
+            "fired": null,
+            "reason": "security.cpu_pct_machine not recorded at this hang (no value stored)",
+            "at": [],
+            "inputs": [],
+            "threshold": {
+              "value": 8,
+              "unit": "% of machine",
+              "source": "provisional",
+              "origin": "default",
+              "key": "security.cpu_pct_machine"
+            },
+            "n": 0,
+            "calm": {
+              "mean": null,
+              "n": 0,
+              "signal": null
+            },
+            "components": null,
+            "confidence": null,
+            "disprover": {
+              "check": "security-software CPU < 3% of machine on every probe within +-10 s of the hang",
+              "result": "not-evaluable",
+              "values": []
+            },
+            "confounds": [
+              {
+                "id": "probe-start-scanning",
+                "text": "probe process starts may trigger scanning",
+                "active": true
+              }
+            ]
+          },
+          {
+            "id": "single-process-dominance",
+            "class": "memory",
+            "fired": null,
+            "reason": "proc.group_mem_mb not recorded at this hang (no value stored)",
+            "at": [],
+            "inputs": [],
+            "threshold": {
+              "value": 40,
+              "unit": "% of used memory",
+              "source": "provisional (diagnosis-cause-rules design)",
+              "origin": "default",
+              "key": "single-process-dominance.sharePct"
+            },
+            "n": 0,
+            "calm": {
+              "mean": null,
+              "n": 0,
+              "signal": null
+            },
+            "components": null,
+            "confidence": null,
+            "disprover": {
+              "check": "no group holds >= 20% of used memory and no group grows by >= 10% at any hang",
+              "result": "not-evaluable",
+              "values": []
+            },
+            "confounds": []
+          },
+          {
+            "id": "thermal-power-throttle",
+            "class": "thermal-power",
+            "fired": null,
+            "reason": "cpu.perf_pct not recorded at this hang (no value stored); no performance-limit signal either, so throttling is neither shown nor ruled out",
+            "at": [],
+            "inputs": [],
+            "threshold": {
+              "value": 60,
+              "unit": "% of calm median",
+              "source": "provisional (diagnosis-cause-rules design)",
+              "origin": "default",
+              "key": "thermal-power-throttle.perfPctOfCalm"
+            },
+            "n": 0,
+            "calm": {
+              "mean": null,
+              "n": 0,
+              "signal": null
+            },
+            "components": null,
+            "confidence": null,
+            "disprover": {
+              "check": "delivered performance >= 90% of the calm median at 2/3 or more of the hangs",
+              "result": "not-evaluable",
+              "values": []
+            },
+            "confounds": []
+          },
+          {
+            "id": "vm-memory-dominance",
+            "class": "memory",
+            "fired": null,
+            "reason": "proc.vm_host_mb not recorded at this hang (no value stored)",
+            "at": [],
+            "inputs": [],
+            "threshold": {
+              "value": 40,
+              "unit": "% of RAM",
+              "source": "provisional (diagnosis-cause-rules design)",
+              "origin": "default",
+              "key": "vm-memory-dominance.vmPctRam"
+            },
+            "n": 0,
+            "calm": {
+              "mean": null,
+              "n": 0,
+              "signal": null
+            },
+            "components": null,
+            "confidence": null,
+            "disprover": {
+              "check": "the configured VM memory cap is at most 50% of RAM, or VM host memory < 25% of RAM at 2/3 or more of the hangs",
+              "result": "not-evaluable",
+              "values": []
+            },
+            "confounds": []
+          }
+        ],
+        "ranked": [
+          "memory-pressure"
+        ]
+      },
+      {
+        "ref": "spawnProbes[21]",
+        "at": "2026-01-15T10:00:50.000Z",
+        "ms": 2600,
+        "confirmedBy": [
+          "probe-only"
+        ],
+        "helperLate": "not evaluated",
+        "helperLateReason": "report predates the input-response check",
+        "rules": [
+          {
+            "id": "battery-power-plan",
+            "class": "thermal-power",
+            "fired": null,
+            "reason": "rate comparison not evaluated: single power source observed; power mode not evaluated: power mode / energy saver known at 0 hangs and 0 calm probes (needs 3 of each)",
+            "at": [],
+            "inputs": [],
+            "threshold": {
+              "value": 2,
+              "unit": "x AC rate",
+              "source": "provisional (diagnosis-cause-rules design)",
+              "origin": "default",
+              "key": "battery-power-plan.rateRatio"
+            },
+            "n": 0,
+            "calm": {
+              "mean": null,
+              "n": 0,
+              "signal": null
+            },
+            "components": null,
+            "confidence": null,
+            "disprover": {
+              "check": "battery and AC hang rates per minute within 1.25x of each other (each side with enough hangs and probes)",
+              "result": "not-evaluable",
+              "values": [
+                {
+                  "reason": "single power source observed"
+                }
+              ]
+            },
+            "confounds": [],
+            "extra": {
+              "via": null,
+              "battery": {
+                "hangs": 5,
+                "probes": 26,
+                "observedMin": 0.7,
+                "ratePerMin": 6.977
+              },
+              "ac": {
+                "hangs": 0,
+                "probes": 0,
+                "observedMin": 0,
+                "ratePerMin": null
+              },
+              "ratio": null,
+              "rateComparison": "not evaluated: single power source observed",
+              "mode": {
+                "evaluated": false,
+                "hangShare": null,
+                "calmShare": null,
+                "reason": "power mode / energy saver known at 0 hangs and 0 calm probes (needs 3 of each)"
+              }
+            }
+          },
+          {
+            "id": "commit-limit-pressure",
+            "class": "memory",
+            "fired": null,
+            "reason": "mem.pagefile_pct not recorded at this hang (no value stored); a rising page file needs at least 3 readings",
+            "at": [],
+            "inputs": [],
+            "threshold": {
+              "value": 90,
+              "unit": "%",
+              "source": "provisional (diagnosis-cause-rules design)",
+              "origin": "default",
+              "key": "commit-limit-pressure.commitPct"
+            },
+            "n": 0,
+            "calm": {
+              "mean": null,
+              "n": 0,
+              "signal": null
+            },
+            "components": null,
+            "confidence": null,
+            "disprover": {
+              "check": "commit < 80% of the limit at 2/3 or more of the hangs",
+              "result": "not-disproved",
+              "values": [
+                {
+                  "ref": "spawnProbes[17]",
+                  "commitPct": 88
+                },
+                {
+                  "ref": "spawnProbes[18]",
+                  "commitPct": 90
+                },
+                {
+                  "ref": "spawnProbes[19]",
+                  "commitPct": 91
+                },
+                {
+                  "ref": "spawnProbes[20]",
+                  "commitPct": 92
+                },
+                {
+                  "ref": "spawnProbes[21]",
+                  "commitPct": 89
+                }
+              ]
+            },
+            "confounds": []
+          },
+          {
+            "id": "cpu-saturation",
+            "class": "cpu",
+            "fired": null,
+            "reason": "cpu.pct_total not recorded at this hang (no value stored)",
+            "at": [],
+            "inputs": [],
+            "threshold": {
+              "value": 90,
+              "unit": "%",
+              "source": "provisional",
+              "origin": "default",
+              "key": "cpu.pct_total"
+            },
+            "n": 0,
+            "calm": {
+              "mean": null,
+              "n": 0,
+              "signal": null
+            },
+            "components": null,
+            "confidence": null,
+            "disprover": {
+              "check": "CPU < 60% and queue < 1 per logical processor on every probe within +-10 s of the hang",
+              "result": "not-evaluable",
+              "values": []
+            },
+            "confounds": []
+          },
+          {
+            "id": "database-memory-io",
+            "class": "memory",
+            "fired": null,
+            "reason": "proc.group_mem_mb[database] not recorded at this hang (no value stored)",
+            "at": [],
+            "inputs": [],
+            "threshold": {
+              "value": 25,
+              "unit": "% of RAM",
+              "source": "provisional (diagnosis-cause-rules design)",
+              "origin": "default",
+              "key": "database-memory-io.memPctRam"
+            },
+            "n": 0,
+            "calm": {
+              "mean": null,
+              "n": 0,
+              "signal": null
+            },
+            "components": null,
+            "confidence": null,
+            "disprover": {
+              "check": "disk latency < 10 ms and database group memory < 10% of RAM within +-10 s of every hang",
+              "result": "not-evaluable",
+              "values": []
+            },
+            "confounds": []
+          },
+          {
+            "id": "disk-nearly-full",
+            "class": "disk",
+            "fired": null,
+            "reason": "disk.relevant_free_pct not recorded at this hang (no value stored); free space of the system, pagefile and workload volumes is needed",
+            "at": [],
+            "inputs": [],
+            "threshold": {
+              "value": 10,
+              "unit": "%",
+              "source": "provisional (diagnosis-cause-rules design)",
+              "origin": "default",
+              "key": "disk-nearly-full.lowFreePct"
+            },
+            "n": 0,
+            "calm": {
+              "mean": null,
+              "n": 0,
+              "signal": null
+            },
+            "components": null,
+            "confidence": null,
+            "disprover": {
+              "check": "free space of the relevant volumes at or above 25% at 2/3 or more of the hangs",
+              "result": "not-evaluable",
+              "values": []
+            },
+            "confounds": []
+          },
+          {
+            "id": "disk-stall",
+            "class": "disk",
+            "fired": false,
+            "reason": "not sustained (0 of 3 probes, minimum 3; latency > 25 ms with queue >= 1)",
+            "at": [],
+            "inputs": [],
+            "threshold": {
+              "value": 25,
+              "unit": "ms",
+              "source": "provisional",
+              "origin": "default",
+              "key": "disk.latency_ms"
+            },
+            "n": 0,
+            "calm": {
+              "mean": 4,
+              "n": 18,
+              "signal": "disk.latency_ms"
+            },
+            "components": null,
+            "confidence": null,
+            "disprover": {
+              "check": "latency < 10 ms and queue < 1 on every probe within +-10 s of the hang, for the machine total and for every drive with a reading",
+              "result": "disproved",
+              "values": [
+                {
+                  "ref": "spawnProbes[19]",
+                  "latencyMs": 4,
+                  "queue": 0.2
+                },
+                {
+                  "ref": "spawnProbes[20]",
+                  "latencyMs": 4,
+                  "queue": 0.2
+                },
+                {
+                  "ref": "spawnProbes[21]",
+                  "latencyMs": 4,
+                  "queue": 0.2
+                }
+              ]
+            },
+            "confounds": [
+              {
+                "id": "sync-client-io",
+                "text": "a file-sync client in the declared scope was reading or writing near the hang",
+                "active": false
+              }
+            ],
+            "extra": {
+              "perDrive": {
+                "recorded": false,
+                "text": "per-drive data not recorded"
+              },
+              "slowDrive": null,
+              "culprit": null
+            }
+          },
+          {
+            "id": "driver-interrupt-storm",
+            "class": "cpu",
+            "fired": null,
+            "reason": "cpu.dpc_intr_pct not recorded at this hang (no value stored)",
+            "at": [],
+            "inputs": [],
+            "threshold": {
+              "value": 10,
+              "unit": "%",
+              "source": "provisional (diagnosis-cause-rules design)",
+              "origin": "default",
+              "key": "driver-interrupt-storm.sumPct"
+            },
+            "n": 0,
+            "calm": {
+              "mean": null,
+              "n": 0,
+              "signal": null
+            },
+            "components": null,
+            "confidence": null,
+            "disprover": {
+              "check": "DPC + interrupt time < 3% on every probe within +-10 s of every hang",
+              "result": "not-evaluable",
+              "values": []
+            },
+            "confounds": []
+          },
+          {
+            "id": "gpu-contention",
+            "class": "gpu",
+            "fired": null,
+            "reason": "gpu.engine_util_pct not recorded at this hang (no value stored)",
+            "at": [],
+            "inputs": [],
+            "threshold": {
+              "value": 90,
+              "unit": "%",
+              "source": "provisional (diagnosis-cause-rules design)",
+              "origin": "default",
+              "key": "gpu-contention.enginePct"
+            },
+            "n": 0,
+            "calm": {
+              "mean": null,
+              "n": 0,
+              "signal": null
+            },
+            "components": null,
+            "confidence": null,
+            "disprover": {
+              "check": "busiest GPU engine < 50% and dedicated memory < 80% of its total within +-10 s of every hang",
+              "result": "not-evaluable",
+              "values": []
+            },
+            "confounds": []
+          },
+          {
+            "id": "hard-fault-thrash",
+            "class": "memory",
+            "fired": null,
+            "reason": "mem.pages_out_per_s not recorded at this hang (no value stored)",
+            "at": [],
+            "inputs": [],
+            "threshold": {
+              "value": 100,
+              "unit": "/s",
+              "source": "provisional (diagnosis-cause-rules design)",
+              "origin": "default",
+              "key": "hard-fault-thrash.pagesOutPerS"
+            },
+            "n": 0,
+            "calm": {
+              "mean": null,
+              "n": 0,
+              "signal": null
+            },
+            "components": null,
+            "confidence": null,
+            "disprover": {
+              "check": "pages written out < 20/s on every probe within +-10 s of every hang",
+              "result": "not-evaluable",
+              "values": []
+            },
+            "confounds": []
+          },
+          {
+            "id": "memory-pressure",
+            "class": "memory",
+            "fired": true,
+            "reason": null,
+            "at": [
+              "2026-01-15T10:00:50.000Z"
+            ],
+            "inputs": [
+              {
+                "ref": "spawnProbes[21]",
+                "signal": "mem.committed_pct",
+                "at": "2026-01-15T10:00:50.000Z",
+                "value": 89,
+                "unit": "%"
+              },
+              {
+                "ref": "spawnProbes[21]",
+                "signal": "mem.avail_mb",
+                "at": "2026-01-15T10:00:50.000Z",
+                "value": 340,
+                "unit": "MB"
+              }
+            ],
+            "threshold": {
+              "value": 85,
+              "unit": "%",
+              "source": "MS perf troubleshooting [derived]",
+              "origin": "default",
+              "key": "mem.commit"
+            },
+            "n": 1,
+            "calm": {
+              "mean": 61.95,
+              "n": 18,
+              "signal": "mem.committed_pct"
+            },
+            "components": {
+              "C": 1,
+              "D": 1,
+              "O": 1,
+              "K": 0.4,
+              "P": 0
+            },
+            "confidence": 0.91,
+            "disprover": {
+              "check": "commit < 70% and available > 2 GB on every probe within +-10 s of the hang",
+              "result": "not-disproved",
+              "values": [
+                {
+                  "ref": "spawnProbes[19]",
+                  "commitPct": 91,
+                  "availMB": 310
+                },
+                {
+                  "ref": "spawnProbes[20]",
+                  "commitPct": 92,
+                  "availMB": 325
+                },
+                {
+                  "ref": "spawnProbes[21]",
+                  "commitPct": 89,
+                  "availMB": 340
+                }
+              ]
+            },
+            "confounds": [],
+            "confirmationWeight": 0,
+            "hangValue": 89
+          },
+          {
+            "id": "outside-scope",
+            "class": "outside-scope",
+            "fired": null,
+            "reason": "open scope",
+            "at": [],
+            "inputs": [],
+            "threshold": {
+              "value": 85,
+              "unit": "%",
+              "source": "MS perf troubleshooting [derived]",
+              "origin": "default",
+              "key": "mem.commit"
+            },
+            "n": 0,
+            "calm": {
+              "mean": null,
+              "n": 0,
+              "signal": null
+            },
+            "components": null,
+            "confidence": null,
+            "disprover": {
+              "check": "machine commit < 70% and CPU < 60% on every probe within +-10 s of the hang",
+              "result": "not-evaluable",
+              "values": []
+            },
+            "confounds": []
+          },
+          {
+            "id": "security-contention",
+            "class": "security-software",
+            "fired": null,
+            "reason": "security.cpu_pct_machine not recorded at this hang (no value stored)",
+            "at": [],
+            "inputs": [],
+            "threshold": {
+              "value": 8,
+              "unit": "% of machine",
+              "source": "provisional",
+              "origin": "default",
+              "key": "security.cpu_pct_machine"
+            },
+            "n": 0,
+            "calm": {
+              "mean": null,
+              "n": 0,
+              "signal": null
+            },
+            "components": null,
+            "confidence": null,
+            "disprover": {
+              "check": "security-software CPU < 3% of machine on every probe within +-10 s of the hang",
+              "result": "not-evaluable",
+              "values": []
+            },
+            "confounds": [
+              {
+                "id": "probe-start-scanning",
+                "text": "probe process starts may trigger scanning",
+                "active": true
+              }
+            ]
+          },
+          {
+            "id": "single-process-dominance",
+            "class": "memory",
+            "fired": null,
+            "reason": "proc.group_mem_mb not recorded at this hang (no value stored)",
+            "at": [],
+            "inputs": [],
+            "threshold": {
+              "value": 40,
+              "unit": "% of used memory",
+              "source": "provisional (diagnosis-cause-rules design)",
+              "origin": "default",
+              "key": "single-process-dominance.sharePct"
+            },
+            "n": 0,
+            "calm": {
+              "mean": null,
+              "n": 0,
+              "signal": null
+            },
+            "components": null,
+            "confidence": null,
+            "disprover": {
+              "check": "no group holds >= 20% of used memory and no group grows by >= 10% at any hang",
+              "result": "not-evaluable",
+              "values": []
+            },
+            "confounds": []
+          },
+          {
+            "id": "thermal-power-throttle",
+            "class": "thermal-power",
+            "fired": null,
+            "reason": "cpu.perf_pct not recorded at this hang (no value stored); no performance-limit signal either, so throttling is neither shown nor ruled out",
+            "at": [],
+            "inputs": [],
+            "threshold": {
+              "value": 60,
+              "unit": "% of calm median",
+              "source": "provisional (diagnosis-cause-rules design)",
+              "origin": "default",
+              "key": "thermal-power-throttle.perfPctOfCalm"
+            },
+            "n": 0,
+            "calm": {
+              "mean": null,
+              "n": 0,
+              "signal": null
+            },
+            "components": null,
+            "confidence": null,
+            "disprover": {
+              "check": "delivered performance >= 90% of the calm median at 2/3 or more of the hangs",
+              "result": "not-evaluable",
+              "values": []
+            },
+            "confounds": []
+          },
+          {
+            "id": "vm-memory-dominance",
+            "class": "memory",
+            "fired": null,
+            "reason": "proc.vm_host_mb not recorded at this hang (no value stored)",
+            "at": [],
+            "inputs": [],
+            "threshold": {
+              "value": 40,
+              "unit": "% of RAM",
+              "source": "provisional (diagnosis-cause-rules design)",
+              "origin": "default",
+              "key": "vm-memory-dominance.vmPctRam"
+            },
+            "n": 0,
+            "calm": {
+              "mean": null,
+              "n": 0,
+              "signal": null
+            },
+            "components": null,
+            "confidence": null,
+            "disprover": {
+              "check": "the configured VM memory cap is at most 50% of RAM, or VM host memory < 25% of RAM at 2/3 or more of the hangs",
+              "result": "not-evaluable",
+              "values": []
+            },
+            "confounds": []
+          }
+        ],
+        "ranked": [
+          "memory-pressure"
+        ]
+      }
+    ],
+    "rollup": [
+      {
+        "id": "memory-pressure",
+        "class": "memory",
+        "hangs": 5,
+        "of": 5,
+        "confidence": 0.91,
+        "hangMean": 90,
+        "hangN": 5,
+        "calm": {
+          "mean": 61.95,
+          "n": 18
+        },
+        "unit": "%",
+        "signal": "mem.committed_pct"
+      }
+    ],
+    "finding": {
+      "class": "memory",
+      "sentence": "5 of 5 usable hangs coincide with memory pressure; commit 90% at hangs vs 62% calm (hangs n=5, calm n=18); 2 confirmed by user mark, 3 probe-only",
+      "strength": "sufficient",
+      "confirmations": {
+        "user-mark": 2,
+        "os-not-responding": 0,
+        "workload-probe": 0,
+        "probe-only": 3
+      },
+      "excludedHangs": 0,
+      "scope": "open scope",
+      "window": {
+        "start": "2026-01-15T10:00:00.000Z",
+        "end": "2026-01-15T10:01:08.100Z",
+        "observedS": 68
+      },
+      "ruleId": "memory-pressure",
+      "confidence": 0.91
+    },
+    "observations": [],
+    "hwConfigSignal": {
+      "value": "pressure-at-freezes",
+      "atHang": {
+        "mean": 90,
+        "n": 5
+      },
+      "calm": {
+        "mean": 62,
+        "n": 18
+      }
+    },
+    "timeLost": {
+      "basis": "measured",
+      "hangs": 5,
+      "frozenS": 10,
+      "observedS": 68,
+      "meanFreezeS": 2,
+      "userSupplied": null
+    },
+    "eventsUsed": [],
+    "eventsHistory": [],
+    "suggestedActions": []
+  }
+}

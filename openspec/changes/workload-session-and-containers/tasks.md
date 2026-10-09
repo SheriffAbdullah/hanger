@@ -11,7 +11,7 @@ Interfaces consumed later (keep their shape stable and documented in `SCHEMA-CHA
 
 ## 1. Scope-file schema extension
 
-- [x] 1.1 Extend the scope-file loader with optional `phases` (string list), `probes[]` `{name, command: string[], timeoutMs=5000, everySec=5}` and `config[]` `{kind: "postgres"|"wsl", connection?}`. Reject a string `command`, a missing `name`, and any key matching `/pass|pwd|secret|token/i`, each with a message. Verify: `node --test tools/telltale/test/workload-scope.test.js` covers valid, string-command, and secret-key cases. [R03-REC-9] [R01-P1-6]
+- [x] 1.1 Extend the scope-file loader with optional `phases` (string list), `probes[]` `{name, command: string[], timeoutMs=5000, everySec=5}` and `config[]` `{kind: "postgres"|"wsl", connection?}`. Reject a string `command`, a missing `name`, and any key matching `/pass|pwd|secret|token/i`, each with a message. Verify: `node --test tools/hanger/test/workload-scope.test.js` covers valid, string-command, and secret-key cases. [R03-REC-9] [R01-P1-6]
 - [x] 1.2 Document the extension in `README.md` (scope-file section) with one Postgres-in-Docker example, and note that credentials are never stored. Verify: run the README example scope file through the loader test. [R03-REC-9]
 
 ## 2. Workload session phases
@@ -33,7 +33,7 @@ Interfaces consumed later (keep their shape stable and documented in `SCHEMA-CHA
 ## 5. Workload latency probe
 
 - [x] 5.1 Implement `lib/workload/probes.js`: run declared probes with argv, no shell, hidden window, output ignored, kill on timeout, and status class `ok|nonzero|timeout|not-found`. Stop after 3 consecutive not-found results with a reason. Never run when no probe is declared. Wall time is added to observer cost. Verify: tests with a fake command (sleeps beyond the timeout → "timeout", process killed; prints a canary → canary absent from output; missing exe → "not-found"). [R03-REC-9] [R03-P0-4]
-- [x] 5.2 Expose `workload.probes` in the stream and the final report, and document the shape in `SCHEMA-CHANGELOG.md` `2.x` as the confirmation input for `diagnosis-engine-rebuild`. Verify: `node tools/telltale/test/helpers/validate-report.js <fixture>` passes. [R03-P0-4] [R03-REC-9]
+- [x] 5.2 Expose `workload.probes` in the stream and the final report, and document the shape in `SCHEMA-CHANGELOG.md` `2.x` as the confirmation input for `diagnosis-engine-rebuild`. Verify: `node tools/hanger/test/helpers/validate-report.js <fixture>` passes. [R03-P0-4] [R03-REC-9]
 
 ## 6. Workload configuration facts
 
@@ -45,9 +45,9 @@ Interfaces consumed later (keep their shape stable and documented in `SCHEMA-CHA
 
 ## 8. Integration check
 
-- [ ] 8.1 Live run with Docker Desktop running a Postgres container in scope, a declared `pg-select1` probe, and `config` postgres plus wsl. In Git Bash: `node tools/telltale/telltale.js trace --duration 120 --phase loaded --scope ./scope.json --out "$TMPDIR/tt-wl"`. Press the phase key twice during the run. Verify: report has ≥6 container samples, ≥20 probe attempts, a phase with both bounds, and VM host memory series; cap fact is a value or reason. [R02-REC-7] [R03-REC-9] [R01-P1-6]
-- [x] 8.2 Live run on a machine (or with the daemon stopped) without Docker: `node tools/telltale/telltale.js trace --duration 30 --out "$TMPDIR/tt-nodocker"`. Verify: container values are null with "not installed" or "not running", and the report and MD contain no raw shell error text (`grep -i "not recognized" "$TMPDIR"/tt-nodocker/*` finds nothing). [R02-P1-7]
-- [x] 8.3 Run `node --test tools/telltale/test/` and `node tools/telltale/test/canary-leak.js`. The canary includes an out-of-scope container when Docker is present. Verify: all pass, zero canary hits. [R02-REC-7]
+- [ ] 8.1 Live run with Docker Desktop running a Postgres container in scope, a declared `pg-select1` probe, and `config` postgres plus wsl. In Git Bash: `node tools/hanger/hanger.js trace --duration 120 --phase loaded --scope ./scope.json --out "$TMPDIR/tt-wl"`. Press the phase key twice during the run. Verify: report has ≥6 container samples, ≥20 probe attempts, a phase with both bounds, and VM host memory series; cap fact is a value or reason. [R02-REC-7] [R03-REC-9] [R01-P1-6]
+- [x] 8.2 Live run on a machine (or with the daemon stopped) without Docker: `node tools/hanger/hanger.js trace --duration 30 --out "$TMPDIR/tt-nodocker"`. Verify: container values are null with "not installed" or "not running", and the report and MD contain no raw shell error text (`grep -i "not recognized" "$TMPDIR"/tt-nodocker/*` finds nothing). [R02-P1-7]
+- [x] 8.3 Run `node --test tools/hanger/test/` and `node tools/hanger/test/canary-leak.js`. The canary includes an out-of-scope container when Docker is present. Verify: all pass, zero canary hits. [R02-REC-7]
 - [x] 8.4 Run `openspec validate workload-session-and-containers --strict`, then record a review-gate note below (date, commands, observed results). Verify: validation passes and the note is present. [R01-REC-5]
 
 ## Workflow follow-up
@@ -56,13 +56,13 @@ Interfaces consumed later (keep their shape stable and documented in `SCHEMA-CHA
 
 ## Review-gate note (2026-10-07, wave 4)
 
-Tests: `node --test tools/telltale/test/` = 210 tests; the workload files (workload-scope, workload-session, workload-platform,
+Tests: `node --test tools/hanger/test/` = 210 tests; the workload files (workload-scope, workload-session, workload-platform,
 workload-run) all pass. Two tests outside this change fail while `data-signals-completeness` is mid-edit (session power-line parse and
 bundle parser in the counter-session code); they are not touched by this change.
 
 - 1.1/1.2: `test/workload-scope.test.js` (valid, string command, secret key, credential in text, bounds, README example run through the loader).
 - 2.x: `test/workload-session.test.js` (phase key sequence, unfinished phase from a stream, 30/45 idle-vs-loaded with untagged and unobserved seconds, no phases).
-  Live: `TELLTALE_TEST_PHASE_KEYS=15,60 node tools/telltale/telltale.js trace --duration 90 --scope scope.json --phase loaded` -> phase loaded
+  Live: `HANGER_TEST_PHASE_KEYS=15,60 node tools/hanger/hanger.js trace --duration 90 --scope scope.json --phase loaded` -> phase loaded
   start 12:11:01.988Z end 12:11:47.042Z source key, phaseSummary with n on the tagged side and untagged counts, console line "workload: 1 phase(s): loaded closed".
 - 3.1: marker diff test with a canary process and container (no marker, no canary string in stream or markers).
 - 4.1/4.2: `test/workload-platform.test.js` on canned docker ps/stats JSON (MiB/GiB/kB/B), "not recognized", daemon-pipe error, ENOENT, and a hanging fake command killed at 400 ms.
@@ -72,8 +72,8 @@ bundle parser in the counter-session code); they are not touched by this change.
 - 6.1: canned psql output, auth-failure text, out-of-scope spy (zero executions), docker exec path. Live: `psql` absent here -> each fact null "not installed"; wsl cap null "no cap configured (default applies)".
 - 7.1: `workload` and `workloadConfig` assembled from the stream (also on `recover`), `validate-report.js` passes on live reports, changelog 2.x section written.
 - 8.2: live no-Docker traces (`--scope scope.json`): `containers.unavailable.reason` "not installed", `docker.unavailable` "not installed"; `grep -ril "not recognized"` over the out dirs and console logs finds nothing. Also `test/workload-run.test.js` (fail-all trace).
-- 8.3: `node tools/telltale/test/canary-leak.js` -> canary hits: 0, backstop never activated (the container canary is skipped without Docker; unit tests cover container, image and distro names).
-- Observer cost (90 s, same machine, concurrent 2 h trace running): total 3.8% (with workload) vs 3.9% (TELLTALE_TEST_NO_WORKLOAD=1), i.e. no measurable difference in the tool's own CPU. Child CPU is not in that figure; measured separately: `wsl -l -v` about 31 ms,
+- 8.3: `node tools/hanger/test/canary-leak.js` -> canary hits: 0, backstop never activated (the container canary is skipped without Docker; unit tests cover container, image and distro names).
+- Observer cost (90 s, same machine, concurrent 2 h trace running): total 3.8% (with workload) vs 3.9% (HANGER_TEST_NO_WORKLOAD=1), i.e. no measurable difference in the tool's own CPU. Child CPU is not in that figure; measured separately: `wsl -l -v` about 31 ms,
   filtered `tasklist` about 94 ms, `node -e` about 78 ms. Added cost: VM poll every 60 s = about 0.05% of one logical CPU when the VM is stopped, about 0.2% when it runs; Docker absent = 0 launches (ENOENT, recheck every 300 s);
   Docker running = two CLI calls per 10 s (not measurable here; expect about 0.5%); a declared probe costs one launch per `everySec` (the user's command plus about 80 ms for a node probe at 5 s = 1.6%). The baseline already exceeds the 2% budget (observer line).
 - Not done: 8.1 (live Docker Desktop + Postgres container) is blocked: Docker is not installed on this machine. Everything except the real daemon call was exercised live and on canned output.

@@ -1,7 +1,7 @@
 # Zero-Memory — Zeroth-Order Memory Surface (Windows, no admin, no wmic)
 
 ## Context
-Everything telltale reads unelevated before derivation. Proven in `telltale.js` + registry.
+Everything hanger reads unelevated before derivation. Proven in `hanger.js` + registry.
 
 ## System signals
 | Signal | Collector | Unit | Cost | Admin | Confounds |

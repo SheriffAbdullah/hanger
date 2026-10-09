@@ -2,7 +2,7 @@
 
 ## Context
 
-The continuous tier already reads one machine-total disk set, per-process I/O (reduced through the scope resolver before storage), and the static system profile. The diagnosis engine runs drop-in rules over a frozen `telltale-json/2` report. This change adds data and a rule without changing the engine, the sampler core, or the scope resolver.
+The continuous tier already reads one machine-total disk set, per-process I/O (reduced through the scope resolver before storage), and the static system profile. The diagnosis engine runs drop-in rules over a frozen `hanger-json/2` report. This change adds data and a rule without changing the engine, the sampler core, or the scope resolver.
 
 ## Goals / Non-Goals
 

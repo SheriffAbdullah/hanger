@@ -2,7 +2,7 @@
 
 ## Why
 
-The owner runs Telltale while Postgres and Docker reproduce the hang. Today the tool cannot see that workload. It has no notion of a workload phase (idle vs loaded). It records one end-of-run `docker stats` row and no container time series. The WSL2/Docker Desktop VM is a black box: no memory cap and no guest memory (R02-P1-7). Nothing gives a workload-side freeze signal, so "the hang you felt" rests only on the generic process-spawn probe (R03-P0-4). The diagnosis rules for VM memory dominance and database memory/I/O (R03-ADD-3, R03-ADD-4) cannot be built without these data.
+The owner runs Hanger while Postgres and Docker reproduce the hang. Today the tool cannot see that workload. It has no notion of a workload phase (idle vs loaded). It records one end-of-run `docker stats` row and no container time series. The WSL2/Docker Desktop VM is a black box: no memory cap and no guest memory (R02-P1-7). Nothing gives a workload-side freeze signal, so "the hang you felt" rests only on the generic process-spawn probe (R03-P0-4). The diagnosis rules for VM memory dominance and database memory/I/O (R03-ADD-3, R03-ADD-4) cannot be built without these data.
 
 ## What Changes
 
@@ -25,10 +25,10 @@ The owner runs Telltale while Postgres and Docker reproduce the hang. Today the 
 
 ## Impact
 
-- New `tools/telltale/lib/workload/*.js` (phases, markers, containers, vm, probes, config), registered through the collector registration interface from `sampling-engine-and-provenance`.
-- `tools/telltale/lib/scope.js` scope-file schema extension (owned by `software-inventory-and-scope`, extended additively here).
-- `tools/telltale/telltale.js`: key handling for phase tags, flag parsing (`--phase`), report assembly key `workload`.
-- `tools/telltale/SCHEMA-CHANGELOG.md`: a `2.x` additive section.
+- New `tools/hanger/lib/workload/*.js` (phases, markers, containers, vm, probes, config), registered through the collector registration interface from `sampling-engine-and-provenance`.
+- `tools/hanger/lib/scope.js` scope-file schema extension (owned by `software-inventory-and-scope`, extended additively here).
+- `tools/hanger/hanger.js`: key handling for phase tags, flag parsing (`--phase`), report assembly key `workload`.
+- `tools/hanger/SCHEMA-CHANGELOG.md`: a `2.x` additive section.
 - Consumers downstream: `diagnosis-engine-rebuild` (latency probe as a confirmation source; idle-vs-loaded comparison) and `diagnosis-cause-rules` (VM memory dominance rule, database memory and I/O rule). `report-and-visualization` uses phase and marker annotations on charts.
 - Depends on `sampling-engine-and-provenance` (registration, provenance) and `software-inventory-and-scope` (resolver). Runs in wave 4, parallel with `data-signals-completeness`.
 

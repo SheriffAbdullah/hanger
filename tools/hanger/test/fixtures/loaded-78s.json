@@ -1,0 +1,1304 @@
+{
+  "tool": "hanger v0.6",
+  "schema": "hanger-json/2",
+  "schemaStatus": "frozen",
+  "registry": "registry v0.4",
+  "run": {
+    "status": "complete",
+    "endReason": null,
+    "startedAt": "2026-01-15T10:00:00.000Z",
+    "endedAt": "2026-01-15T10:01:18.100Z",
+    "utcOffsetMin": 0,
+    "stream": "hanger-loaded-78s.jsonl"
+  },
+  "window": {
+    "nominalS": 20,
+    "spanS": 78,
+    "unobservedS": 0,
+    "observedS": 78,
+    "probesExpected": 10,
+    "probesObserved": 10,
+    "samplesExpected": 40,
+    "samplesObserved": 40
+  },
+  "settings": {
+    "duration": {
+      "value": 20,
+      "source": "flag"
+    },
+    "interval": {
+      "value": 500,
+      "source": "config"
+    },
+    "anonymize": {
+      "value": true,
+      "source": "config"
+    },
+    "scope": {
+      "value": {
+        "mode": "open"
+      },
+      "source": "default"
+    },
+    "thresholds": {
+      "hang": {
+        "value": 800,
+        "source": "default"
+      },
+      "commit": {
+        "value": 85,
+        "source": "default"
+      },
+      "minFreeGB": {
+        "value": 2,
+        "source": "default"
+      },
+      "pages": {
+        "value": 500,
+        "source": "default"
+      },
+      "queue": {
+        "value": 4,
+        "source": "default"
+      },
+      "diskSec": {
+        "value": 0.025,
+        "source": "default"
+      },
+      "ramHigh": {
+        "value": 85,
+        "source": "default"
+      },
+      "severeCommit": {
+        "value": 90,
+        "source": "default"
+      },
+      "severeFree": {
+        "value": 1.5,
+        "source": "default"
+      },
+      "defender": {
+        "value": 20,
+        "source": "default"
+      },
+      "recovery": {
+        "value": 400,
+        "source": "default"
+      }
+    }
+  },
+  "observer": {
+    "pidCount": 3,
+    "wsMB": 96,
+    "wsMBAvg": 90,
+    "cpuPctAvg": null,
+    "note": "synthetic fixture"
+  },
+  "tier": "user",
+  "startedAt": "2026-01-15T10:00:00.000Z",
+  "hostname": "<host>",
+  "anonymized": true,
+  "machine": {
+    "totalGB": 16,
+    "cpus": 8,
+    "cpuModel": "Synthetic CPU 8-thread",
+    "uptimeMin": 1234.5
+  },
+  "systemProfile": {
+    "collectedAt": "2026-01-15T10:00:00.000Z",
+    "collectionMs": 1200,
+    "tier": "user",
+    "workloadConfigRef": null,
+    "groupStatus": {},
+    "identity": {
+      "hostname": {
+        "value": "<host>",
+        "source": "os",
+        "tier": "user",
+        "asOf": "2026-01-15T10:00:00.000Z"
+      },
+      "manufacturer": {
+        "value": "Synthetic Corp",
+        "source": "firmware-system-info",
+        "tier": "user",
+        "asOf": "2026-01-15T10:00:00.000Z"
+      },
+      "model": {
+        "value": "SX-1 Laptop",
+        "source": "firmware-system-info",
+        "tier": "user",
+        "asOf": "2026-01-15T10:00:00.000Z"
+      },
+      "serial": {
+        "value": "SYN0000001",
+        "source": "firmware-bios",
+        "tier": "user",
+        "asOf": "2026-01-15T10:00:00.000Z"
+      }
+    },
+    "processor": {
+      "model": {
+        "value": "Synthetic CPU 8-thread",
+        "source": "cpu-info",
+        "tier": "user",
+        "asOf": "2026-01-15T10:00:00.000Z"
+      },
+      "physicalCores": {
+        "value": 4,
+        "unit": "cores",
+        "source": "cpu-info",
+        "tier": "user",
+        "asOf": "2026-01-15T10:00:00.000Z"
+      },
+      "logicalProcessors": {
+        "value": 8,
+        "unit": "threads",
+        "source": "cpu-info",
+        "tier": "user",
+        "asOf": "2026-01-15T10:00:00.000Z"
+      },
+      "baseClockMHz": {
+        "value": 2400,
+        "unit": "MHz",
+        "source": "cpu-info",
+        "tier": "user",
+        "asOf": "2026-01-15T10:00:00.000Z"
+      },
+      "maxClockMHz": {
+        "value": null,
+        "unit": "MHz",
+        "source": "cpu-info",
+        "tier": "user",
+        "asOf": "2026-01-15T10:00:00.000Z",
+        "unavailableReason": "max turbo clock not exposed at user tier"
+      }
+    },
+    "memory": {
+      "installedGB": {
+        "value": 16,
+        "unit": "GB",
+        "source": "physical-memory-info",
+        "tier": "user",
+        "asOf": "2026-01-15T10:00:00.000Z"
+      },
+      "modules": {
+        "value": [
+          {
+            "slot": "Slot 1",
+            "sizeGB": 16,
+            "speedMTs": 3200,
+            "formFactor": "SODIMM"
+          }
+        ],
+        "source": "physical-memory-info",
+        "tier": "user",
+        "asOf": "2026-01-15T10:00:00.000Z"
+      },
+      "slotsUsed": {
+        "value": 1,
+        "source": "physical-memory-info",
+        "tier": "user",
+        "asOf": "2026-01-15T10:00:00.000Z"
+      },
+      "slotsTotal": {
+        "value": 2,
+        "source": "physical-memory-info",
+        "tier": "user",
+        "asOf": "2026-01-15T10:00:00.000Z"
+      }
+    },
+    "storage": {
+      "disks": {
+        "value": [
+          {
+            "model": "Synthetic NVMe 512",
+            "mediaType": "SSD",
+            "bus": "NVMe",
+            "capacityGB": 512,
+            "health": "Healthy"
+          }
+        ],
+        "source": "physical-disk-info",
+        "tier": "user",
+        "asOf": "2026-01-15T10:00:00.000Z"
+      },
+      "systemVolume": {
+        "value": {
+          "volume": "C:",
+          "freeGB": 190,
+          "totalGB": 460
+        },
+        "unit": "GB",
+        "source": "logical-disk-info",
+        "tier": "user",
+        "asOf": "2026-01-15T10:00:00.000Z"
+      }
+    },
+    "firmware": {
+      "biosVendor": {
+        "value": "Synthetic",
+        "source": "firmware-bios",
+        "tier": "user",
+        "asOf": "2026-01-15T10:00:00.000Z"
+      },
+      "biosVersion": {
+        "value": "SYN 1.02",
+        "source": "firmware-bios",
+        "tier": "user",
+        "asOf": "2026-01-15T10:00:00.000Z"
+      },
+      "biosDate": {
+        "value": "2025-06-01",
+        "source": "firmware-bios",
+        "tier": "user",
+        "asOf": "2026-01-15T10:00:00.000Z"
+      }
+    },
+    "os": {
+      "edition": {
+        "value": "Windows 11 Pro",
+        "source": "os-info",
+        "tier": "user",
+        "asOf": "2026-01-15T10:00:00.000Z"
+      },
+      "version": {
+        "value": "10.0.26200",
+        "source": "os-info",
+        "tier": "user",
+        "asOf": "2026-01-15T10:00:00.000Z"
+      },
+      "build": {
+        "value": "26200",
+        "source": "os-info",
+        "tier": "user",
+        "asOf": "2026-01-15T10:00:00.000Z"
+      },
+      "uptimeMin": {
+        "value": 1234,
+        "unit": "min",
+        "source": "os-info",
+        "tier": "user",
+        "asOf": "2026-01-15T10:00:00.000Z"
+      }
+    },
+    "power": {
+      "planName": {
+        "value": "Balanced",
+        "source": "powercfg",
+        "tier": "user",
+        "asOf": "2026-01-15T10:00:00.000Z"
+      },
+      "powerMode": {
+        "value": "Balanced",
+        "source": "powercfg",
+        "tier": "user",
+        "asOf": "2026-01-15T10:00:00.000Z"
+      },
+      "batteryDesignWh": {
+        "value": null,
+        "unit": "Wh",
+        "source": "battery-static-data",
+        "tier": "user",
+        "asOf": "2026-01-15T10:00:00.000Z",
+        "unavailableReason": "requires admin"
+      }
+    },
+    "virtualMemory": {
+      "pagefiles": {
+        "value": [
+          {
+            "location": "C:pagefile.sys",
+            "currentMB": 2048,
+            "initialMB": 4096,
+            "maxMB": 8192
+          }
+        ],
+        "source": "pagefile-info",
+        "tier": "user",
+        "asOf": "2026-01-15T10:00:00.000Z"
+      },
+      "systemManaged": {
+        "value": false,
+        "source": "pagefile-info",
+        "tier": "user",
+        "asOf": "2026-01-15T10:00:00.000Z"
+      },
+      "commitLimitGB": {
+        "value": 24,
+        "unit": "GB",
+        "source": "os-info",
+        "tier": "user",
+        "asOf": "2026-01-15T10:00:00.000Z"
+      }
+    },
+    "security": {
+      "products": {
+        "value": [
+          {
+            "name": "Synthetic Defender",
+            "state": "enabled"
+          }
+        ],
+        "source": "security-center",
+        "tier": "user",
+        "asOf": "2026-01-15T10:00:00.000Z"
+      },
+      "domainJoined": {
+        "value": false,
+        "source": "domain-join-info",
+        "tier": "user",
+        "asOf": "2026-01-15T10:00:00.000Z"
+      }
+    }
+  },
+  "power": {
+    "scheme": "Power Scheme GUID: 00000000-0000-0000-0000-000000000000  (Balanced)",
+    "plugged": true,
+    "batteryPct": null
+  },
+  "admin": {
+    "tier": "user",
+    "skipped": "process not elevated; re-run as admin for thermal/SMART/Sysmon/WER-sys/SeDebug"
+  },
+  "wprEtl": null,
+  "gpu": {
+    "engines": {
+      "unavailable": "synthetic fixture: no GPU data"
+    },
+    "mem": {
+      "unavailable": "synthetic fixture: no GPU data"
+    },
+    "nvidia": {
+      "present": false,
+      "reason": "synthetic fixture"
+    },
+    "bundleTotalNote": "synthetic fixture"
+  },
+  "summary": {
+    "windowBasis": "observed",
+    "avgUsedPct": 73.3,
+    "minFreeGB": 3.85,
+    "committedPeak": 80,
+    "pagesPeak": 174,
+    "pagesAvg": 119,
+    "diskSecPeak": 0.004,
+    "diskQPeak": 0.2,
+    "maxFreqMin": 100,
+    "loopP50ms": 1.1,
+    "loopP95ms": 2.5,
+    "loopMaxMs": 2.5,
+    "spawnP50ms": 195,
+    "spawnP95ms": 6000,
+    "spawnMaxMs": 6000,
+    "hangThresholdMs": 800,
+    "hangEventCount": 1,
+    "hangRatePerMin": 0.77,
+    "pctFrozenFull": 7.69,
+    "pctFrozenExcess": 6.67,
+    "mttrMs": 183,
+    "mttrN": 1,
+    "meanFreezeS": 6,
+    "secsOverRamHigh": 0,
+    "secsOverRamHighBasis": "time above 85% RAM, each sample weighted by its measured spacing",
+    "calmSharePct": 90,
+    "recoveryThresholdMs": 400,
+    "granularityMs": 500,
+    "totalSamples": 40,
+    "totalSpawnProbes": 10,
+    "thresholds": {
+      "hang": 800,
+      "commit": 85,
+      "minFreeGB": 2,
+      "pages": 500,
+      "queue": 4,
+      "diskSec": 0.025,
+      "ramHigh": 85,
+      "severeCommit": 90,
+      "severeFree": 1.5,
+      "defender": 20,
+      "recovery": 400,
+      "sources": {
+        "hang": "NN/g response limits [cited]",
+        "commit": "MS perf troubleshooting [derived]"
+      },
+      "ideal": "TBD (orders-framework ideal table)",
+      "status": "provisional"
+    },
+    "nulls": {},
+    "committedStart": 71,
+    "committedEnd": 80,
+    "pagesStart": 112,
+    "pagesEnd": 97,
+    "availMB": 4096,
+    "cpuQueue": 1,
+    "loopN": 5,
+    "bundleOkProbes": "10/10",
+    "loopConfoundNote": "synthetic fixture",
+    "loopNote": null,
+    "warpSeenMB": null,
+    "openspecSeenMB": null,
+    "unresolvedNames": 0,
+    "werArchive": {
+      "total": 12,
+      "apphang": 3
+    },
+    "hangCount": 0
+  },
+  "hangEvents": [
+    {
+      "tSec": 39,
+      "at": "2026-01-15T10:00:39.000Z",
+      "ms": 6000,
+      "usedPct": 72,
+      "hang": true,
+      "bundleMs": 180,
+      "slipS": 29,
+      "plugged": true,
+      "batteryPct": null,
+      "weightMs": {
+        "spawn": 6000,
+        "bundle": 180
+      },
+      "degraded": [],
+      "committed": 75,
+      "pages": 85,
+      "cpuQ": 1,
+      "diskQ": 0.2,
+      "diskSec": 0.004,
+      "maxFreq": 100,
+      "culpritsAtHang": [
+        {
+          "name": "node.exe",
+          "totalMB": 6200,
+          "n": 14,
+          "pids": [
+            1100,
+            1104,
+            1108
+          ]
+        }
+      ],
+      "label": "HANG 6000ms at 10:00:39 (t+39s, RAM 72%)",
+      "context": {
+        "windowS": 10,
+        "basis": "wall-clock offsets",
+        "ramPreAvg": 72.8,
+        "ramPostAvg": 73.3,
+        "commitPreAvg": 74,
+        "commitPostAvg": 76,
+        "pagesPreAvg": 140,
+        "pagesPostAvg": 174,
+        "cpuQPreAvg": 1,
+        "cpuQPostAvg": 1,
+        "diskQPreAvg": 0.2,
+        "diskQPostAvg": 0.2,
+        "gpuPreAvg": null,
+        "gpuPostAvg": null,
+        "culpritDelta": null,
+        "culpritDeltaNote": "pre-hang culprits not sampled (snapshot is post-measure by design); see culpritsAtHang",
+        "recoveryMs": 183,
+        "recoveryGapS": 7.8
+      }
+    }
+  ],
+  "userMarks": [],
+  "culprits": [
+    {
+      "name": "node.exe",
+      "friendly": "Node.js runtime",
+      "detail": "Node.js runtime",
+      "totalMB": 3100,
+      "instances": 9,
+      "source": "known"
+    }
+  ],
+  "privateTop": [
+    {
+      "name": "node.exe",
+      "privateMB": 3100,
+      "instances": 14
+    }
+  ],
+  "topProcesses": [
+    {
+      "name": "node.exe",
+      "pid": 1100,
+      "memMB": 3100
+    }
+  ],
+  "scope": {
+    "mode": "open",
+    "source": "none",
+    "path": null,
+    "sha256": null,
+    "entries": [],
+    "matchRule": "case-insensitive executable name (with or without .exe) or explicit * ? pattern; descendants only when an entry opts in",
+    "systemSet": {
+      "listVersion": 1,
+      "categories": [
+        "os",
+        "security",
+        "virtualization"
+      ],
+      "names": [
+        "system",
+        "system idle process",
+        "registry",
+        "memory compression",
+        "secure system",
+        "smss",
+        "csrss",
+        "wininit",
+        "winlogon",
+        "services",
+        "lsass",
+        "fontdrvhost",
+        "dwm",
+        "svchost",
+        "searchindexer",
+        "msmpeng",
+        "mpdefendercoreservice",
+        "nissrv",
+        "securityhealthservice",
+        "securityhealthsystray",
+        "mssense",
+        "sense",
+        "vmmem",
+        "vmmemwsl",
+        "vmmemcmfnd",
+        "vmcompute",
+        "vmwp",
+        "docker-desktop",
+        "docker-desktop-data"
+      ]
+    },
+    "counts": {
+      "inScopeGroups": 1,
+      "systemGroups": 0,
+      "outOfScopeGroups": 0
+    },
+    "fallbacks": [],
+    "statement": "OPEN SCOPE: names of all running software may appear in this report"
+  },
+  "outOfScope": {
+    "groups": 0,
+    "processes": 0,
+    "memMB": 0,
+    "cpuPctOfMachine": 0,
+    "inScope": {
+      "memMB": 3100,
+      "cpuPctOfMachine": null
+    },
+    "system": {
+      "memMB": 0,
+      "cpuPctOfMachine": 0
+    },
+    "measuredAt": "2026-01-15T10:00:00.000Z"
+  },
+  "containers": null,
+  "containersNote": "synthetic fixture: no daemon",
+  "flags": {
+    "hasChromeHeadless": false,
+    "hasDockerVmmem": false,
+    "hasWarp": false,
+    "hasOpenspec": false
+  },
+  "events": {
+    "window": {
+      "from": "2026-01-15T09:59:00.000Z",
+      "to": "2026-01-15T10:01:18.100Z",
+      "leadS": 60
+    },
+    "mode": "none-in-window",
+    "inWindow": {
+      "appHang": [],
+      "appCrash": [],
+      "resourceExhaustion": []
+    },
+    "history": {
+      "appHang": {
+        "count": 1,
+        "newest": "2026-01-14T09:00:00.000Z",
+        "countCapped": false
+      },
+      "appCrash": {
+        "count": 0,
+        "newest": null,
+        "countCapped": false
+      },
+      "resourceExhaustion": {
+        "count": 0,
+        "newest": null,
+        "countCapped": false
+      }
+    }
+  },
+  "wer": {
+    "archivePresent": true,
+    "searchedWindow": {
+      "from": "2026-01-15T10:00:00.000Z",
+      "to": "2026-01-15T10:01:18.100Z"
+    },
+    "inRun": {
+      "total": 0,
+      "apphang": 0
+    },
+    "history": {
+      "total": 12,
+      "apphang": 3,
+      "window": "all-time",
+      "capped": false
+    }
+  },
+  "docker": {
+    "present": false,
+    "containers": {
+      "total": 0,
+      "inScope": [],
+      "outOfScopeCount": 0
+    },
+    "statsOutOfScopeCount": 0,
+    "wsl": {
+      "present": false,
+      "distros": [],
+      "outOfScopeCount": 0
+    }
+  },
+  "disk": "C: 190.0/460.0GB free",
+  "errors": [],
+  "collection.failures": [],
+  "spawnProbes": [
+    {
+      "tSec": 7.8,
+      "at": "2026-01-15T10:00:07.800Z",
+      "ms": 169,
+      "usedPct": 72,
+      "hang": false,
+      "bundleMs": 180,
+      "slipS": 5.8,
+      "plugged": true,
+      "batteryPct": null,
+      "weightMs": {
+        "spawn": 169,
+        "bundle": 180
+      },
+      "degraded": [],
+      "committed": 71,
+      "pages": 112,
+      "cpuQ": 1,
+      "diskQ": 0.2,
+      "diskSec": 0.004,
+      "maxFreq": 100
+    },
+    {
+      "tSec": 15.6,
+      "at": "2026-01-15T10:00:15.600Z",
+      "ms": 190,
+      "usedPct": 72,
+      "hang": false,
+      "bundleMs": 180,
+      "slipS": 11.6,
+      "plugged": true,
+      "batteryPct": null,
+      "weightMs": {
+        "spawn": 190,
+        "bundle": 180
+      },
+      "degraded": [],
+      "committed": 72,
+      "pages": 96,
+      "cpuQ": 1,
+      "diskQ": 0.2,
+      "diskSec": 0.004,
+      "maxFreq": 100
+    },
+    {
+      "tSec": 23.4,
+      "at": "2026-01-15T10:00:23.400Z",
+      "ms": 210,
+      "usedPct": 72,
+      "hang": false,
+      "bundleMs": 180,
+      "slipS": 17.4,
+      "plugged": true,
+      "batteryPct": null,
+      "weightMs": {
+        "spawn": 210,
+        "bundle": 180
+      },
+      "degraded": [],
+      "committed": 73,
+      "pages": 106,
+      "cpuQ": 1,
+      "diskQ": 0.2,
+      "diskSec": 0.004,
+      "maxFreq": 100
+    },
+    {
+      "tSec": 31.2,
+      "at": "2026-01-15T10:00:31.200Z",
+      "ms": 194,
+      "usedPct": 72,
+      "hang": false,
+      "bundleMs": 180,
+      "slipS": 23.2,
+      "plugged": true,
+      "batteryPct": null,
+      "weightMs": {
+        "spawn": 194,
+        "bundle": 180
+      },
+      "degraded": [],
+      "committed": 74,
+      "pages": 140,
+      "cpuQ": 1,
+      "diskQ": 0.2,
+      "diskSec": 0.004,
+      "maxFreq": 100
+    },
+    {
+      "tSec": 39,
+      "at": "2026-01-15T10:00:39.000Z",
+      "ms": 6000,
+      "usedPct": 72,
+      "hang": true,
+      "bundleMs": 180,
+      "slipS": 29,
+      "plugged": true,
+      "batteryPct": null,
+      "weightMs": {
+        "spawn": 6000,
+        "bundle": 180
+      },
+      "degraded": [],
+      "committed": 75,
+      "pages": 85,
+      "cpuQ": 1,
+      "diskQ": 0.2,
+      "diskSec": 0.004,
+      "maxFreq": 100,
+      "culpritsAtHang": [
+        {
+          "name": "node.exe",
+          "totalMB": 6200,
+          "n": 14,
+          "pids": [
+            1100,
+            1104,
+            1108
+          ]
+        }
+      ]
+    },
+    {
+      "tSec": 46.8,
+      "at": "2026-01-15T10:00:46.800Z",
+      "ms": 183,
+      "usedPct": 72,
+      "hang": false,
+      "bundleMs": 180,
+      "slipS": 34.8,
+      "plugged": true,
+      "batteryPct": null,
+      "weightMs": {
+        "spawn": 183,
+        "bundle": 180
+      },
+      "degraded": [],
+      "committed": 76,
+      "pages": 174,
+      "cpuQ": 1,
+      "diskQ": 0.2,
+      "diskSec": 0.004,
+      "maxFreq": 100
+    },
+    {
+      "tSec": 54.6,
+      "at": "2026-01-15T10:00:54.600Z",
+      "ms": 195,
+      "usedPct": 72,
+      "hang": false,
+      "bundleMs": 180,
+      "slipS": 40.6,
+      "plugged": true,
+      "batteryPct": null,
+      "weightMs": {
+        "spawn": 195,
+        "bundle": 180
+      },
+      "degraded": [],
+      "committed": 77,
+      "pages": 132,
+      "cpuQ": 1,
+      "diskQ": 0.2,
+      "diskSec": 0.004,
+      "maxFreq": 100
+    },
+    {
+      "tSec": 62.4,
+      "at": "2026-01-15T10:01:02.400Z",
+      "ms": 180,
+      "usedPct": 72,
+      "hang": false,
+      "bundleMs": 180,
+      "slipS": 46.4,
+      "plugged": true,
+      "batteryPct": null,
+      "weightMs": {
+        "spawn": 180,
+        "bundle": 180
+      },
+      "degraded": [],
+      "committed": 78,
+      "pages": 155,
+      "cpuQ": 1,
+      "diskQ": 0.2,
+      "diskSec": 0.004,
+      "maxFreq": 100
+    },
+    {
+      "tSec": 70.2,
+      "at": "2026-01-15T10:01:10.200Z",
+      "ms": 246,
+      "usedPct": 72,
+      "hang": false,
+      "bundleMs": 180,
+      "slipS": 52.2,
+      "plugged": true,
+      "batteryPct": null,
+      "weightMs": {
+        "spawn": 246,
+        "bundle": 180
+      },
+      "degraded": [],
+      "committed": 79,
+      "pages": 95,
+      "cpuQ": 1,
+      "diskQ": 0.2,
+      "diskSec": 0.004,
+      "maxFreq": 100
+    },
+    {
+      "tSec": 78,
+      "at": "2026-01-15T10:01:18.000Z",
+      "ms": 206,
+      "usedPct": 72,
+      "hang": false,
+      "bundleMs": 180,
+      "slipS": 58,
+      "plugged": true,
+      "batteryPct": null,
+      "weightMs": {
+        "spawn": 206,
+        "bundle": 180
+      },
+      "degraded": [],
+      "committed": 80,
+      "pages": 97,
+      "cpuQ": 1,
+      "diskQ": 0.2,
+      "diskSec": 0.004,
+      "maxFreq": 100
+    }
+  ],
+  "samples": [
+    {
+      "at": "2026-01-15T10:00:01.950Z",
+      "tSec": 1.95,
+      "freeGB": 4.29,
+      "usedPct": 73.22
+    },
+    {
+      "at": "2026-01-15T10:00:03.900Z",
+      "tSec": 3.9,
+      "freeGB": 4.51,
+      "usedPct": 71.81
+    },
+    {
+      "at": "2026-01-15T10:00:05.850Z",
+      "tSec": 5.85,
+      "freeGB": 4.42,
+      "usedPct": 72.35
+    },
+    {
+      "at": "2026-01-15T10:00:07.800Z",
+      "tSec": 7.8,
+      "freeGB": 4.21,
+      "usedPct": 73.71
+    },
+    {
+      "at": "2026-01-15T10:00:09.750Z",
+      "tSec": 9.75,
+      "freeGB": 3.86,
+      "usedPct": 75.9
+    },
+    {
+      "at": "2026-01-15T10:00:11.700Z",
+      "tSec": 11.7,
+      "freeGB": 3.87,
+      "usedPct": 75.82
+    },
+    {
+      "at": "2026-01-15T10:00:13.650Z",
+      "tSec": 13.65,
+      "freeGB": 4.53,
+      "usedPct": 71.67
+    },
+    {
+      "at": "2026-01-15T10:00:15.600Z",
+      "tSec": 15.6,
+      "freeGB": 4.34,
+      "usedPct": 72.89
+    },
+    {
+      "at": "2026-01-15T10:00:17.550Z",
+      "tSec": 17.55,
+      "freeGB": 4.33,
+      "usedPct": 72.91
+    },
+    {
+      "at": "2026-01-15T10:00:19.500Z",
+      "tSec": 19.5,
+      "freeGB": 3.99,
+      "usedPct": 75.09
+    },
+    {
+      "at": "2026-01-15T10:00:21.450Z",
+      "tSec": 21.45,
+      "freeGB": 4.47,
+      "usedPct": 72.09
+    },
+    {
+      "at": "2026-01-15T10:00:23.400Z",
+      "tSec": 23.4,
+      "freeGB": 4.75,
+      "usedPct": 70.34
+    },
+    {
+      "at": "2026-01-15T10:00:25.350Z",
+      "tSec": 25.35,
+      "freeGB": 4.4,
+      "usedPct": 72.51
+    },
+    {
+      "at": "2026-01-15T10:00:27.300Z",
+      "tSec": 27.3,
+      "freeGB": 4.05,
+      "usedPct": 74.71
+    },
+    {
+      "at": "2026-01-15T10:00:29.250Z",
+      "tSec": 29.25,
+      "freeGB": 4.12,
+      "usedPct": 74.26
+    },
+    {
+      "at": "2026-01-15T10:00:31.200Z",
+      "tSec": 31.2,
+      "freeGB": 4.51,
+      "usedPct": 71.79
+    },
+    {
+      "at": "2026-01-15T10:00:33.150Z",
+      "tSec": 33.15,
+      "freeGB": 4.19,
+      "usedPct": 73.8
+    },
+    {
+      "at": "2026-01-15T10:00:35.100Z",
+      "tSec": 35.1,
+      "freeGB": 4.54,
+      "usedPct": 71.61
+    },
+    {
+      "at": "2026-01-15T10:00:37.050Z",
+      "tSec": 37.05,
+      "freeGB": 4.39,
+      "usedPct": 72.57
+    },
+    {
+      "at": "2026-01-15T10:00:39.000Z",
+      "tSec": 39,
+      "freeGB": 4.08,
+      "usedPct": 74.49
+    },
+    {
+      "at": "2026-01-15T10:00:40.950Z",
+      "tSec": 40.95,
+      "freeGB": 4.33,
+      "usedPct": 72.95
+    },
+    {
+      "at": "2026-01-15T10:00:42.900Z",
+      "tSec": 42.9,
+      "freeGB": 4.11,
+      "usedPct": 74.3
+    },
+    {
+      "at": "2026-01-15T10:00:44.850Z",
+      "tSec": 44.85,
+      "freeGB": 4.2,
+      "usedPct": 73.72
+    },
+    {
+      "at": "2026-01-15T10:00:46.800Z",
+      "tSec": 46.8,
+      "freeGB": 4.61,
+      "usedPct": 71.18
+    },
+    {
+      "at": "2026-01-15T10:00:48.750Z",
+      "tSec": 48.75,
+      "freeGB": 4.11,
+      "usedPct": 74.34
+    },
+    {
+      "at": "2026-01-15T10:00:50.700Z",
+      "tSec": 50.7,
+      "freeGB": 4.49,
+      "usedPct": 71.94
+    },
+    {
+      "at": "2026-01-15T10:00:52.650Z",
+      "tSec": 52.65,
+      "freeGB": 4.39,
+      "usedPct": 72.55
+    },
+    {
+      "at": "2026-01-15T10:00:54.600Z",
+      "tSec": 54.6,
+      "freeGB": 3.85,
+      "usedPct": 75.93
+    },
+    {
+      "at": "2026-01-15T10:00:56.550Z",
+      "tSec": 56.55,
+      "freeGB": 4.35,
+      "usedPct": 72.79
+    },
+    {
+      "at": "2026-01-15T10:00:58.500Z",
+      "tSec": 58.5,
+      "freeGB": 4.21,
+      "usedPct": 73.66
+    },
+    {
+      "at": "2026-01-15T10:01:00.450Z",
+      "tSec": 60.45,
+      "freeGB": 4.07,
+      "usedPct": 74.58
+    },
+    {
+      "at": "2026-01-15T10:01:02.400Z",
+      "tSec": 62.4,
+      "freeGB": 3.95,
+      "usedPct": 75.31
+    },
+    {
+      "at": "2026-01-15T10:01:04.350Z",
+      "tSec": 64.35,
+      "freeGB": 4.49,
+      "usedPct": 71.92
+    },
+    {
+      "at": "2026-01-15T10:01:06.300Z",
+      "tSec": 66.3,
+      "freeGB": 4.11,
+      "usedPct": 74.34
+    },
+    {
+      "at": "2026-01-15T10:01:08.250Z",
+      "tSec": 68.25,
+      "freeGB": 4,
+      "usedPct": 75.02
+    },
+    {
+      "at": "2026-01-15T10:01:10.200Z",
+      "tSec": 70.2,
+      "freeGB": 4.29,
+      "usedPct": 73.21
+    },
+    {
+      "at": "2026-01-15T10:01:12.150Z",
+      "tSec": 72.15,
+      "freeGB": 4.59,
+      "usedPct": 71.32
+    },
+    {
+      "at": "2026-01-15T10:01:14.100Z",
+      "tSec": 74.1,
+      "freeGB": 4.35,
+      "usedPct": 72.82
+    },
+    {
+      "at": "2026-01-15T10:01:16.050Z",
+      "tSec": 76.05,
+      "freeGB": 4.29,
+      "usedPct": 73.17
+    },
+    {
+      "at": "2026-01-15T10:01:18.000Z",
+      "tSec": 78,
+      "freeGB": 4.56,
+      "usedPct": 71.5
+    }
+  ],
+  "diagnosis": {
+    "engine": "diagnosis/1",
+    "hangDefinition": {
+      "probe": "process-start-latency",
+      "thresholdMs": 800,
+      "source": "default",
+      "intervalS": 7.8,
+      "cannotSee": [
+        "freezes shorter than the probe interval",
+        "UI input lag that does not delay process start"
+      ],
+      "inputResponse": {
+        "status": "not evaluated",
+        "reason": "report predates the input-response check"
+      }
+    },
+    "usable": {
+      "probes": 0,
+      "excluded": 10,
+      "minimum": 10,
+      "sustainedMin": 3
+    },
+    "excludedProbes": [
+      {
+        "ref": "spawnProbes[0]",
+        "reasons": [
+          "startup-window",
+          "observer-slip"
+        ]
+      },
+      {
+        "ref": "spawnProbes[1]",
+        "reasons": [
+          "observer-slip"
+        ]
+      },
+      {
+        "ref": "spawnProbes[2]",
+        "reasons": [
+          "observer-slip"
+        ]
+      },
+      {
+        "ref": "spawnProbes[3]",
+        "reasons": [
+          "observer-slip"
+        ]
+      },
+      {
+        "ref": "spawnProbes[4]",
+        "reasons": [
+          "observer-slip"
+        ]
+      },
+      {
+        "ref": "spawnProbes[5]",
+        "reasons": [
+          "observer-slip"
+        ]
+      },
+      {
+        "ref": "spawnProbes[6]",
+        "reasons": [
+          "observer-slip"
+        ]
+      },
+      {
+        "ref": "spawnProbes[7]",
+        "reasons": [
+          "observer-slip"
+        ]
+      },
+      {
+        "ref": "spawnProbes[8]",
+        "reasons": [
+          "observer-slip"
+        ]
+      },
+      {
+        "ref": "spawnProbes[9]",
+        "reasons": [
+          "observer-slip"
+        ]
+      }
+    ],
+    "calm": {
+      "definition": "usable, latency < 400 ms, not within 10 s of a hang",
+      "n": 0,
+      "means": {}
+    },
+    "proxyValidation": {
+      "status": "not validated",
+      "reason": "no hung user marks were recorded"
+    },
+    "marks": {
+      "joined": [],
+      "unmatched": []
+    },
+    "confidenceModel": {
+      "confirmationWeights": {
+        "user-mark": 1,
+        "os-not-responding": 1,
+        "workload-probe": 1,
+        "input-stall": 0.5,
+        "probe-only": 0
+      },
+      "weights": {
+        "C": 0.35,
+        "D": 0.25,
+        "O": 0.25,
+        "K": 0.15
+      },
+      "penaltyPerConfound": 0.1,
+      "penaltyMax": 0.3,
+      "cap": 0.95
+    },
+    "thresholds": {},
+    "probeAgreement": {
+      "status": "not evaluated",
+      "reason": "report predates the input-response check",
+      "toleranceMs": 2000,
+      "stallMs": null,
+      "probeIntervalS": null
+    },
+    "inputStallCorroboration": {
+      "status": "not evaluated",
+      "reason": "report predates the input-response check"
+    },
+    "hangs": [],
+    "rollup": [],
+    "finding": {
+      "class": "insufficient-evidence",
+      "sentence": "1 hang(s) seen but no cause is ranked (all 1 hang(s) were observer-affected); 10 probe(s) excluded as observer-affected.",
+      "strength": "insufficient (0 usable probes, minimum 10)",
+      "confirmations": {
+        "user-mark": 0,
+        "os-not-responding": 0,
+        "workload-probe": 0,
+        "probe-only": 0
+      },
+      "excludedHangs": 1,
+      "scope": "open scope",
+      "window": {
+        "start": "2026-01-15T10:00:00.000Z",
+        "end": "2026-01-15T10:01:18.100Z",
+        "observedS": 78
+      }
+    },
+    "observations": [
+      "0 usable probes of 10 (10 excluded: startup-window, observer-slip)",
+      "hang 6000 ms at 2026-01-15T10:00:39.000Z (t+39s), commit 75% [excluded: observer-slip]"
+    ],
+    "hwConfigSignal": null,
+    "timeLost": null,
+    "eventsUsed": [],
+    "eventsHistory": [],
+    "suggestedActions": []
+  }
+}

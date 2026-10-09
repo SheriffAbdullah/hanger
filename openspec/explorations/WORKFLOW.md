@@ -1,4 +1,4 @@
-# Workflow — explore → argue → fold → build (Telltale data ladder)
+# Workflow — explore → argue → fold → build (Hanger data ladder)
 
 ## Phase 1 — EXPLORE (now, divergent, no killing ideas)
 1. Survey exists: `openspec/explorations/zero-*.md` (4 surfaces) + `orders-framework.md`.
@@ -12,7 +12,7 @@ DEFER, one line each with reason. Recorded in `openspec/explorations/dividend.md
 Rule: killing requires naming the cheaper substitute. Nothing killed silently.
 
 ## Phase 3 — FOLD (proposal)
-Winners → `openspec/changes/telltale-v06/proposal.md` + tasks. Spec SHALLs updated;
+Winners → `openspec/changes/hanger-v06/proposal.md` + tasks. Spec SHALLs updated;
 losers stay listed as rejected-with-reason (not deleted).
 
 ## Phase 4 — BUILD (gated)

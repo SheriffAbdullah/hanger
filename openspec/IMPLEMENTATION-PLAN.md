@@ -71,7 +71,7 @@ W6:   [9 cause-rules]          [10 report-and-visualization] (needs 4, 8)
 | Wave | Parallel | Merge hotspot | Rule |
 |---|---|---|---|
 | W1 | 1 and 2 | none (1 touches only `openspec/`, `README.md`) | free |
-| W2 | 3 and 4 | `tools/telltale/telltale.js` report assembly (`report = {...}`) | 4 writes a new module `lib/system-profile.js` and adds one key to the report. 3 owns everything else in assembly. Merge 3 first. |
+| W2 | 3 and 4 | `tools/hanger/hanger.js` report assembly (`report = {...}`) | 4 writes a new module `lib/system-profile.js` and adds one key to the report. 3 owns everything else in assembly. Merge 3 first. |
 | W4 | 6 and 7 | collector registration in the sampler from change 5 | Both add collectors through the registration interface change 5 creates. Neither edits the sampler core. |
 | W6 | 9 and 10 | none: 9 edits `lib/diagnosis/rules/*`, 10 edits renderers | 10 renders whatever rules exist. Rules added by 9 appear without renderer changes. |
 
@@ -82,7 +82,7 @@ handing back, and rebases onto the current main before merge.
 
 - **Do not change behavior outside your change's specs.** If a requirement in another
   change blocks you, stop and report it rather than editing that change.
-- **Tests:** zero dependencies. `node --test tools/telltale/test/` must pass. Change 2
+- **Tests:** zero dependencies. `node --test tools/hanger/test/` must pass. Change 2
   creates the harness, `test/fixtures/`, and `test/helpers/` (`validate-report.js`,
   `grep-artifacts.js`). Collector parsing is unit-tested on canned output text. Live
   collection is verified by the smoke commands in each `tasks.md`.
@@ -93,17 +93,17 @@ handing back, and rebases onto the current main before merge.
   contain "Archive would refuse" for any MODIFIED/REMOVED header.
 - **Traceability:** every task carries the finding IDs it closes, e.g. `[R02-P0-1]`.
   Tasks cite requirement names, never source line numbers (line numbers rot, R01-P2-8).
-- **Report schema:** change 2 bumps the schema to `telltale-json/2` and records it in
-  `tools/telltale/SCHEMA-CHANGELOG.md`. For the whole program (changes 2-10), v2 is a
+- **Report schema:** change 2 bumps the schema to `hanger-json/2` and records it in
+  `tools/hanger/SCHEMA-CHANGELOG.md`. For the whole program (changes 2-10), v2 is a
   **draft**: the report carries `schemaStatus: "draft"`. Every change that adds, renames,
   or removes a field (e.g. `redacted.*`/`focus.*` removal in change 3, the `asset` alias
   removal in change 10) adds a dated `2.x` changelog section listing the fields, and
-  stays at `telltale-json/2`. Change 10's last task sets `schemaStatus: "frozen"`. After
+  stays at `hanger-json/2`. Change 10's last task sets `schemaStatus: "frozen"`. After
   that, the changelog's normal rule applies again: any later removal or rename bumps to `/3`.
-- **Module seams:** new logic goes in `tools/telltale/lib/*.js` as functions with no side
-  effects at require time, so tests can require them. `telltale.js` keeps the CLI and
+- **Module seams:** new logic goes in `tools/hanger/lib/*.js` as functions with no side
+  effects at require time, so tests can require them. `hanger.js` keeps the CLI and
   orchestration. Change 2 adds the `require.main === module` guard.
-- **Privacy canary:** from change 3 onward, `node tools/telltale/test/canary-leak.js` must
+- **Privacy canary:** from change 3 onward, `node tools/hanger/test/canary-leak.js` must
   report zero hits. It is added to the integration task of every later change.
 
 ## 3. Per-change agent briefs
@@ -119,8 +119,8 @@ Each brief summarizes the scope. The authoritative content is the change folder
   Deferred section. Archive v09 and v13 with `--skip-specs` after moving their open items.
   Record the v08 review. Add archive gates to `config.yaml`.
 - **Files:** `openspec/specs/*/spec.md` (direct edits only for Purpose and Deferred
-  sections), `openspec/config.yaml`, `openspec/changes/telltale-v09|v13/`,
-  `openspec/changes/archive/2026-10-07-telltale-v08/tasks.md`, `README.md` (prerequisites
+  sections), `openspec/config.yaml`, `openspec/changes/hanger-v09|v13/`,
+  `openspec/changes/archive/2026-10-07-hanger-v08/tasks.md`, `README.md` (prerequisites
   and contract wording only), `openspec/explorations/orders-framework.md` and `ontology.md`
   (mark the correlation and culprit-formula claims as not implemented).
 - **Done when:** `openspec validate --all --strict` passes, `openspec list` shows no
@@ -137,9 +137,9 @@ Each brief summarizes the scope. The authoritative content is the change folder
   settings with source. Recompute with recorded thresholds. Honest "not recorded" scope
   wording. Fix the print-view unknown-power bug. Regenerate the shipped sample from a
   synthetic fixture.
-- **Files:** `tools/telltale/telltale.js`, new `tools/telltale/lib/{serialize,anonymize,timebase,persist,events}.js`,
+- **Files:** `tools/hanger/hanger.js`, new `tools/hanger/lib/{serialize,anonymize,timebase,persist,events}.js`,
   `trend.js`, `render-print.js`, `render-charts.js` (reader only), `SCHEMA-CHANGELOG.md`,
-  new `tools/telltale/test/**`, `reports/sample-telltale.*`.
+  new `tools/hanger/test/**`, `reports/sample-hanger.*`.
 - **Done when:** a 30 s `--anonymize` trace parses. Killing a trace mid-run leaves a
   parseable stream marked unfinished. A 20 s trace on a loaded box reports a rate over the
   real window. Pack and trend print the name of any unreadable file. All tests pass.
@@ -153,9 +153,9 @@ Each brief summarizes the scope. The authoritative content is the change folder
   load as anonymous aggregates at every hang. Scope declaration first in MD and print.
   Remove the `hide` config default, retire `--hide/--focus/--extras`, never persist raw
   command lines, and add the canary test. Update `persona-it.md` with the non-goal.
-- **Files:** new `tools/telltale/lib/scope.js`, `telltale.js` (every enumeration and output
-  site), `telltale.config.json`, `elevated-trace.bat`, `render-print.js` (scope block only),
-  `README.md`, `openspec/explorations/persona-it.md`, new `tools/telltale/test/canary-leak.js`.
+- **Files:** new `tools/hanger/lib/scope.js`, `hanger.js` (every enumeration and output
+  site), `hanger.config.json`, `elevated-trace.bat`, `render-print.js` (scope block only),
+  `README.md`, `openspec/explorations/persona-it.md`, new `tools/hanger/test/canary-leak.js`.
 - **Done when:** the canary test reports zero hits for trace, watch, inventory, pack, MD,
   print, console, and log. A scoped run with nothing in scope still records out-of-scope
   aggregates at every hang. `--hide` exits with a migration message.
@@ -166,7 +166,7 @@ Each brief summarizes the scope. The authoritative content is the change folder
   Report physical cores vs logical processors correctly. Facts: firmware, memory modules,
   storage, GPU and driver, pagefile configuration, power plan name and mode, battery
   health, VBS, virtualization platform versions, security products, domain/MDM join.
-- **Files:** new `tools/telltale/lib/system-profile.js`, one call site in `telltale.js`,
+- **Files:** new `tools/hanger/lib/system-profile.js`, one call site in `hanger.js`,
   the console summary line, tests with canned outputs.
 - **Done when:** an unelevated run on the reference laptop fills every user-tier fact or
   gives a reason. `test/system-profile.test.js` passes on canned outputs.
@@ -179,7 +179,7 @@ Each brief summarizes the scope. The authoritative content is the change folder
   capture (hours). Key-press marks are captured without being blocked by collection.
   Collector registration interface for changes 6 and 7. Per-value provenance (unit,
   window, n, source, measuredAt, precision). Locale-independent parsing.
-- **Files:** new `tools/telltale/lib/sampler/*.js`, `telltale.js` trace and watch loops,
+- **Files:** new `tools/hanger/lib/sampler/*.js`, `hanger.js` trace and watch loops,
   `COLLECTORS` registry migration, tests.
 - **Done when:** on a loaded box a 120 s trace achieves at most 2.5 s median cadence for the
   continuous tier, records gaps, and records observer cost. A 2-hour capture stays within
@@ -195,8 +195,8 @@ Each brief summarizes the scope. The authoritative content is the change folder
   throughput. Aggregate network and VPN-adapter presence. GPU utilization and VRAM when
   exposed, at bounded cost. Defender/AV CPU normalized. System handle count. Remove the
   EcoQoS batch.
-- **Files:** `tools/telltale/lib/collectors/*.js` (registered through change 5's interface),
-  `telltale.js` (registration only), tests with canned outputs.
+- **Files:** `tools/hanger/lib/collectors/*.js` (registered through change 5's interface),
+  `hanger.js` (registration only), tests with canned outputs.
 - **Done when:** a trace on the reference laptop shows every signal as a time series or
   null with a reason. Battery % is numeric on a laptop. AV CPU is at most 100.
 
@@ -207,7 +207,7 @@ Each brief summarizes the scope. The authoritative content is the change folder
   Opt-in workload latency probe declared in the scope file (timing only, output
   discarded). Opt-in workload configuration facts (Postgres memory settings, configured
   WSL memory cap). Idle-vs-loaded comparison in the run summary.
-- **Files:** new `tools/telltale/lib/workload/*.js`, scope-file schema extension
+- **Files:** new `tools/hanger/lib/workload/*.js`, scope-file schema extension
   (`probes`, `config`), tests.
 - **Done when:** with Docker Desktop running a Postgres container in scope, a trace records
   container stats over time, start/stop markers, and a latency series. Without Docker,
@@ -223,7 +223,7 @@ Each brief summarizes the scope. The authoritative content is the change folder
   Five migrated core rules (memory pressure at hang, CPU saturation, disk stall,
   security-software contention, observer guard). Remove cost v1, canned cause text, and
   the `reasons.length >= 2` STATE. The discriminator becomes an output of the ranking.
-- **Files:** new `tools/telltale/lib/diagnosis/{engine,rules/*,vocabulary}.js`, `telltale.js`
+- **Files:** new `tools/hanger/lib/diagnosis/{engine,rules/*,vocabulary}.js`, `hanger.js`
   (replaces the verdict/rca/discriminator block), `render-print.js` (vocabulary only),
   `trend.js` (vocabulary only), tests with fixtures including the R03 sample case.
 - **Done when:** the R03 sample fixture (0 hangs, commit 52-65%) yields "no freeze
@@ -235,7 +235,7 @@ Each brief summarizes the scope. The authoritative content is the change folder
   database memory/I/O, single-process dominance/growth, thermal/power throttling,
   battery/power plan, DPC/ISR storm, and GPU contention. Each rule has fixture tests for
   fires, does-not-fire, and disproved. Rule-to-action mapping (cheapest first).
-- **Files:** `tools/telltale/lib/diagnosis/rules/*.js`, `lib/diagnosis/actions.js`, tests.
+- **Files:** `tools/hanger/lib/diagnosis/rules/*.js`, `lib/diagnosis/actions.js`, tests.
 - **Done when:** each rule has three passing fixture tests and appears in the ranked list
   with evidence references.
 
@@ -249,7 +249,7 @@ Each brief summarizes the scope. The authoritative content is the change folder
   filled only from JSON, with an attachment manifest and hashes.
 - **Files:** `render-print.js` (becomes the report renderer), new `lib/render/svg-charts.js`,
   new `lib/render/email.js`, `render-charts.js` (removed or kept as an alias), the MD writer
-  in `telltale.js`, tests (HTML snapshot assertions and an email-from-fixture test).
+  in `hanger.js`, tests (HTML snapshot assertions and an email-from-fixture test).
 - **Done when:** rendering the fixtures offline gives an HTML whose printed PDF contains the
   charts. The email draft contains only numbers present in the JSON (automated check).
 
@@ -327,7 +327,7 @@ change in this plan.
 | OQ-11 | Default and maximum duration? | `trace` default stays 60 s, `record` default becomes 10 min, maximum 8 h. Any clamp is printed and recorded. | 2, 5 |
 | OQ-12 | Keep a `STATE:` label? | Replace it with a "Finding" sentence and a leading cause class from the fixed vocabulary. The word "STATE" is dropped from all outputs. | 8, 10 |
 | OQ-13 | Name registered security products in the system profile? | Yes. They are IT-installed and needed for the security-contention rule. | 4 |
-| OQ-14 | Read old `telltale-json/1` reports? | `trend` reads v1 for the fields it shows and labels them "v1 (pre-fix; rates may be overstated)". `pack` and renderers require v2 and say so when given v1. | 2 |
+| OQ-14 | Read old `hanger-json/1` reports? | `trend` reads v1 for the fields it shows and labels them "v1 (pre-fix; rates may be overstated)". `pack` and renderers require v2 and say so when given v1. | 2 |
 | OQ-15 | Minimum-evidence thresholds? | At least 10 usable probes for any cause ranking, and at least 3 probes for "sustained". Below that the output is "insufficient evidence". | 8 |
 | OQ-17 | Should `trace`/`record` write `.report.html` and `.email.txt` by default? | Yes. `--no-report` opts out. The email is a draft file only; the tool never sends anything. | 10 |
 | OQ-18 | Keep the `--cost-*` flags? | `--cost-min` is deprecated (it assumed lost minutes). `--cost-rate` stays as an input to measured cost only. | 8 |
@@ -523,7 +523,7 @@ Where two changes share an ID, the first one listed is primary.
 | R03-O-7 | Order: appendix (culprit table, events windowed vs history, method, JSON name + hash) | `report-and-visualization` | report-and-visualization: 1.9, 5.4 |
 | R03-O-8 | Order: ready-to-send message (.email.txt + copy block) | `report-and-visualization` | report-and-visualization: 5.1, 5.4, 5.5 |
 
-### 6.3b Relocated open items from the zombie change `telltale-v09` (R01-P0-4)
+### 6.3b Relocated open items from the zombie change `hanger-v09` (R01-P0-4)
 
 | ID | Item | Change | Tasks |
 |---|---|---|---|

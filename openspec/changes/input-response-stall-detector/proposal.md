@@ -2,7 +2,7 @@
 
 ## Why
 
-Telltale's only definition of a hang is a spawn-time probe: how long it takes to start a trivial process (at or above 800 ms). Its own report admits what that cannot see: UI input lag that does not delay process start, and freezes between probes (`diagnosis.hangDefinition.cannotSee`). The only check on the proxy is a user pressing a key in the terminal, which needs focus, needs the user to act during the stall, and has no end time (review 04, section 0). So today nobody can tell whether the tool's "hangs" are the freezes the user felt.
+Hanger's only definition of a hang is a spawn-time probe: how long it takes to start a trivial process (at or above 800 ms). Its own report admits what that cannot see: UI input lag that does not delay process start, and freezes between probes (`diagnosis.hangDefinition.cannotSee`). The only check on the proxy is a user pressing a key in the terminal, which needs focus, needs the user to act during the stall, and has no end time (review 04, section 0). So today nobody can tell whether the tool's "hangs" are the freezes the user felt.
 
 The owner wants a detector that needs no user action: when the user has just typed or clicked and the foreground application does not answer within about 250 ms, record a stall. It must also say when its own helper woke up late, and it must compare the spawn probe's hangs with what the user actually experienced, so the tool can see whether its hang definition matches felt hangs. Review 04 measured the passive approach on this laptop: about 0.0 ms CPU over 15 s and about 12 MB, with a 0 to 1 ms liveness round trip while calm. Its sensitivity on a real freeze is not yet measured.
 
@@ -33,12 +33,12 @@ The owner wants a detector that needs no user action: when the user has just typ
 
 ## Impact
 
-- New `tools/telltale/lib/input/` (helper bridge, pure episode builder, pure agreement calculator, report assembler) and helper source under `tools/telltale/lib/sampler/input-helper/`. No edits to the scheduler core; the helper is started and stopped beside the key-capture child.
-- `tools/telltale/telltale.js`: start and stop the helper, settings and flags, merge the helper file at run end and in `recover`, add the `inputStall` key to report assembly.
-- `tools/telltale/lib/diagnosis/context.js`, `engine.js`, `confidence.js`: confirmation source, corroboration, agreement, weights. Rules are untouched.
-- `tools/telltale/lib/render/`: chart overlay, evidence subsection, finding count, email line.
-- `tools/telltale/lib/settings.js` and `telltale.config.json` keys; `tools/telltale/lib/sampler/observer.js` reads the helper's process stats.
-- `tools/telltale/SCHEMA-CHANGELOG.md`, `tools/telltale/test/helpers/validate-report.js`, `tools/telltale/test/canary-leak.js`, new fixtures and tests, `README.md`.
+- New `tools/hanger/lib/input/` (helper bridge, pure episode builder, pure agreement calculator, report assembler) and helper source under `tools/hanger/lib/sampler/input-helper/`. No edits to the scheduler core; the helper is started and stopped beside the key-capture child.
+- `tools/hanger/hanger.js`: start and stop the helper, settings and flags, merge the helper file at run end and in `recover`, add the `inputStall` key to report assembly.
+- `tools/hanger/lib/diagnosis/context.js`, `engine.js`, `confidence.js`: confirmation source, corroboration, agreement, weights. Rules are untouched.
+- `tools/hanger/lib/render/`: chart overlay, evidence subsection, finding count, email line.
+- `tools/hanger/lib/settings.js` and `hanger.config.json` keys; `tools/hanger/lib/sampler/observer.js` reads the helper's process stats.
+- `tools/hanger/SCHEMA-CHANGELOG.md`, `tools/hanger/test/helpers/validate-report.js`, `tools/hanger/test/canary-leak.js`, new fixtures and tests, `README.md`.
 - Depends on the archived changes: sampling-engine-and-provenance (budget, provenance), software-inventory-and-scope (resolver and canary), diagnosis-engine-rebuild (confirmation sources, confidence), report-and-visualization (charts, email). Independent of the in-flight `workload-session-and-containers`; it reads `workload.probes` only if present.
 
 ## Follow-ups (out of scope)
