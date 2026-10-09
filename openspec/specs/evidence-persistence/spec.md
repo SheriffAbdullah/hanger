@@ -90,21 +90,16 @@ Every report SHALL declare its schema version and status (`draft` or `frozen`). 
 - **THEN** its root `schema` value is `hanger-json/2` and its `schemaStatus` is `draft`
 - **AND** the schema changelog has a v2 section listing the new and changed fields
 
-#### Scenario: Old and unknown versions handled explicitly
-- **GIVEN** one report with schema `hanger-json/1` and one with `hanger-json/9`
+#### Scenario: Unknown versions handled explicitly
+- **GIVEN** one report with schema `hanger-json/1`, one with `hanger-json/9` and one with `hanger-json/2`
 - **WHEN** the user runs `trend`
-- **THEN** the v1 row is shown labelled as pre-fix with rates that may be overstated
-- **AND** the v9 file is reported as an unknown schema and not shown
-
-#### Scenario: Reports written before the Hanger rename still load
-- **GIVEN** a report already on disk whose root `schema` is `telltale-json/2` and whose file stem is `telltale-<stamp>`
-- **WHEN** the user runs `trend`, `pack` or the renderer on it
-- **THEN** it is read as the same frozen v2 schema as `hanger-json/2`, listed, validated and rendered like any other report
+- **THEN** the v2 row is shown
+- **AND** the v1 and v9 files are each reported as an unknown schema and not shown
 
 #### Scenario: Pack requires v2
-- **GIVEN** the only trace report has the legacy schema `telltale-json/1`
+- **GIVEN** the only trace report declares a schema other than `hanger-json/2`
 - **WHEN** the user runs `pack`
-- **THEN** the output states that the report is v1 and must be re-captured
+- **THEN** the output names the file as unreadable with an unknown schema and reports no trace
 
 ### Requirement: Effective settings recorded with their source
 Each report SHALL record every setting that changes the evidence (duration, sample interval, anonymization, scope, and every threshold) with its effective value and its source (flag, config, or default). Any value the tool changed from what was requested SHALL be recorded with the requested value and the reason, and SHALL be printed on the console.
